@@ -1131,6 +1131,7 @@ export const projects = [
     slug: "markdown-to-cc98",
     name: "Markdown 转 CC98",
     description: "把 Markdown 转换并发布到 CC98 的辅助工具，支持格式转换与批量上传图片。",
+    repo: "stevenstg/obsidian-cc98-publish",
     category: "work",
     tags: ["CC98", "Markdown", "工具"],
     links: {
