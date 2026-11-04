@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths } from "astro";
+import { CATEGORIES, type Category, isCategoryId } from "@/domain/project/category";
+import CatalogSection from "@/presentation/components/catalog/CatalogSection.astro";
+import CategoryHero from "@/presentation/components/catalog/CategoryHero.astro";
+import BaseLayout from "@/presentation/layouts/BaseLayout.astro";
+import { getCatalog, getCategoryCatalog } from "@/presentation/lib/catalog";
+
+export const getStaticPaths = (() =>
+  CATEGORIES.map((category) => ({
+    params: { category: category.id },
+    props: { category },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  category: Category;
+}
+
+const { category } = Astro.props;
+const pathCategory = Astro.params.category;
+
+if (!pathCategory || !isCategoryId(pathCategory) || pathCategory !== category.id) {
+  throw new Error(`Invalid category route: ${pathCategory}`);
+}
+
+const catalog = getCatalog();
+const categoryCatalog = getCategoryCatalog(category.id);
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `浙江大学${category.label}类开源项目`,
+  numberOfItems: categoryCatalog.counts.total,
+  itemListElement: categoryCatalog.projects.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: project.name,
+    description: project.description,
+    url: project.primaryUrl,
+  })),
+};
+---
+
+<BaseLayout
+  title={`${category.label}项目`}
+  description={`${category.description} 收录 ${categoryCatalog.counts.total} 个浙江大学开源项目。`}
+  syncedAt={catalog.syncedAt}
+  source={catalog.source}
+  total={catalog.counts.total}
+  jsonLd={itemListJsonLd}
+>
+  <div class="page-shell">
+    <CategoryHero category={category} counts={categoryCatalog.counts} />
+    <CatalogSection
+      projects={categoryCatalog.projects}
+      counts={categoryCatalog.counts}
+      title={`${category.label}项目`}
+      eyebrow={`Projects / ${category.labelEn}`}
+    />
+  </div>
+</BaseLayout>

@@ -1,0 +1,134 @@
+---
+import "@/presentation/styles/global.css";
+import { siteConfig } from "@/config/site";
+import Footer from "@/presentation/components/site/Footer.astro";
+import Header from "@/presentation/components/site/Header.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+  syncedAt?: string | null;
+  source?: string | null;
+  total?: number;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  noindex = false,
+  syncedAt,
+  source,
+  total,
+  jsonLd,
+} = Astro.props;
+
+const pageTitle = title ? `${title} · ${siteConfig.name}` : siteConfig.title;
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : Astro.url.toString();
+const ogImage = Astro.site ? new URL("/og.png", Astro.site).toString() : "/og.png";
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  alternateName: siteConfig.nameEn,
+  url: Astro.site?.toString(),
+  description: siteConfig.description,
+  inLanguage: "zh-CN",
+  potentialAction: Astro.site
+    ? {
+        "@type": "SearchAction",
+        target: `${new URL("/", Astro.site)}?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      }
+    : undefined,
+};
+const structuredData = [
+  websiteJsonLd,
+  ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []),
+];
+const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
+---
+
+<!doctype html>
+<html lang="zh-CN" class="light" data-theme="light" data-theme-mode="system">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script is:inline>
+    (() => {
+      try {
+        const key = "zju-atlas-theme";
+        const stored = localStorage.getItem(key);
+        const mode = stored === "light" || stored === "dark" ? stored : "system";
+        const resolved =
+          mode === "dark" ||
+          (mode === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ? "dark"
+            : "light";
+        const root = document.documentElement;
+        root.classList.toggle("dark", resolved === "dark");
+        root.classList.toggle("light", resolved === "light");
+        root.dataset.theme = resolved;
+        root.dataset.themeMode = mode;
+        root.style.colorScheme = resolved;
+      } catch {
+        document.documentElement.classList.add("light");
+      }
+    })();
+    </script>
+    <title>{pageTitle}</title>
+    <meta name="description" content={description}>
+    <meta name="keywords" content={siteConfig.keywords.join(", ")}>
+    <meta name="author" content={siteConfig.author}>
+    <meta name="generator" content={Astro.generator}>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#161619">
+    <link rel="canonical" href={canonical}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml">
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={siteConfig.name}>
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={canonical}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content={`${siteConfig.name}项目索引`}>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={pageTitle}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+
+    <script type="application/ld+json" is:inline set:html={structuredDataJson} />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="site-backdrop" aria-hidden="true"></div>
+
+    <div id="swup">
+      <Header />
+
+      <main id="main" class="transition-main" tabindex="-1">
+        <slot />
+      </main>
+
+      <Footer syncedAt={syncedAt} source={source} total={total} />
+    </div>
+
+    <script>
+    import "@/presentation/scripts/app";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "求是开源 · ZJU Open Source Atlas",
+  "short_name": "求是开源",
+  "description": "浙江大学开源项目索引，记录分类、链接与维护状态。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#0b4d8c",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+name: 推荐一个项目
+description: 推荐一个与浙江大学有关的开源项目
+title: "[项目推荐] "
+labels:
+  - project-suggestion
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢推荐。请尽量填写真实、可验证的信息。提交前可以先查看 README 中的数据格式。
+
+  - type: input
+    id: name
+    attributes:
+      label: 项目名称
+      placeholder: 例如：ZJU Connect
+    validations:
+      required: true
+
+  - type: input
+    id: repo
+    attributes:
+      label: GitHub 仓库
+      description: 使用 owner/name 格式。
+      placeholder: owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类
+      options:
+        - 生活
+        - 学习
+        - 科研
+        - 工作
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 一句话简介
+      description: 说明这个项目解决了什么问题，建议 16 到 80 个字符。
+      placeholder: 在校园网外访问校内资源的 RVPN 客户端。
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: 网站或部署地址
+      placeholder: https://example.com
+
+  - type: input
+    id: download
+    attributes:
+      label: 下载地址
+      placeholder: https://github.com/owner/repo/releases
+
+  - type: input
+    id: tags
+    attributes:
+      label: 标签
+      description: 用逗号分隔，建议 2 到 4 个。
+      placeholder: RVPN, 校园网, Go
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认
+      options:
+        - label: 该仓库是公开可访问的，且与浙江大学有关。
+          required: true
+        - label: 我已确认项目没有被重复收录。
+          required: true

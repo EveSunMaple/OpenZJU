@@ -1,0 +1,39 @@
+---
+import CatalogSection from "@/presentation/components/catalog/CatalogSection.astro";
+import Hero from "@/presentation/components/catalog/Hero.astro";
+import BaseLayout from "@/presentation/layouts/BaseLayout.astro";
+import { getCatalog } from "@/presentation/lib/catalog";
+
+const catalog = getCatalog();
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "浙江大学开源项目索引",
+  numberOfItems: catalog.counts.total,
+  itemListElement: catalog.projects.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: project.name,
+    description: project.description,
+    url: project.primaryUrl,
+  })),
+};
+---
+
+<BaseLayout
+  syncedAt={catalog.syncedAt}
+  source={catalog.source}
+  total={catalog.counts.total}
+  jsonLd={itemListJsonLd}
+>
+  <div class="page-shell">
+    <Hero counts={catalog.counts} syncedAt={catalog.syncedAt} source={catalog.source} />
+    <CatalogSection
+      projects={catalog.projects}
+      counts={catalog.counts}
+      title="全部项目"
+      eyebrow="Directory / All"
+    />
+  </div>
+</BaseLayout>

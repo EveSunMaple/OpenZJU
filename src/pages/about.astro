@@ -1,0 +1,228 @@
+---
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/site";
+import { MAINTENANCE_META, MAINTENANCE_STATUSES } from "@/domain/project/repository-stats";
+import BaseLayout from "@/presentation/layouts/BaseLayout.astro";
+import { getCatalog } from "@/presentation/lib/catalog";
+import { formatCompactNumber, formatDateTime } from "@/presentation/lib/format";
+
+const catalog = getCatalog();
+const repositoryUrl = siteConfig.repositoryUrl;
+const dataDocUrl = repositoryUrl ? `${repositoryUrl}/blob/main/docs/data-model.md` : "";
+const exampleProjectSnippet = `{
+  slug: "my-zju-project",
+  name: "My ZJU Project",
+  description: "一句话说明这个项目解决了什么问题。",
+  repo: "owner/repo",
+  category: "study",
+  tags: ["课程资料", "工具"],
+  links: { website: "https://example.com" },
+}`;
+---
+
+<BaseLayout
+  title="关于"
+  description="了解求是开源的收录范围、维护状态判定方式、数据来源与贡献方式。"
+  syncedAt={catalog.syncedAt}
+  source={catalog.source}
+  total={catalog.counts.total}
+>
+  <div class="page-shell doc-page">
+    <header class="doc-hero">
+      <p class="eyebrow">About / 关于本站</p>
+      <h1>让每一个浙大开源项目，<br>都能被找到。</h1>
+      <p>
+        求是开源是一个静态的浙江大学开源项目索引。它不托管代码，也不替项目做宣传，只做三件事：把项目按场景归类，记录它们最近是否仍在维护，并让搜索变得足够快。
+      </p>
+    </header>
+
+    <div class="doc-grid">
+      <div class="doc-content">
+        <section class="doc-section" id="what">
+          <span class="doc-section__number">01 / WHAT</span>
+          <h2>这是什么</h2>
+          <p>
+            浙江大学每年都会产生大量课程资料、科研代码、校园工具与效率脚本。它们散落在不同的组织和个人仓库里，很多项目生态位重叠，也有很多已经停止维护。这个站点试图给出一张持续更新的地图。
+          </p>
+          <ul>
+            <li>在做新项目之前，先确认是否已经有人做过类似的事。</li>
+            <li>在选用一个项目之前，先判断它是否仍在维护。</li>
+            <li>在寻找学习资料或校园工具时，按分类和标签快速筛选。</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="criteria">
+          <span class="doc-section__number">02 / CRITERIA</span>
+          <h2>维护状态如何判定</h2>
+          <p>
+            每次构建时，站点会读取 GitHub 仓库的默认分支提交时间与最近 90
+            天提交数量，并结合仓库是否归档，给出一个粗略但直观的维护状态。它不是质量评分，也不代表项目是否适合生产使用。
+          </p>
+
+          <div class="maintenance-legend">
+            {MAINTENANCE_STATUSES.filter((status) => status !== "unknown").map((status) => (
+              <div class="maintenance-legend__item">
+                <span class={`status-dot status-dot--${status}`} aria-hidden="true" />
+                <div>
+                  <strong>{MAINTENANCE_META[status].label}</strong>
+                  <span>{MAINTENANCE_META[status].description}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p>
+            最近更新时间取默认分支最新提交时间，失败时回退到 GitHub 的
+            pushed_at。已归档仓库会明确标注为“已归档”，即使它仍然可以正常使用。
+          </p>
+        </section>
+
+        <section class="doc-section" id="data">
+          <span class="doc-section__number">03 / DATA</span>
+          <h2>数据从哪里来</h2>
+          <p>
+            项目的基本信息来自仓库内的
+            <strong>src/data/projects.ts</strong
+            >，包括名称、简介、分类、标签与链接。Stars、语言、归档状态、最近提交时间与提交频率在构建时从
+            GitHub 获取。
+          </p>
+          <p>
+            构建结果会写入
+            <strong>src/generated/repository-stats.json</strong>
+            作为缓存。网络不可用或触发速率限制时，页面会继续使用上一次成功同步的数据，因此构建不会因为
+            GitHub 暂时不可达而失败。
+          </p>
+          <p>
+            最近一次同步时间：<strong>{formatDateTime(catalog.syncedAt)}</strong>。当前收录
+            <strong> {catalog.counts.total} </strong>个项目，其中
+            <strong> {catalog.counts.maintained} </strong>个在最近一年内有提交。
+          </p>
+        </section>
+
+        <section class="doc-section" id="contribute">
+          <span class="doc-section__number">04 / CONTRIBUTE</span>
+          <h2>如何收录一个项目</h2>
+          <p>
+            收录标准很宽松：只要项目与浙江大学有关，并且公开可访问，就可以提交。课程作业、科研代码、校园工具、模板与资源集合都欢迎。
+          </p>
+          <ol>
+            <li>打开 <strong>src/data/projects.ts</strong>，按现有格式添加一条项目记录。</li>
+            <li>填写唯一的 slug、仓库的 owner/name、中文简介、分类与至少一个标签。</li>
+            <li>如果项目有部署网站或下载地址，填写到 links.website 或 links.download。</li>
+            <li>运行 <strong>pnpm check</strong>，然后提交 Pull Request。</li>
+          </ol>
+          <pre class="doc-code"><code>{exampleProjectSnippet}</code></pre>
+          <p>
+            如果项目已经不存在、仓库迁移或分类不合适，也可以直接提交修改。收录不是排名，所有项目按最近更新排序，已归档项目会自动沉底。
+          </p>
+        </section>
+
+        <section class="doc-section" id="stack">
+          <span class="doc-section__number">05 / STACK</span>
+          <h2>技术栈</h2>
+          <p>
+            站点使用 Astro 静态生成，Tailwind CSS v4 负责样式，HeroUI v3 提供框架无关的 BEM
+            组件样式，Lucide 图标通过 astro-icon 管理。页面切换由 Swup
+            控制，搜索与筛选完全在浏览器端完成，不依赖服务端。
+          </p>
+          <p>
+            项目数据与展示逻辑按 DDD + MVC
+            分层：领域层定义项目、分类与维护状态，应用层负责组装与搜索，基础设施层负责 GitHub
+            同步，表现层负责 Astro 组件与浏览器控制器。
+          </p>
+        </section>
+
+        <section class="doc-section" id="license">
+          <span class="doc-section__number">06 / LICENSE</span>
+          <h2>许可与声明</h2>
+          <p>
+            本站代码以
+            <strong>GPL-3.0</strong>
+            许可发布。项目名称、简介、链接与统计数据仅用于索引与展示，版权归各自作者所有。维护状态只是自动化判断，不构成对项目质量的保证。
+          </p>
+          <p>
+            收录范围以公开可访问为准，收录不代表推荐、审核或保证合规。部分自动化脚本可能违反平台规则或学术诚信要求，请自行判断并承担使用后果。
+          </p>
+          <p>
+            本站不是浙江大学官方项目，也不代表学校立场。如果你不希望自己的项目被收录，可以通过仓库
+            Issue 或 Pull Request 联系我们移除。
+          </p>
+        </section>
+      </div>
+
+      <aside class="doc-aside">
+        <div class="doc-aside__card">
+          <h2>On this page</h2>
+          <ul class="doc-aside__links">
+            <li>
+              <a href="#what"
+                >这是什么 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a
+              >
+            </li>
+            <li>
+              <a href="#criteria"
+                >维护状态 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a
+              >
+            </li>
+            <li>
+              <a href="#data"
+                >数据来源 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a
+              >
+            </li>
+            <li>
+              <a href="#contribute"
+                >贡献项目 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a
+              >
+            </li>
+            <li>
+              <a href="#stack">技术栈 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="doc-aside__card">
+          <h2>Snapshot</h2>
+          <p>
+            {catalog.counts.total}
+            个项目 · {catalog.counts.maintained} 个仍在维护<br>
+            累计 {formatCompactNumber(catalog.counts.totalStars)} Stars<br>
+            同步于 {formatDateTime(catalog.syncedAt)}
+          </p>
+          {repositoryUrl && (
+            <p>
+              <a href={repositoryUrl} target="_blank" rel="noopener noreferrer">
+                在 GitHub 上查看源码
+              </a>
+            </p>
+          )}
+          {dataDocUrl && (
+            <p>
+              <a href={dataDocUrl} target="_blank" rel="noopener noreferrer">
+                阅读数据字段文档
+              </a>
+            </p>
+          )}
+        </div>
+
+        <div class="doc-aside__card">
+          <h2>Quick actions</h2>
+          <ul class="doc-aside__links">
+            <li>
+              <a href="/">返回项目索引 <Icon name="lucide:arrow-up-right" aria-hidden="true" /></a>
+            </li>
+            <li>
+              <a href="/categories/study/"
+                >浏览学习资源 <Icon name="lucide:arrow-up-right" aria-hidden="true" /></a
+              >
+            </li>
+            <li>
+              <a href="/categories/research/"
+                >浏览科研项目 <Icon name="lucide:arrow-up-right" aria-hidden="true" /></a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

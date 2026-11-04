@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<fieldset class="theme-switch">
+  <legend class="sr-only">主题模式</legend>
+  <button
+    class="theme-switch__button"
+    type="button"
+    data-theme-option="system"
+    aria-label="跟随系统"
+    title="跟随系统"
+    aria-pressed="false"
+  >
+    <Icon name="lucide:monitor" aria-hidden="true" />
+  </button>
+  <button
+    class="theme-switch__button"
+    type="button"
+    data-theme-option="light"
+    aria-label="白天模式"
+    title="白天模式"
+    aria-pressed="false"
+  >
+    <Icon name="lucide:sun" aria-hidden="true" />
+  </button>
+  <button
+    class="theme-switch__button"
+    type="button"
+    data-theme-option="dark"
+    aria-label="黑夜模式"
+    title="黑夜模式"
+    aria-pressed="false"
+  >
+    <Icon name="lucide:moon" aria-hidden="true" />
+  </button>
+</fieldset>

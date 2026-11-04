@@ -1,0 +1,14 @@
+---
+import type { ProjectView } from "@/application/catalog";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props {
+  projects: readonly ProjectView[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="project-grid" data-project-grid>
+  {projects.map((project) => <ProjectCard project={project} />)}
+</div>

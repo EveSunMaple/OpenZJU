@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+import type { CatalogCounts } from "@/application/catalog";
+import { CATEGORIES, type Category } from "@/domain/project/category";
+
+interface Props {
+  category: Category;
+  counts: CatalogCounts;
+}
+
+const { category, counts } = Astro.props;
+---
+
+<section
+  class="category-hero"
+  style={`--category-color: var(--cat-${category.id})`}
+  aria-labelledby="category-title"
+>
+  <a class="category-hero__back" href="/">
+    <Icon name="lucide:arrow-left" aria-hidden="true" />
+    返回全部项目
+  </a>
+
+  <div class="category-hero__number" aria-hidden="true">{category.index}</div>
+
+  <div class="category-hero__copy">
+    <p class="eyebrow">Category {category.index} / {category.labelEn}</p>
+    <h1 id="category-title">浙大开源 · <span>{category.label}</span></h1>
+    <p>{category.description}</p>
+  </div>
+
+  <div class="category-hero__aside">
+    <span class="category-hero__icon" aria-hidden="true">
+      <Icon name={category.icon} />
+    </span>
+    <dl class="category-hero__stats">
+      <div class="category-hero__stat">
+        <dt>项目</dt>
+        <dd>{counts.total}</dd>
+      </div>
+      <div class="category-hero__stat">
+        <dt>仍在维护</dt>
+        <dd>{counts.maintained}</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<nav class="category-switcher" aria-label="分类切换">
+  {CATEGORIES.map((item) => (
+    <a
+      class="category-switcher__link"
+      href={`/categories/${item.id}/`}
+      aria-current={item.id === category.id ? "page" : undefined}
+      style={`--category-color: var(--cat-${item.id})`}
+    >
+      <span class="category-switcher__dot" aria-hidden="true" />
+      {item.label}
+    </a>
+  ))}
+</nav>

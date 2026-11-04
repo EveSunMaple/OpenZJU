@@ -1,0 +1,157 @@
+---
+import { Icon } from "astro-icon/components";
+import type { ProjectView } from "@/application/catalog";
+import { normalizeSearchText } from "@/application/search";
+import { formatCommitFrequency, formatCompactNumber, formatDate } from "@/presentation/lib/format";
+
+interface Props {
+  project: ProjectView;
+}
+
+const { project } = Astro.props;
+const { stats, maintenance, categoryInfo, links } = project;
+
+const primaryHref = links.website ?? links.download ?? project.repoUrl ?? "#";
+const hasWebsite = Boolean(links.website);
+const hasDownload = Boolean(links.download);
+const hasExternalAction = hasWebsite || hasDownload;
+const searchText = normalizeSearchText(project.searchText);
+const updatedAt = project.updatedAt ? String(Date.parse(project.updatedAt)) : "0";
+const commitLabel = formatCommitFrequency(stats?.commitsLast90Days, stats?.commitsLast90DaysCapped);
+---
+
+<article
+  class="card project-card"
+  data-project-card
+  data-category={project.category}
+  data-status={maintenance.status}
+  data-search={searchText}
+  data-updated={updatedAt}
+  data-stars={stats?.stars ?? 0}
+  data-name={normalizeSearchText(project.name)}
+  data-archived={String(stats?.archived ?? false)}
+  data-slug={project.slug}
+>
+  <div class="project-card__top">
+    <a
+      class="category-badge"
+      href={`/categories/${categoryInfo.id}/`}
+      aria-label={`查看${categoryInfo.label}分类`}
+    >
+      <span class="category-badge__dot" aria-hidden="true"></span>
+      {categoryInfo.label}
+    </a>
+
+    <div
+      class="project-card__updated"
+      title={`${maintenance.description} 最近更新：${formatDate(project.updatedAt)}`}
+    >
+      <span class={`status-dot status-dot--${maintenance.status}`} aria-hidden="true"></span>
+      {project.updatedAt ? (
+        <time datetime={project.updatedAt}>{formatDate(project.updatedAt)}</time>
+      ) : (
+        <span>暂无数据</span>
+      )}
+    </div>
+  </div>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">
+      <a href={primaryHref} target="_blank" rel="noopener noreferrer">
+        {project.name}
+        <Icon name="lucide:arrow-up-right" aria-hidden="true" />
+      </a>
+      {project.featured && (
+        <span class="project-card__featured" title="编辑推荐">
+          <Icon name="lucide:sparkles" aria-hidden="true" />
+          <span class="sr-only">编辑推荐</span>
+        </span>
+      )}
+    </h3>
+
+    <p class="project-card__description">{project.description}</p>
+  </div>
+
+  <div class="project-card__signals">
+    <span
+      class={`signal signal--status signal--${maintenance.status}`}
+      title={maintenance.description}
+    >
+      <span class={`status-dot status-dot--${maintenance.status}`} aria-hidden="true"></span>
+      {maintenance.label}
+    </span>
+
+    {stats && (
+      <span class="signal" title={`${formatCompactNumber(stats.stars)} Stars`}>
+        <Icon name="lucide:star" aria-hidden="true" />
+        {formatCompactNumber(stats.stars)}
+      </span>
+    )}
+
+    {stats?.language && (
+      <span class="signal">
+        <Icon name="lucide:code-xml" aria-hidden="true" />
+        {stats.language}
+      </span>
+    )}
+
+    {commitLabel && (
+      <span class="signal" title="最近 90 天默认分支上的提交数量">
+        <Icon name="lucide:git-commit-horizontal" aria-hidden="true" />
+        {commitLabel}
+      </span>
+    )}
+  </div>
+
+  <div class="project-card__footer">
+    <div class="project-card__links">
+      {hasWebsite && (
+        <a class="card-action" href={links.website} target="_blank" rel="noopener noreferrer">
+          <Icon name="lucide:globe" aria-hidden="true" />
+          网站
+        </a>
+      )}
+
+      {hasDownload && (
+        <a class="card-action" href={links.download} target="_blank" rel="noopener noreferrer">
+          <Icon name="lucide:download" aria-hidden="true" />
+          下载
+        </a>
+      )}
+
+      {project.repoUrl &&
+        (hasExternalAction ? (
+          <a
+            class="card-action card-action--icon"
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${project.name} 的 GitHub 仓库`}
+            title="GitHub 仓库"
+          >
+            <Icon name="lucide:github" aria-hidden="true" />
+          </a>
+        ) : (
+          <a class="card-action" href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+            <Icon name="lucide:github" aria-hidden="true" />
+            GitHub 源码
+          </a>
+        ))}
+    </div>
+
+    <ul class="project-card__tags" aria-label="项目标签">
+      {project.tags.map((tag) => (
+        <li>
+          <button
+            class="tag-button"
+            type="button"
+            data-search-tag={tag}
+            title={`按标签搜索：${tag}`}
+          >
+            {tag}
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+</article>

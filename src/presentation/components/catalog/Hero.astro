@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon/components";
+import type { CatalogCounts } from "@/application/catalog";
+import { CATEGORIES } from "@/domain/project/category";
+import { formatCompactNumber, formatDateTime } from "@/presentation/lib/format";
+
+interface Props {
+  counts: CatalogCounts;
+  syncedAt: string | null;
+  source: string | null;
+}
+
+const { counts, syncedAt } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<section class="catalog-hero" aria-labelledby="hero-title">
+  <div class="catalog-hero__copy">
+    <p class="eyebrow">ZJU Open Source Atlas / {currentYear}</p>
+
+    <h1 class="catalog-hero__title" id="hero-title">
+      浙大开源，<br>
+      <em>一张可检索的地图。</em>
+    </h1>
+
+    <p class="catalog-hero__lede">
+      汇集浙江大学师生与校友的开源作品。做新项目之前，先看看有没有人已经做过；使用项目之前，先看看它是否仍在维护。
+    </p>
+
+    <dl class="hero-stats">
+      <div class="hero-stat">
+        <dt>收录项目</dt>
+        <dd>{counts.total}<span>个</span></dd>
+      </div>
+      <div class="hero-stat">
+        <dt title="最近一年内有提交（含活跃项目）">仍在维护</dt>
+        <dd>{counts.maintained}<span>个</span></dd>
+      </div>
+      <div class="hero-stat">
+        <dt>累计 Stars</dt>
+        <dd>{formatCompactNumber(counts.totalStars)}</dd>
+      </div>
+    </dl>
+
+    <div class="hero-actions">
+      <a class="button button--primary" href="#catalog">
+        浏览全部项目
+        <Icon name="lucide:arrow-down" aria-hidden="true" />
+      </a>
+      <a class="button button--outline" href="/about/">
+        了解收录标准
+        <Icon name="lucide:arrow-right" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+
+  <aside class="category-index" aria-label="分类索引">
+    <div class="category-index__head">
+      <span>Index</span>
+      <span>04 Fields</span>
+    </div>
+
+    <ul class="category-index__list">
+      {CATEGORIES.map((category) => (
+        <li class="category-index__item">
+          <a
+            class="category-index__link"
+            href={`/categories/${category.id}/`}
+            style={`--category-color: var(--cat-${category.id})`}
+          >
+            <span class="category-index__number">{category.index}</span>
+            <span class="category-index__label">
+              <strong>{category.label}</strong>
+              <span>{category.labelEn}</span>
+            </span>
+            <span class="category-index__count">{counts.byCategory[category.id]} 个</span>
+            <Icon name="lucide:arrow-right" class="category-index__arrow" aria-hidden="true" />
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="category-index__foot">
+      <span>同步于 {formatDateTime(syncedAt)}</span>
+      <span>构建时自动刷新</span>
+    </div>
+  </aside>
+</section>

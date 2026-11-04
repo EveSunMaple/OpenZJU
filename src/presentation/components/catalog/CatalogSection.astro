@@ -1,0 +1,124 @@
+---
+import { Icon } from "astro-icon/components";
+import type { CatalogCounts, ProjectView } from "@/application/catalog";
+import {
+  MAINTENANCE_META,
+  MAINTENANCE_STATUSES,
+  type MaintenanceStatus,
+} from "@/domain/project/repository-stats";
+import ProjectGrid from "./ProjectGrid.astro";
+
+interface Props {
+  projects: readonly ProjectView[];
+  counts: CatalogCounts;
+  title: string;
+  eyebrow?: string;
+}
+
+const { projects, counts, title, eyebrow = "Directory" } = Astro.props;
+const statuses = MAINTENANCE_STATUSES.filter(
+  (status): status is MaintenanceStatus => status !== "unknown" || counts.byStatus.unknown > 0,
+);
+---
+
+<section class="catalog-section" id="catalog" data-catalog aria-labelledby="catalog-title">
+  <div class="catalog-heading">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="catalog-title">{title}</h2>
+    </div>
+
+    <div class="catalog-heading__meta">
+      <p class="results-count" data-results-count aria-live="polite">共 {counts.total} 个项目</p>
+      <p class="results-hint" id="catalog-search-hint">支持名称、简介、标签与编程语言检索</p>
+    </div>
+  </div>
+
+  <search class="catalog-search">
+    <div class="search-field search-field--full-width">
+      <label class="sr-only" for="project-search">搜索项目</label>
+      <div class="search-field__group search-field__group--full-width">
+        <Icon
+          name="lucide:search"
+          class="search-field__search-icon"
+          data-slot="search-field-search-icon"
+          aria-hidden="true"
+        />
+        <input
+          class="search-field__input"
+          id="project-search"
+          data-search-input
+          data-slot="search-field-input"
+          type="search"
+          placeholder="搜索项目、标签、语言…"
+          autocomplete="off"
+          spellcheck="false"
+          aria-describedby="catalog-search-hint"
+        >
+        <button
+          class="search-clear"
+          type="button"
+          data-search-clear
+          aria-label="清空搜索"
+          title="清空搜索"
+          hidden
+        >
+          <Icon name="lucide:x" aria-hidden="true" />
+        </button>
+        <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+      </div>
+    </div>
+  </search>
+
+  <div class="catalog-toolbar">
+    <fieldset class="status-filters">
+      <legend class="sr-only">按维护状态筛选</legend>
+      <button class="filter-pill" type="button" data-status-filter="all" aria-pressed="true">
+        全部
+        <span class="filter-pill__count" data-status-count>{counts.total}</span>
+      </button>
+
+      {statuses.map((status) => (
+        <button
+          class="filter-pill"
+          type="button"
+          data-status-filter={status}
+          aria-pressed="false"
+          title={MAINTENANCE_META[status].description}
+        >
+          <span class={`filter-pill__dot status-dot--${status}`} aria-hidden="true" />
+          {MAINTENANCE_META[status].label}
+          <span class="filter-pill__count" data-status-count>
+            {counts.byStatus[status]}
+          </span>
+        </button>
+      ))}
+    </fieldset>
+
+    <label class="sort-control">
+      <span class="sort-control__label">排序</span>
+      <span class="sort-control__field">
+        <select data-sort aria-label="项目排序方式">
+          <option value="recent">最近更新</option>
+          <option value="stars">Star 最多</option>
+          <option value="name">名称排序</option>
+        </select>
+        <Icon name="lucide:chevron-down" class="sort-control__icon" aria-hidden="true" />
+      </span>
+    </label>
+  </div>
+
+  <ProjectGrid projects={projects} />
+
+  <div class="empty-state" data-empty-state hidden={projects.length > 0}>
+    <Icon name="lucide:search-x" aria-hidden="true" />
+    <h3>没有找到匹配的项目</h3>
+    <p>试试更短的关键词，或切换到其他维护状态。也可以直接浏览全部项目。</p>
+  </div>
+
+  <noscript>
+    <p class="results-hint" style="margin-top: 1rem;">
+      搜索与筛选需要启用 JavaScript；全部项目仍可正常浏览。
+    </p>
+  </noscript>
+</section>
