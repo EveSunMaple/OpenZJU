@@ -1,25 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T09:31:31.616Z",
+  "generatedAt": "2026-11-07T13:21:55.564Z",
   "source": "deep-audit",
   "repositories": {
     "0x000005/better-zdbk": {
-      "analyzedAt": "2026-11-05T05:05:00.313Z",
+      "analyzedAt": "2026-11-07T13:18:32.581Z",
       "commitAt": "2026-09-15T03:10:52Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 1,
@@ -32,27 +30,25 @@
         "duplicatedBlocks": 1,
         "lintErrors": 0,
         "lintWarnings": 9,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "2044145178/learning_in_zju_script": {
-      "analyzedAt": "2026-11-05T05:05:08.673Z",
+      "analyzedAt": "2026-11-07T13:18:33.724Z",
       "commitAt": "2024-09-25T03:57:25Z",
       "branch": "master",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 1,
@@ -65,12 +61,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "5dbwat4/zju-live-better": {
-      "analyzedAt": "2026-11-05T05:05:11.746Z",
+      "analyzedAt": "2026-11-07T13:18:34.387Z",
       "commitAt": "2026-10-28T14:56:42Z",
       "branch": "main",
       "language": "JavaScript",
@@ -79,14 +75,12 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -100,7 +94,7 @@
         "duplicatedBlocks": 8,
         "lintErrors": 0,
         "lintWarnings": 21,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 25,
@@ -110,40 +104,38 @@
       }
     },
     "8eoyw/zju-learning-cli": {
-      "analyzedAt": "2026-11-05T05:05:16.748Z",
+      "analyzedAt": "2026-11-07T13:18:36.206Z",
       "commitAt": "2026-11-03T03:28:41Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 2,
-        "loc": 1499,
-        "functions": 126,
-        "averageComplexity": 4.71,
-        "maxComplexity": 40,
-        "highComplexityFunctions": 7,
+        "loc": 2108,
+        "functions": 176,
+        "averageComplexity": 5.26,
+        "maxComplexity": 58,
+        "highComplexityFunctions": 11,
         "duplicationPercentage": 0,
         "duplicatedBlocks": 0,
-        "lintErrors": 25,
+        "lintErrors": 32,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "adsr1042/cardscope": {
-      "analyzedAt": "2026-11-05T05:05:21.089Z",
+      "analyzedAt": "2026-11-07T13:18:36.894Z",
       "commitAt": "2026-09-20T17:02:00Z",
       "branch": "main",
       "language": "Go",
@@ -151,45 +143,48 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks"
+        "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 99,
-        "loc": 6726,
-        "functions": 417,
-        "averageComplexity": 4.09,
+        "loc": 6600,
+        "functions": 471,
+        "averageComplexity": 3.81,
         "maxComplexity": 52,
-        "highComplexityFunctions": 19,
+        "highComplexityFunctions": 20,
         "duplicationPercentage": 1.43,
         "duplicatedBlocks": 16,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
-        "vulnerabilities": null
+        "secrets": null,
+        "vulnerabilities": {
+          "critical": 0,
+          "high": 2,
+          "medium": 5,
+          "low": 1
+        }
       }
     },
     "adsr1042/lazuli": {
-      "analyzedAt": "2026-11-05T05:08:24.804Z",
+      "analyzedAt": "2026-11-07T13:18:44.307Z",
       "commitAt": "2025-06-20T07:58:39Z",
       "branch": "master",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 7,
@@ -202,58 +197,54 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 11,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "adsr1042/zju_vocabboost": {
-      "analyzedAt": "2026-11-05T05:08:31.780Z",
+      "analyzedAt": "2026-11-07T13:18:45.436Z",
       "commitAt": "2023-09-15T10:25:11Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 13,
-        "loc": 1137,
-        "functions": 76,
-        "averageComplexity": 2.61,
+        "loc": 1210,
+        "functions": 83,
+        "averageComplexity": 2.49,
         "maxComplexity": 12,
         "highComplexityFunctions": 0,
         "duplicationPercentage": 0.01,
         "duplicatedBlocks": 1,
         "lintErrors": 0,
         "lintWarnings": 3,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "anchorite-no/cc98-autosign-fast": {
-      "analyzedAt": "2026-11-05T05:08:39.844Z",
+      "analyzedAt": "2026-11-07T13:18:47.160Z",
       "commitAt": "2026-05-25T07:26:21Z",
       "branch": "main",
       "language": "Go",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 10,
@@ -266,12 +257,12 @@
         "duplicatedBlocks": 2,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "anchorite-no/dsh-zju-assistant": {
-      "analyzedAt": "2026-11-05T05:08:44.379Z",
+      "analyzedAt": "2026-11-07T13:18:47.901Z",
       "commitAt": "2026-11-04T15:14:53Z",
       "branch": "main",
       "language": "TypeScript",
@@ -280,28 +271,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 329,
-        "loc": 38775,
-        "functions": 8076,
-        "averageComplexity": 2.79,
-        "maxComplexity": 155,
-        "highComplexityFunctions": 212,
-        "duplicationPercentage": 1.39,
+        "files": 331,
+        "loc": 40595,
+        "functions": 8496,
+        "averageComplexity": 2.76,
+        "maxComplexity": 71,
+        "highComplexityFunctions": 218,
+        "duplicationPercentage": 1.36,
         "duplicatedBlocks": 75,
         "lintErrors": 0,
         "lintWarnings": 71,
-        "secrets": 4,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 5,
@@ -311,7 +300,7 @@
       }
     },
     "aoikjuice/zju-academic": {
-      "analyzedAt": "2026-11-05T05:08:55.924Z",
+      "analyzedAt": "2026-11-07T13:18:53.709Z",
       "commitAt": "2026-06-29T14:37:36Z",
       "branch": "main",
       "language": "Python",
@@ -320,14 +309,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -341,7 +328,7 @@
         "duplicatedBlocks": 14,
         "lintErrors": 101,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 0,
@@ -351,7 +338,7 @@
       }
     },
     "auspiow/zynotes": {
-      "analyzedAt": "2026-11-05T05:09:51.898Z",
+      "analyzedAt": "2026-11-07T13:18:57.547Z",
       "commitAt": "2025-11-27T04:05:05Z",
       "branch": "master",
       "language": "JavaScript",
@@ -362,22 +349,20 @@
       "metrics": null
     },
     "ayin-ay/self-evolving-skills": {
-      "analyzedAt": "2026-11-05T05:09:51.898Z",
+      "analyzedAt": "2026-11-07T13:18:57.547Z",
       "commitAt": "2026-08-31T00:38:26Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 1,
@@ -390,27 +375,25 @@
         "duplicatedBlocks": 1,
         "lintErrors": 4,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "birchtree2/zju-grad-course-helper": {
-      "analyzedAt": "2026-11-05T05:09:56.315Z",
+      "analyzedAt": "2026-11-07T13:18:58.211Z",
       "commitAt": "2026-09-15T03:01:41Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 6,
@@ -423,27 +406,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 5,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "blackhorseq/lightgcn-paddle": {
-      "analyzedAt": "2026-11-05T05:10:01.477Z",
+      "analyzedAt": "2026-11-07T13:18:59.234Z",
       "commitAt": "2021-05-16T02:09:09Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 6,
@@ -456,27 +437,25 @@
         "duplicatedBlocks": 1,
         "lintErrors": 58,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "blackhorseq/ngcf-paddle2": {
-      "analyzedAt": "2026-11-05T08:43:38.079Z",
+      "analyzedAt": "2026-11-07T13:19:05.754Z",
       "commitAt": "2021-05-16T02:17:47Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 6,
@@ -489,12 +468,12 @@
         "duplicatedBlocks": 1,
         "lintErrors": 63,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "bms-2021/minisql": {
-      "analyzedAt": "2026-11-05T05:13:56.004Z",
+      "analyzedAt": "2026-11-07T13:19:11.714Z",
       "commitAt": "2022-06-05T13:37:15Z",
       "branch": "main",
       "language": "C++",
@@ -505,20 +484,18 @@
       "metrics": null
     },
     "catqaq/chatpixiu": {
-      "analyzedAt": "2026-11-05T08:59:27.660Z",
+      "analyzedAt": "2026-11-07T13:19:11.715Z",
       "commitAt": "2024-12-10T16:16:40Z",
       "branch": "main",
       "language": null,
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 949,
@@ -531,27 +508,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "catqaq/opentextclassification": {
-      "analyzedAt": "2026-11-05T05:13:56.004Z",
+      "analyzedAt": "2026-11-07T13:19:13.157Z",
       "commitAt": "2023-04-14T10:20:22Z",
       "branch": "master",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 27,
@@ -564,12 +539,12 @@
         "duplicatedBlocks": 115,
         "lintErrors": 367,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "cedar17/zju-connect-android": {
-      "analyzedAt": "2026-11-05T05:13:59.558Z",
+      "analyzedAt": "2026-11-07T13:19:13.939Z",
       "commitAt": "2026-11-02T16:11:19Z",
       "branch": "master",
       "language": "Kotlin",
@@ -577,18 +552,16 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 50,
-        "loc": 7579,
+        "loc": 7573,
         "functions": 552,
         "averageComplexity": 2.71,
         "maxComplexity": 53,
@@ -597,7 +570,7 @@
         "duplicatedBlocks": 12,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 0,
@@ -607,53 +580,49 @@
       }
     },
     "celechron/celechron": {
-      "analyzedAt": "2026-11-05T05:14:09.497Z",
+      "analyzedAt": "2026-11-07T13:19:16.921Z",
       "commitAt": "2026-09-20T11:52:17Z",
       "branch": "main",
       "language": "Dart",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
-        "files": 151,
-        "loc": 28744,
-        "functions": 1227,
-        "averageComplexity": 3.87,
+        "files": 155,
+        "loc": 29565,
+        "functions": 1291,
+        "averageComplexity": 3.82,
         "maxComplexity": 114,
         "highComplexityFunctions": 53,
         "duplicationPercentage": 8.24,
         "duplicatedBlocks": 213,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 1,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "colamentos2023/zju_innercurly_tool2": {
-      "analyzedAt": "2026-11-05T05:05:00.320Z",
+      "analyzedAt": "2026-11-07T13:18:30.368Z",
       "commitAt": "2026-01-30T07:00:38Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 1,
@@ -666,12 +635,12 @@
         "duplicatedBlocks": 14,
         "lintErrors": 174,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "coran-tech/cc98-reborn": {
-      "analyzedAt": "2026-11-05T05:05:07.732Z",
+      "analyzedAt": "2026-11-07T13:18:31.251Z",
       "commitAt": "2026-10-28T06:48:41Z",
       "branch": "main",
       "language": "JavaScript",
@@ -680,53 +649,49 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 209,
-        "loc": 95181,
-        "functions": 11038,
-        "averageComplexity": 3.22,
-        "maxComplexity": 496,
-        "highComplexityFunctions": 278,
+        "loc": 95423,
+        "functions": 11616,
+        "averageComplexity": 3.12,
+        "maxComplexity": 125,
+        "highComplexityFunctions": 282,
         "duplicationPercentage": 15.43,
         "duplicatedBlocks": 1153,
         "lintErrors": 0,
         "lintWarnings": 170,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": {
-          "critical": 3,
+          "critical": 5,
           "high": 36,
-          "medium": 38,
+          "medium": 44,
           "low": 14
         }
       }
     },
     "cpbianma/zju-yjsy-course-grabber": {
-      "analyzedAt": "2026-11-05T05:06:29.652Z",
+      "analyzedAt": "2026-11-07T13:18:41.692Z",
       "commitAt": "2026-09-13T13:58:21Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 3,
@@ -739,12 +704,12 @@
         "duplicatedBlocks": 2,
         "lintErrors": 0,
         "lintWarnings": 12,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "crazyspotteddove/fiz": {
-      "analyzedAt": "2026-11-05T05:06:35.593Z",
+      "analyzedAt": "2026-11-07T13:18:42.559Z",
       "commitAt": "2025-11-11T08:27:31Z",
       "branch": "dev",
       "language": "Rust",
@@ -752,13 +717,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -772,32 +735,30 @@
         "duplicatedBlocks": 17,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 38,
-          "medium": 100,
+          "medium": 101,
           "low": 22
         }
       }
     },
     "deturium/zjuxk": {
-      "analyzedAt": "2026-11-05T05:06:45.510Z",
+      "analyzedAt": "2026-11-07T13:18:45.077Z",
       "commitAt": "2018-02-10T11:46:33Z",
       "branch": "master",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 2,
@@ -810,27 +771,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 7,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "dimlitter/zju-dailyhealth-autocheck": {
-      "analyzedAt": "2026-11-05T05:06:52.550Z",
+      "analyzedAt": "2026-11-07T13:18:45.912Z",
       "commitAt": "2022-09-13T03:10:41Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 4,
@@ -843,60 +802,56 @@
         "duplicatedBlocks": 0,
         "lintErrors": 22,
         "lintWarnings": 0,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "donglanqwq0/zju-tongge-schedule": {
-      "analyzedAt": "2026-11-05T05:06:55.557Z",
+      "analyzedAt": "2026-11-07T13:18:46.660Z",
       "commitAt": "2026-10-24T11:13:58Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 39,
-        "loc": 16801,
-        "functions": 2624,
-        "averageComplexity": 2.73,
-        "maxComplexity": 177,
-        "highComplexityFunctions": 48,
+        "loc": 16889,
+        "functions": 2714,
+        "averageComplexity": 2.68,
+        "maxComplexity": 92,
+        "highComplexityFunctions": 49,
         "duplicationPercentage": 3.07,
         "duplicatedBlocks": 96,
         "lintErrors": 0,
         "lintWarnings": 80,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "dreaming-zh/segmentation-based-silicon-solar-panel-defect-detection": {
-      "analyzedAt": "2026-11-05T09:29:53.754Z",
+      "analyzedAt": "2026-11-07T13:18:48.668Z",
       "commitAt": "2023-04-08T13:04:36Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 7,
@@ -909,43 +864,41 @@
         "duplicatedBlocks": 21,
         "lintErrors": 58,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "elyyyyyyyyxer/elychron": {
-      "analyzedAt": "2026-11-05T05:09:16.229Z",
+      "analyzedAt": "2026-11-07T13:18:49.968Z",
       "commitAt": "2026-10-12T14:32:38Z",
       "branch": "main",
       "language": "Dart",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
-        "files": 362,
-        "loc": 64121,
-        "functions": 2903,
-        "averageComplexity": 3.8,
+        "files": 365,
+        "loc": 64304,
+        "functions": 2914,
+        "averageComplexity": 3.79,
         "maxComplexity": 114,
-        "highComplexityFunctions": 107,
+        "highComplexityFunctions": 108,
         "duplicationPercentage": 4.82,
         "duplicatedBlocks": 302,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 1,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "f1yingwhite/auto-course.zju": {
-      "analyzedAt": "2026-11-05T05:09:54.554Z",
+      "analyzedAt": "2026-11-07T13:18:52.648Z",
       "commitAt": "2026-03-12T02:25:04Z",
       "branch": "main",
       "language": "Python",
@@ -954,14 +907,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -975,7 +926,7 @@
         "duplicatedBlocks": 0,
         "lintErrors": 7,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 6,
@@ -985,40 +936,38 @@
       }
     },
     "fanbb2333/nvidb": {
-      "analyzedAt": "2026-11-05T05:10:00.590Z",
+      "analyzedAt": "2026-11-07T13:18:53.985Z",
       "commitAt": "2026-10-23T07:04:53Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
-        "files": 74,
-        "loc": 32916,
-        "functions": 2119,
-        "averageComplexity": 4.01,
+        "files": 80,
+        "loc": 34002,
+        "functions": 2199,
+        "averageComplexity": 3.98,
         "maxComplexity": 137,
-        "highComplexityFunctions": 86,
-        "duplicationPercentage": 0.62,
-        "duplicatedBlocks": 31,
-        "lintErrors": 1080,
+        "highComplexityFunctions": 88,
+        "duplicationPercentage": 0.61,
+        "duplicatedBlocks": 32,
+        "lintErrors": 1097,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "fish-zjuer/anchor-explain": {
-      "analyzedAt": "2026-11-05T05:10:35.680Z",
+      "analyzedAt": "2026-11-07T13:18:55.490Z",
       "commitAt": "2026-10-06T06:58:11Z",
       "branch": "master",
       "language": "JavaScript",
@@ -1027,28 +976,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 165,
-        "loc": 78428,
-        "functions": 8537,
-        "averageComplexity": 3.67,
+        "loc": 138732,
+        "functions": 11957,
+        "averageComplexity": 3.79,
         "maxComplexity": 2704,
-        "highComplexityFunctions": 218,
+        "highComplexityFunctions": 389,
         "duplicationPercentage": 10.67,
         "duplicatedBlocks": 1407,
         "lintErrors": 0,
         "lintWarnings": 2231,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 1,
@@ -1058,53 +1005,49 @@
       }
     },
     "flaviohor/pcelechron": {
-      "analyzedAt": "2026-11-05T05:11:07.080Z",
+      "analyzedAt": "2026-11-07T13:19:05.611Z",
       "commitAt": "2026-09-18T11:41:48Z",
       "branch": "main",
       "language": "Dart",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
-        "files": 157,
-        "loc": 29416,
-        "functions": 1266,
-        "averageComplexity": 3.86,
+        "files": 161,
+        "loc": 30237,
+        "functions": 1330,
+        "averageComplexity": 3.82,
         "maxComplexity": 103,
         "highComplexityFunctions": 55,
         "duplicationPercentage": 8.08,
         "duplicatedBlocks": 224,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 1,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "flypancake/zju-english-android": {
-      "analyzedAt": "2026-11-05T05:12:03.789Z",
+      "analyzedAt": "2026-11-07T13:19:08.526Z",
       "commitAt": "2026-10-08T15:15:26Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 20,
@@ -1117,12 +1060,12 @@
         "duplicatedBlocks": 12,
         "lintErrors": 0,
         "lintWarnings": 3,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "gcwing/bitfun": {
-      "analyzedAt": "2026-11-05T08:43:38.078Z",
+      "analyzedAt": "2026-11-07T13:19:09.552Z",
       "commitAt": "2026-11-05T01:35:41Z",
       "branch": "main",
       "language": "Rust",
@@ -1130,52 +1073,48 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 6538,
-        "loc": 1695902,
-        "functions": 138119,
+        "files": 6740,
+        "loc": 1793047,
+        "functions": 147470,
         "averageComplexity": 2.57,
         "maxComplexity": 513,
-        "highComplexityFunctions": 2689,
-        "duplicationPercentage": 6.93,
-        "duplicatedBlocks": 11836,
+        "highComplexityFunctions": 2906,
+        "duplicationPercentage": 6.62,
+        "duplicatedBlocks": 10829,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 28,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 5,
           "high": 139,
-          "medium": 190,
+          "medium": 191,
           "low": 30
         }
       }
     },
     "grapesea/csdiy_auto_resources_downloader": {
-      "analyzedAt": "2026-11-05T05:14:07.385Z",
+      "analyzedAt": "2026-11-07T13:20:20.713Z",
       "commitAt": "2026-09-28T11:31:10Z",
       "branch": "master",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 3,
@@ -1188,27 +1127,25 @@
         "duplicatedBlocks": 5,
         "lintErrors": 0,
         "lintWarnings": 7,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "gvrzizo/lazy-tui": {
-      "analyzedAt": "2026-11-05T05:15:24.994Z",
+      "analyzedAt": "2026-11-07T13:20:22.046Z",
       "commitAt": "2026-01-17T12:41:45Z",
       "branch": "main",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 5,
@@ -1220,28 +1157,26 @@
         "duplicationPercentage": 1.23,
         "duplicatedBlocks": 1,
         "lintErrors": 0,
-        "lintWarnings": 17,
-        "secrets": 0,
+        "lintWarnings": 13,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "gvvg5272-code/cc98-material-search": {
-      "analyzedAt": "2026-11-05T05:15:27.764Z",
+      "analyzedAt": "2026-11-07T13:20:22.991Z",
       "commitAt": "2026-11-02T11:35:23Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 18,
@@ -1254,12 +1189,12 @@
         "duplicatedBlocks": 9,
         "lintErrors": 0,
         "lintWarnings": 20,
-        "secrets": 1,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "habai182/paperforge-android": {
-      "analyzedAt": "2026-11-05T09:29:53.752Z",
+      "analyzedAt": "2026-11-07T13:20:24.018Z",
       "commitAt": "2026-10-31T09:34:33Z",
       "branch": "main",
       "language": "Kotlin",
@@ -1267,27 +1202,25 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 522,
-        "loc": 84412,
-        "functions": 6977,
-        "averageComplexity": 3.93,
-        "maxComplexity": 3832,
-        "highComplexityFunctions": 208,
+        "loc": 86852,
+        "functions": 8736,
+        "averageComplexity": 3.31,
+        "maxComplexity": 218,
+        "highComplexityFunctions": 252,
         "duplicationPercentage": 17.68,
         "duplicatedBlocks": 887,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 4,
           "high": 8,
@@ -1297,40 +1230,38 @@
       }
     },
     "haoka1/zju-offer": {
-      "analyzedAt": "2026-11-05T05:17:32.419Z",
+      "analyzedAt": "2026-11-07T13:20:32.630Z",
       "commitAt": "2026-09-08T03:35:18Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 110,
-        "loc": 11761,
-        "functions": 1250,
-        "averageComplexity": 2.86,
+        "loc": 11762,
+        "functions": 1253,
+        "averageComplexity": 2.85,
         "maxComplexity": 24,
         "highComplexityFunctions": 22,
         "duplicationPercentage": 0.89,
         "duplicatedBlocks": 18,
         "lintErrors": 0,
         "lintWarnings": 9,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "harry-linner/campusos": {
-      "analyzedAt": "2026-11-05T05:05:00.329Z",
+      "analyzedAt": "2026-11-07T13:18:28.553Z",
       "commitAt": "2026-10-12T02:45:22Z",
       "branch": "main",
       "language": "TypeScript",
@@ -1339,28 +1270,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 398,
-        "loc": 60267,
-        "functions": 7659,
-        "averageComplexity": 2.14,
-        "maxComplexity": 69,
-        "highComplexityFunctions": 126,
+        "loc": 62784,
+        "functions": 7858,
+        "averageComplexity": 2.2,
+        "maxComplexity": 81,
+        "highComplexityFunctions": 138,
         "duplicationPercentage": 6.05,
         "duplicatedBlocks": 472,
         "lintErrors": 0,
         "lintWarnings": 9,
-        "secrets": 3,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 3,
           "high": 54,
@@ -1370,7 +1299,7 @@
       }
     },
     "he-he-he-he-he-he/yingqiao-store": {
-      "analyzedAt": "2026-11-05T05:05:45.878Z",
+      "analyzedAt": "2026-11-07T13:18:34.278Z",
       "commitAt": "2026-10-21T03:10:03Z",
       "branch": "developer-presence-0312",
       "language": "C++",
@@ -1379,28 +1308,26 @@
         "lizard",
         "jscpd",
         "cppcheck",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1",
+        "cppcheck": "Cppcheck 2.19.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 118,
-        "loc": 19382,
-        "functions": 1449,
-        "averageComplexity": 6.02,
-        "maxComplexity": 113,
-        "highComplexityFunctions": 122,
+        "loc": 19441,
+        "functions": 1480,
+        "averageComplexity": 6.21,
+        "maxComplexity": 199,
+        "highComplexityFunctions": 130,
         "duplicationPercentage": 11.82,
         "duplicatedBlocks": 570,
-        "lintErrors": 20,
-        "lintWarnings": 123,
-        "secrets": 2,
+        "lintErrors": 38,
+        "lintWarnings": 106,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 0,
@@ -1410,7 +1337,7 @@
       }
     },
     "he-he-he-he-he-he/zhiyunassistant": {
-      "analyzedAt": "2026-11-05T05:06:12.296Z",
+      "analyzedAt": "2026-11-07T13:18:42.545Z",
       "commitAt": "2026-11-03T14:43:53Z",
       "branch": "main",
       "language": "TypeScript",
@@ -1419,28 +1346,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 276,
-        "loc": 40322,
-        "functions": 17275,
-        "averageComplexity": 3.28,
-        "maxComplexity": 713,
-        "highComplexityFunctions": 542,
-        "duplicationPercentage": 21.05,
-        "duplicatedBlocks": 273,
+        "files": 325,
+        "loc": 49331,
+        "functions": 19687,
+        "averageComplexity": 3.18,
+        "maxComplexity": 296,
+        "highComplexityFunctions": 602,
+        "duplicationPercentage": 18.11,
+        "duplicatedBlocks": 281,
         "lintErrors": 12,
-        "lintWarnings": 4046,
-        "secrets": 2,
+        "lintWarnings": 4059,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 0,
@@ -1450,7 +1375,7 @@
       }
     },
     "husk-huz/arxivday": {
-      "analyzedAt": "2026-11-05T05:08:04.969Z",
+      "analyzedAt": "2026-11-07T13:18:59.052Z",
       "commitAt": "2025-01-13T08:44:42Z",
       "branch": "main",
       "language": "Python",
@@ -1459,14 +1384,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -1480,7 +1403,7 @@
         "duplicatedBlocks": 10,
         "lintErrors": 25,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 2,
           "high": 9,
@@ -1490,20 +1413,18 @@
       }
     },
     "hzlgames/zju-autosign": {
-      "analyzedAt": "2026-11-05T08:59:27.660Z",
+      "analyzedAt": "2026-11-07T13:19:02.468Z",
       "commitAt": "2025-12-24T03:53:57Z",
       "branch": "main",
       "language": "HTML",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 13,
@@ -1516,25 +1437,23 @@
         "duplicatedBlocks": 38,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "interest2/anti-addiction": {
-      "analyzedAt": "2026-11-05T05:08:20.397Z",
+      "analyzedAt": "2026-11-07T13:19:03.263Z",
       "commitAt": "2026-11-01T06:02:35Z",
       "branch": "master",
       "language": "Java",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 80,
@@ -1547,27 +1466,25 @@
         "duplicatedBlocks": 95,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "isshikihugh/expoven": {
-      "analyzedAt": "2026-11-05T05:08:28.572Z",
+      "analyzedAt": "2026-11-07T13:19:04.298Z",
       "commitAt": "2026-02-16T02:33:54Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 30,
@@ -1580,27 +1497,25 @@
         "duplicatedBlocks": 15,
         "lintErrors": 167,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "isshikihugh/zju-cs-asio": {
-      "analyzedAt": "2026-11-05T05:08:33.024Z",
+      "analyzedAt": "2026-11-07T13:19:04.976Z",
       "commitAt": "2026-10-04T20:14:42Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 1,
@@ -1613,45 +1528,43 @@
         "duplicatedBlocks": 2,
         "lintErrors": 6,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "jiao77/magpie-board-android": {
-      "analyzedAt": "2026-11-05T05:08:35.486Z",
+      "analyzedAt": "2026-11-07T13:19:05.869Z",
       "commitAt": "2026-10-25T09:31:19Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 3,
-        "loc": 1697,
-        "functions": 114,
-        "averageComplexity": 4.67,
+        "loc": 1710,
+        "functions": 119,
+        "averageComplexity": 4.51,
         "maxComplexity": 69,
-        "highComplexityFunctions": 6,
+        "highComplexityFunctions": 5,
         "duplicationPercentage": 0.78,
         "duplicatedBlocks": 4,
         "lintErrors": 0,
         "lintWarnings": 6,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "jnove/zjucoursetrace": {
-      "analyzedAt": "2026-11-05T05:08:39.646Z",
+      "analyzedAt": "2026-11-07T13:19:06.626Z",
       "commitAt": "2026-10-08T02:02:11Z",
       "branch": "main",
       "language": "TypeScript",
@@ -1660,28 +1573,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 79,
-        "loc": 11191,
-        "functions": 965,
-        "averageComplexity": 2.8,
+        "loc": 11486,
+        "functions": 973,
+        "averageComplexity": 2.85,
         "maxComplexity": 47,
-        "highComplexityFunctions": 12,
+        "highComplexityFunctions": 14,
         "duplicationPercentage": 1.64,
         "duplicatedBlocks": 50,
         "lintErrors": 0,
         "lintWarnings": 57,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 5,
           "high": 70,
@@ -1691,20 +1602,18 @@
       }
     },
     "kaixuanwang2003/zju-welcome": {
-      "analyzedAt": "2026-11-05T08:59:27.651Z",
+      "analyzedAt": "2026-11-07T13:19:09.871Z",
       "commitAt": "2026-09-20T11:19:03Z",
       "branch": "main",
       "language": "HTML",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 1,
@@ -1717,27 +1626,25 @@
         "duplicatedBlocks": 6,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "kirchhoff114514/ppt_deduplicator": {
-      "analyzedAt": "2026-11-05T05:08:58.919Z",
+      "analyzedAt": "2026-11-07T13:19:11.697Z",
       "commitAt": "2025-12-25T05:33:20Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 1,
@@ -1750,27 +1657,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": 6,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "kiri603/to-sheet-music-skill": {
-      "analyzedAt": "2026-11-05T05:09:02.464Z",
+      "analyzedAt": "2026-11-07T13:19:12.288Z",
       "commitAt": "2026-09-17T02:43:32Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 16,
@@ -1783,12 +1688,12 @@
         "duplicatedBlocks": 6,
         "lintErrors": 48,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "kitty-in-github/ssinvioce": {
-      "analyzedAt": "2026-11-05T05:09:05.840Z",
+      "analyzedAt": "2026-11-07T13:19:13.098Z",
       "commitAt": "2026-10-29T05:56:44Z",
       "branch": "main",
       "language": "Python",
@@ -1797,14 +1702,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -1818,7 +1721,7 @@
         "duplicatedBlocks": 25,
         "lintErrors": 146,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 7,
           "high": 35,
@@ -1828,20 +1731,18 @@
       }
     },
     "kryptonite309/zju-english-dictation-tool_kry-advanced": {
-      "analyzedAt": "2026-11-05T05:09:53.049Z",
+      "analyzedAt": "2026-11-07T13:19:18.310Z",
       "commitAt": "2026-10-26T14:48:59Z",
       "branch": "main",
       "language": "C#",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 33,
@@ -1854,12 +1755,12 @@
         "duplicatedBlocks": 34,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "kylian-08/deepseek_harness_for_windows": {
-      "analyzedAt": "2026-11-05T05:10:09.110Z",
+      "analyzedAt": "2026-11-07T13:19:19.556Z",
       "commitAt": "2026-08-18T03:29:40Z",
       "branch": "master",
       "language": "JavaScript",
@@ -1868,14 +1769,12 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -1889,7 +1788,7 @@
         "duplicatedBlocks": 39,
         "lintErrors": 0,
         "lintWarnings": 33,
-        "secrets": 1,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 2,
           "high": 42,
@@ -1899,38 +1798,36 @@
       }
     },
     "laujoe/zhelixun": {
-      "analyzedAt": "2026-11-05T08:59:27.658Z",
+      "analyzedAt": "2026-11-07T13:19:22.409Z",
       "commitAt": "2026-10-31T11:39:44Z",
       "branch": "main",
       "language": "HTML",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 22,
-        "loc": 6392,
-        "functions": 3777,
-        "averageComplexity": 3.96,
-        "maxComplexity": 181,
-        "highComplexityFunctions": 180,
+        "loc": 7186,
+        "functions": 4489,
+        "averageComplexity": 3.91,
+        "maxComplexity": 217,
+        "highComplexityFunctions": 204,
         "duplicationPercentage": 5.62,
         "duplicatedBlocks": 118,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 4,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "lineus/physics-report-cc": {
-      "analyzedAt": "2026-11-05T05:10:23.187Z",
+      "analyzedAt": "2026-11-07T13:19:25.760Z",
       "commitAt": "2026-10-27T09:15:49Z",
       "branch": "main",
       "language": "Python",
@@ -1939,14 +1836,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -1960,7 +1855,7 @@
         "duplicatedBlocks": 2,
         "lintErrors": 107,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 5,
           "high": 32,
@@ -1970,22 +1865,20 @@
       }
     },
     "liupilot/zju-teacher-rating-helper": {
-      "analyzedAt": "2026-11-05T05:10:40.657Z",
+      "analyzedAt": "2026-11-07T13:19:28.814Z",
       "commitAt": "2026-09-28T14:55:09Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 11,
@@ -1998,12 +1891,12 @@
         "duplicatedBlocks": 15,
         "lintErrors": 0,
         "lintWarnings": 1,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "logicalpha114/crushzju": {
-      "analyzedAt": "2026-11-05T08:59:27.641Z",
+      "analyzedAt": "2026-11-07T13:19:29.598Z",
       "commitAt": "2026-03-28T09:13:27Z",
       "branch": "main",
       "language": "HTML",
@@ -2011,13 +1904,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -2031,7 +1922,7 @@
         "duplicatedBlocks": 1,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 1,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 2,
@@ -2041,20 +1932,18 @@
       }
     },
     "ltto123/zju-low-score-course-selection-helper": {
-      "analyzedAt": "2026-11-05T08:59:27.680Z",
+      "analyzedAt": "2026-11-07T13:18:19.563Z",
       "commitAt": "2026-09-14T14:03:27Z",
       "branch": "main",
       "language": null,
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 0,
@@ -2067,27 +1956,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "lucent-snow/zju-english-dictation-tool": {
-      "analyzedAt": "2026-11-05T05:05:00.302Z",
+      "analyzedAt": "2026-11-07T13:18:20.354Z",
       "commitAt": "2026-01-06T08:02:22Z",
       "branch": "master",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 3,
@@ -2100,96 +1987,83 @@
         "duplicatedBlocks": 0,
         "lintErrors": 38,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "lybx-leyw/evergreen-main": {
-      "analyzedAt": "2026-11-05T08:43:38.084Z",
+      "analyzedAt": "2026-11-07T13:18:22.461Z",
       "commitAt": "2026-09-15T07:40:32Z",
       "branch": "v2.0",
       "language": "Dart",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks",
-        "osv-scanner"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
-        "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 989,
-        "loc": 154441,
-        "functions": 8062,
-        "averageComplexity": 3.79,
+        "loc": 154501,
+        "functions": 8056,
+        "averageComplexity": 3.8,
         "maxComplexity": 160,
         "highComplexityFunctions": 258,
-        "duplicationPercentage": 6.34,
-        "duplicatedBlocks": 1024,
+        "duplicationPercentage": 5.94,
+        "duplicatedBlocks": 915,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 2,
-        "vulnerabilities": {
-          "critical": 1,
-          "high": 0,
-          "medium": 3,
-          "low": 0
-        }
+        "secrets": null,
+        "vulnerabilities": null
       }
     },
     "lyz20051019/zju_reminder": {
-      "analyzedAt": "2026-11-05T05:08:23.563Z",
+      "analyzedAt": "2026-11-07T13:18:28.322Z",
       "commitAt": "2026-05-01T04:52:18Z",
       "branch": "main",
       "language": "Dart",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
-        "files": 116,
-        "loc": 17697,
-        "functions": 784,
-        "averageComplexity": 3.23,
+        "files": 119,
+        "loc": 17882,
+        "functions": 797,
+        "averageComplexity": 3.21,
         "maxComplexity": 47,
         "highComplexityFunctions": 22,
         "duplicationPercentage": 11.79,
         "duplicatedBlocks": 200,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "macanine/zjumihomo-converter": {
-      "analyzedAt": "2026-11-05T05:08:42.276Z",
+      "analyzedAt": "2026-11-07T13:18:29.638Z",
       "commitAt": "2026-10-06T12:56:53Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 21,
@@ -2202,25 +2076,23 @@
         "duplicatedBlocks": 1,
         "lintErrors": 0,
         "lintWarnings": 16,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "maksymilan/zju-resume-template": {
-      "analyzedAt": "2026-11-05T08:59:27.680Z",
+      "analyzedAt": "2026-11-07T13:18:30.793Z",
       "commitAt": "2026-01-10T02:18:42Z",
       "branch": "master",
       "language": "TeX",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 2363,
@@ -2233,12 +2105,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "memset0/learning-at-zju-helper": {
-      "analyzedAt": "2026-11-05T05:08:46.991Z",
+      "analyzedAt": "2026-11-07T13:18:32.731Z",
       "commitAt": "2024-12-05T16:09:55Z",
       "branch": "master",
       "language": "JavaScript",
@@ -2247,14 +2119,12 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -2268,7 +2138,7 @@
         "duplicatedBlocks": 6,
         "lintErrors": 0,
         "lintWarnings": 15,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 32,
@@ -2278,22 +2148,20 @@
       }
     },
     "meteors27/zju-calendar-maker": {
-      "analyzedAt": "2026-11-05T05:08:53.921Z",
+      "analyzedAt": "2026-11-07T13:18:34.743Z",
       "commitAt": "2023-03-18T14:50:09Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 1,
@@ -2306,12 +2174,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 21,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "mythologyli/zju-connect": {
-      "analyzedAt": "2026-11-05T05:08:57.430Z",
+      "analyzedAt": "2026-11-07T13:18:35.454Z",
       "commitAt": "2026-11-01T14:50:54Z",
       "branch": "main",
       "language": "Go",
@@ -2319,12 +2187,12 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks"
+        "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 141,
@@ -2337,27 +2205,30 @@
         "duplicatedBlocks": 126,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
-        "vulnerabilities": null
+        "secrets": null,
+        "vulnerabilities": {
+          "critical": 0,
+          "high": 1,
+          "medium": 17,
+          "low": 0
+        }
       }
     },
     "mythologyli/zju-connect-for-windows": {
-      "analyzedAt": "2026-11-05T05:12:01.291Z",
+      "analyzedAt": "2026-11-07T13:18:43.901Z",
       "commitAt": "2026-03-12T01:38:08Z",
       "branch": "master",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 16,
@@ -2369,26 +2240,24 @@
         "duplicationPercentage": 3.26,
         "duplicatedBlocks": 23,
         "lintErrors": 4,
-        "lintWarnings": 6,
-        "secrets": 0,
+        "lintWarnings": 5,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "mythologyli/zjuconnectforandroid": {
-      "analyzedAt": "2026-11-05T05:12:08.692Z",
+      "analyzedAt": "2026-11-07T13:18:45.233Z",
       "commitAt": "2024-07-28T09:20:27Z",
       "branch": "master",
       "language": "Java",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 4,
@@ -2401,27 +2270,25 @@
         "duplicatedBlocks": 1,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "nanoarcheaum/zju_coursecraft": {
-      "analyzedAt": "2026-11-05T05:12:12.590Z",
+      "analyzedAt": "2026-11-07T13:18:45.969Z",
       "commitAt": "2026-09-12T10:03:49Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 4,
@@ -2434,27 +2301,25 @@
         "duplicatedBlocks": 624,
         "lintErrors": 0,
         "lintWarnings": 11,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "nzw806/zju-lecture-summerizer-": {
-      "analyzedAt": "2026-11-05T05:12:15.261Z",
+      "analyzedAt": "2026-11-07T13:18:47.217Z",
       "commitAt": "2026-10-29T16:00:15Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 3,
@@ -2467,12 +2332,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 30,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "ouyuanchen/zjucoursehunter": {
-      "analyzedAt": "2026-11-05T05:12:17.084Z",
+      "analyzedAt": "2026-11-07T13:18:47.923Z",
       "commitAt": "2026-03-09T08:52:04Z",
       "branch": "main",
       "language": "Python",
@@ -2481,14 +2346,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -2502,7 +2365,7 @@
         "duplicatedBlocks": 0,
         "lintErrors": 28,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 0,
@@ -2512,7 +2375,7 @@
       }
     },
     "panjoel812/zju-english-dictation": {
-      "analyzedAt": "2026-11-05T05:12:28.699Z",
+      "analyzedAt": "2026-11-07T13:18:50.329Z",
       "commitAt": "2026-10-24T10:51:01Z",
       "branch": "master",
       "language": "TypeScript",
@@ -2521,38 +2384,36 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 155,
-        "loc": 8844,
-        "functions": 1023,
-        "averageComplexity": 1.85,
-        "maxComplexity": 33,
+        "files": 174,
+        "loc": 10559,
+        "functions": 1361,
+        "averageComplexity": 1.88,
+        "maxComplexity": 32,
         "highComplexityFunctions": 6,
-        "duplicationPercentage": 0.62,
-        "duplicatedBlocks": 364,
+        "duplicationPercentage": 0.58,
+        "duplicatedBlocks": 383,
         "lintErrors": 0,
-        "lintWarnings": 18,
-        "secrets": 0,
+        "lintWarnings": 19,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 55,
-          "medium": 84,
+          "medium": 85,
           "low": 11
         }
       }
     },
     "peipei233/zju-learning-assistant": {
-      "analyzedAt": "2026-11-05T05:13:58.576Z",
+      "analyzedAt": "2026-11-07T13:18:58.227Z",
       "commitAt": "2026-11-02T14:38:11Z",
       "branch": "main",
       "language": "Rust",
@@ -2560,27 +2421,25 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 83,
-        "loc": 11692,
-        "functions": 959,
-        "averageComplexity": 3.74,
+        "files": 84,
+        "loc": 11986,
+        "functions": 1070,
+        "averageComplexity": 3.49,
         "maxComplexity": 93,
-        "highComplexityFunctions": 49,
+        "highComplexityFunctions": 44,
         "duplicationPercentage": 2.72,
         "duplicatedBlocks": 54,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 0,
@@ -2590,20 +2449,18 @@
       }
     },
     "peipei233/zju-score-push-template": {
-      "analyzedAt": "2026-11-05T09:00:27.278Z",
+      "analyzedAt": "2026-11-07T13:19:01.054Z",
       "commitAt": "2023-07-14T05:05:33Z",
       "branch": "main",
       "language": null,
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 82,
@@ -2616,12 +2473,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "phil-fan/awesome-zju-tools": {
-      "analyzedAt": "2026-11-05T08:59:39.595Z",
+      "analyzedAt": "2026-11-07T13:19:01.717Z",
       "commitAt": "2026-11-02T06:07:04Z",
       "branch": "main",
       "language": "MDX",
@@ -2629,18 +2486,16 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 12,
-        "loc": 173,
+        "loc": 154,
         "functions": 20,
         "averageComplexity": 1.2,
         "maxComplexity": 2,
@@ -2649,7 +2504,7 @@
         "duplicatedBlocks": 28,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 5,
           "high": 10,
@@ -2659,22 +2514,20 @@
       }
     },
     "phil-fan/grs-enhance": {
-      "analyzedAt": "2026-11-05T05:14:15.377Z",
+      "analyzedAt": "2026-11-07T13:19:03.676Z",
       "commitAt": "2026-09-14T10:38:45Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 1,
@@ -2687,12 +2540,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 7,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "phil-fan/zju-coffee": {
-      "analyzedAt": "2026-11-05T05:14:18.946Z",
+      "analyzedAt": "2026-11-07T13:19:04.509Z",
       "commitAt": "2026-04-06T07:27:24Z",
       "branch": "main",
       "language": "TypeScript",
@@ -2701,28 +2554,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 29,
-        "loc": 2635,
-        "functions": 234,
-        "averageComplexity": 2.44,
+        "files": 30,
+        "loc": 2808,
+        "functions": 252,
+        "averageComplexity": 2.46,
         "maxComplexity": 30,
-        "highComplexityFunctions": 3,
+        "highComplexityFunctions": 4,
         "duplicationPercentage": 1.73,
         "duplicatedBlocks": 24,
         "lintErrors": 0,
         "lintWarnings": 23,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 4,
           "high": 27,
@@ -2732,22 +2583,20 @@
       }
     },
     "pm25000/dsh-course-selector": {
-      "analyzedAt": "2026-11-05T05:05:00.315Z",
+      "analyzedAt": "2026-11-07T13:18:39.353Z",
       "commitAt": "2026-08-19T04:45:17Z",
       "branch": "main",
       "language": "TypeScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 17,
@@ -2760,12 +2609,12 @@
         "duplicatedBlocks": 18,
         "lintErrors": 0,
         "lintWarnings": 9,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "poco-ai/poco-agent": {
-      "analyzedAt": "2026-11-05T05:05:10.665Z",
+      "analyzedAt": "2026-11-07T13:18:40.741Z",
       "commitAt": "2026-09-22T11:40:25Z",
       "branch": "main",
       "language": "Python",
@@ -2774,28 +2623,26 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 1061,
-        "loc": 148049,
-        "functions": 9262,
-        "averageComplexity": 2.81,
-        "maxComplexity": 79,
-        "highComplexityFunctions": 199,
+        "files": 1063,
+        "loc": 156612,
+        "functions": 9751,
+        "averageComplexity": 2.86,
+        "maxComplexity": 88,
+        "highComplexityFunctions": 225,
         "duplicationPercentage": 5.97,
         "duplicatedBlocks": 1278,
         "lintErrors": 1327,
         "lintWarnings": 0,
-        "secrets": 3,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 17,
           "high": 145,
@@ -2805,20 +2652,18 @@
       }
     },
     "qqsugar2000/awesome-cv-cn": {
-      "analyzedAt": "2026-11-05T09:02:07.798Z",
+      "analyzedAt": "2026-11-07T13:18:50.739Z",
       "commitAt": "2024-10-09T15:15:50Z",
       "branch": "master",
       "language": "TeX",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 1701,
@@ -2831,12 +2676,12 @@
         "duplicatedBlocks": 16,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "qsctech/zju-icicles": {
-      "analyzedAt": "2026-11-05T09:29:53.745Z",
+      "analyzedAt": "2026-11-07T13:18:54.744Z",
       "commitAt": "2026-09-07T08:18:15Z",
       "branch": "master",
       "language": "HTML",
@@ -2844,13 +2689,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -2860,11 +2703,11 @@
         "averageComplexity": 3.26,
         "maxComplexity": 79,
         "highComplexityFunctions": 17,
-        "duplicationPercentage": 16.56,
-        "duplicatedBlocks": 859,
+        "duplicationPercentage": 16.55,
+        "duplicatedBlocks": 858,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 6,
@@ -2874,20 +2717,18 @@
       }
     },
     "qsctech/zjunet": {
-      "analyzedAt": "2026-11-05T05:06:03.526Z",
+      "analyzedAt": "2026-11-07T13:19:00.091Z",
       "commitAt": "2023-12-21T07:39:53Z",
       "branch": "master",
       "language": "Shell",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 1,
@@ -2900,58 +2741,54 @@
         "duplicatedBlocks": 1,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "roboparty/labweft": {
-      "analyzedAt": "2026-11-05T05:06:07.589Z",
+      "analyzedAt": "2026-11-07T13:19:00.844Z",
       "commitAt": "2026-10-17T06:07:17Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 37,
         "loc": 10525,
         "functions": 931,
-        "averageComplexity": 6.7,
+        "averageComplexity": 6.69,
         "maxComplexity": 167,
-        "highComplexityFunctions": 99,
+        "highComplexityFunctions": 98,
         "duplicationPercentage": 10.84,
         "duplicatedBlocks": 122,
-        "lintErrors": 219,
+        "lintErrors": 220,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "sisgloria/zju-23isee-sisgloria": {
-      "analyzedAt": "2026-11-05T09:29:53.743Z",
+      "analyzedAt": "2026-11-07T13:19:02.312Z",
       "commitAt": "2026-07-10T06:41:05Z",
       "branch": "main",
       "language": "VHDL",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 14,
@@ -2964,27 +2801,25 @@
         "duplicatedBlocks": 416,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "slowist-lee/website-converter": {
-      "analyzedAt": "2026-11-05T05:06:35.998Z",
+      "analyzedAt": "2026-11-07T13:19:03.729Z",
       "commitAt": "2026-02-23T04:55:48Z",
       "branch": "master",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 1,
@@ -2997,27 +2832,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "steambird1/amethyst": {
-      "analyzedAt": "2026-11-05T05:06:39.815Z",
+      "analyzedAt": "2026-11-07T13:19:04.515Z",
       "commitAt": "2026-09-14T15:17:28Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 2,
@@ -3030,27 +2863,25 @@
         "duplicatedBlocks": 2,
         "lintErrors": 67,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "stella617/zju-clock-in": {
-      "analyzedAt": "2026-11-05T05:06:41.965Z",
+      "analyzedAt": "2026-11-07T13:19:05.305Z",
       "commitAt": "2021-05-22T13:40:18Z",
       "branch": "master",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 1,
@@ -3063,12 +2894,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 16,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "stevenstg/obsidian-cc98-publish": {
-      "analyzedAt": "2026-11-05T05:06:49.925Z",
+      "analyzedAt": "2026-11-07T13:19:06.000Z",
       "commitAt": "2026-10-19T12:54:54Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3077,19 +2908,17 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 25,
-        "loc": 5947,
+        "loc": 5962,
         "functions": 518,
         "averageComplexity": 3.79,
         "maxComplexity": 74,
@@ -3098,7 +2927,7 @@
         "duplicatedBlocks": 5,
         "lintErrors": 0,
         "lintWarnings": 15,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 0,
@@ -3108,22 +2937,20 @@
       }
     },
     "subconv/zju-rule": {
-      "analyzedAt": "2026-11-05T05:06:56.309Z",
+      "analyzedAt": "2026-11-07T13:19:07.615Z",
       "commitAt": "2026-09-28T01:51:13Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 2,
@@ -3136,25 +2963,23 @@
         "duplicatedBlocks": 302,
         "lintErrors": 24,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "thenetadmin/zjuthesis": {
-      "analyzedAt": "2026-11-05T08:59:32.175Z",
+      "analyzedAt": "2026-11-07T13:19:09.049Z",
       "commitAt": "2025-12-08T05:41:41Z",
       "branch": "master",
       "language": "TeX",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 1,
@@ -3167,25 +2992,23 @@
         "duplicatedBlocks": 41,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "too-difficult-to-study/zju_blind_review_monitor": {
-      "analyzedAt": "2026-11-05T09:00:41.986Z",
+      "analyzedAt": "2026-11-07T13:19:09.753Z",
       "commitAt": "2026-04-27T02:46:28Z",
       "branch": "main",
       "language": "HTML",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 1,
@@ -3198,12 +3021,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "upupming/new-grad-positions": {
-      "analyzedAt": "2026-11-05T05:07:25.239Z",
+      "analyzedAt": "2026-11-07T13:19:12.364Z",
       "commitAt": "2023-02-04T03:28:53Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3212,28 +3035,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 10,
-        "loc": 736,
-        "functions": 85,
-        "averageComplexity": 1.74,
+        "loc": 710,
+        "functions": 83,
+        "averageComplexity": 1.76,
         "maxComplexity": 7,
         "highComplexityFunctions": 0,
         "duplicationPercentage": 1.22,
         "duplicatedBlocks": 4,
         "lintErrors": 0,
         "lintWarnings": 6,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 2,
           "high": 61,
@@ -3243,20 +3064,18 @@
       }
     },
     "upupming/zhr-action-demo": {
-      "analyzedAt": "2026-11-05T09:00:28.312Z",
+      "analyzedAt": "2026-11-07T13:19:14.387Z",
       "commitAt": "2023-01-02T10:00:07Z",
       "branch": "main",
       "language": null,
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 134,
@@ -3269,12 +3088,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "upupming/zju-grs-ics": {
-      "analyzedAt": "2026-11-05T05:07:34.406Z",
+      "analyzedAt": "2026-11-07T13:19:15.049Z",
       "commitAt": "2022-09-19T13:25:04Z",
       "branch": "master",
       "language": "TypeScript",
@@ -3283,14 +3102,12 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -3304,7 +3121,7 @@
         "duplicatedBlocks": 6,
         "lintErrors": 0,
         "lintWarnings": 2,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 2,
           "high": 88,
@@ -3314,7 +3131,7 @@
       }
     },
     "vita0818/cc98-searchplus": {
-      "analyzedAt": "2026-11-05T05:07:43.058Z",
+      "analyzedAt": "2026-11-07T13:19:17.350Z",
       "commitAt": "2026-08-22T03:46:52Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3323,28 +3140,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 17,
-        "loc": 1352,
-        "functions": 162,
-        "averageComplexity": 2.42,
+        "loc": 1342,
+        "functions": 163,
+        "averageComplexity": 2.41,
         "maxComplexity": 29,
         "highComplexityFunctions": 3,
         "duplicationPercentage": 0,
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 2,
@@ -3354,22 +3169,20 @@
       }
     },
     "vvirgooo2/auto-video-tronclass-zju": {
-      "analyzedAt": "2026-11-05T05:07:49.949Z",
+      "analyzedAt": "2026-11-07T13:19:18.858Z",
       "commitAt": "2023-09-23T06:32:00Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 1,
@@ -3382,12 +3195,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "wei-liping/echomate": {
-      "analyzedAt": "2026-11-05T05:07:54.989Z",
+      "analyzedAt": "2026-11-07T13:19:19.620Z",
       "commitAt": "2026-03-24T10:18:47Z",
       "branch": "main",
       "language": "Python",
@@ -3396,14 +3209,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -3417,7 +3228,7 @@
         "duplicatedBlocks": 1,
         "lintErrors": 60,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 8,
           "high": 40,
@@ -3427,7 +3238,7 @@
       }
     },
     "x-t-e-r/zotero-mcp-neo": {
-      "analyzedAt": "2026-11-05T05:05:00.336Z",
+      "analyzedAt": "2026-11-07T13:18:17.317Z",
       "commitAt": "2026-04-09T07:52:41Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3436,28 +3247,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 40,
-        "loc": 13377,
-        "functions": 826,
+        "loc": 14018,
+        "functions": 872,
         "averageComplexity": 4.32,
         "maxComplexity": 71,
-        "highComplexityFunctions": 37,
+        "highComplexityFunctions": 39,
         "duplicationPercentage": 3.58,
         "duplicatedBlocks": 66,
         "lintErrors": 0,
         "lintWarnings": 84,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 45,
@@ -3467,7 +3276,7 @@
       }
     },
     "xecades/zju-ical-py": {
-      "analyzedAt": "2026-11-05T05:05:33.210Z",
+      "analyzedAt": "2026-11-07T13:18:19.944Z",
       "commitAt": "2026-09-17T08:46:32Z",
       "branch": "main",
       "language": "Python",
@@ -3476,14 +3285,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -3497,7 +3304,7 @@
         "duplicatedBlocks": 1,
         "lintErrors": 0,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 3,
@@ -3507,22 +3314,20 @@
       }
     },
     "xhacker/zju-jwb-to-icalendar": {
-      "analyzedAt": "2026-11-05T05:05:50.258Z",
+      "analyzedAt": "2026-11-07T13:18:22.704Z",
       "commitAt": "2017-08-06T09:24:23Z",
       "branch": "master",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 4,
@@ -3535,27 +3340,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": 19,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "xi2p/zju-motis": {
-      "analyzedAt": "2026-11-05T05:05:54.781Z",
+      "analyzedAt": "2026-11-07T13:18:23.341Z",
       "commitAt": "2025-03-04T09:53:29Z",
       "branch": "master",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 14,
@@ -3568,58 +3371,36 @@
         "duplicatedBlocks": 10,
         "lintErrors": 65,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "xmmshp/quantum": {
-      "analyzedAt": "2026-11-05T05:05:59.225Z",
+      "analyzedAt": "2026-11-07T13:18:24.408Z",
       "commitAt": "2026-11-04T05:35:21Z",
       "branch": "main",
       "language": "C#",
+      "status": "skipped",
+      "skippedReason": "下载失败：HTTP 404",
+      "tools": [],
+      "toolVersions": {},
+      "metrics": null
+    },
+    "xuanzhizheng/zju-23isee-cognis": {
+      "analyzedAt": "2026-11-07T13:18:24.409Z",
+      "commitAt": "2026-10-26T06:49:23Z",
+      "branch": "main",
+      "language": "C",
       "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
-      },
-      "metrics": {
-        "files": 403,
-        "loc": 41805,
-        "functions": 2579,
-        "averageComplexity": 2.8,
-        "maxComplexity": 96,
-        "highComplexityFunctions": 63,
-        "duplicationPercentage": 14.43,
-        "duplicatedBlocks": 167,
-        "lintErrors": null,
-        "lintWarnings": null,
-        "secrets": 0,
-        "vulnerabilities": null
-      }
-    },
-    "xuanzhizheng/zju-23isee-cognis": {
-      "analyzedAt": "2026-11-05T09:29:53.743Z",
-      "commitAt": "2026-10-26T06:49:23Z",
-      "branch": "main",
-      "language": "C",
-      "status": "complete",
-      "tools": [
-        "lizard",
-        "jscpd",
-        "cppcheck",
-        "gitleaks"
-      ],
-      "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 1000,
@@ -3630,29 +3411,27 @@
         "highComplexityFunctions": 543,
         "duplicationPercentage": 50.18,
         "duplicatedBlocks": 10888,
-        "lintErrors": 323,
-        "lintWarnings": 2326,
-        "secrets": 42,
+        "lintErrors": 305,
+        "lintWarnings": 2120,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "xxone111/zju-notes-assistant": {
-      "analyzedAt": "2026-11-05T05:08:07.708Z",
+      "analyzedAt": "2026-11-07T13:20:07.785Z",
       "commitAt": "2026-10-11T10:52:05Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 3,
@@ -3665,12 +3444,12 @@
         "duplicatedBlocks": 3,
         "lintErrors": 0,
         "lintWarnings": 2,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "xzzd-pro/xzzd-pro": {
-      "analyzedAt": "2026-11-05T05:08:11.231Z",
+      "analyzedAt": "2026-11-07T13:20:08.655Z",
       "commitAt": "2026-10-29T13:10:51Z",
       "branch": "master",
       "language": "TypeScript",
@@ -3679,28 +3458,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 132,
-        "loc": 19546,
-        "functions": 1717,
-        "averageComplexity": 2.65,
+        "files": 133,
+        "loc": 19971,
+        "functions": 1775,
+        "averageComplexity": 2.64,
         "maxComplexity": 43,
-        "highComplexityFunctions": 30,
-        "duplicationPercentage": 1.68,
-        "duplicatedBlocks": 35,
+        "highComplexityFunctions": 31,
+        "duplicationPercentage": 1.58,
+        "duplicatedBlocks": 34,
         "lintErrors": 0,
         "lintWarnings": 35,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 45,
@@ -3710,7 +3487,7 @@
       }
     },
     "yangshu233-snow/cc98-live-better": {
-      "analyzedAt": "2026-11-05T05:09:28.112Z",
+      "analyzedAt": "2026-11-07T13:20:13.093Z",
       "commitAt": "2026-05-28T05:18:38Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3719,28 +3496,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 20,
-        "loc": 1726,
-        "functions": 213,
-        "averageComplexity": 2.32,
+        "loc": 1758,
+        "functions": 215,
+        "averageComplexity": 2.35,
         "maxComplexity": 11,
         "highComplexityFunctions": 0,
         "duplicationPercentage": 0.49,
         "duplicatedBlocks": 2,
         "lintErrors": 0,
         "lintWarnings": 6,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 1,
           "high": 36,
@@ -3750,22 +3525,20 @@
       }
     },
     "yangshu233-snow/learning_at_zju_third_client": {
-      "analyzedAt": "2026-11-05T05:09:35.326Z",
+      "analyzedAt": "2026-11-07T13:20:15.090Z",
       "commitAt": "2026-11-04T01:47:22Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 33,
@@ -3778,12 +3551,12 @@
         "duplicatedBlocks": 83,
         "lintErrors": 2,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zack-will/interleaf": {
-      "analyzedAt": "2026-11-05T05:09:41.040Z",
+      "analyzedAt": "2026-11-07T13:20:15.917Z",
       "commitAt": "2026-10-17T14:13:44Z",
       "branch": "main",
       "language": "JavaScript",
@@ -3792,28 +3565,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 3897,
-        "loc": 542167,
-        "functions": 56590,
-        "averageComplexity": 1.55,
+        "files": 3919,
+        "loc": 547508,
+        "functions": 57292,
+        "averageComplexity": 1.56,
         "maxComplexity": 216,
-        "highComplexityFunctions": 191,
-        "duplicationPercentage": 9.8,
-        "duplicatedBlocks": 4922,
+        "highComplexityFunctions": 203,
+        "duplicationPercentage": 9.39,
+        "duplicatedBlocks": 4522,
         "lintErrors": 0,
-        "lintWarnings": 3973,
-        "secrets": 13,
+        "lintWarnings": 3975,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 9,
           "high": 81,
@@ -3823,20 +3594,18 @@
       }
     },
     "zarad0x/openclaw-zju-skills": {
-      "analyzedAt": "2026-11-05T08:59:43.555Z",
+      "analyzedAt": "2026-11-07T13:20:50.509Z",
       "commitAt": "2026-03-31T09:47:35Z",
       "branch": "main",
       "language": null,
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 376,
@@ -3849,27 +3618,25 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zenith-shadow-x/zju-learning-reminder": {
-      "analyzedAt": "2026-11-05T05:13:26.216Z",
+      "analyzedAt": "2026-11-07T13:20:51.252Z",
       "commitAt": "2026-04-28T12:43:55Z",
       "branch": "main",
       "language": "JavaScript",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "oxlint",
-        "gitleaks"
+        "oxlint"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1"
+        "oxlint": "Version: 1.92.0"
       },
       "metrics": {
         "files": 3,
@@ -3882,12 +3649,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 0,
         "lintWarnings": 1,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zhangyc0/zju-course-selection": {
-      "analyzedAt": "2026-11-05T05:13:30.273Z",
+      "analyzedAt": "2026-11-07T13:20:52.099Z",
       "commitAt": "2021-08-13T16:13:28Z",
       "branch": "main",
       "language": "Python",
@@ -3895,14 +3662,12 @@
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 71,
@@ -3915,12 +3680,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": 1,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-cc98/cc98-pwa": {
-      "analyzedAt": "2026-11-05T05:13:32.410Z",
+      "analyzedAt": "2026-11-07T13:20:52.828Z",
       "commitAt": "2024-05-09T13:15:59Z",
       "branch": "dev",
       "language": "TypeScript",
@@ -3929,28 +3694,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 188,
-        "loc": 5172,
-        "functions": 702,
-        "averageComplexity": 1.6,
+        "loc": 5098,
+        "functions": 716,
+        "averageComplexity": 1.63,
         "maxComplexity": 14,
         "highComplexityFunctions": 0,
         "duplicationPercentage": 2.6,
         "duplicatedBlocks": 47,
         "lintErrors": 0,
         "lintWarnings": 51,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 27,
           "high": 127,
@@ -3960,7 +3723,7 @@
       }
     },
     "zju-cc98/forum": {
-      "analyzedAt": "2026-11-05T08:43:38.083Z",
+      "analyzedAt": "2026-11-07T13:20:56.071Z",
       "commitAt": "2026-11-04T06:55:02Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3969,28 +3732,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 237,
-        "loc": 26730,
-        "functions": 1925,
-        "averageComplexity": 2.53,
+        "loc": 25377,
+        "functions": 1960,
+        "averageComplexity": 2.52,
         "maxComplexity": 46,
         "highComplexityFunctions": 36,
-        "duplicationPercentage": 10.04,
-        "duplicatedBlocks": 325,
+        "duplicationPercentage": 10.8,
+        "duplicatedBlocks": 285,
         "lintErrors": 0,
         "lintWarnings": 535,
-        "secrets": 2,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 10,
           "high": 83,
@@ -4000,7 +3761,7 @@
       }
     },
     "zju-charger/zju-charger": {
-      "analyzedAt": "2026-11-05T05:15:43.018Z",
+      "analyzedAt": "2026-11-07T13:21:01.150Z",
       "commitAt": "2026-03-11T09:19:56Z",
       "branch": "main",
       "language": "Python",
@@ -4009,14 +3770,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4030,7 +3789,7 @@
         "duplicatedBlocks": 29,
         "lintErrors": 0,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 2,
           "high": 24,
@@ -4040,22 +3799,20 @@
       }
     },
     "zju-fast-lab/ego-planner": {
-      "analyzedAt": "2026-11-05T08:48:27.595Z",
+      "analyzedAt": "2026-11-07T13:21:03.657Z",
       "commitAt": "2025-03-08T09:23:46Z",
       "branch": "master",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 257,
@@ -4067,28 +3824,26 @@
         "duplicationPercentage": 22.61,
         "duplicatedBlocks": 1193,
         "lintErrors": 58,
-        "lintWarnings": 202,
-        "secrets": 0,
+        "lintWarnings": 195,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-fast-lab/ego-planner-swarm": {
-      "analyzedAt": "2026-11-05T08:53:38.092Z",
+      "analyzedAt": "2026-11-07T13:21:08.689Z",
       "commitAt": "2025-03-08T09:21:50Z",
       "branch": "master",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 267,
@@ -4100,28 +3855,26 @@
         "duplicationPercentage": 21.31,
         "duplicatedBlocks": 1202,
         "lintErrors": 58,
-        "lintWarnings": 390,
-        "secrets": 0,
+        "lintWarnings": 383,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-fast-lab/fast-drone-250": {
-      "analyzedAt": "2026-11-05T09:15:31.000Z",
+      "analyzedAt": "2026-11-07T13:21:14.597Z",
       "commitAt": "2022-11-09T08:02:20Z",
       "branch": "master",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 381,
@@ -4130,31 +3883,29 @@
         "averageComplexity": 2.47,
         "maxComplexity": 77,
         "highComplexityFunctions": 78,
-        "duplicationPercentage": 18.22,
-        "duplicatedBlocks": 1623,
-        "lintErrors": 72,
-        "lintWarnings": 877,
-        "secrets": 0,
+        "duplicationPercentage": 18.06,
+        "duplicatedBlocks": 1577,
+        "lintErrors": 69,
+        "lintWarnings": 852,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-fast-lab/gcopter": {
-      "analyzedAt": "2026-11-05T08:53:38.092Z",
+      "analyzedAt": "2026-11-07T13:19:11.675Z",
       "commitAt": "2023-06-06T15:15:32Z",
       "branch": "main",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 18,
@@ -4167,27 +3918,25 @@
         "duplicatedBlocks": 44,
         "lintErrors": 1,
         "lintWarnings": 10,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-fast-lab/primitive-planner": {
-      "analyzedAt": "2026-11-05T05:07:00.313Z",
+      "analyzedAt": "2026-11-07T13:19:15.202Z",
       "commitAt": "2026-08-26T07:53:25Z",
       "branch": "main",
       "language": "C++",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "cppcheck",
-        "gitleaks"
+        "cppcheck"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "cppcheck": "Cppcheck 2.22.0",
-        "gitleaks": "8.30.1"
+        "cppcheck": "Cppcheck 2.19.0"
       },
       "metrics": {
         "files": 249,
@@ -4199,13 +3948,13 @@
         "duplicationPercentage": 19.89,
         "duplicatedBlocks": 1062,
         "lintErrors": 58,
-        "lintWarnings": 235,
-        "secrets": 0,
+        "lintWarnings": 197,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-isee/zju-isee": {
-      "analyzedAt": "2026-11-05T09:28:19.583Z",
+      "analyzedAt": "2026-11-07T13:19:21.549Z",
       "commitAt": "2023-12-05T16:11:11Z",
       "branch": "master",
       "language": "Jupyter Notebook",
@@ -4213,19 +3962,17 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 108,
-        "loc": 34662,
-        "functions": 5836,
+        "loc": 34697,
+        "functions": 5871,
         "averageComplexity": 3.58,
         "maxComplexity": 535,
         "highComplexityFunctions": 193,
@@ -4233,7 +3980,7 @@
         "duplicatedBlocks": 2687,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 21,
           "high": 71,
@@ -4243,53 +3990,49 @@
       }
     },
     "zju-llms/openstory": {
-      "analyzedAt": "2026-11-05T09:15:30.967Z",
+      "analyzedAt": "2026-11-07T13:19:46.809Z",
       "commitAt": "2026-08-19T04:52:05Z",
       "branch": "main",
       "language": "Python",
-      "status": "complete",
+      "status": "partial",
       "tools": [
         "lizard",
         "jscpd",
-        "ruff",
-        "gitleaks"
+        "ruff"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1"
+        "ruff": "ruff 0.17.4"
       },
       "metrics": {
         "files": 266,
-        "loc": 50401,
-        "functions": 3695,
+        "loc": 50346,
+        "functions": 3698,
         "averageComplexity": 4.3,
         "maxComplexity": 73,
         "highComplexityFunctions": 196,
-        "duplicationPercentage": 28.2,
-        "duplicatedBlocks": 651,
+        "duplicationPercentage": 27.87,
+        "duplicatedBlocks": 602,
         "lintErrors": 3675,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-r/zjutimetable": {
-      "analyzedAt": "2026-11-05T09:10:21.761Z",
+      "analyzedAt": "2026-11-07T13:19:51.682Z",
       "commitAt": "2024-06-05T15:20:07Z",
       "branch": "main",
       "language": "HTML",
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 7,
@@ -4302,12 +4045,12 @@
         "duplicatedBlocks": 2,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zju-real/polaris": {
-      "analyzedAt": "2026-11-05T05:10:04.613Z",
+      "analyzedAt": "2026-11-07T13:19:52.793Z",
       "commitAt": "2026-10-09T21:14:36Z",
       "branch": "main",
       "language": "Python",
@@ -4316,28 +4059,26 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 1082,
-        "loc": 176572,
-        "functions": 14256,
-        "averageComplexity": 2.95,
+        "files": 1083,
+        "loc": 184326,
+        "functions": 14965,
+        "averageComplexity": 2.94,
         "maxComplexity": 128,
-        "highComplexityFunctions": 324,
+        "highComplexityFunctions": 350,
         "duplicationPercentage": 2.94,
         "duplicatedBlocks": 751,
         "lintErrors": 1,
         "lintWarnings": 0,
-        "secrets": 7,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 7,
           "high": 33,
@@ -4347,7 +4088,7 @@
       }
     },
     "zju-sec/cianalyser": {
-      "analyzedAt": "2026-11-05T05:11:54.738Z",
+      "analyzedAt": "2026-11-07T13:20:08.391Z",
       "commitAt": "2023-03-13T11:10:50Z",
       "branch": "main",
       "language": "Go",
@@ -4355,13 +4096,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4375,17 +4114,17 @@
         "duplicatedBlocks": 5,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 10,
           "high": 26,
-          "medium": 111,
+          "medium": 116,
           "low": 3
         }
       }
     },
     "zju-turing/turingcourses": {
-      "analyzedAt": "2026-11-05T09:09:39.009Z",
+      "analyzedAt": "2026-11-07T13:20:20.767Z",
       "commitAt": "2026-09-19T08:40:38Z",
       "branch": "master",
       "language": "Markdown",
@@ -4393,13 +4132,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4413,7 +4150,7 @@
         "duplicatedBlocks": 23,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 2,
           "high": 17,
@@ -4423,7 +4160,7 @@
       }
     },
     "zju3dv/4k4d": {
-      "analyzedAt": "2026-11-05T05:13:43.953Z",
+      "analyzedAt": "2026-11-07T13:20:23.533Z",
       "commitAt": "2026-09-15T07:34:02Z",
       "branch": "main",
       "language": "Python",
@@ -4432,14 +4169,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4453,7 +4188,7 @@
         "duplicatedBlocks": 340,
         "lintErrors": 2925,
         "lintWarnings": 0,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 1,
@@ -4463,7 +4198,7 @@
       }
     },
     "zju3dv/easymocap": {
-      "analyzedAt": "2026-11-05T08:53:38.092Z",
+      "analyzedAt": "2026-11-07T13:20:29.729Z",
       "commitAt": "2026-09-15T07:34:02Z",
       "branch": "master",
       "language": "Python",
@@ -4472,14 +4207,12 @@
         "lizard",
         "jscpd",
         "ruff",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "ruff": "ruff 0.17.3",
-        "gitleaks": "8.30.1",
+        "ruff": "ruff 0.17.4",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4491,9 +4224,9 @@
         "highComplexityFunctions": 193,
         "duplicationPercentage": 9.4,
         "duplicatedBlocks": 1998,
-        "lintErrors": 2979,
+        "lintErrors": 2980,
         "lintWarnings": 0,
-        "secrets": 6,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 6,
           "high": 18,
@@ -4503,7 +4236,7 @@
       }
     },
     "zju3dv/gvhmr": {
-      "analyzedAt": "2026-11-05T08:59:36.154Z",
+      "analyzedAt": "2026-11-07T13:20:49.503Z",
       "commitAt": "2026-09-15T07:44:58Z",
       "branch": "main",
       "language": "Jupyter Notebook",
@@ -4511,13 +4244,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4531,7 +4262,7 @@
         "duplicatedBlocks": 253,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 3,
           "high": 6,
@@ -4541,7 +4272,7 @@
       }
     },
     "zju3dv/loftr": {
-      "analyzedAt": "2026-11-05T09:05:10.000Z",
+      "analyzedAt": "2026-11-07T13:20:53.038Z",
       "commitAt": "2023-08-03T06:04:38Z",
       "branch": "master",
       "language": "Jupyter Notebook",
@@ -4549,13 +4280,11 @@
       "tools": [
         "lizard",
         "jscpd",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
@@ -4569,7 +4298,7 @@
         "duplicatedBlocks": 24,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 6,
           "high": 14,
@@ -4579,20 +4308,18 @@
       }
     },
     "zjuchalaoshi/chalaoshi": {
-      "analyzedAt": "2026-11-05T09:00:29.345Z",
+      "analyzedAt": "2026-11-07T13:21:03.074Z",
       "commitAt": "2025-08-18T16:33:43Z",
       "branch": "main",
       "language": null,
       "status": "partial",
       "tools": [
         "lizard",
-        "jscpd",
-        "gitleaks"
+        "jscpd"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
-        "jscpd": "jscpd 5.4.2",
-        "gitleaks": "8.30.1"
+        "lizard": "1.25.1",
+        "jscpd": "jscpd 5.4.2"
       },
       "metrics": {
         "files": 218,
@@ -4605,12 +4332,12 @@
         "duplicatedBlocks": 0,
         "lintErrors": null,
         "lintWarnings": null,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": null
       }
     },
     "zjusct/mirror-front": {
-      "analyzedAt": "2026-11-05T05:16:31.865Z",
+      "analyzedAt": "2026-11-07T13:21:03.984Z",
       "commitAt": "2026-10-31T11:01:14Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4619,28 +4346,26 @@
         "lizard",
         "jscpd",
         "oxlint",
-        "gitleaks",
         "osv-scanner"
       ],
       "toolVersions": {
-        "lizard": "1.25.0",
+        "lizard": "1.25.1",
         "jscpd": "jscpd 5.4.2",
-        "oxlint": "Version: 1.91.0",
-        "gitleaks": "8.30.1",
+        "oxlint": "Version: 1.92.0",
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
         "files": 45,
-        "loc": 5553,
-        "functions": 501,
-        "averageComplexity": 2.7,
+        "loc": 5814,
+        "functions": 512,
+        "averageComplexity": 2.79,
         "maxComplexity": 39,
-        "highComplexityFunctions": 11,
+        "highComplexityFunctions": 13,
         "duplicationPercentage": 5.66,
         "duplicatedBlocks": 65,
         "lintErrors": 0,
         "lintWarnings": 5,
-        "secrets": 0,
+        "secrets": null,
         "vulnerabilities": {
           "critical": 0,
           "high": 27,
@@ -4650,7 +4375,7 @@
       }
     },
     "zjusct/mirrorsdotnet": {
-      "analyzedAt": "2026-11-05T05:17:19.664Z",
+      "analyzedAt": "2026-11-07T13:21:07.082Z",
       "commitAt": "2025-04-29T03:17:28Z",
       "branch": "master",
       "language": "C#",
@@ -4661,7 +4386,7 @@
       "metrics": null
     },
     "zjusct/mirrorz-shim": {
-      "analyzedAt": "2026-11-05T05:17:19.664Z",
+      "analyzedAt": "2026-11-07T13:21:07.083Z",
       "commitAt": "2023-12-20T07:38:14Z",
       "branch": "main",
       "language": "Go",
