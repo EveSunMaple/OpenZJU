@@ -6,6 +6,11 @@ import {
   repositoryUrl,
 } from "@/domain/project/project";
 import {
+  EMPTY_AUDIT_SNAPSHOT,
+  type RepositoryAudit,
+  type RepositoryAuditSnapshot,
+} from "@/domain/project/repository-audit";
+import {
   assessMaintenance,
   latestActivityAt,
   MAINTENANCE_STATUSES,
@@ -23,6 +28,7 @@ export interface ProjectView extends Project {
   readonly repoUrl: string | null;
   readonly primaryUrl: string;
   readonly stats: RepositoryStats | undefined;
+  readonly audit: RepositoryAudit | undefined;
   readonly maintenance: MaintenanceAssessment;
   readonly updatedAt: string | null;
   readonly searchText: string;
@@ -41,6 +47,9 @@ export interface ProjectCatalog {
   readonly counts: CatalogCounts;
   readonly syncedAt: string | null;
   readonly source: RepositoryStatsSnapshot["source"] | null;
+  readonly auditCount: number;
+  readonly auditSyncedAt: string | null;
+  readonly codeQualityCount: number;
 }
 
 function buildSearchText(project: Project, category: Category, stats: RepositoryStats | undefined) {
@@ -131,16 +140,21 @@ export function buildCatalog(
   projects: readonly Project[],
   snapshot: RepositoryStatsSnapshot,
   now: Date = new Date(),
+  auditSnapshot: RepositoryAuditSnapshot = EMPTY_AUDIT_SNAPSHOT,
 ): ProjectCatalog {
   assertValidProjects(projects);
 
   const statsByRepo = new Map(
     Object.entries(snapshot.repositories).map(([repo, stats]) => [repo.toLowerCase(), stats]),
   );
+  const auditsByRepo = new Map(
+    Object.entries(auditSnapshot.audits).map(([repo, audit]) => [repo.toLowerCase(), audit]),
+  );
 
   const views = projects.map((project): ProjectView => {
     const categoryInfo = getCategory(project.category);
     const stats = project.repo ? statsByRepo.get(project.repo.toLowerCase()) : undefined;
+    const audit = project.repo ? auditsByRepo.get(project.repo.toLowerCase()) : undefined;
     const maintenance = assessMaintenance(stats, now);
     const repoUrl = project.repo ? repositoryUrl(project.repo) : null;
     const links = project.links ?? {};
@@ -153,6 +167,7 @@ export function buildCatalog(
       repoUrl,
       primaryUrl,
       stats,
+      audit,
       maintenance,
       updatedAt: latestActivityAt(stats),
       searchText: buildSearchText(project, categoryInfo, stats),
@@ -164,5 +179,8 @@ export function buildCatalog(
     counts: summarizeProjects(views),
     syncedAt: snapshot.generatedAt || null,
     source: snapshot.source || null,
+    auditCount: Object.keys(auditSnapshot.audits).length,
+    auditSyncedAt: auditSnapshot.generatedAt || null,
+    codeQualityCount: views.filter((project) => project.audit?.codeQuality).length,
   };
 }

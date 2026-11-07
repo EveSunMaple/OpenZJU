@@ -2,14 +2,16 @@
 import { Icon } from "astro-icon/components";
 import type { ProjectView } from "@/application/catalog";
 import { normalizeSearchText } from "@/application/search";
+import { AI_RISK_LABELS } from "@/domain/project/repository-audit";
 import { formatCommitFrequency, formatCompactNumber, formatDate } from "@/presentation/lib/format";
+import AuditBadge from "./AuditBadge.astro";
 
 interface Props {
   project: ProjectView;
 }
 
 const { project } = Astro.props;
-const { stats, maintenance, categoryInfo, links } = project;
+const { stats, audit, maintenance, categoryInfo, links } = project;
 
 const primaryHref = links.website ?? links.download ?? project.repoUrl ?? "#";
 const hasWebsite = Boolean(links.website);
@@ -46,13 +48,14 @@ const commitLabel = formatCommitFrequency(stats?.commitsLast90Days, stats?.commi
       class="project-card__updated"
       title={`${maintenance.description} 最近更新：${formatDate(project.updatedAt)}`}
     >
-      <span class={`status-dot status-dot--${maintenance.status}`} aria-hidden="true"></span>
       {project.updatedAt ? (
         <time datetime={project.updatedAt}>{formatDate(project.updatedAt)}</time>
       ) : (
         <span>暂无数据</span>
       )}
     </div>
+
+    {audit && <AuditBadge audit={audit} slug={project.slug} projectName={project.name} />}
   </div>
 
   <div class="project-card__body">
@@ -99,6 +102,16 @@ const commitLabel = formatCommitFrequency(stats?.commitsLast90Days, stats?.commi
       <span class="signal" title="最近 90 天默认分支上的提交数量">
         <Icon name="lucide:git-commit-horizontal" aria-hidden="true" />
         {commitLabel}
+      </span>
+    )}
+
+    {audit && (
+      <span
+        class={`signal signal--ai-risk signal--ai-risk-${audit.aiRisk.level}`}
+        title="启发式 AI 风险：基于测试、CI、文档等工程信号，不代表项目由 AI 生成"
+      >
+        <Icon name="lucide:bot" aria-hidden="true" />
+        AI 风险 {AI_RISK_LABELS[audit.aiRisk.level]}
       </span>
     )}
   </div>

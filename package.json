@@ -1,5 +1,5 @@
 {
-  "name": "zju-open-source-atlas",
+  "name": "openzju",
   "version": "1.0.0",
   "description": "A searchable static index of open source projects from Zhejiang University.",
   "license": "GPL-3.0-only",
@@ -19,10 +19,15 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "pnpm sync:projects && astro build",
+    "build": "pnpm sync:projects && pnpm sync:audits && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "sync:projects": "tsx scripts/sync-projects.ts",
+    "sync:audits": "tsx scripts/sync-audits.ts",
+    "sync:audits:offline": "tsx scripts/sync-audits.ts --offline",
+    "deep:prepare": "tsx scripts/deep-audit/prepare.ts",
+    "deep:analyze": "tsx scripts/deep-audit/analyze.ts",
+    "deep:merge": "tsx scripts/deep-audit/merge.ts",
     "sync:projects:offline": "tsx scripts/sync-projects.ts --offline",
     "check": "astro check && biome check .",
     "check:ci": "astro check && biome ci .",

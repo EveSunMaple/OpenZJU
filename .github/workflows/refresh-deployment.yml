@@ -1,8 +1,6 @@
-name: Refresh deployment
+name: Refresh deployment (manual fallback)
 
 on:
-  schedule:
-    - cron: "17 18 * * *"
   workflow_dispatch:
 
 permissions:

@@ -56,17 +56,18 @@ Vercel 不会自动按计划重新构建静态站点。推荐使用 **Deploy Hoo
 3. 在 GitHub 仓库 **Settings → Secrets and variables → Actions** 新建 secret：
    - 名称：`VERCEL_DEPLOY_HOOK_URL`
    - 值：上一步的 URL
-4. 仓库中的 `.github/workflows/refresh-deployment.yml` 会每天定时 POST 该 hook，触发一次生产构建。
-5. 也可以在 Actions 页面手动运行 `Refresh deployment` 工作流。
+4. `.github/workflows/deep-audit.yml` 每天先运行深度代码质量分析、自动提交缓存，再 POST 该 hook，触发一次生产构建。
+5. `.github/workflows/refresh-deployment.yml` 保留为手动兜底，不再单独定时，避免重复构建。
+6. 在 Vercel 关闭 Git 自动部署，否则自动提交和 Deploy Hook 可能各触发一次构建。
 
-工作流使用 UTC cron：
+深度分析工作流使用 UTC cron：
 
 ```yaml
 schedule:
-  - cron: "17 18 * * *"
+  - cron: "0 16 * * *"
 ```
 
-对应北京时间次日 02:17。GitHub Actions 的定时任务可能延迟数分钟到数十分钟。
+对应北京时间每天 00:00（UTC+8）。GitHub Actions 的定时任务可能延迟数分钟到数十分钟。
 
 ## 持续集成
 
@@ -83,7 +84,7 @@ pnpm build
 
 - `pnpm check:ci` = `astro check` + `biome ci .`
 - `pnpm test` = Vitest 单元测试
-- `pnpm build` 会使用 workflow 注入的 `GITHUB_TOKEN` 刷新数据
+- `pnpm build` 会使用 workflow 注入的 `GITHUB_TOKEN` 刷新统计数据与项目审计，并读取已提交的代码质量缓存
 
 CI 的构建产物不会提交回仓库，只用于验证。
 

@@ -1,0 +1,186 @@
+name: Deep code audit
+
+on:
+  schedule:
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deep-code-audit
+  cancel-in-progress: false
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  prepare:
+    name: Prepare audit chunks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.8.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Prepare chunks
+        run: pnpm deep:prepare --output deep-audit-chunks.json
+
+      - name: Build matrix
+        id: matrix
+        run: |
+          node - <<'NODE' >> "$GITHUB_OUTPUT"
+          const data = require("./deep-audit-chunks.json");
+          console.log(`matrix=${JSON.stringify({ include: data.chunks.map((chunk) => ({ chunk: chunk.index })) })}`);
+          NODE
+
+      - name: Upload chunks
+        uses: actions/upload-artifact@v4
+        with:
+          name: deep-audit-chunks
+          path: deep-audit-chunks.json
+          retention-days: 1
+
+  analyze:
+    name: Analyze chunk ${{ matrix.chunk }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.8.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Install static analyzers
+        run: |
+          python -m venv "$HOME/.venvs/deep-audit"
+          "$HOME/.venvs/deep-audit/bin/pip" install "lizard>=1.17" "ruff>=0.9"
+          echo "$HOME/.venvs/deep-audit/bin" >> "$GITHUB_PATH"
+          npm install --global jscpd oxlint
+          sudo apt-get update
+          sudo apt-get install --yes cppcheck || true
+          go install github.com/gitleaks/gitleaks/v8@latest || true
+          go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest || true
+          echo "$HOME/go/bin" >> "$GITHUB_PATH"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Download chunks
+        uses: actions/download-artifact@v4
+        with:
+          name: deep-audit-chunks
+
+      - name: Analyze repositories
+        run: >-
+          pnpm deep:analyze
+          --chunks deep-audit-chunks.json
+          --chunk ${{ matrix.chunk }}
+          --output artifacts/code-quality-chunk-${{ matrix.chunk }}.json
+
+      - name: Upload chunk result
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-chunk-${{ matrix.chunk }}
+          path: artifacts/code-quality-chunk-${{ matrix.chunk }}.json
+          if-no-files-found: error
+          retention-days: 7
+
+  merge:
+    name: Merge results and deploy
+    needs: analyze
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.8.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Download results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: code-quality-chunk-*
+          path: artifacts
+          merge-multiple: true
+
+      - name: Merge results
+        run: pnpm deep:merge --inputs artifacts --output src/generated/repository-code-quality.json
+
+      - name: Commit generated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/generated/repository-code-quality.json
+          if git diff --cached --quiet; then
+            echo "No code quality changes to commit."
+          else
+            git commit -m "chore: refresh deep code quality"
+            git push
+          fi
+
+      - name: Trigger deployment
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$DEPLOY_HOOK_URL" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL is not configured; skipping deployment trigger."
+            exit 0
+          fi
+          curl --fail --silent --show-error --request POST "$DEPLOY_HOOK_URL"
+          echo "Deployment hook triggered."

@@ -41,10 +41,15 @@ PUBLIC_REPOSITORY_URL=
 
 ```bash
 pnpm dev                    # 开发服务器
-pnpm build                  # 同步数据 + 静态构建
+pnpm build                  # 同步统计数据与审计 + 静态构建
 pnpm preview                # 预览 dist
 pnpm sync:projects          # 只同步 GitHub 数据
-pnpm sync:projects:offline  # 只使用缓存
+pnpm sync:projects:offline  # 只使用统计缓存
+pnpm sync:audits            # 只同步项目审计
+pnpm sync:audits:offline    # 只使用审计缓存
+pnpm deep:prepare           # 生成深度审计分片
+pnpm deep:analyze           # 分析一个分片
+pnpm deep:merge             # 合并深度审计结果
 pnpm check                  # astro check + biome check
 pnpm check:ci               # astro check + biome ci
 pnpm format                 # Biome 格式化
@@ -201,3 +206,4 @@ pnpm check
 - [ ] 移动端无横向滚动
 - [ ] `SITE_URL` 与 `GITHUB_TOKEN` 已在部署平台配置
 - [ ] 定时 Deploy Hook secret 已配置
+- [ ] 深度分析工作流可手动运行，且生成缓存已提交

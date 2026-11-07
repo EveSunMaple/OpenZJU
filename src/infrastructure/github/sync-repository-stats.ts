@@ -1,7 +1,7 @@
 import type { Project } from "@/domain/project/project";
 import type { RepositoryStats, RepositoryStatsSnapshot } from "@/domain/project/repository-stats";
 import { EMPTY_SNAPSHOT } from "@/domain/project/snapshot";
-import { GitHubClient } from "./github-client";
+import { GitHubApiError, GitHubClient } from "./github-client";
 import { readSnapshot, writeSnapshot } from "./stats-store";
 
 export interface StatsClient {
@@ -24,10 +24,23 @@ export interface SyncSummary {
   readonly total: number;
   readonly fetched: number;
   readonly cached: number;
-  readonly failed: number;
+  readonly missing: number;
+  readonly fetchErrors: number;
+  readonly rateLimitErrors: number;
   readonly source: RepositoryStatsSnapshot["source"];
   readonly generatedAt: string;
   readonly durationMs: number;
+}
+
+function isRateLimitError(error: unknown): boolean {
+  if (!(error instanceof GitHubApiError)) {
+    return false;
+  }
+
+  return (
+    error.status === 429 ||
+    (error.status === 403 && (error.remaining === 0 || /rate limit/i.test(error.message)))
+  );
 }
 
 export interface SyncResult {
@@ -92,7 +105,9 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
       total: repos.length,
       fetched: 0,
       cached: Object.keys(snapshot.repositories).length,
-      failed: repos.length - Object.keys(snapshot.repositories).length,
+      missing: repos.length - Object.keys(snapshot.repositories).length,
+      fetchErrors: 0,
+      rateLimitErrors: 0,
       source: "cache",
       generatedAt: snapshot.generatedAt,
       durationMs: Date.now() - startedAt,
@@ -115,6 +130,8 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
   let usedGraphQL = false;
   let usedRest = false;
   let usedCache = false;
+  let fetchErrors = 0;
+  let rateLimitErrors = 0;
 
   if (client.hasToken) {
     try {
@@ -142,6 +159,12 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
       try {
         return await client.fetchRestStats(repo);
       } catch (error) {
+        fetchErrors += 1;
+
+        if (isRateLimitError(error)) {
+          rateLimitErrors += 1;
+        }
+
         logger.warn(`  REST 同步失败 ${repo}：${(error as Error).message}`);
 
         return undefined;
@@ -178,7 +201,7 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
   }
 
   const fetched = Object.keys(repositories).length - cached;
-  const failed = repos.length - Object.keys(repositories).length;
+  const missing = repos.length - Object.keys(repositories).length;
   const source: RepositoryStatsSnapshot["source"] =
     fetched === 0
       ? "cache"
@@ -200,7 +223,7 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
   await writeSnapshot(options.cachePath, snapshot);
 
   logger.info(
-    `同步完成：${fetched} 个更新，${cached} 个使用缓存，${failed} 个失败，用时 ${Date.now() - startedAt}ms。`,
+    `同步完成：${fetched} 个更新，${cached} 个使用缓存，${missing} 个缺失，${fetchErrors} 次请求失败（其中 ${rateLimitErrors} 次限流），用时 ${Date.now() - startedAt}ms。`,
   );
 
   return {
@@ -209,7 +232,9 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
       total: repos.length,
       fetched,
       cached,
-      failed,
+      missing,
+      fetchErrors,
+      rateLimitErrors,
       source,
       generatedAt: snapshot.generatedAt,
       durationMs: Date.now() - startedAt,

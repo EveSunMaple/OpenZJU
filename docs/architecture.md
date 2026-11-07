@@ -2,7 +2,7 @@
 
 ## 目标与约束
 
-求是开源要解决的是一个信息发现问题：浙大开源项目分散、重叠、维护状态不透明。站点需要：
+OpenZJU 要解决的是一个信息发现问题：浙大开源项目分散、重叠、维护状态不透明。站点需要：
 
 - 以静态站点形式部署，不运行 SSR；
 - 每次构建时刷新 GitHub 仓库状态；
@@ -94,7 +94,7 @@ scripts/sync-projects.ts
 src/generated/repository-stats.json
         │
         ▼
-buildCatalog(projects, snapshot)
+buildCatalog(projects, snapshot, auditSnapshot)
         │
         ├── 合并仓库状态
         ├── 判定维护状态
@@ -126,16 +126,19 @@ CatalogController
 
 1. `pnpm sync:projects`：由 `tsx` 执行 `scripts/sync-projects.ts`。
 2. 同步脚本调用 `syncRepositoryStats`，写入 `src/generated/repository-stats.json`。
-3. Astro 构建所有静态路由，页面在模块加载时读取快照并组装目录。
-4. `@astrojs/sitemap` 生成 sitemap。
-5. `src/pages/robots.txt.ts` 生成 robots.txt。
-6. 输出到 `dist/`。
+3. `pnpm sync:audits`：读取仓库状态与深度代码质量缓存，拉取 GitHub 工程信号与 OpenSSF Scorecard，写入 `src/generated/repository-audits.json`。
+4. Astro 构建所有静态路由，页面在模块加载时读取三份快照（统计、审计、代码质量）并组装目录。
+5. `@astrojs/sitemap` 生成 sitemap。
+6. `src/pages/robots.txt.ts` 生成 robots.txt。
+7. 输出到 `dist/`。
 
 任何一步失败都会尽量降级而不是中断：
 
 - 单个仓库失败：使用该仓库的上一次缓存；没有缓存则标记为未知。
 - 网络整体失败：保留旧快照，构建继续。
 - 缓存文件缺失：生成空快照，页面仍可构建。
+- 审计失败：沿用上一次审计缓存；没有缓存则不显示审计圆环。评分与局限见 [`audit.md`](./audit.md)。
+- 深度分析失败：沿用 `repository-code-quality.json` 的上一次结果；没有结果时回退工程信号评分。工作流见 [`code-quality.md`](./code-quality.md)。
 
 ## 关键设计决策
 

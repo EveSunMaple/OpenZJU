@@ -9,6 +9,8 @@ import { formatCompactNumber, formatDateTime } from "@/presentation/lib/format";
 const catalog = getCatalog();
 const repositoryUrl = siteConfig.repositoryUrl;
 const dataDocUrl = repositoryUrl ? `${repositoryUrl}/blob/main/docs/data-model.md` : "";
+const auditDocUrl = repositoryUrl ? `${repositoryUrl}/blob/main/docs/audit.md` : "";
+const codeQualityDocUrl = repositoryUrl ? `${repositoryUrl}/blob/main/docs/code-quality.md` : "";
 const exampleProjectSnippet = `{
   slug: "my-zju-project",
   name: "My ZJU Project",
@@ -22,7 +24,7 @@ const exampleProjectSnippet = `{
 
 <BaseLayout
   title="关于"
-  description="了解求是开源的收录范围、维护状态判定方式、数据来源与贡献方式。"
+  description="了解 OpenZJU 的收录范围、维护状态判定方式、数据来源与贡献方式。"
   syncedAt={catalog.syncedAt}
   source={catalog.source}
   total={catalog.counts.total}
@@ -32,7 +34,8 @@ const exampleProjectSnippet = `{
       <p class="eyebrow">About / 关于本站</p>
       <h1>让每一个浙大开源项目，<br>都能被找到。</h1>
       <p>
-        求是开源是一个静态的浙江大学开源项目索引。它不托管代码，也不替项目做宣传，只做三件事：把项目按场景归类，记录它们最近是否仍在维护，并让搜索变得足够快。
+        OpenZJU
+        是一个静态的浙江大学开源项目索引。它不托管代码，也不替项目做宣传，只做三件事：把项目按场景归类，记录它们最近是否仍在维护，并让搜索变得足够快。
       </p>
     </header>
 
@@ -99,8 +102,34 @@ const exampleProjectSnippet = `{
           </p>
         </section>
 
+        <section class="doc-section" id="audit">
+          <span class="doc-section__number">04 / AUDIT</span>
+          <h2>卡片上的分数是什么</h2>
+          <p>
+            卡片右上角的圆环主要展示代码质量，范围
+            0–100。有深度分析结果时，总分由代码质量（60%）、维护（15%）、文档（10%）与安全（15%）加权得到；没有可分析源码时，回退到原有的工程信号审计并明确标注。
+          </p>
+          <p>
+            深度分析每天在 GitHub Actions
+            中运行，使用复杂度、重复率、lint、密钥和依赖漏洞等静态指标；不安装依赖、不执行项目脚本。分析结果会缓存并自动提交，Vercel
+            只负责构建与展示。
+          </p>
+          <p>
+            状态行中的「AI
+            风险」同样是启发式标签，基于测试、CI、文档、依赖锁等工程信号的缺失程度，不检测代码是否由
+            AI 生成。已有一定社区采用的仓库会降低风险分，已归档仓库显示为「未知」。
+          </p>
+          <p>
+            审计结果缓存在 <strong>src/generated/repository-audits.json</strong>，深度指标缓存在
+            <strong>src/generated/repository-code-quality.json</strong
+            >。网络失败时沿用上一次同步结果，构建不会中断。当前共审计
+            <strong> {catalog.auditCount} </strong>个仓库，其中
+            <strong> {catalog.codeQualityCount} </strong>个已有深度分析结果。
+          </p>
+        </section>
+
         <section class="doc-section" id="contribute">
-          <span class="doc-section__number">04 / CONTRIBUTE</span>
+          <span class="doc-section__number">05 / CONTRIBUTE</span>
           <h2>如何收录一个项目</h2>
           <p>
             收录标准很宽松：只要项目与浙江大学有关，并且公开可访问，就可以提交。课程作业、科研代码、校园工具、模板与资源集合都欢迎。
@@ -118,7 +147,7 @@ const exampleProjectSnippet = `{
         </section>
 
         <section class="doc-section" id="stack">
-          <span class="doc-section__number">05 / STACK</span>
+          <span class="doc-section__number">06 / STACK</span>
           <h2>技术栈</h2>
           <p>
             站点使用 Astro 静态生成，Tailwind CSS v4 负责样式，HeroUI v3 提供框架无关的 BEM
@@ -133,12 +162,13 @@ const exampleProjectSnippet = `{
         </section>
 
         <section class="doc-section" id="license">
-          <span class="doc-section__number">06 / LICENSE</span>
+          <span class="doc-section__number">07 / LICENSE</span>
           <h2>许可与声明</h2>
           <p>
             本站代码以
             <strong>GPL-3.0</strong>
-            许可发布。项目名称、简介、链接与统计数据仅用于索引与展示，版权归各自作者所有。维护状态只是自动化判断，不构成对项目质量的保证。
+            许可发布。项目名称、简介、链接、统计数据与审计结果仅用于索引与展示，版权归各自作者所有。维护状态、审计分与
+            AI 风险标签都是自动化判断，不构成对项目质量的保证。
           </p>
           <p>
             收录范围以公开可访问为准，收录不代表推荐、审核或保证合规。部分自动化脚本可能违反平台规则或学术诚信要求，请自行判断并承担使用后果。
@@ -170,6 +200,11 @@ const exampleProjectSnippet = `{
               >
             </li>
             <li>
+              <a href="#audit"
+                >项目审计 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a
+              >
+            </li>
+            <li>
               <a href="#contribute"
                 >贡献项目 <Icon name="lucide:arrow-down-right" aria-hidden="true" /></a
               >
@@ -186,6 +221,7 @@ const exampleProjectSnippet = `{
             {catalog.counts.total}
             个项目 · {catalog.counts.maintained} 个仍在维护<br>
             累计 {formatCompactNumber(catalog.counts.totalStars)} Stars<br>
+            审计 {catalog.auditCount} 个仓库 · 深度分析 {catalog.codeQualityCount} 个<br>
             同步于 {formatDateTime(catalog.syncedAt)}
           </p>
           {repositoryUrl && (
@@ -199,6 +235,20 @@ const exampleProjectSnippet = `{
             <p>
               <a href={dataDocUrl} target="_blank" rel="noopener noreferrer">
                 阅读数据字段文档
+              </a>
+            </p>
+          )}
+          {auditDocUrl && (
+            <p>
+              <a href={auditDocUrl} target="_blank" rel="noopener noreferrer">
+                阅读审计方法文档
+              </a>
+            </p>
+          )}
+          {codeQualityDocUrl && (
+            <p>
+              <a href={codeQualityDocUrl} target="_blank" rel="noopener noreferrer">
+                阅读深度代码质量文档
               </a>
             </p>
           )}

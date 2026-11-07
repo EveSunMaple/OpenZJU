@@ -11,3 +11,4 @@ coverage/
 .vitest/
 
 .secrets/
+.openbitfun/

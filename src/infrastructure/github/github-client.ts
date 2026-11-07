@@ -86,6 +86,33 @@ interface RestCommit {
   };
 }
 
+export interface CommunityProfileSignals {
+  readonly healthPercentage: number | null;
+  readonly readme: boolean;
+  readonly license: boolean;
+  readonly contributing: boolean;
+  readonly codeOfConduct: boolean;
+  readonly issueTemplate: boolean;
+  readonly pullRequestTemplate: boolean;
+}
+
+interface RestCommunityProfile {
+  health_percentage: number | null;
+  files: {
+    readme: unknown | null;
+    license: unknown | null;
+    contributing: unknown | null;
+    code_of_conduct: unknown | null;
+    issue_template: unknown | null;
+    pull_request_template: unknown | null;
+  } | null;
+}
+
+interface RestContentEntry {
+  name: string;
+  type: string;
+}
+
 interface RequestResult<T> {
   data: T;
   remaining: number | null;
@@ -365,6 +392,49 @@ export class GitHubClient {
     }
 
     return stats;
+  }
+
+  async fetchCommunityProfile(repo: string): Promise<CommunityProfileSignals | null> {
+    try {
+      const { data } = await this.#request<RestCommunityProfile>(
+        `/repos/${repo}/community/profile`,
+      );
+      const files = data.files;
+
+      return {
+        healthPercentage:
+          typeof data.health_percentage === "number" ? data.health_percentage : null,
+        readme: Boolean(files?.readme),
+        license: Boolean(files?.license),
+        contributing: Boolean(files?.contributing),
+        codeOfConduct: Boolean(files?.code_of_conduct),
+        issueTemplate: Boolean(files?.issue_template),
+        pullRequestTemplate: Boolean(files?.pull_request_template),
+      };
+    } catch (error) {
+      if (error instanceof GitHubApiError && error.status === 404) {
+        return null;
+      }
+
+      throw error;
+    }
+  }
+
+  async fetchRootEntries(repo: string, ref: string): Promise<string[]> {
+    return this.fetchDirectoryEntries(repo, "", ref);
+  }
+
+  async fetchDirectoryEntries(repo: string, path: string, ref: string): Promise<string[]> {
+    const suffix = path ? `/${path}` : "";
+    const { data } = await this.#request<RestContentEntry[] | RestContentEntry>(
+      `/repos/${repo}/contents${suffix}?ref=${encodeURIComponent(ref)}`,
+    );
+
+    if (Array.isArray(data)) {
+      return data.map((entry) => entry.name);
+    }
+
+    return data?.name ? [data.name] : [];
   }
 
   async fetchAtomCommitDates(branch: string | null, repo: string): Promise<string[]> {

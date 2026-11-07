@@ -1,6 +1,6 @@
 {
-  "name": "求是开源 · ZJU Open Source Atlas",
-  "short_name": "求是开源",
+  "name": "OpenZJU",
+  "short_name": "OpenZJU",
   "description": "浙江大学开源项目索引，记录分类、链接与维护状态。",
   "lang": "zh-CN",
   "start_url": "/",

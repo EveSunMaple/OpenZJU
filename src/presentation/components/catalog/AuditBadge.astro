@@ -1,0 +1,202 @@
+---
+import { Icon } from "astro-icon/components";
+import type { RepositoryAudit } from "@/domain/project/repository-audit";
+import {
+  AI_RISK_LABELS,
+  type AuditCheckStatus,
+  confidenceLabel,
+} from "@/domain/project/repository-audit";
+import { formatDate } from "@/presentation/lib/format";
+
+interface Props {
+  audit: RepositoryAudit;
+  slug: string;
+  projectName: string;
+}
+
+const { audit, slug, projectName } = Astro.props;
+const popoverId = `audit-${slug}`;
+const titleId = `${popoverId}-title`;
+const tone =
+  audit.grade === "A"
+    ? "great"
+    : audit.grade === "B"
+      ? "good"
+      : audit.grade === "F"
+        ? "bad"
+        : "warn";
+const confidence = confidenceLabel(audit.confidence);
+
+const dimensions = audit.codeQuality
+  ? ([
+      { id: "quality", label: "质量", value: audit.codeQuality.score },
+      { id: "maintenance", label: "维护", value: audit.dimensions.maintenance },
+      { id: "documentation", label: "文档", value: audit.dimensions.documentation },
+      { id: "security", label: "安全", value: audit.dimensions.security },
+    ] as const)
+  : ([
+      { id: "maintenance", label: "维护", value: audit.dimensions.maintenance },
+      { id: "documentation", label: "文档", value: audit.dimensions.documentation },
+      { id: "engineering", label: "工程", value: audit.dimensions.engineering },
+      { id: "security", label: "安全", value: audit.dimensions.security },
+    ] as const);
+
+const quality = audit.codeQuality;
+const toolLabel = quality?.tools.length ? quality.tools.join("、") : "未标记工具";
+const metric = (value: number | null, suffix = "") => (value === null ? "—" : `${value}${suffix}`);
+const vulnerabilityTotal = quality?.metrics.vulnerabilities
+  ? quality.metrics.vulnerabilities.critical +
+    quality.metrics.vulnerabilities.high +
+    quality.metrics.vulnerabilities.medium +
+    quality.metrics.vulnerabilities.low
+  : null;
+
+const checkIcons: Record<AuditCheckStatus, string> = {
+  pass: "lucide:check",
+  warn: "lucide:triangle-exclamation-point",
+  fail: "lucide:x",
+  unknown: "lucide:circle-question-mark",
+};
+---
+
+<button
+  class={`audit-trigger audit-trigger--${tone}`}
+  type="button"
+  popovertarget={popoverId}
+  aria-haspopup="dialog"
+  aria-label={`${projectName} 综合质量 ${audit.score} 分，${audit.grade} 级，查看审计详情`}
+  title={`综合质量 ${audit.score}/100 · ${audit.grade} 级（代码质量占 60%）`}
+  style={`--audit-score: ${audit.score}`}
+>
+  <span class="audit-trigger__value">{audit.score}</span>
+</button>
+
+<div id={popoverId} class="audit-popover" popover="auto" role="dialog" aria-labelledby={titleId}>
+  <div class="audit-popover__head">
+    <div class={`audit-popover__score audit-popover__score--${tone}`}>
+      <strong>{audit.score}</strong>
+      <span>/ 100</span>
+    </div>
+    <div class="audit-popover__heading">
+      <p class="eyebrow">Code Quality Audit</p>
+      <h3 id={titleId}>{projectName} · {audit.grade} 级</h3>
+      <p>置信度：{confidence} · 审计于 {formatDate(audit.fetchedAt)}</p>
+    </div>
+  </div>
+
+  {quality ? (
+    <div class="audit-quality">
+      <div class="audit-quality__head">
+        <div>
+          <strong>深度静态分析</strong>
+          <span>
+            {quality.metrics.loc.toLocaleString()} 行 · {quality.metrics.functions} 个函数
+          </span>
+        </div>
+        <span class={`audit-quality__confidence audit-quality__confidence--${quality.confidence}`}>
+          置信度{" "}
+          {quality.confidence === "high" ? "高" : quality.confidence === "medium" ? "中" : "低"}
+        </span>
+      </div>
+
+      <div class="audit-quality__scores">
+        <span>
+          可维护性 <strong>{metric(quality.maintainability)}</strong>
+        </span>
+        <span>
+          可靠性 <strong>{metric(quality.reliability)}</strong>
+        </span>
+        <span>
+          安全发现 <strong>{metric(quality.security)}</strong>
+        </span>
+      </div>
+
+      <dl class="audit-quality__metrics">
+        <div>
+          <dt>平均复杂度</dt>
+          <dd>{metric(quality.metrics.averageComplexity)}</dd>
+        </div>
+        <div>
+          <dt>高复杂度函数</dt>
+          <dd>{metric(quality.metrics.highComplexityFunctions)}</dd>
+        </div>
+        <div>
+          <dt>重复率</dt>
+          <dd>{metric(quality.metrics.duplicationPercentage, "%")}</dd>
+        </div>
+        <div>
+          <dt>lint 错误 / 警告</dt>
+          <dd>
+            {quality.metrics.lintErrors === null && quality.metrics.lintWarnings === null
+              ? "—"
+              : `${quality.metrics.lintErrors ?? 0} / ${quality.metrics.lintWarnings ?? 0}`}
+          </dd>
+        </div>
+        <div>
+          <dt>密钥</dt>
+          <dd>{metric(quality.metrics.secrets)}</dd>
+        </div>
+        <div>
+          <dt>依赖漏洞</dt>
+          <dd>{metric(vulnerabilityTotal)}</dd>
+        </div>
+      </dl>
+
+      <p class="audit-quality__tools">工具：{toolLabel} · 不含测试覆盖率</p>
+    </div>
+  ) : (
+    <p class="audit-quality__empty">尚未运行深度静态分析，当前圆环使用工程信号回退评分。</p>
+  )}
+
+  <div class={`audit-ai audit-ai--${audit.aiRisk.level}`}>
+    <div class="audit-ai__title">
+      <Icon name="lucide:bot" aria-hidden="true" />
+      启发式 AI 风险：{AI_RISK_LABELS[audit.aiRisk.level]}
+      <span>{audit.aiRisk.score}/100</span>
+    </div>
+    <p>基于测试、CI、文档、依赖锁等工程信号的粗略判断，不代表项目由 AI 生成。</p>
+    {audit.aiRisk.reasons.length > 0 && (
+      <ul>
+        {audit.aiRisk.reasons.map((reason) => (
+          <li>{reason}</li>
+        ))}
+      </ul>
+    )}
+  </div>
+
+  <div class="audit-dimensions">
+    {dimensions.map((dimension) => (
+      <div class="audit-dimension">
+        <span>{dimension.label}</span>
+        <strong>{dimension.value}</strong>
+        <span class="audit-dimension__track" aria-hidden="true">
+          <span class="audit-dimension__bar" style={`width: ${dimension.value}%`} />
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <ul class="audit-checks">
+    {audit.checks.map((check) => (
+      <li class={`audit-check audit-check--${check.status}`}>
+        <Icon name={checkIcons[check.status]} aria-hidden="true" />
+        <span>
+          <strong>{check.label}</strong>
+          <small>{check.detail}</small>
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  <div class="audit-popover__foot">
+    <span>工程信号审计，不是项目质量裁决。</span>
+    {audit.scorecard ? (
+      <a href={audit.scorecard.url} target="_blank" rel="noopener noreferrer">
+        OpenSSF Scorecard {audit.scorecard.score.toFixed(1)}/10
+        <Icon name="lucide:arrow-up-right" aria-hidden="true" />
+      </a>
+    ) : (
+      <span>暂未收录 OpenSSF Scorecard</span>
+    )}
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="./public/favicon.svg" width="72" height="72" alt="ZJU Open Source Atlas logo" />
-  <h1>ZJU Open Source Atlas</h1>
+  <img src="./public/favicon.svg" width="72" height="72" alt="OpenZJU logo" />
+  <h1>OpenZJU</h1>
   <p>A searchable map of open source projects from Zhejiang University.</p>
 
   <p>
@@ -25,7 +25,7 @@
 
 Zhejiang University produces a large number of open source projects every year: course materials, research code, campus tools, productivity scripts, templates and curated resource lists. They are scattered across many organizations and personal repositories. Many overlap, and many are no longer maintained.
 
-**ZJU Open Source Atlas** is a continuously refreshed index that helps you:
+**OpenZJU** is a continuously refreshed index that helps you:
 
 - check whether someone has already built what you are about to build;
 - see whether a project is still maintained before depending on it;
@@ -38,6 +38,7 @@ The site does not host code and does not rank projects. It collects entry points
 - **Four categories**: Life, Study, Research and Work.
 - **Build-time GitHub sync**: stars, language, license, archived state, latest commit date and commits in the last 90 days.
 - **Maintenance status**: active, maintained, low frequency, dormant and archived. Archived repositories sink to the bottom.
+- **Code-quality-led audit**: a 0–100 score on every card, led by the daily deep static analysis (complexity, duplication, lint, secrets and dependency vulnerabilities). Repositories without analyzable source fall back to engineering signals. A heuristic AI-risk label is included.
 - **Static search**: match names, descriptions, tags, categories, languages and licenses entirely in the browser.
 - **Composable filters**: maintenance status, sort by recent activity / stars / name, with URL state.
 - **Tags as entry points**: click a tag to search for it.
@@ -45,7 +46,8 @@ The site does not host code and does not rank projects. It collects entry points
 - **Swup page transitions**: no full-page flash, with accessibility, head updates and scroll handling preserved.
 - **Responsive grid**: global scrolling and adaptive columns from mobile to wide screens.
 - **Accessibility**: skip link, keyboard shortcuts, focus management, live result counts and reduced-motion support.
-- **Resilient data**: when GitHub is unavailable or rate-limited, the build falls back to the last successful snapshot.
+- **Resilient data**: when GitHub is unavailable or rate-limited, the build falls back to the last successful snapshot for repository stats, audits and code quality.
+- **Daily deep analysis**: a GitHub Actions job runs static analysis every day, commits the cached metrics and keeps the Vercel build fast.
 
 ## Preview
 
@@ -85,8 +87,11 @@ pnpm build
 The build:
 
 1. runs `scripts/sync-projects.ts` to refresh GitHub repository stats into `src/generated/repository-stats.json`;
-2. statically generates the home page, four category pages, about page, 404 page, `robots.txt` and the sitemap;
-3. writes the result to `dist/`.
+2. runs `scripts/sync-audits.ts` to refresh engineering signals and OpenSSF Scorecard results, and to merge `repository-code-quality.json` into `src/generated/repository-audits.json`;
+3. statically generates the home page, four category pages, about page, 404 page, `robots.txt` and the sitemap;
+4. writes the result to `dist/`.
+
+Deep static analysis does not run in the Vercel build. It runs daily in [`.github/workflows/deep-audit.yml`](./.github/workflows/deep-audit.yml), commits the cache and triggers deployment. Run it once manually after the first deployment. See [`docs/code-quality.md`](./docs/code-quality.md) (Chinese) for tools, scoring and limitations.
 
 To skip network requests and use the checked-in cache:
 
@@ -150,14 +155,16 @@ These are automated signals, not a quality score or a production-readiness guara
 ├── docs/                        # architecture, data, design, deployment, development
 ├── public/                      # favicon, OG image, manifest
 ├── scripts/
+│   ├── deep-audit/              # daily deep static analysis scripts
+│   ├── sync-audits.ts           # build-time audit sync entry
 │   └── sync-projects.ts         # build-time GitHub sync entry
 ├── src/
 │   ├── application/             # catalog assembly, search, sorting
 │   ├── config/                  # site configuration
 │   ├── data/                    # project source data
 │   ├── domain/                  # project, category, maintenance rules
-│   ├── generated/               # build-time repository stats cache
-│   ├── infrastructure/          # GitHub client and cache storage
+│   ├── generated/               # repository stats, audit and code quality caches
+│   ├── infrastructure/          # GitHub / OpenSSF clients and code quality storage
 │   ├── pages/                    # Astro routes
 │   └── presentation/            # Astro views, styles and browser controllers
 ├── astro.config.mjs
@@ -185,6 +192,11 @@ Read [`docs/architecture.md`](./docs/architecture.md) for the details. The docum
 | `pnpm preview`               | Preview the production build          |
 | `pnpm sync:projects`         | Refresh GitHub repository stats       |
 | `pnpm sync:projects:offline` | Use the local cache only              |
+| `pnpm sync:audits`           | Refresh project audits                |
+| `pnpm sync:audits:offline`   | Use the audit cache only              |
+| `pnpm deep:prepare`          | Prepare deep-audit chunks             |
+| `pnpm deep:analyze`          | Analyze one chunk                     |
+| `pnpm deep:merge`            | Merge deep-audit results              |
 | `pnpm check`                 | `astro check` + Biome                 |
 | `pnpm check:ci`              | Strict CI check                       |
 | `pnpm format`                | Format with Biome                     |
@@ -201,7 +213,7 @@ The sync implementation lives in [`src/infrastructure/github`](./src/infrastruct
 4. On any failure, reuse the last successful cache.
 5. Write the snapshot to `src/generated/repository-stats.json`, which is committed as an offline fallback.
 
-A token is strongly recommended in CI and on Vercel. The unauthenticated GitHub API has a low rate limit and is not suitable for frequent rebuilds.
+A token is strongly recommended in CI and on Vercel. The unauthenticated GitHub API has a low rate limit and is not suitable for frequent rebuilds. Audit sync reuses the same token to read Community Profile, repository root and `.github`, then tries OpenSSF Scorecard; results are cached in `src/generated/repository-audits.json` and fall back to the previous run on failure. See [`docs/audit.md`](./docs/audit.md) (Chinese) for the scoring method and limitations.
 
 ## Deploy to Vercel
 
@@ -211,7 +223,7 @@ A token is strongly recommended in CI and on Vercel. The unauthenticated GitHub 
    - `SITE_URL` — the production URL, e.g. `https://zju-open-source.vercel.app`.
    - `PUBLIC_REPOSITORY_URL` — optional; enables source links in the footer and about page.
 3. Deploy. Vercel runs `pnpm build`, which refreshes GitHub data at build time.
-4. Create a Vercel Deploy Hook and store it as the GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`. The included scheduled workflow triggers a rebuild once a day so maintenance signals stay fresh.
+4. Create a Vercel Deploy Hook and store it as the GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`. The daily deep-analysis workflow commits the quality cache and then triggers one rebuild; disable Vercel Git auto-deploy to avoid duplicate builds.
 
 See [`docs/deployment.md`](./docs/deployment.md) for details and troubleshooting.
 
@@ -227,6 +239,8 @@ Contributions of projects, corrections, UI improvements and documentation are we
 ## License
 
 Code in this repository is licensed under the [GNU General Public License v3.0](./LICENSE).
+
+Project names, descriptions, links, statistics, audit and code-quality results are shown for indexing only and remain the property of their respective authors. Listing is not an endorsement, review or compliance guarantee. Audit scores, code-quality scores and AI-risk labels are heuristic signals, not quality verdicts, official SonarQube results or coverage reports.
 
 Project names, descriptions, links and statistics are used for indexing and attribution only. Copyright remains with their respective authors. Listing does not imply endorsement, review or a guarantee of compliance; some automation scripts may violate platform rules or academic-integrity requirements. Use them at your own discretion and responsibility. This is not an official Zhejiang University project and does not represent the university's views.
 

@@ -14,6 +14,22 @@ src/data/projects.ts
 src/generated/repository-stats.json
 ```
 
+项目审计由 `pnpm sync:audits` 单独获取，写入：
+
+```text
+src/generated/repository-audits.json
+```
+
+审计依赖仓库状态、社区健康度、根目录文件与 OpenSSF Scorecard。评分结构、AI 风险启发式与局限见 [项目审计](./audit.md)。
+
+深度代码质量由每日工作流写入：
+
+```text
+src/generated/repository-code-quality.json
+```
+
+它包含复杂度、重复率、lint、密钥、依赖漏洞和工具版本；不入库源码或密钥内容。字段、评分与工作流见 [深度代码质量](./code-quality.md)。
+
 页面不会在运行时请求 GitHub，也不会从第三方接口读取项目信息。
 
 ## Project
@@ -96,17 +112,17 @@ interface RepositoryStats {
 }
 ```
 
-| 字段                      | 展示       | 说明                 |
-| ------------------------- | ---------- | -------------------- |
-| `stars`                   | 卡片信号   | 累计 Stars           |
-| `language`                | 卡片信号   | GitHub 主语言        |
-| `lastCommitAt`            | 卡片右上角 | 默认分支最近提交时间 |
-| `pushedAt`                | 回退       | 没有提交日期时使用   |
-| `commitsLast90Days`       | 卡片信号   | 最近 90 天提交数量   |
-| `commitsLast90DaysCapped` | 卡片信号   | `true` 时显示 `N+`   |
-| `archived`                | 维护状态   | 归档优先于更新时间   |
-| `license`                 | 搜索文本   | 可被搜索             |
-| `topics`                  | 搜索文本   | 可被搜索             |
+| 字段                      | 展示     | 说明                 |
+| ------------------------- | -------- | -------------------- |
+| `stars`                   | 卡片信号 | 累计 Stars           |
+| `language`                | 卡片信号 | GitHub 主语言        |
+| `lastCommitAt`            | 卡片顶部 | 默认分支最近提交时间 |
+| `pushedAt`                | 回退     | 没有提交日期时使用   |
+| `commitsLast90Days`       | 卡片信号 | 最近 90 天提交数量   |
+| `commitsLast90DaysCapped` | 卡片信号 | `true` 时显示 `N+`   |
+| `archived`                | 维护状态 | 归档优先于更新时间   |
+| `license`                 | 搜索文本 | 可被搜索             |
+| `topics`                  | 搜索文本 | 可被搜索             |
 
 `commitsLastYear` 只在 GraphQL 路径中提供；REST/Atom 路径可能为 `null`。页面目前只展示最近 90 天提交数。
 
@@ -199,6 +215,20 @@ pnpm sync:projects:offline
 - 先写临时文件，再原子重命名。
 - 写入前按仓库名排序，方便 git diff。
 - 缓存文件已提交到仓库，是离线构建与 CI 的兜底。
+
+### 同步统计口径
+
+`SyncSummary` 区分数据状态和请求状态：
+
+| 字段              | 含义                                     |
+| ----------------- | ---------------------------------------- |
+| `fetched`         | 本次成功获取新数据的仓库数               |
+| `cached`          | 请求失败但成功使用旧缓存的仓库数         |
+| `missing`         | 请求失败且没有缓存、最终没有数据的仓库数 |
+| `fetchErrors`     | 仓库级抓取失败次数                       |
+| `rateLimitErrors` | 其中由 403/429 限流造成的次数            |
+
+因此「缺失 0」不等于「请求失败 0」：没有 token 时，匿名 API 限额耗尽后，大量仓库可能请求失败并回退到缓存。
 
 ## 环境变量
 

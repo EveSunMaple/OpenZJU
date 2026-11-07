@@ -50,7 +50,12 @@ async function main(): Promise<void> {
   console.info("");
   console.info(`数据源：${formatSource(summary.source)}`);
   console.info(`项目数量：${summary.total}`);
-  console.info(`已更新：${summary.fetched} · 缓存：${summary.cached} · 失败：${summary.failed}`);
+  console.info(
+    `已更新：${summary.fetched} · 缓存回退：${summary.cached} · 缺失：${summary.missing}`,
+  );
+  console.info(
+    `请求失败：${summary.fetchErrors} 次（其中限流：${summary.rateLimitErrors} 次；失败仓库会尝试回退缓存）`,
+  );
   console.info(`同步时间：${summary.generatedAt || "尚未同步"}`);
 }
 

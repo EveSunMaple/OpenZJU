@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="./public/favicon.svg" width="72" height="72" alt="求是开源 Logo" />
-  <h1>求是开源 · ZJU Open Source Atlas</h1>
+  <img src="./public/favicon.svg" width="72" height="72" alt="OpenZJU Logo" />
+  <h1>OpenZJU</h1>
   <p>一张可检索的浙江大学开源项目地图。</p>
 
   <p>
@@ -25,7 +25,7 @@
 
 浙江大学每年都会产生大量开源项目：课程资料、科研代码、校园工具、效率脚本、模板与资源集合。它们散落在不同的组织和个人仓库里，生态位经常重叠，也有很多项目已经停止维护。
 
-**求是开源**希望成为一个持续更新的索引：
+**OpenZJU** 希望成为一个持续更新的索引：
 
 - 做新项目之前，先看看有没有人已经做过类似的事。
 - 使用一个项目之前，先看看它是否仍在维护。
@@ -38,6 +38,7 @@
 - **四种分类**：生活、学习、科研、工作。
 - **构建时同步**：每次构建读取 GitHub 项目的 Stars、语言、License、归档状态、最近提交时间与最近 90 天提交数；无 GitHub 仓库的脚本项目会显示为「未知」。
 - **维护状态**：自动判定「活跃 / 维护中 / 低频 / 停滞 / 已归档」，已归档项目自动沉底。
+- **代码质量主导的项目审计**：卡片展示 0–100 分，优先使用每日深度静态分析（复杂度、重复率、lint、密钥、依赖漏洞）；没有可分析源码时回退到工程信号评分，并附带启发式 AI 风险标签。
 - **静态搜索**：按名称、简介、标签、分类、语言、License 搜索，不依赖服务端。
 - **组合筛选**：维护状态筛选、最近更新 / Star / 名称排序，筛选条件会同步到 URL。
 - **标签即入口**：点击卡片标签即可按标签搜索。
@@ -45,7 +46,8 @@
 - **Swup 页面过渡**：路由切换无整页白屏，同时保留可访问性、head 更新与滚动行为。
 - **响应式布局**：从手机到宽屏的全局滚动与自适应网格。
 - **可访问性**：跳过链接、键盘快捷键、焦点管理、状态播报与减少动效支持。
-- **自动数据缓存**：GitHub 不可达或触发速率限制时，构建会回退到上一次成功同步的数据。
+- **自动数据缓存**：GitHub 不可达或触发速率限制时，构建会回退到上一次成功同步的数据；统计数据、审计数据与代码质量数据分别缓存。
+- **每日深度分析**：GitHub Actions 每天运行静态分析并自动提交通用代码质量缓存，Vercel 构建保持快速。
 
 ## 预览
 
@@ -89,8 +91,11 @@ pnpm build
 构建流程是：
 
 1. 运行 `scripts/sync-projects.ts`，从 GitHub 同步仓库状态并写入 `src/generated/repository-stats.json`。
-2. Astro 静态生成首页、四个分类页、关于页、404 页、`robots.txt` 与 sitemap。
-3. 输出到 `dist/`。
+2. 运行 `scripts/sync-audits.ts`，同步工程信号与 OpenSSF Scorecard，并读取 `repository-code-quality.json`，写入 `src/generated/repository-audits.json`。
+3. Astro 静态生成首页、四个分类页、关于页、404 页、`robots.txt` 与 sitemap。
+4. 输出到 `dist/`。
+
+深度静态分析不在 Vercel 构建里运行。它由 [`.github/workflows/deep-audit.yml`](./.github/workflows/deep-audit.yml) 每天执行，结果自动提交后再触发部署；首次部署后可在 Actions 页面手动运行一次。工具、评分和限制见 [`docs/code-quality.md`](./docs/code-quality.md)。
 
 如果已经在本地同步过，或暂时没有网络，可以跳过网络请求：
 
@@ -152,18 +157,20 @@ SKIP_GITHUB_SYNC=1 pnpm build
 .
 ├── .github/
 │   ├── ISSUE_TEMPLATE/          # 推荐新项目的 Issue 表单
-│   └── workflows/               # CI 与定时部署工作流
+│   └── workflows/               # CI、深度分析与部署工作流
 ├── docs/                        # 架构、数据、设计、部署与开发文档
 ├── public/                      # favicon、OG 图、manifest
 ├── scripts/
+│   ├── deep-audit/              # 每日深度静态分析脚本
+│   ├── sync-audits.ts           # 构建前项目审计同步入口
 │   └── sync-projects.ts         # 构建前 GitHub 数据同步入口
 ├── src/
 │   ├── application/             # 应用层：目录聚合、搜索与排序
 │   ├── config/                  # 站点配置
 │   ├── data/                    # 项目基础数据（唯一数据源）
 │   ├── domain/                  # 领域层：项目、分类、维护状态
-│   ├── generated/               # 构建时生成的仓库状态缓存
-│   ├── infrastructure/          # 基础设施层：GitHub API 与缓存读写
+│   ├── generated/               # 仓库状态、审计与深度代码质量缓存
+│   ├── infrastructure/          # 基础设施层：GitHub / OpenSSF API、代码质量缓存
 │   ├── pages/                    # Astro 路由页面
 │   └── presentation/            # 表现层：Astro 组件、布局、样式、控制器
 ├── astro.config.mjs
@@ -191,6 +198,11 @@ SKIP_GITHUB_SYNC=1 pnpm build
 | `pnpm preview`               | 本地预览构建产物           |
 | `pnpm sync:projects`         | 手动同步 GitHub 仓库状态   |
 | `pnpm sync:projects:offline` | 只使用本地缓存             |
+| `pnpm sync:audits`           | 手动同步项目审计           |
+| `pnpm sync:audits:offline`   | 只使用审计缓存             |
+| `pnpm deep:prepare`          | 生成深度审计分片           |
+| `pnpm deep:analyze`          | 分析一个分片               |
+| `pnpm deep:merge`            | 合并深度分析结果           |
 | `pnpm check`                 | `astro check` + Biome 检查 |
 | `pnpm check:ci`              | CI 使用的严格检查          |
 | `pnpm format`                | 使用 Biome 格式化          |
@@ -207,7 +219,14 @@ SKIP_GITHUB_SYNC=1 pnpm build
 4. 任意步骤失败都会使用上一次成功写入的缓存。
 5. 结果写入 `src/generated/repository-stats.json`，随仓库提交，作为离线与降级兜底。
 
-推荐在本地和部署环境配置 token。匿名 GitHub API 的速率限制较低，不适合频繁构建。
+同步结束后的统计含义：
+
+- **已更新**：本次成功取到新数据的仓库数。
+- **缓存回退**：请求失败、但使用了旧缓存的仓库数。
+- **缺失**：请求失败且没有旧缓存、页面上会显示为「未知」的仓库数。
+- **请求失败 / 其中限流**：本次发生的仓库级请求错误次数，以及其中由 GitHub 403/429 限流造成的次数。
+
+推荐在本地和部署环境配置 token。匿名 GitHub API 的速率限制较低，不适合频繁构建。审计同步会复用同一个 token，读取 Community Profile、仓库根目录与 `.github`，并尝试获取 OpenSSF Scorecard；审计结果写入 `src/generated/repository-audits.json`，失败时使用上一次缓存。评分方法与局限见 [`docs/audit.md`](./docs/audit.md)。
 
 ## 部署到 Vercel
 
@@ -217,7 +236,7 @@ SKIP_GITHUB_SYNC=1 pnpm build
    - `SITE_URL`：生产域名，例如 `https://zju-open-source.vercel.app`。
    - `PUBLIC_REPOSITORY_URL`：可选，填写后页脚与关于页会显示源码入口。
 3. 部署。Vercel 会自动执行 `pnpm build`，构建时刷新 GitHub 数据。
-4. 在 Vercel 创建 Deploy Hook，并把地址保存为 GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`。仓库自带的定时工作流会每天触发一次重新构建，让维护状态保持新鲜。
+4. 在 Vercel 创建 Deploy Hook，并把地址保存为 GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`。每日深度分析工作流会在提交代码质量缓存后触发一次重新构建；建议关闭 Vercel Git 自动部署，避免重复构建。
 
 详细步骤与故障排查见 [`docs/deployment.md`](./docs/deployment.md)。
 
@@ -226,6 +245,8 @@ SKIP_GITHUB_SYNC=1 pnpm build
 - [文档索引](./docs/README.md)
 - [架构：DDD + MVC 与构建流程](./docs/architecture.md)
 - [数据模型与维护状态](./docs/data-model.md)
+- [项目审计与 AI 风险](./docs/audit.md)
+- [深度代码质量与每日静态分析](./docs/code-quality.md)
 - [静态搜索、筛选与 Swup](./docs/search-and-navigation.md)
 - [设计系统与可访问性](./docs/design-system.md)
 - [部署与定时重建](./docs/deployment.md)
@@ -244,7 +265,7 @@ SKIP_GITHUB_SYNC=1 pnpm build
 
 本项目代码以 [GNU General Public License v3.0](./LICENSE) 发布。
 
-项目名称、简介、链接与统计数据仅用于索引与展示，版权归各自作者所有。收录不代表推荐、审核或保证合规；部分自动化脚本可能违反平台规则或学术诚信要求，请自行判断并承担使用后果。本站不是浙江大学官方项目，也不代表学校立场。
+项目名称、简介、链接、统计数据、审计与代码质量结果仅用于索引与展示，版权归各自作者所有。收录不代表推荐、审核或保证合规；审计分、代码质量分与 AI 风险标签都是启发式判断，不是项目质量裁决，也不是 SonarQube 官方结果或覆盖率报告；部分自动化脚本可能违反平台规则或学术诚信要求，请自行判断并承担使用后果。本站不是浙江大学官方项目，也不代表学校立场。
 
 ## 致谢
 

@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "求是开源",
-  nameEn: "ZJU Open Source Atlas",
-  title: "求是开源 · 浙江大学开源项目图鉴",
+  name: "OpenZJU",
+  nameEn: "OpenZJU",
+  title: "OpenZJU · 浙江大学开源项目图鉴",
   description:
     "汇集浙江大学师生与校友的开源项目。做新项目之前，先看看有没有人已经做过；使用项目之前，先看看它是否仍在维护。",
   locale: "zh-CN",
