@@ -99,12 +99,12 @@ export interface CommunityProfileSignals {
 interface RestCommunityProfile {
   health_percentage: number | null;
   files: {
-    readme: unknown | null;
-    license: unknown | null;
-    contributing: unknown | null;
-    code_of_conduct: unknown | null;
-    issue_template: unknown | null;
-    pull_request_template: unknown | null;
+    readme: unknown;
+    license: unknown;
+    contributing: unknown;
+    code_of_conduct: unknown;
+    issue_template: unknown;
+    pull_request_template: unknown;
   } | null;
 }
 

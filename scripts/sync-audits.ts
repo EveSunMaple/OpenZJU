@@ -54,7 +54,9 @@ async function main(): Promise<void> {
   console.info(`深度代码质量缓存：${Object.keys(codeQualitySnapshot.repositories).length} 个仓库`);
 }
 
-main().catch((error: unknown) => {
+try {
+  await main();
+} catch (error) {
   console.error("项目审计同步失败，构建将继续使用已有审计缓存。");
   console.error(error);
-});
+}

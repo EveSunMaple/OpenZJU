@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: deep-code-audit
@@ -24,15 +24,15 @@ jobs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1
         with:
           version: 11.8.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
           cache: pnpm
@@ -52,7 +52,7 @@ jobs:
           NODE
 
       - name: Upload chunks
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: deep-audit-chunks
           path: deep-audit-chunks.json
@@ -68,46 +68,46 @@ jobs:
       matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1
         with:
           version: 11.8.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
           cache: pnpm
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.13"
 
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
           go-version: stable
 
       - name: Install static analyzers
         run: |
           python -m venv "$HOME/.venvs/deep-audit"
-          "$HOME/.venvs/deep-audit/bin/pip" install "lizard>=1.17" "ruff>=0.9"
+          "$HOME/.venvs/deep-audit/bin/pip" install "lizard==1.25.1" "ruff==0.17.4"
           echo "$HOME/.venvs/deep-audit/bin" >> "$GITHUB_PATH"
-          npm install --global jscpd oxlint
+          npm install --global --ignore-scripts jscpd@5.4.2 oxlint@1.92.0
           sudo apt-get update
           sudo apt-get install --yes cppcheck || true
-          go install github.com/gitleaks/gitleaks/v8@latest || true
-          go install github.com/google/osv-scanner/v2/cmd/osv-scanner@latest || true
+          go install github.com/gitleaks/gitleaks/v8@v8.30.1 || true
+          go install github.com/google/osv-scanner/v2/cmd/osv-scanner@v2.7.0 || true
           echo "$HOME/go/bin" >> "$GITHUB_PATH"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Download chunks
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: deep-audit-chunks
 
@@ -119,7 +119,7 @@ jobs:
           --output artifacts/code-quality-chunk-${{ matrix.chunk }}.json
 
       - name: Upload chunk result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: code-quality-chunk-${{ matrix.chunk }}
           path: artifacts/code-quality-chunk-${{ matrix.chunk }}.json
@@ -131,20 +131,22 @@ jobs:
     needs: analyze
     if: always()
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     timeout-minutes: 15
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1
         with:
           version: 11.8.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
           cache: pnpm
@@ -153,7 +155,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Download results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           pattern: code-quality-chunk-*
           path: artifacts

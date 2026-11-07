@@ -4,7 +4,7 @@ import type { RepositoryAudit, RepositoryAuditSnapshot } from "@/domain/project/
 import type { CodeQualitySnapshot } from "@/domain/project/repository-code-quality";
 import type { RepositoryStatsSnapshot } from "@/domain/project/repository-stats";
 import { type CommunityProfileSignals, GitHubClient } from "../github/github-client";
-import { EMPTY_AUDIT_SNAPSHOT, readAuditSnapshot, writeAuditSnapshot } from "./audit-store";
+import { readAuditSnapshot, writeAuditSnapshot } from "./audit-store";
 import type { ScorecardSignal } from "./scorecard-client";
 
 export interface AuditSignalsClient {
@@ -57,26 +57,93 @@ async function mapWithConcurrency<T, R>(
   const results = new Array<R | undefined>(items.length);
   let nextIndex = 0;
 
-  await Promise.all(
-    Array.from({ length: Math.min(concurrency, items.length) }, async () => {
-      while (nextIndex < items.length) {
-        const index = nextIndex;
-        nextIndex += 1;
+  const runWorker = async (): Promise<void> => {
+    const index = nextIndex;
+    nextIndex += 1;
 
-        try {
-          results[index] = await worker(items[index]);
-        } catch {
-          results[index] = undefined;
-        }
-      }
-    }),
-  );
+    if (index >= items.length) {
+      return;
+    }
+
+    try {
+      results[index] = await worker(items[index]);
+    } catch {
+      results[index] = undefined;
+    }
+
+    await runWorker();
+  };
+
+  await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, () => runWorker()));
 
   return results;
 }
 
 function uniqueRepos(projects: readonly Project[]): string[] {
   return [...new Set(projects.flatMap((project) => (project.repo ? [project.repo] : [])))];
+}
+
+interface CachedAuditOptions {
+  readonly currentRepos: readonly string[];
+  readonly previousByRepo: ReadonlyMap<string, RepositoryAudit>;
+  readonly previous: RepositoryAuditSnapshot;
+  readonly cachePath: string;
+  readonly startedAt: number;
+}
+
+async function cachedAuditResult(options: CachedAuditOptions): Promise<AuditSyncResult> {
+  const audits: Record<string, RepositoryAudit> = {};
+
+  for (const repo of options.currentRepos) {
+    const cached = options.previousByRepo.get(repo.toLowerCase());
+
+    if (cached) {
+      audits[repo.toLowerCase()] = cached;
+    }
+  }
+
+  const snapshot: RepositoryAuditSnapshot = {
+    schemaVersion: 1,
+    generatedAt: options.previous.generatedAt,
+    source: "cache",
+    audits,
+  };
+
+  await writeAuditSnapshot(options.cachePath, snapshot);
+
+  return {
+    snapshot,
+    summary: {
+      total: options.currentRepos.length,
+      fetched: 0,
+      cached: Object.keys(audits).length,
+      skipped: options.currentRepos.length - Object.keys(audits).length,
+      fetchErrors: 0,
+      source: "cache",
+      generatedAt: snapshot.generatedAt,
+      durationMs: Date.now() - options.startedAt,
+    },
+  };
+}
+
+function auditSource(
+  fetched: number,
+  cached: number,
+  usedScorecard: boolean,
+): RepositoryAuditSnapshot["source"] {
+  if (fetched === 0) {
+    return "cache";
+  }
+
+  if (cached > 0) {
+    return "mixed";
+  }
+
+  if (usedScorecard) {
+    return "github+scorecard";
+  }
+
+  return "github";
 }
 
 async function fetchSignals(
@@ -167,38 +234,13 @@ export async function syncRepositoryAudits(options: AuditSyncOptions): Promise<A
   const currentRepos = repos.filter((repo) => statsByRepo.has(repo.toLowerCase()));
 
   if (options.offline || currentRepos.length === 0) {
-    const audits: Record<string, RepositoryAudit> = {};
-
-    for (const repo of currentRepos) {
-      const cached = previousByRepo.get(repo.toLowerCase());
-
-      if (cached) {
-        audits[repo.toLowerCase()] = cached;
-      }
-    }
-
-    const snapshot: RepositoryAuditSnapshot = {
-      schemaVersion: 1,
-      generatedAt: previous.generatedAt,
-      source: "cache",
-      audits,
-    };
-
-    await writeAuditSnapshot(options.cachePath, snapshot);
-
-    return {
-      snapshot,
-      summary: {
-        total: currentRepos.length,
-        fetched: 0,
-        cached: Object.keys(audits).length,
-        skipped: currentRepos.length - Object.keys(audits).length,
-        fetchErrors: 0,
-        source: "cache",
-        generatedAt: snapshot.generatedAt,
-        durationMs: Date.now() - startedAt,
-      },
-    };
+    return cachedAuditResult({
+      currentRepos,
+      previousByRepo,
+      previous,
+      cachePath: options.cachePath,
+      startedAt,
+    });
   }
 
   const client =
@@ -210,39 +252,15 @@ export async function syncRepositoryAudits(options: AuditSyncOptions): Promise<A
     options.scorecardClient ?? new (await import("./scorecard-client")).ScorecardClient();
 
   if (!client.hasToken) {
-    const audits: Record<string, RepositoryAudit> = {};
-
-    for (const repo of currentRepos) {
-      const cached = previousByRepo.get(repo.toLowerCase());
-
-      if (cached) {
-        audits[repo.toLowerCase()] = cached;
-      }
-    }
-
-    const snapshot: RepositoryAuditSnapshot = {
-      schemaVersion: 1,
-      generatedAt: previous.generatedAt,
-      source: "cache",
-      audits,
-    };
-
-    await writeAuditSnapshot(options.cachePath, snapshot);
     logger.warn("  审计同步需要 GITHUB_TOKEN 才能读取社区健康度与文件树；当前使用已有审计缓存。");
 
-    return {
-      snapshot,
-      summary: {
-        total: currentRepos.length,
-        fetched: 0,
-        cached: Object.keys(audits).length,
-        skipped: currentRepos.length - Object.keys(audits).length,
-        fetchErrors: 0,
-        source: "cache",
-        generatedAt: snapshot.generatedAt,
-        durationMs: Date.now() - startedAt,
-      },
-    };
+    return cachedAuditResult({
+      currentRepos,
+      previousByRepo,
+      previous,
+      cachePath: options.cachePath,
+      startedAt,
+    });
   }
 
   logger.info(`审计 ${currentRepos.length} 个 GitHub 仓库…`);
@@ -300,8 +318,7 @@ export async function syncRepositoryAudits(options: AuditSyncOptions): Promise<A
     }
   }
 
-  const source: RepositoryAuditSnapshot["source"] =
-    fetched === 0 ? "cache" : cached > 0 ? "mixed" : usedScorecard ? "github+scorecard" : "github";
+  const source = auditSource(fetched, cached, usedScorecard);
 
   const snapshot: RepositoryAuditSnapshot = {
     schemaVersion: 1,
@@ -333,4 +350,4 @@ export async function syncRepositoryAudits(options: AuditSyncOptions): Promise<A
   };
 }
 
-export { EMPTY_AUDIT_SNAPSHOT };
+export { EMPTY_AUDIT_SNAPSHOT } from "./audit-store";

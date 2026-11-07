@@ -41,14 +41,15 @@ const currentRepos = new Set(
   allProjects.flatMap((project) => (project.repo ? [project.repo.toLowerCase()] : [])),
 );
 const previous = await readCodeQualitySnapshot(cachePath);
+const snapshots = await Promise.all(
+  files.map(async (file) =>
+    parseCodeQualitySnapshot(JSON.parse(await readFile(resolve(inputDirectory, file), "utf8"))),
+  ),
+);
 const repositories: Record<string, CodeQualitySnapshot["repositories"][string]> = {};
 let fileCount = 0;
 
-for (const file of files) {
-  const snapshot = parseCodeQualitySnapshot(
-    JSON.parse(await readFile(resolve(inputDirectory, file), "utf8")),
-  );
-
+for (const snapshot of snapshots) {
   for (const [repo, quality] of Object.entries(snapshot.repositories)) {
     if (currentRepos.has(repo.toLowerCase())) {
       repositories[repo.toLowerCase()] = quality;

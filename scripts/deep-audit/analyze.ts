@@ -1,8 +1,8 @@
 import { execFileSync, spawnSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { accessSync, constants, readFileSync } from "node:fs";
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { dirname, join, resolve } from "node:path";
+import { delimiter, dirname, join, resolve } from "node:path";
 import type {
   CodeQualityMetrics,
   CodeQualityVulnerabilities,
@@ -118,16 +118,39 @@ function argument(name: string, fallback?: string): string {
   return value ?? fallback ?? "";
 }
 
-function toolAvailable(command: string): boolean {
-  return spawnSync("which", [command], { encoding: "utf8" }).status === 0;
+function isExecutable(path: string): boolean {
+  try {
+    accessSync(path, constants.X_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function findExecutable(command: string): string | null {
+  for (const directory of (process.env.PATH ?? "").split(delimiter)) {
+    if (!directory) {
+      continue;
+    }
+
+    const candidate = join(directory, command);
+
+    if (isExecutable(candidate)) {
+      return candidate;
+    }
+  }
+
+  return null;
 }
 
 function runTool(command: string, args: readonly string[], cwd: string): ToolResult {
-  if (!toolAvailable(command)) {
+  const executable = findExecutable(command);
+
+  if (!executable) {
     return { stdout: "", stderr: "", status: null, available: false };
   }
 
-  const result = spawnSync(command, args, {
+  const result = spawnSync(executable, args, {
     cwd,
     encoding: "utf8",
     maxBuffer: MAX_BUFFER,
@@ -140,6 +163,22 @@ function runTool(command: string, args: readonly string[], cwd: string): ToolRes
     status: result.status,
     available: true,
   };
+}
+
+interface ProcessOptions {
+  readonly cwd?: string;
+  readonly stdio?: "ignore";
+  readonly env?: NodeJS.ProcessEnv;
+}
+
+function runProcess(command: string, args: readonly string[], options: ProcessOptions): void {
+  const executable = findExecutable(command);
+
+  if (!executable) {
+    throw new Error(`找不到命令 ${command}`);
+  }
+
+  execFileSync(executable, args, options);
 }
 
 function parseCsvLine(line: string): string[] {
@@ -303,20 +342,6 @@ function parseCppcheck(stderr: string): LintMetrics | null {
   return { errors, warnings, tools: ["cppcheck"] };
 }
 
-function mergeLint(results: readonly (LintMetrics | null)[]): LintMetrics | null {
-  const available = results.filter((result): result is LintMetrics => result !== null);
-
-  if (available.length === 0) {
-    return null;
-  }
-
-  return {
-    errors: available.reduce((total, result) => total + result.errors, 0),
-    warnings: available.reduce((total, result) => total + result.warnings, 0),
-    tools: available.flatMap((result) => result.tools),
-  };
-}
-
 function parseGitleaks(reportPath: string): number | null {
   try {
     const findings: unknown = JSON.parse(readFileSync(reportPath, "utf8"));
@@ -420,7 +445,7 @@ async function downloadSparseRepository(
   branch: string,
   directory: string,
 ): Promise<void> {
-  execFileSync(
+  runProcess(
     "git",
     [
       "clone",
@@ -438,11 +463,11 @@ async function downloadSparseRepository(
       env: { ...process.env, GIT_TERMINAL_PROMPT: "0" },
     },
   );
-  execFileSync("git", ["sparse-checkout", "set", "--no-cone", ...SPARSE_PATTERNS], {
+  runProcess("git", ["sparse-checkout", "set", "--no-cone", ...SPARSE_PATTERNS], {
     cwd: directory,
     stdio: "ignore",
   });
-  execFileSync("rm", ["-rf", join(directory, ".git")], { stdio: "ignore" });
+  await rm(join(directory, ".git"), { recursive: true, force: true });
 }
 
 async function downloadRepository(
@@ -476,10 +501,240 @@ async function downloadRepository(
   const archivePath = join(directory, "source.tar.gz");
 
   await writeFile(archivePath, buffer);
-  execFileSync("tar", ["-xzf", archivePath, "-C", directory, "--strip-components=1"], {
+  runProcess("tar", ["-xzf", archivePath, "-C", directory, "--strip-components=1"], {
     stdio: "ignore",
   });
   await rm(archivePath);
+}
+
+function recordToolVersion(
+  toolVersions: Record<string, string>,
+  command: string,
+  versionArgs: readonly string[],
+  cwd: string,
+): void {
+  const version = runTool(command, versionArgs, cwd);
+  const value = version.stdout.trim();
+
+  if (value) {
+    toolVersions[command] = value;
+  }
+}
+
+function collectComplexity(
+  directory: string,
+  tools: string[],
+  toolVersions: Record<string, string>,
+): LizardMetrics | null {
+  const result = runTool("lizard", ["--csv", "--verbose", "."], directory);
+
+  if (!result.available) {
+    return null;
+  }
+
+  tools.push("lizard");
+  recordToolVersion(toolVersions, "lizard", ["--version"], directory);
+
+  return parseLizard(result.stdout);
+}
+
+async function collectDuplication(
+  directory: string,
+  tools: string[],
+  toolVersions: Record<string, string>,
+): Promise<{
+  percentage: number | null;
+  clones: number | null;
+  lines: number | null;
+} | null> {
+  const outputDirectory = join(directory, ".jscpd-report");
+  await mkdir(outputDirectory, { recursive: true });
+  const result = runTool(
+    "jscpd",
+    [
+      ".",
+      "--reporters",
+      "json",
+      "--output",
+      outputDirectory,
+      "--silent",
+      "--ignore",
+      "**/node_modules/**,**/vendor/**,**/dist/**,**/build/**,**/*.min.*",
+    ],
+    directory,
+  );
+
+  if (!result.available) {
+    return null;
+  }
+
+  tools.push("jscpd");
+  recordToolVersion(toolVersions, "jscpd", ["--version"], directory);
+
+  return parseJscpd(outputDirectory);
+}
+
+interface LinterDefinition {
+  readonly command: string;
+  readonly args: readonly string[];
+  readonly versionArgs: readonly string[];
+  readonly parse: (result: ToolResult) => LintMetrics | null;
+}
+
+function linterFor(language: string): LinterDefinition | null {
+  if (language === "python") {
+    return {
+      command: "ruff",
+      args: ["check", "--output-format", "json", "--no-cache", "."],
+      versionArgs: ["--version"],
+      parse: (result) => parseRuff(result.stdout),
+    };
+  }
+
+  if (language === "javascript" || language === "typescript") {
+    return {
+      command: "oxlint",
+      args: [".", "--format", "json"],
+      versionArgs: ["--version"],
+      parse: (result) => parseOxlint(result.stdout),
+    };
+  }
+
+  if (language === "c" || language === "c++") {
+    return {
+      command: "cppcheck",
+      args: [
+        "--enable=warning,style,performance,portability",
+        "--xml",
+        "--xml-version=2",
+        "--quiet",
+        ".",
+      ],
+      versionArgs: ["--version"],
+      parse: (result) => parseCppcheck(result.stderr),
+    };
+  }
+
+  return null;
+}
+
+function collectLint(
+  language: string,
+  directory: string,
+  tools: string[],
+  toolVersions: Record<string, string>,
+): LintMetrics | null {
+  const linter = linterFor(language);
+
+  if (!linter) {
+    return null;
+  }
+
+  const result = runTool(linter.command, linter.args, directory);
+
+  if (!result.available) {
+    return null;
+  }
+
+  const lint = linter.parse(result);
+
+  if (!lint) {
+    return null;
+  }
+
+  tools.push(linter.command);
+  recordToolVersion(toolVersions, linter.command, linter.versionArgs, directory);
+
+  return lint;
+}
+
+function collectSecrets(
+  directory: string,
+  tools: string[],
+  toolVersions: Record<string, string>,
+): number | null {
+  const reportPath = join(directory, ".gitleaks-report.json");
+  const result = runTool(
+    "gitleaks",
+    ["dir", ".", "--report-format", "json", "--report-path", reportPath, "--no-banner"],
+    directory,
+  );
+
+  if (!result.available) {
+    return null;
+  }
+
+  const secrets = parseGitleaks(reportPath);
+
+  if (secrets === null) {
+    return null;
+  }
+
+  tools.push("gitleaks");
+  recordToolVersion(toolVersions, "gitleaks", ["version"], directory);
+
+  return secrets;
+}
+
+function collectVulnerabilities(
+  directory: string,
+  tools: string[],
+  toolVersions: Record<string, string>,
+): CodeQualityVulnerabilities | null {
+  const result = runTool("osv-scanner", ["scan", "source", "-r", ".", "-f", "json"], directory);
+
+  if (!result.available) {
+    return null;
+  }
+
+  const vulnerabilities = parseOsv(result.stdout);
+
+  if (vulnerabilities === null) {
+    return null;
+  }
+
+  tools.push("osv-scanner");
+  recordToolVersion(toolVersions, "osv-scanner", ["--version"], directory);
+
+  return vulnerabilities;
+}
+
+function buildMetrics(
+  lizard: LizardMetrics | null,
+  duplication: { percentage: number | null; clones: number | null; lines: number | null } | null,
+  lint: LintMetrics | null,
+  secrets: number | null,
+  vulnerabilities: CodeQualityVulnerabilities | null,
+): CodeQualityMetrics {
+  return {
+    files: lizard?.files ?? duplication?.lines ?? 0,
+    loc: lizard?.loc ?? duplication?.lines ?? 0,
+    functions: lizard?.functions ?? 0,
+    averageComplexity: lizard?.averageComplexity ?? null,
+    maxComplexity: lizard?.maxComplexity ?? null,
+    highComplexityFunctions: lizard?.highComplexityFunctions ?? null,
+    duplicationPercentage: duplication?.percentage ?? null,
+    duplicatedBlocks: duplication?.clones ?? null,
+    lintErrors: lint?.errors ?? null,
+    lintWarnings: lint?.warnings ?? null,
+    secrets,
+    vulnerabilities,
+  };
+}
+
+function isComplete(
+  lizard: LizardMetrics | null,
+  duplication: object | null,
+  lint: LintMetrics | null,
+  secrets: number | null,
+  vulnerabilities: CodeQualityVulnerabilities | null,
+): boolean {
+  return (
+    lizard !== null &&
+    duplication !== null &&
+    lint !== null &&
+    (secrets !== null || vulnerabilities !== null)
+  );
 }
 
 async function analyzeRepository(
@@ -518,136 +773,11 @@ async function analyzeRepository(
 
     const tools: string[] = [];
     const toolVersions: Record<string, string> = {};
-    const lizardResult = runTool("lizard", ["--csv", "--verbose", "."], directory);
-    const lizard = lizardResult.available ? parseLizard(lizardResult.stdout) : null;
-
-    if (lizardResult.available) {
-      tools.push("lizard");
-      const version = runTool("lizard", ["--version"], directory);
-      if (version.stdout.trim()) {
-        toolVersions.lizard = version.stdout.trim();
-      }
-    }
-
-    const jscpdOutput = join(directory, ".jscpd-report");
-    await mkdir(jscpdOutput, { recursive: true });
-    const jscpdResult = runTool(
-      "jscpd",
-      [
-        ".",
-        "--reporters",
-        "json",
-        "--output",
-        jscpdOutput,
-        "--silent",
-        "--ignore",
-        "**/node_modules/**,**/vendor/**,**/dist/**,**/build/**,**/*.min.*",
-      ],
-      directory,
-    );
-    const duplication = jscpdResult.available ? await parseJscpd(jscpdOutput) : null;
-
-    if (jscpdResult.available) {
-      tools.push("jscpd");
-      const version = runTool("jscpd", ["--version"], directory);
-      if (version.stdout.trim()) {
-        toolVersions.jscpd = version.stdout.trim();
-      }
-    }
-
-    const lintResults: (LintMetrics | null)[] = [];
-    const language = (entry.language ?? "").toLowerCase();
-
-    if (language === "python") {
-      const result = runTool(
-        "ruff",
-        ["check", "--output-format", "json", "--no-cache", "."],
-        directory,
-      );
-      if (result.available) {
-        const lint = parseRuff(result.stdout);
-        if (lint) {
-          lintResults.push(lint);
-          tools.push("ruff");
-          const version = runTool("ruff", ["--version"], directory);
-          if (version.stdout.trim()) {
-            toolVersions.ruff = version.stdout.trim();
-          }
-        }
-      }
-    }
-
-    if (language === "javascript" || language === "typescript") {
-      const result = runTool("oxlint", [".", "--format", "json"], directory);
-      if (result.available) {
-        const lint = parseOxlint(result.stdout);
-        if (lint) {
-          lintResults.push(lint);
-          tools.push("oxlint");
-          const version = runTool("oxlint", ["--version"], directory);
-          if (version.stdout.trim()) {
-            toolVersions.oxlint = version.stdout.trim();
-          }
-        }
-      }
-    }
-
-    if (language === "c" || language === "c++") {
-      const result = runTool(
-        "cppcheck",
-        [
-          "--enable=warning,style,performance,portability",
-          "--xml",
-          "--xml-version=2",
-          "--quiet",
-          ".",
-        ],
-        directory,
-      );
-      if (result.available) {
-        const lint = parseCppcheck(result.stderr);
-        if (lint) {
-          lintResults.push(lint);
-          tools.push("cppcheck");
-          const version = runTool("cppcheck", ["--version"], directory);
-          if (version.stdout.trim()) {
-            toolVersions.cppcheck = version.stdout.trim();
-          }
-        }
-      }
-    }
-
-    const lint = mergeLint(lintResults);
-
-    const gitleaksReport = join(directory, ".gitleaks-report.json");
-    let secrets: number | null = null;
-    const gitleaks = runTool(
-      "gitleaks",
-      ["dir", ".", "--report-format", "json", "--report-path", gitleaksReport, "--no-banner"],
-      directory,
-    );
-
-    if (gitleaks.available) {
-      secrets = parseGitleaks(gitleaksReport);
-      if (secrets !== null) {
-        tools.push("gitleaks");
-        const version = runTool("gitleaks", ["version"], directory);
-        if (version.stdout.trim()) {
-          toolVersions.gitleaks = version.stdout.trim();
-        }
-      }
-    }
-
-    const osv = runTool("osv-scanner", ["scan", "source", "-r", ".", "-f", "json"], directory);
-    const vulnerabilities = osv.available ? parseOsv(osv.stdout) : null;
-
-    if (osv.available && vulnerabilities !== null) {
-      tools.push("osv-scanner");
-      const version = runTool("osv-scanner", ["--version"], directory);
-      if (version.stdout.trim()) {
-        toolVersions["osv-scanner"] = version.stdout.trim();
-      }
-    }
+    const lizard = collectComplexity(directory, tools, toolVersions);
+    const duplication = await collectDuplication(directory, tools, toolVersions);
+    const lint = collectLint((entry.language ?? "").toLowerCase(), directory, tools, toolVersions);
+    const secrets = collectSecrets(directory, tools, toolVersions);
+    const vulnerabilities = collectVulnerabilities(directory, tools, toolVersions);
 
     if (!lizard && !duplication) {
       return {
@@ -660,32 +790,14 @@ async function analyzeRepository(
       };
     }
 
-    const metrics: CodeQualityMetrics = {
-      files: lizard?.files ?? duplication?.lines ?? 0,
-      loc: lizard?.loc ?? duplication?.lines ?? 0,
-      functions: lizard?.functions ?? 0,
-      averageComplexity: lizard?.averageComplexity ?? null,
-      maxComplexity: lizard?.maxComplexity ?? null,
-      highComplexityFunctions: lizard?.highComplexityFunctions ?? null,
-      duplicationPercentage: duplication?.percentage ?? null,
-      duplicatedBlocks: duplication?.clones ?? null,
-      lintErrors: lint?.errors ?? null,
-      lintWarnings: lint?.warnings ?? null,
-      secrets,
-      vulnerabilities,
-    };
-    const complete =
-      lizard !== null &&
-      duplication !== null &&
-      lint !== null &&
-      (secrets !== null || vulnerabilities !== null);
-
     return {
       ...base,
-      status: complete ? "complete" : "partial",
+      status: isComplete(lizard, duplication, lint, secrets, vulnerabilities)
+        ? "complete"
+        : "partial",
       tools,
       toolVersions,
-      metrics,
+      metrics: buildMetrics(lizard, duplication, lint, secrets, vulnerabilities),
     };
   } finally {
     await rm(directory, { recursive: true, force: true });
@@ -713,6 +825,7 @@ if (!chunk) {
   throw new Error(`找不到审计分片 ${chunkIndex}`);
 }
 
+const activeChunk = chunk;
 const token = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN;
 const repositories: Record<string, RepositoryCodeQuality> = {};
 const writePartial = async () => {
@@ -725,9 +838,19 @@ const writePartial = async () => {
   });
 };
 
-for (const [index, entry] of chunk.repositories.entries()) {
+async function analyzeChunk(index = 0): Promise<void> {
+  if (index >= activeChunk.repositories.length) {
+    return;
+  }
+
+  const entry = activeChunk.repositories[index];
+
+  if (!entry) {
+    return;
+  }
+
   console.info(
-    `[${chunkIndex}/${chunks.chunks.length}] ${index + 1}/${chunk.repositories.length} ${entry.repo}`,
+    `[${chunkIndex}/${chunks.chunks.length}] ${index + 1}/${activeChunk.repositories.length} ${entry.repo}`,
   );
 
   try {
@@ -750,7 +873,9 @@ for (const [index, entry] of chunk.repositories.entries()) {
   }
 
   await writePartial();
+  await analyzeChunk(index + 1);
 }
 
+await analyzeChunk();
 await writePartial();
 console.info(`写入 ${outputPath}（${Object.keys(repositories).length} 个仓库）`);
