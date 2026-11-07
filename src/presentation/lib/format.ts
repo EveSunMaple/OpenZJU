@@ -60,5 +60,7 @@ export function formatCommitFrequency(
     return null;
   }
 
-  return `90 天 ${capped ? `${count}+` : count} 次`;
+  const total = capped ? `${count}+` : String(count);
+
+  return `90 天 ${total} 次`;
 }

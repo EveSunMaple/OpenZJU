@@ -6,6 +6,7 @@ const REQUEST_TIMEOUT_MS = 20_000;
 const DAY_IN_MS = 24 * 60 * 60 * 1000;
 const MAX_COMMITS_PER_PAGE = 100;
 const GRAPHQL_BATCH_SIZE = 10;
+const UPDATED_PATTERN = /<updated>([^<]+)<\/updated>/;
 
 const REPOSITORY_FRAGMENT = `
 fragment RepositoryStats on Repository {
@@ -62,6 +63,13 @@ interface GraphQLRepository {
 interface GraphQLResponse {
   data?: Record<string, GraphQLRepository | null>;
   errors?: Array<{ message: string; path?: Array<string | number> }>;
+}
+
+interface GraphQLBatchContext {
+  readonly since90: string;
+  readonly since365: string;
+  readonly now: Date;
+  readonly result: Map<string, RepositoryStats>;
 }
 
 interface RestRepository {
@@ -238,7 +246,7 @@ function parseAtomCommitDates(xml: string): string[] {
   return xml
     .split("<entry>")
     .slice(1)
-    .map((entry) => entry.match(/<updated>([^<]+)<\/updated>/)?.[1])
+    .map((entry) => UPDATED_PATTERN.exec(entry)?.[1])
     .filter((date): date is string => Boolean(date));
 }
 
@@ -305,53 +313,73 @@ export class GitHubClient {
     }
 
     const now = this.#now();
-    const since90 = new Date(now.getTime() - 90 * DAY_IN_MS).toISOString();
-    const since365 = new Date(now.getTime() - 365 * DAY_IN_MS).toISOString();
     const result = new Map<string, RepositoryStats>();
+    const context: GraphQLBatchContext = {
+      since90: new Date(now.getTime() - 90 * DAY_IN_MS).toISOString(),
+      since365: new Date(now.getTime() - 365 * DAY_IN_MS).toISOString(),
+      now,
+      result,
+    };
 
-    for (let offset = 0; offset < repos.length; offset += GRAPHQL_BATCH_SIZE) {
-      const batch = repos.slice(offset, offset + GRAPHQL_BATCH_SIZE);
-      const response = await this.#fetch(`${this.#apiUrl}/graphql`, {
-        method: "POST",
-        headers: {
-          ...this.#headers(),
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: buildGraphQLQuery(batch),
-          variables: { since90, since365 },
-        }),
-        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
-      });
-      const remaining = parseRemaining(response.headers);
-      this.#lastRemaining = remaining;
-
-      if (!response.ok) {
-        throw new GitHubApiError(
-          `GitHub GraphQL ${response.status}: ${response.statusText}`,
-          response.status,
-          remaining,
-        );
-      }
-
-      const payload = (await response.json()) as GraphQLResponse;
-      const failedAliases = new Set(
-        (payload.errors ?? [])
-          .flatMap((error) => error.path ?? [])
-          .filter((part): part is string => typeof part === "string" && part.startsWith("repo")),
-      );
-
-      batch.forEach((repo, index) => {
-        const key = `repo${index}`;
-        const data = payload.data?.[key];
-
-        if (data && !failedAliases.has(key)) {
-          result.set(repo.toLowerCase(), normalizeGraphQLStats(data, now));
-        }
-      });
-    }
+    await this.#fetchGraphQLBatches(repos, 0, context);
 
     return result;
+  }
+
+  async #fetchGraphQLBatches(
+    repos: readonly string[],
+    offset: number,
+    context: GraphQLBatchContext,
+  ): Promise<void> {
+    if (offset >= repos.length) {
+      return;
+    }
+
+    const batch = repos.slice(offset, offset + GRAPHQL_BATCH_SIZE);
+
+    await this.#fetchGraphQLBatch(batch, context);
+    await this.#fetchGraphQLBatches(repos, offset + GRAPHQL_BATCH_SIZE, context);
+  }
+
+  async #fetchGraphQLBatch(batch: readonly string[], context: GraphQLBatchContext): Promise<void> {
+    const response = await this.#fetch(`${this.#apiUrl}/graphql`, {
+      method: "POST",
+      headers: {
+        ...this.#headers(),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: buildGraphQLQuery(batch),
+        variables: { since90: context.since90, since365: context.since365 },
+      }),
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+    });
+    const remaining = parseRemaining(response.headers);
+    this.#lastRemaining = remaining;
+
+    if (!response.ok) {
+      throw new GitHubApiError(
+        `GitHub GraphQL ${response.status}: ${response.statusText}`,
+        response.status,
+        remaining,
+      );
+    }
+
+    const payload = (await response.json()) as GraphQLResponse;
+    const failedAliases = new Set(
+      (payload.errors ?? [])
+        .flatMap((error) => error.path ?? [])
+        .filter((part): part is string => typeof part === "string" && part.startsWith("repo")),
+    );
+
+    batch.forEach((repo, index) => {
+      const key = `repo${index}`;
+      const data = payload.data?.[key];
+
+      if (data && !failedAliases.has(key)) {
+        context.result.set(repo.toLowerCase(), normalizeGraphQLStats(data, context.now));
+      }
+    });
   }
 
   async fetchRestStats(repo: string): Promise<RepositoryStats> {

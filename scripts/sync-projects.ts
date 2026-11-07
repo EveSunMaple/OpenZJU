@@ -59,7 +59,9 @@ async function main(): Promise<void> {
   console.info(`同步时间：${summary.generatedAt || "尚未同步"}`);
 }
 
-main().catch((error: unknown) => {
+try {
+  await main();
+} catch (error) {
   console.error("GitHub 数据同步失败，构建将继续使用已有缓存。");
   console.error(error);
-});
+}

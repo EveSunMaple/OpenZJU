@@ -233,26 +233,21 @@ export class CatalogController {
     return matchesSearch(card.dataset.search ?? "", this.query);
   }
 
-  private applyFilters(): void {
-    let visible = 0;
-    const queryMatches = new Map<string, number>();
+  private applyCardFilter(card: HTMLElement, queryMatches: Map<string, number>): boolean {
+    const queryMatch = this.matchesCard(card);
+    const status = card.dataset.status ?? "unknown";
+    const isVisible = queryMatch && (this.status === "all" || status === this.status);
 
-    for (const card of this.cards) {
-      const queryMatch = this.matchesCard(card);
-      const status = card.dataset.status ?? "unknown";
-      const isVisible = queryMatch && (this.status === "all" || status === this.status);
+    card.hidden = !isVisible;
 
-      card.hidden = !isVisible;
-
-      if (queryMatch) {
-        queryMatches.set(status, (queryMatches.get(status) ?? 0) + 1);
-      }
-
-      if (isVisible) {
-        visible += 1;
-      }
+    if (queryMatch) {
+      queryMatches.set(status, (queryMatches.get(status) ?? 0) + 1);
     }
 
+    return isVisible;
+  }
+
+  private renderResults(visible: number): void {
     const total = this.cards.length;
 
     if (this.resultsCount) {
@@ -263,21 +258,41 @@ export class CatalogController {
     if (this.emptyState) {
       this.emptyState.hidden = visible !== 0;
     }
+  }
 
+  private statusCount(value: string, queryMatches: Map<string, number>): number {
+    if (value === "all") {
+      return [...queryMatches.values()].reduce((total, count) => total + count, 0);
+    }
+
+    return queryMatches.get(value) ?? 0;
+  }
+
+  private renderStatusCounts(queryMatches: Map<string, number>): void {
     for (const button of this.statusButtons) {
       const value = button.dataset.statusFilter ?? "all";
-      const count =
-        value === "all"
-          ? [...queryMatches.values()].reduce((a, b) => a + b, 0)
-          : (queryMatches.get(value) ?? 0);
       const countElement = this.statusCounts.get(button);
 
       if (countElement) {
-        countElement.textContent = String(count);
+        countElement.textContent = String(this.statusCount(value, queryMatches));
       }
 
       button.setAttribute("aria-pressed", String(value === this.status));
     }
+  }
+
+  private applyFilters(): void {
+    const queryMatches = new Map<string, number>();
+    let visible = 0;
+
+    for (const card of this.cards) {
+      if (this.applyCardFilter(card, queryMatches)) {
+        visible += 1;
+      }
+    }
+
+    this.renderResults(visible);
+    this.renderStatusCounts(queryMatches);
 
     if (this.clearButton) {
       this.clearButton.hidden = this.query.length === 0;
@@ -343,7 +358,8 @@ export class CatalogController {
     }
 
     const search = params.toString();
-    const nextUrl = `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`;
+    const query = search ? `?${search}` : "";
+    const nextUrl = `${window.location.pathname}${query}${window.location.hash}`;
 
     window.history.replaceState({}, "", nextUrl);
   }

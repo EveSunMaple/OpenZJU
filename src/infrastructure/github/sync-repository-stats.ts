@@ -58,20 +58,24 @@ async function mapWithConcurrency<T, R>(
   const results = new Array<R | undefined>(items.length);
   let nextIndex = 0;
 
-  const runners = Array.from({ length: Math.min(concurrency, items.length) }, async () => {
-    while (nextIndex < items.length) {
-      const index = nextIndex;
-      nextIndex += 1;
+  const runWorker = async (): Promise<void> => {
+    const index = nextIndex;
+    nextIndex += 1;
 
-      try {
-        results[index] = await worker(items[index], index);
-      } catch {
-        results[index] = undefined;
-      }
+    if (index >= items.length) {
+      return;
     }
-  });
 
-  await Promise.all(runners);
+    try {
+      results[index] = await worker(items[index], index);
+    } catch {
+      results[index] = undefined;
+    }
+
+    await runWorker();
+  };
+
+  await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, () => runWorker()));
 
   return results;
 }
@@ -80,107 +84,74 @@ function uniqueRepos(projects: readonly Project[]): string[] {
   return [...new Set(projects.flatMap((project) => (project.repo ? [project.repo] : [])))];
 }
 
-export async function syncRepositoryStats(options: SyncOptions): Promise<SyncResult> {
-  const logger = options.logger ?? console;
-  const startedAt = Date.now();
-  const now = options.now ?? new Date();
-  const repos = uniqueRepos(options.projects);
-  const previous = await readSnapshot(options.cachePath).catch(() => EMPTY_SNAPSHOT);
-  const previousByRepo = new Map(
-    Object.entries(previous.repositories).map(([repo, stats]) => [repo.toLowerCase(), stats]),
-  );
+interface StatsFetchState {
+  fetchErrors: number;
+  rateLimitErrors: number;
+}
 
-  if (options.offline || repos.length === 0) {
-    const snapshot: RepositoryStatsSnapshot = {
-      ...previous,
-      source: "cache",
-      repositories: Object.fromEntries(
-        repos
-          .map((repo) => [repo.toLowerCase(), previousByRepo.get(repo.toLowerCase())] as const)
-          .filter((entry): entry is [string, RepositoryStats] => Boolean(entry[1])),
-      ),
-    };
-
-    const summary: SyncSummary = {
-      total: repos.length,
-      fetched: 0,
-      cached: Object.keys(snapshot.repositories).length,
-      missing: repos.length - Object.keys(snapshot.repositories).length,
-      fetchErrors: 0,
-      rateLimitErrors: 0,
-      source: "cache",
-      generatedAt: snapshot.generatedAt,
-      durationMs: Date.now() - startedAt,
-    };
-
-    return { snapshot, summary };
+async function fetchGraphQL(
+  client: StatsClient,
+  repos: readonly string[],
+  logger: Pick<Console, "info" | "warn" | "error">,
+): Promise<Map<string, RepositoryStats> | null> {
+  if (!client.hasToken) {
+    return null;
   }
 
-  const client =
-    options.client ??
-    new GitHubClient({
-      token: options.token,
-    });
+  try {
+    const graph = await client.fetchGraphQLStats(repos);
 
-  logger.info(
-    `同步 ${repos.length} 个 GitHub 仓库${client.hasToken ? "（已认证）" : "（未认证，受速率限制）"}…`,
-  );
-
-  const fresh = new Map<string, RepositoryStats>();
-  let usedGraphQL = false;
-  let usedRest = false;
-  let usedCache = false;
-  let fetchErrors = 0;
-  let rateLimitErrors = 0;
-
-  if (client.hasToken) {
-    try {
-      const graph = await client.fetchGraphQLStats(repos);
-
-      for (const [repo, stats] of graph) {
-        fresh.set(repo, stats);
-      }
-
-      if (fresh.size > 0) {
-        usedGraphQL = true;
-        logger.info(`  GraphQL 返回 ${fresh.size}/${repos.length} 个仓库。`);
-      }
-    } catch (error) {
-      logger.warn(`  GraphQL 同步失败，改用 REST：${(error as Error).message}`);
+    if (graph.size > 0) {
+      logger.info(`  GraphQL 返回 ${graph.size}/${repos.length} 个仓库。`);
     }
+
+    return graph;
+  } catch (error) {
+    logger.warn(`  GraphQL 同步失败，改用 REST：${(error as Error).message}`);
+    return null;
   }
+}
 
-  const missingAfterGraphQL = repos.filter((repo) => !fresh.has(repo.toLowerCase()));
+async function fetchRest(
+  client: StatsClient,
+  repos: readonly string[],
+  logger: Pick<Console, "info" | "warn" | "error">,
+  state: StatsFetchState,
+): Promise<Map<string, RepositoryStats>> {
+  const results = await mapWithConcurrency(repos, REST_CONCURRENCY, async (repo) => {
+    try {
+      return await client.fetchRestStats(repo);
+    } catch (error) {
+      state.fetchErrors += 1;
 
-  const restResults = await mapWithConcurrency(
-    missingAfterGraphQL,
-    REST_CONCURRENCY,
-    async (repo) => {
-      try {
-        return await client.fetchRestStats(repo);
-      } catch (error) {
-        fetchErrors += 1;
-
-        if (isRateLimitError(error)) {
-          rateLimitErrors += 1;
-        }
-
-        logger.warn(`  REST 同步失败 ${repo}：${(error as Error).message}`);
-
-        return undefined;
+      if (isRateLimitError(error)) {
+        state.rateLimitErrors += 1;
       }
-    },
-  );
 
-  for (const stats of restResults) {
+      logger.warn(`  REST 同步失败 ${repo}：${(error as Error).message}`);
+
+      return undefined;
+    }
+  });
+  const fresh = new Map<string, RepositoryStats>();
+
+  for (const stats of results) {
     if (stats) {
       fresh.set(stats.fullName.toLowerCase(), stats);
-      usedRest = true;
     }
   }
 
+  return fresh;
+}
+
+function mergeStats(
+  repos: readonly string[],
+  fresh: ReadonlyMap<string, RepositoryStats>,
+  previousByRepo: ReadonlyMap<string, RepositoryStats>,
+): { repositories: Record<string, RepositoryStats>; cached: number; usedCache: boolean } {
   const repositories: Record<string, RepositoryStats> = {};
   let cached = 0;
+  let usedCache = false;
 
   for (const repo of repos) {
     const key = repo.toLowerCase();
@@ -200,18 +171,100 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
     }
   }
 
+  return { repositories, cached, usedCache };
+}
+
+function statsSource(
+  fetched: number,
+  usedCache: boolean,
+  usedGraphQL: boolean,
+  usedRest: boolean,
+): RepositoryStatsSnapshot["source"] {
+  if (fetched === 0) {
+    return "cache";
+  }
+
+  if (usedCache || (usedGraphQL && usedRest)) {
+    return "mixed";
+  }
+
+  if (usedGraphQL) {
+    return "github-graphql";
+  }
+
+  return "github-rest";
+}
+
+function cachedStatsResult(
+  repos: readonly string[],
+  previous: RepositoryStatsSnapshot,
+  previousByRepo: ReadonlyMap<string, RepositoryStats>,
+  startedAt: number,
+): SyncResult {
+  const snapshot: RepositoryStatsSnapshot = {
+    ...previous,
+    source: "cache",
+    repositories: Object.fromEntries(
+      repos
+        .map((repo) => [repo.toLowerCase(), previousByRepo.get(repo.toLowerCase())] as const)
+        .filter((entry): entry is [string, RepositoryStats] => Boolean(entry[1])),
+    ),
+  };
+
+  return {
+    snapshot,
+    summary: {
+      total: repos.length,
+      fetched: 0,
+      cached: Object.keys(snapshot.repositories).length,
+      missing: repos.length - Object.keys(snapshot.repositories).length,
+      fetchErrors: 0,
+      rateLimitErrors: 0,
+      source: "cache",
+      generatedAt: snapshot.generatedAt,
+      durationMs: Date.now() - startedAt,
+    },
+  };
+}
+
+export async function syncRepositoryStats(options: SyncOptions): Promise<SyncResult> {
+  const logger = options.logger ?? console;
+  const startedAt = Date.now();
+  const now = options.now ?? new Date();
+  const repos = uniqueRepos(options.projects);
+  const previous = await readSnapshot(options.cachePath).catch(() => EMPTY_SNAPSHOT);
+  const previousByRepo = new Map(
+    Object.entries(previous.repositories).map(([repo, stats]) => [repo.toLowerCase(), stats]),
+  );
+
+  if (options.offline || repos.length === 0) {
+    return cachedStatsResult(repos, previous, previousByRepo, startedAt);
+  }
+
+  const client =
+    options.client ??
+    new GitHubClient({
+      token: options.token,
+    });
+
+  logger.info(
+    `同步 ${repos.length} 个 GitHub 仓库${client.hasToken ? "（已认证）" : "（未认证，受速率限制）"}…`,
+  );
+
+  const graph = await fetchGraphQL(client, repos, logger);
+  const fresh = graph ?? new Map<string, RepositoryStats>();
+  const missingAfterGraphQL = repos.filter((repo) => !fresh.has(repo.toLowerCase()));
+  const state: StatsFetchState = { fetchErrors: 0, rateLimitErrors: 0 };
+  const rest = await fetchRest(client, missingAfterGraphQL, logger, state);
+
+  for (const [repo, stats] of rest) {
+    fresh.set(repo, stats);
+  }
+
+  const { repositories, cached, usedCache } = mergeStats(repos, fresh, previousByRepo);
   const fetched = Object.keys(repositories).length - cached;
   const missing = repos.length - Object.keys(repositories).length;
-  const source: RepositoryStatsSnapshot["source"] =
-    fetched === 0
-      ? "cache"
-      : usedCache
-        ? "mixed"
-        : usedGraphQL && usedRest
-          ? "mixed"
-          : usedGraphQL
-            ? "github-graphql"
-            : "github-rest";
+  const source = statsSource(fetched, usedCache, graph !== null && graph.size > 0, rest.size > 0);
 
   const snapshot: RepositoryStatsSnapshot = {
     schemaVersion: 1,
@@ -223,7 +276,7 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
   await writeSnapshot(options.cachePath, snapshot);
 
   logger.info(
-    `同步完成：${fetched} 个更新，${cached} 个使用缓存，${missing} 个缺失，${fetchErrors} 次请求失败（其中 ${rateLimitErrors} 次限流），用时 ${Date.now() - startedAt}ms。`,
+    `同步完成：${fetched} 个更新，${cached} 个使用缓存，${missing} 个缺失，${state.fetchErrors} 次请求失败（其中 ${state.rateLimitErrors} 次限流），用时 ${Date.now() - startedAt}ms。`,
   );
 
   return {
@@ -233,8 +286,8 @@ export async function syncRepositoryStats(options: SyncOptions): Promise<SyncRes
       fetched,
       cached,
       missing,
-      fetchErrors,
-      rateLimitErrors,
+      fetchErrors: state.fetchErrors,
+      rateLimitErrors: state.rateLimitErrors,
       source,
       generatedAt: snapshot.generatedAt,
       durationMs: Date.now() - startedAt,

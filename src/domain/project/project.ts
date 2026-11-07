@@ -38,55 +38,86 @@ export function repositoryUrl(repo: string): string {
   return `https://github.com/${repo}`;
 }
 
+function pushIssue(issues: ProjectValidationIssue[], slug: string, message: string): void {
+  issues.push({ slug, message });
+}
+
+function validateSlug(
+  project: Project,
+  slugs: Set<string>,
+  issues: ProjectValidationIssue[],
+): void {
+  if (!SLUG_PATTERN.test(project.slug)) {
+    pushIssue(issues, project.slug, "slug 必须为小写 kebab-case");
+  }
+
+  if (slugs.has(project.slug)) {
+    pushIssue(issues, project.slug, "slug 重复");
+  }
+
+  slugs.add(project.slug);
+}
+
+function validateBasics(project: Project, issues: ProjectValidationIssue[]): void {
+  if (project.name.trim().length < 2) {
+    pushIssue(issues, project.slug, "name 至少需要 2 个字符");
+  }
+
+  if (project.description.trim().length < 16) {
+    pushIssue(issues, project.slug, "description 至少需要 16 个字符");
+  }
+
+  if (project.tags.length === 0) {
+    pushIssue(issues, project.slug, "至少需要一个标签");
+  }
+
+  if (new Set(project.tags).size !== project.tags.length) {
+    pushIssue(issues, project.slug, "标签不能重复");
+  }
+}
+
+function validateRepo(
+  project: Project,
+  repos: Set<string>,
+  issues: ProjectValidationIssue[],
+): void {
+  if (!project.repo) {
+    if (!project.links?.website && !project.links?.download) {
+      pushIssue(issues, project.slug, "至少需要 repo 或一个外部链接");
+    }
+
+    return;
+  }
+
+  if (!REPO_PATTERN.test(project.repo)) {
+    pushIssue(issues, project.slug, "repo 必须为 owner/name");
+  }
+
+  if (repos.has(project.repo.toLowerCase())) {
+    pushIssue(issues, project.slug, "repo 重复");
+  }
+
+  repos.add(project.repo.toLowerCase());
+}
+
+function validateLinks(project: Project, issues: ProjectValidationIssue[]): void {
+  for (const [key, value] of Object.entries(project.links ?? {})) {
+    if (value && !isValidUrl(value)) {
+      pushIssue(issues, project.slug, `links.${key} 不是合法 URL`);
+    }
+  }
+}
+
 export function validateProjects(projects: readonly Project[]): ProjectValidationIssue[] {
   const issues: ProjectValidationIssue[] = [];
   const slugs = new Set<string>();
   const repos = new Set<string>();
 
   for (const project of projects) {
-    if (!SLUG_PATTERN.test(project.slug)) {
-      issues.push({ slug: project.slug, message: "slug 必须为小写 kebab-case" });
-    }
-
-    if (slugs.has(project.slug)) {
-      issues.push({ slug: project.slug, message: "slug 重复" });
-    }
-    slugs.add(project.slug);
-
-    if (project.name.trim().length < 2) {
-      issues.push({ slug: project.slug, message: "name 至少需要 2 个字符" });
-    }
-
-    if (project.description.trim().length < 16) {
-      issues.push({ slug: project.slug, message: "description 至少需要 16 个字符" });
-    }
-
-    if (project.repo) {
-      if (!REPO_PATTERN.test(project.repo)) {
-        issues.push({ slug: project.slug, message: "repo 必须为 owner/name" });
-      }
-
-      if (repos.has(project.repo.toLowerCase())) {
-        issues.push({ slug: project.slug, message: "repo 重复" });
-      }
-      repos.add(project.repo.toLowerCase());
-    } else if (!project.links?.website && !project.links?.download) {
-      issues.push({ slug: project.slug, message: "至少需要 repo 或一个外部链接" });
-    }
-
-    if (project.tags.length === 0) {
-      issues.push({ slug: project.slug, message: "至少需要一个标签" });
-    }
-
-    if (new Set(project.tags).size !== project.tags.length) {
-      issues.push({ slug: project.slug, message: "标签不能重复" });
-    }
-
-    for (const [key, value] of Object.entries(project.links ?? {})) {
-      if (value && !isValidUrl(value)) {
-        issues.push({ slug: project.slug, message: `links.${key} 不是合法 URL` });
-      }
-    }
+    validateSlug(project, slugs, issues);
+    validateBasics(project, issues);
+    validateRepo(project, repos, issues);
+    validateLinks(project, issues);
   }
 
   return issues;
