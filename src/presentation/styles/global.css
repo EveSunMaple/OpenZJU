@@ -832,9 +832,16 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
   color: var(--muted);
 }
 
-.catalog-search .search-field__input {
+.catalog-search .search-field__input,
+.catalog-search .search-field__input:hover,
+.catalog-search .search-field__input:focus,
+.catalog-search .search-field__input:focus-visible {
   height: 100%;
   padding-inline: 0.25rem 0.5rem;
+  border: 0;
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
   color: var(--foreground);
   font-family: var(--font-body);
   font-size: 0.92rem;
@@ -846,25 +853,42 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
 
 .search-clear {
   display: grid;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.55rem;
+  height: 1.55rem;
   flex-shrink: 0;
   place-items: center;
+  margin-right: 0.65rem;
   border: 0;
   border-radius: 999px;
-  background: color-mix(in oklch, var(--foreground) 7%, transparent);
+  background: transparent;
   color: var(--muted);
   cursor: pointer;
+  opacity: 0.82;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    opacity 150ms ease;
 }
 
 .search-clear:hover {
-  background: color-mix(in oklch, var(--foreground) 12%, transparent);
+  background: color-mix(in oklch, var(--foreground) 10%, transparent);
   color: var(--foreground);
+  opacity: 1;
+}
+
+.search-clear:focus-visible {
+  outline: none;
+  background: color-mix(in oklch, var(--foreground) 10%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--accent) 28%, transparent);
 }
 
 .search-clear svg {
   width: 0.8rem;
   height: 0.8rem;
+}
+
+.search-clear:not([hidden]) ~ .search-shortcut {
+  display: none;
 }
 
 .search-shortcut {
