@@ -1,5 +1,5 @@
 const repositoryUrl = (
-  import.meta.env.PUBLIC_REPOSITORY_URL || "https://github.com/EveSunMaple/zju-project"
+  import.meta.env.PUBLIC_REPOSITORY_URL || "https://github.com/EveSunMaple/OpenZJU"
 ).replace(/\/+$/, "");
 
 export const siteConfig = {
