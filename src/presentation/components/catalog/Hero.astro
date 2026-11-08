@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import type { CatalogCounts } from "@/application/catalog";
+import { siteConfig } from "@/config/site";
 import { CATEGORIES } from "@/domain/project/category";
 import { formatCompactNumber, formatDateTime } from "@/presentation/lib/format";
 
@@ -24,7 +25,7 @@ const currentYear = new Date().getFullYear();
     </h1>
 
     <p class="catalog-hero__lede">
-      汇集浙江大学师生与校友的开源作品。做新项目之前，先看看有没有人已经做过；使用项目之前，先看看它是否仍在维护。
+      浙江大学师生与校友的开源项目，按生活、学习、科研、工作四类归档。每个项目标注最近一次提交与维护状态，可按名称、标签与语言检索。
     </p>
 
     <dl class="hero-stats">
@@ -50,6 +51,15 @@ const currentYear = new Date().getFullYear();
       <a class="button button--outline" href="/about/">
         了解收录标准
         <Icon name="lucide:arrow-right" aria-hidden="true" />
+      </a>
+      <a
+        class="button button--secondary"
+        href={siteConfig.newProjectIssueUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        推荐项目
+        <Icon name="lucide:plus" aria-hidden="true" />
       </a>
     </div>
   </div>

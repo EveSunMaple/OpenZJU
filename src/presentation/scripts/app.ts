@@ -6,6 +6,7 @@ import Swup from "swup";
 import { CatalogController } from "./catalog-controller";
 import { initSiteNav, syncSiteNav } from "./site-nav";
 import { initTheme, syncThemeToggle } from "./theme";
+import { loadViewCounter } from "./view-counter";
 
 let catalogController: CatalogController | null = null;
 
@@ -45,6 +46,7 @@ initTheme();
 mountCatalog();
 syncThemeToggle();
 initSiteNav();
+loadViewCounter();
 
 document.addEventListener("keydown", handleSearchShortcut);
 
@@ -66,4 +68,5 @@ swup.hooks.on("page:view", () => {
   mountCatalog();
   syncThemeToggle();
   syncSiteNav();
+  loadViewCounter();
 });
