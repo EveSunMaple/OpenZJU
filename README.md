@@ -233,7 +233,7 @@ SKIP_GITHUB_SYNC=1 pnpm build
 1. 将仓库导入 Vercel，Framework Preset 选择 **Astro**。
 2. 设置环境变量：
    - `GITHUB_TOKEN`：GitHub Personal Access Token，仅需读取公开仓库。
-   - `SITE_URL`：生产域名，例如 `https://zju-open-source.vercel.app`。
+   - `SITE_URL`：生产域名，例如 `https://www.openzju.cn`。
    - `PUBLIC_REPOSITORY_URL`：可选，默认指向本仓库，决定页脚与「添加我的项目」Issue 入口。
 3. 部署。Vercel 会自动执行 `pnpm build`，构建时刷新 GitHub 数据。
 4. 在 Vercel 创建 Deploy Hook，并把地址保存为 GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`。每日深度分析工作流会在提交代码质量缓存后触发一次重新构建；建议关闭 Vercel Git 自动部署，避免重复构建。

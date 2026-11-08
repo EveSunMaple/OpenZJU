@@ -7,23 +7,24 @@
 - 一个 Vercel 账号；
 - 一个 GitHub 仓库（本站源码）；
 - 一个可读取公开仓库的 GitHub Token；
-- 一个生产域名（可使用 Vercel 分配的域名）。
+- 一个生产域名，当前为 `https://www.openzju.cn`。
 
 ## 环境变量
 
 在 Vercel 项目设置的 Environment Variables 中配置：
 
-| 变量                    | 必填 | 说明                                                |
-| ----------------------- | ---- | --------------------------------------------------- |
-| `GITHUB_TOKEN`          | 推荐 | 读取公开仓库元数据与提交记录；服务端专用            |
-| `SITE_URL`              | 推荐 | 生产地址，用于 canonical、OG 与 sitemap             |
-| `PUBLIC_REPOSITORY_URL` | 可选 | 源码仓库地址，默认指向本仓库；用于页脚与 Issue 入口 |
+| 变量                    | 必填 | 说明                                                                |
+| ----------------------- | ---- | ------------------------------------------------------------------- |
+| `GITHUB_TOKEN`          | 推荐 | 读取公开仓库元数据与提交记录；服务端专用                            |
+| `SITE_URL`              | 推荐 | 生产地址，用于 canonical、OG 与 sitemap；须与访客实际访问的域名一致 |
+| `PUBLIC_REPOSITORY_URL` | 可选 | 源码仓库地址，默认指向本仓库；用于页脚与 Issue 入口                 |
 
 注意：
 
 - `GITHUB_TOKEN` **不要**加 `PUBLIC_` 前缀，否则会被打包进客户端。
 - 只需要公开仓库读取权限。Fine-grained token 可以只授予 Public repositories 的只读访问；classic token 不勾选额外 scope 通常也可读取公开数据。
 - Token 过期后，构建仍会继续，但会退回匿名 API 或缓存。
+- `SITE_URL` 必须是访客实际访问的域名。两者不一致时，页面的 canonical、`og:url` 与 sitemap 会指向另一个域名，搜索引擎会把当前域名判为重复内容。
 
 ## 访问统计
 

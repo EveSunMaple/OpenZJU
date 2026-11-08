@@ -220,7 +220,7 @@ A token is strongly recommended in CI and on Vercel. The unauthenticated GitHub 
 1. Import the repository into Vercel and select **Astro** as the framework preset.
 2. Configure environment variables:
    - `GITHUB_TOKEN` — a GitHub token with public repository read access.
-   - `SITE_URL` — the production URL, e.g. `https://zju-open-source.vercel.app`.
+   - `SITE_URL` — the production URL, e.g. `https://www.openzju.cn`.
    - `PUBLIC_REPOSITORY_URL` — optional; defaults to this repository and controls the source and "add my project" issue links in the footer.
 3. Deploy. Vercel runs `pnpm build`, which refreshes GitHub data at build time.
 4. Create a Vercel Deploy Hook and store it as the GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`. The daily deep-analysis workflow commits the quality cache and then triggers one rebuild; disable Vercel Git auto-deploy to avoid duplicate builds.

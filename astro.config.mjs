@@ -11,7 +11,7 @@ const siteUrl =
   fileEnv.SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "https://zju-open-source.vercel.app");
+    : "https://www.openzju.cn");
 
 export default defineConfig({
   site: siteUrl,
