@@ -170,7 +170,7 @@ const swup = new Swup({
 - Head 插件更新标题、meta 与样式资源；`persistAssets: true` 避免误删公共资源。
 - A11y 插件负责页面播报与聚焦；滚动插件负责回到顶部/恢复历史位置。
 - 全局 `/` 与 `Cmd/Ctrl + K` 监听只绑定一次。
-- 页脚的不蒜子计数器在每次 `page:view` 重新请求一次 JSONP 接口，所以 SPA 切换也会记一次浏览量。
+- Swup 切页会更新 history，Vercel Web Analytics 脚本按 pushState 自动记一次页面视图，不需要在 `page:view` 里手动上报。
 
 ## 页面过渡
 

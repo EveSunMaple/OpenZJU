@@ -43,6 +43,7 @@
     "@swup/head-plugin": "2.3.1",
     "@swup/preload-plugin": "3.2.12",
     "@swup/scroll-plugin": "4.0.0",
+    "@vercel/analytics": "2.0.1",
     "astro": "7.4.5",
     "astro-icon": "1.2.0",
     "swup": "4.10.0"

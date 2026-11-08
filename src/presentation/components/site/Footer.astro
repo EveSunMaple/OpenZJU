@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site";
 import { CATEGORIES } from "@/domain/project/category";
 import { formatDateTime } from "@/presentation/lib/format";
 import Logo from "./Logo.astro";
-import ViewCounter from "./ViewCounter.astro";
 
 interface Props {
   syncedAt?: string | null;
@@ -77,7 +76,6 @@ const sourceLabels: Record<string, string> = {
           </a>
         </span>
         {total !== undefined && <span>收录 {total} 个项目</span>}
-        <ViewCounter />
       </div>
 
       <div class="site-footer__meta">

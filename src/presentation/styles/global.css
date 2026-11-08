@@ -1989,22 +1989,6 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
   gap: 0.35rem 1rem;
 }
 
-.view-counter {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.view-counter__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.view-counter__item[hidden] {
-  display: none;
-}
-
 .doc-page {
   padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 6rem);
 }

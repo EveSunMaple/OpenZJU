@@ -25,9 +25,15 @@
 - 只需要公开仓库读取权限。Fine-grained token 可以只授予 Public repositories 的只读访问；classic token 不勾选额外 scope 通常也可读取公开数据。
 - Token 过期后，构建仍会继续，但会退回匿名 API 或缓存。
 
-## 浏览量统计
+## 访问统计
 
-页脚的浏览量（PV）与访客数（UV）来自[不蒜子](https://busuanzi.ibruce.info/)的公开 JSONP 接口，不需要账号、环境变量或服务端代码。每个页面视图请求一次，Swup 的站内跳转也会计入。接口不可达或被拦截时，页脚不显示这两项，页面其余部分不受影响。
+站点使用 [Vercel Web Analytics](https://vercel.com/docs/analytics)，不需要环境变量或服务端代码。
+
+- 统计脚本是同源的 `/_vercel/insights/script.js`，由 `@vercel/analytics` 的 `inject()` 在构建产物里注入；`astro dev` 下不注入。
+- 不发第三个域名的请求、不写 cookie，因此不会被广告拦截/代理规则改写到本机地址，也不会触发浏览器的本地网络访问授权提示。
+- Swup 的站内跳转会更新 history，脚本按 pushState 自动记一次页面视图。
+- 数据在 Vercel 项目的 **Analytics** 面板查看。首次部署后需要在面板点 **Enable**；未启用时脚本请求返回 404，页面其余部分不受影响。
+- 页脚不再显示 PV / UV 数字：纯静态站点没有读取计数的接口。
 
 ## Vercel 项目设置
 

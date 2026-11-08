@@ -161,7 +161,7 @@ interface RepositoryStatsSnapshot {
 - 键是仓库全名的小写形式，例如 `zju-cc98/forum`。
 - `generatedAt` 是最近一次成功获取新数据的时间。
 - 全部使用缓存时为 `cache`；部分新数据 + 部分缓存，或 GraphQL + REST 混合时为 `mixed`。
-- 页面页脚会展示数据源、同步时间、作者与不蒜子统计的浏览量 / 访客数。
+- 页面页脚会展示数据源、同步时间与作者。
 
 快照解析器 `parseSnapshot` 做最小结构校验；损坏的条目会被丢弃，缺失字段会回退到空快照。
 
