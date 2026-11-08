@@ -151,8 +151,9 @@ const swup = new Swup({
 ```html
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="site-backdrop" aria-hidden="true"></div>
+  <header>...</header>
   <div id="swup">
-    <header>...</header>
     <main id="main" class="transition-main">...</main>
     <footer>...</footer>
   </div>
@@ -163,11 +164,13 @@ const swup = new Swup({
 关键点：
 
 - Swup 只替换 `#swup`，主题类保存在 `<html>` 上，因此切页不会丢失主题。
+- 顶部导航在 `#swup` 之外：导航链接与滑动指示条在切页时保持不变，`page:view` 之后只更新 `aria-current` 与指示条位置。
 - `page:view` 后先销毁旧 `CatalogController`，再挂载新控制器并同步主题按钮状态。
 - 不在 `visit:start` 立即销毁，这样同页锚点或失败的导航不会让当前页搜索失效。
 - Head 插件更新标题、meta 与样式资源；`persistAssets: true` 避免误删公共资源。
 - A11y 插件负责页面播报与聚焦；滚动插件负责回到顶部/恢复历史位置。
 - 全局 `/` 与 `Cmd/Ctrl + K` 监听只绑定一次。
+- 页脚的不蒜子计数器在每次 `page:view` 重新请求一次 JSONP 接口，所以 SPA 切换也会记一次浏览量。
 
 ## 页面过渡
 

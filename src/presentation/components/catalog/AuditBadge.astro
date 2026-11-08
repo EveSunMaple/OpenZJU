@@ -145,7 +145,7 @@ const checkIcons: Record<AuditCheckStatus, string> = {
       <p class="audit-quality__tools">工具：{toolLabel} · 不含测试覆盖率</p>
     </div>
   ) : (
-    <p class="audit-quality__empty">尚未运行深度静态分析，当前圆环使用工程信号回退评分。</p>
+    <p class="audit-quality__empty">尚未运行深度静态分析，当前分数来自工程信号审计。</p>
   )}
 
   <div class={`audit-ai audit-ai--${audit.aiRisk.level}`}>
@@ -154,7 +154,7 @@ const checkIcons: Record<AuditCheckStatus, string> = {
       启发式 AI 风险：{AI_RISK_LABELS[audit.aiRisk.level]}
       <span>{audit.aiRisk.score}/100</span>
     </div>
-    <p>基于测试、CI、文档、依赖锁等工程信号的粗略判断，不代表项目由 AI 生成。</p>
+    <p>由测试、CI、文档与依赖锁的完整度计算，代码是否由 AI 生成不参与计算。</p>
     {audit.aiRisk.reasons.length > 0 && (
       <ul>
         {audit.aiRisk.reasons.map((reason) => (
@@ -189,7 +189,7 @@ const checkIcons: Record<AuditCheckStatus, string> = {
   </ul>
 
   <div class="audit-popover__foot">
-    <span>工程信号审计，不是项目质量裁决。</span>
+    <span>分数由构建时的工程信号与静态分析指标计算。</span>
     {audit.scorecard ? (
       <a href={audit.scorecard.url} target="_blank" rel="noopener noreferrer">
         OpenSSF Scorecard {audit.scorecard.score.toFixed(1)}/10

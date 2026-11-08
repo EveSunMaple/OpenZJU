@@ -13,17 +13,21 @@
 
 在 Vercel 项目设置的 Environment Variables 中配置：
 
-| 变量                    | 必填 | 说明                                     |
-| ----------------------- | ---- | ---------------------------------------- |
-| `GITHUB_TOKEN`          | 推荐 | 读取公开仓库元数据与提交记录；服务端专用 |
-| `SITE_URL`              | 推荐 | 生产地址，用于 canonical、OG 与 sitemap  |
-| `PUBLIC_REPOSITORY_URL` | 可选 | 页脚与关于页的源码链接                   |
+| 变量                    | 必填 | 说明                                                |
+| ----------------------- | ---- | --------------------------------------------------- |
+| `GITHUB_TOKEN`          | 推荐 | 读取公开仓库元数据与提交记录；服务端专用            |
+| `SITE_URL`              | 推荐 | 生产地址，用于 canonical、OG 与 sitemap             |
+| `PUBLIC_REPOSITORY_URL` | 可选 | 源码仓库地址，默认指向本仓库；用于页脚与 Issue 入口 |
 
 注意：
 
 - `GITHUB_TOKEN` **不要**加 `PUBLIC_` 前缀，否则会被打包进客户端。
 - 只需要公开仓库读取权限。Fine-grained token 可以只授予 Public repositories 的只读访问；classic token 不勾选额外 scope 通常也可读取公开数据。
 - Token 过期后，构建仍会继续，但会退回匿名 API 或缓存。
+
+## 浏览量统计
+
+页脚的浏览量（PV）与访客数（UV）来自[不蒜子](https://busuanzi.ibruce.info/)的公开 JSONP 接口，不需要账号、环境变量或服务端代码。每个页面视图请求一次，Swup 的站内跳转也会计入。接口不可达或被拦截时，页脚不显示这两项，页面其余部分不受影响。
 
 ## Vercel 项目设置
 

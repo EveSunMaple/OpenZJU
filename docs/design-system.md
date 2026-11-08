@@ -83,7 +83,7 @@ HeroUI 默认主题提供语义变量，本项目覆盖：
 --status-unknown: oklch(0.62 0.01 260);
 ```
 
-- 状态色只出现在状态圆点、状态胶囊、审计圆环与 AI 风险标签中。
+- 状态色只出现在状态圆点、状态胶囊、审计弹层的等级色与 AI 风险标签中。
 - 文本始终保留足够对比度；颜色不是唯一信息，徽标同时包含文字。
 - 已归档与未知使用中性灰，避免与「危险」混淆。
 
@@ -106,7 +106,7 @@ HeroUI 默认主题提供语义变量，本项目覆盖：
 
 - `.search-field` / `.search-field__group` / `.search-field__input`：搜索框结构与交互态；
 - `.card`：卡片基础容器与阴影；
-- `.button` / `.button--primary` / `.button--outline`：Hero 与 404 的主要动作；
+- `.button` / `.button--primary` / `.button--secondary` / `.button--outline`：Hero、页脚与 404 的主要动作；
 
 样式覆盖尽量使用语义变量，不复制组件内部 CSS。需要局部调整时，用本项目自己的 `.project-card`、`.catalog-search` 等类覆盖。
 
@@ -126,11 +126,11 @@ HeroUI 默认主题提供语义变量，本项目覆盖：
 
 结构从上到下：
 
-1. **Top**：左侧分类 badge（链接到分类页）与最新更新日期，右侧项目审计圆环。
-2. **Body**：项目名（外链、hover 箭头、可选编辑推荐图标）+ 最多三行简介。
-3. **Signals**：维护状态、Stars、语言、最近 90 天提交数、启发式 AI 风险。
-4. **Audit popover**：代码质量主导的维度条、深度指标、工程护栏、AI 风险与 OpenSSF 状态。
-5. **Footer**：网站/下载/GitHub 动作 + 可点击标签。
+1. **Top**：左侧仓库 owner 头像与项目名（外链、可选编辑推荐图标）；右侧网站 / 下载 / GitHub 动作。
+2. **Body**：最多三行简介。
+3. **Meta**：维护状态胶囊、分类链接、Stars 与审计评分按钮。
+4. **Extras**：最近更新日期、语言、最近 90 天提交数与可点击标签。
+5. **Audit popover**：点击评分按钮弹出的详情，包含代码质量主导的维度条、深度指标、启发式 AI 风险、工程护栏与 OpenSSF 状态。
 
 设计约束：
 

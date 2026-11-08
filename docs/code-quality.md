@@ -1,6 +1,6 @@
 # 深度代码质量
 
-项目卡片右上角的圆环现在以代码质量为主。深度分析每条命令只在 GitHub Actions 中运行，结果写入 `src/generated/repository-code-quality.json`；Vercel 构建只读取缓存，不克隆仓库。
+卡片状态行里的评分按钮现在以代码质量为主。深度分析每条命令只在 GitHub Actions 中运行，结果写入 `src/generated/repository-code-quality.json`；Vercel 构建只读取缓存，不克隆仓库。
 
 它不是 SonarQube 官方结果，也不包含测试覆盖率。它是一个可解释的静态质量信号，适合发现复杂度、重复代码、lint 问题、密钥和依赖漏洞，而不是判断项目是否“好”。
 

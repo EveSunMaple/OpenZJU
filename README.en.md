@@ -38,7 +38,7 @@ The site does not host code and does not rank projects. It collects entry points
 - **Four categories**: Life, Study, Research and Work.
 - **Build-time GitHub sync**: stars, language, license, archived state, latest commit date and commits in the last 90 days.
 - **Maintenance status**: active, maintained, low frequency, dormant and archived. Archived repositories sink to the bottom.
-- **Code-quality-led audit**: a 0–100 score on every card, led by the daily deep static analysis (complexity, duplication, lint, secrets and dependency vulnerabilities). Repositories without analyzable source fall back to engineering signals. A heuristic AI-risk label is included.
+- **Code-quality-led audit**: a 0–100 score button in each card's status row opens the details, led by the daily deep static analysis (complexity, duplication, lint, secrets and dependency vulnerabilities). Repositories without analyzable source fall back to engineering signals, and the popover includes a heuristic AI-risk label.
 - **Static search**: match names, descriptions, tags, categories, languages and licenses entirely in the browser.
 - **Composable filters**: maintenance status, sort by recent activity / stars / name, with URL state.
 - **Tags as entry points**: click a tag to search for it.
@@ -221,7 +221,7 @@ A token is strongly recommended in CI and on Vercel. The unauthenticated GitHub 
 2. Configure environment variables:
    - `GITHUB_TOKEN` — a GitHub token with public repository read access.
    - `SITE_URL` — the production URL, e.g. `https://zju-open-source.vercel.app`.
-   - `PUBLIC_REPOSITORY_URL` — optional; enables source links in the footer and about page.
+   - `PUBLIC_REPOSITORY_URL` — optional; defaults to this repository and controls the source and "add my project" issue links in the footer.
 3. Deploy. Vercel runs `pnpm build`, which refreshes GitHub data at build time.
 4. Create a Vercel Deploy Hook and store it as the GitHub Actions secret `VERCEL_DEPLOY_HOOK_URL`. The daily deep-analysis workflow commits the quality cache and then triggers one rebuild; disable Vercel Git auto-deploy to avoid duplicate builds.
 

@@ -161,7 +161,7 @@ interface RepositoryStatsSnapshot {
 - 键是仓库全名的小写形式，例如 `zju-cc98/forum`。
 - `generatedAt` 是最近一次成功获取新数据的时间。
 - 全部使用缓存时为 `cache`；部分新数据 + 部分缓存，或 GraphQL + REST 混合时为 `mixed`。
-- 页面页脚会展示数据源与同步时间。
+- 页面页脚会展示数据源、同步时间、作者与不蒜子统计的浏览量 / 访客数。
 
 快照解析器 `parseSnapshot` 做最小结构校验；损坏的条目会被丢弃，缺失字段会回退到空快照。
 
@@ -238,7 +238,7 @@ pnpm sync:projects:offline
 | `GH_TOKEN`              | `GITHUB_TOKEN` 的备用名                             |
 | `SKIP_GITHUB_SYNC`      | 设为 `1` 或 `true` 时跳过网络同步                   |
 | `SITE_URL`              | Astro `site` 与 canonical / sitemap 的基地址        |
-| `PUBLIC_REPOSITORY_URL` | 可选，页脚与关于页的源码链接                        |
+| `PUBLIC_REPOSITORY_URL` | 可选，默认指向本仓库；页脚与 Issue 入口的链接       |
 
 ## 添加项目
 
