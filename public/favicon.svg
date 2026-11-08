@@ -1,7 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="OpenZJU">
-  <rect width="64" height="64" rx="15" fill="#0b4d8c"/>
-  <rect x="0.5" y="0.5" width="63" height="63" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
-  <path d="M16 20h32M16 44h32M20 16v32M44 16v32" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Songti SC, STSong, Noto Serif SC, serif" font-size="34" font-weight="600" fill="#f7fbff">求</text>
-  <circle cx="49" cy="15" r="3.2" fill="#8fd0ff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="openzju">
+  <rect width="64" height="64" rx="14" fill="#00408B"/>
+  <path fill="#fff" d="M32.55 11.86 L35.86 12.36 L38.46 13.76 L34.76 15.47 L36.46 19.27 L39.16 14.96 L41.97 13.16 L56.00 13.36 L55.30 14.66 L53.19 16.27 L47.38 16.67 L46.78 18.17 L47.18 18.77 L52.99 18.87 L51.79 20.98 L50.09 22.18 L44.88 22.48 L44.18 24.08 L44.38 24.58 L49.09 24.99 L46.68 27.59 L42.27 28.29 L41.97 30.20 L45.58 30.60 L43.87 33.10 L39.97 33.80 L39.47 35.71 L42.07 36.11 L40.27 38.51 L36.76 39.52 L36.46 41.42 L37.66 43.22 L32.25 51.74 L26.54 43.02 L27.74 41.32 L27.44 39.42 L24.13 38.31 L22.43 36.31 L22.33 35.81 L24.73 35.61 L24.33 33.80 L20.93 33.10 L18.92 30.60 L22.53 30.30 L22.23 28.69 L17.52 27.69 L15.52 25.09 L20.13 24.79 L20.33 24.18 L19.62 22.68 L14.11 22.08 L12.51 20.88 L11.41 19.17 L17.12 18.87 L17.52 18.27 L16.92 16.87 L10.81 16.27 L8.90 14.96 L8.00 13.36 L22.63 13.26 L25.34 15.07 L27.44 18.67 L29.24 13.26 L30.45 12.26 Z"/>
 </svg>

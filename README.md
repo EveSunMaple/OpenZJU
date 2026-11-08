@@ -4,7 +4,7 @@
   <p>一张可检索的浙江大学开源项目地图。</p>
 
   <p>
-    <a href="./LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-0b4d8c.svg" /></a>
+    <a href="./LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-00408B.svg" /></a>
     <img alt="Astro" src="https://img.shields.io/badge/Astro-7-ff5d01.svg" />
     <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-4-38bdf8.svg" />
     <img alt="HeroUI" src="https://img.shields.io/badge/HeroUI-v3-7c3aed.svg" />
