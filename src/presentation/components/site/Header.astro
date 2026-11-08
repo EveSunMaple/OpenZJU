@@ -23,6 +23,7 @@ const links = [
     </div>
 
     <nav class="site-nav" aria-label="主导航">
+      <span class="site-nav__indicator" aria-hidden="true"></span>
       {links.map((link) => (
         <a class="site-nav__link" href={link.href} aria-current={link.active ? "page" : undefined}>
           {link.label}

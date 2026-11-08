@@ -4,6 +4,7 @@ import SwupPreloadPlugin from "@swup/preload-plugin";
 import SwupScrollPlugin from "@swup/scroll-plugin";
 import Swup from "swup";
 import { CatalogController } from "./catalog-controller";
+import { initSiteNav, syncSiteNav } from "./site-nav";
 import { initTheme, syncThemeToggle } from "./theme";
 
 let catalogController: CatalogController | null = null;
@@ -43,6 +44,7 @@ function handleSearchShortcut(event: KeyboardEvent): void {
 initTheme();
 mountCatalog();
 syncThemeToggle();
+initSiteNav();
 
 document.addEventListener("keydown", handleSearchShortcut);
 
@@ -63,4 +65,5 @@ const swup = new Swup({
 swup.hooks.on("page:view", () => {
   mountCatalog();
   syncThemeToggle();
+  syncSiteNav();
 });
