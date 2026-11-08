@@ -60,14 +60,14 @@ const checkIcons: Record<AuditCheckStatus, string> = {
 ---
 
 <button
-  class={`audit-trigger audit-trigger--${tone}`}
+  class="audit-trigger"
   type="button"
   popovertarget={popoverId}
   aria-haspopup="dialog"
   aria-label={`${projectName} 综合质量 ${audit.score} 分，${audit.grade} 级，查看审计详情`}
   title={`综合质量 ${audit.score}/100 · ${audit.grade} 级（代码质量占 60%）`}
-  style={`--audit-score: ${audit.score}`}
 >
+  <Icon name="lucide:gauge" aria-hidden="true" />
   <span class="audit-trigger__value">{audit.score}</span>
 </button>
 
