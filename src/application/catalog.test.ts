@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Project } from "@/domain/project/project";
+import type { RepositoryAudit, RepositoryAuditSnapshot } from "@/domain/project/repository-audit";
+import { gradeForScore } from "@/domain/project/repository-audit";
 import type { RepositoryStatsSnapshot } from "@/domain/project/repository-stats";
 import { buildCatalog, type ProjectView, sortProjectViews, summarizeProjects } from "./catalog";
 
@@ -78,6 +80,36 @@ const snapshot: RepositoryStatsSnapshot = {
   },
 };
 
+function makeAudit(score: number): RepositoryAudit {
+  return {
+    score,
+    grade: gradeForScore(score),
+    confidence: "high",
+    dimensions: {
+      maintenance: 80,
+      documentation: 70,
+      engineering: 75,
+      security: 80,
+      codeQuality: null,
+    },
+    codeQuality: null,
+    aiRisk: { level: "low", score: 20, reasons: [] },
+    checks: [],
+    scorecard: null,
+    fetchedAt: now.toISOString(),
+  };
+}
+
+const auditSnapshot: RepositoryAuditSnapshot = {
+  schemaVersion: 1,
+  generatedAt: now.toISOString(),
+  source: "github",
+  audits: {
+    "owner/recent": makeAudit(68),
+    "owner/unknown": makeAudit(85),
+  },
+};
+
 describe("buildCatalog", () => {
   it("merges stats, computes counts and puts archived repositories last", () => {
     const catalog = buildCatalog(projects, snapshot, now);
@@ -93,13 +125,15 @@ describe("buildCatalog", () => {
     expect(catalog.projects.find((project) => project.slug === "unknown")?.stats).toBeUndefined();
   });
 
-  it("sorts by stars and by name", () => {
-    const catalog = buildCatalog(projects, snapshot, now);
+  it("sorts by stars, quality and name", () => {
+    const catalog = buildCatalog(projects, snapshot, now, auditSnapshot);
     const byStars = sortProjectViews(catalog.projects, "stars");
+    const byQuality = sortProjectViews(catalog.projects, "quality");
     const byName = sortProjectViews(catalog.projects, "name");
 
     expect(byStars[0]?.slug).toBe("recent");
     expect(byStars.at(-1)?.slug).toBe("archived");
+    expect(byQuality.map((project) => project.slug)).toEqual(["unknown", "recent", "archived"]);
     expect(byName.map((project) => project.name)).toEqual(["Recent", "Unknown", "Archived"]);
   });
 });

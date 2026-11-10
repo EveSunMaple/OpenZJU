@@ -1,6 +1,6 @@
 import { matchesSearch } from "@/application/search";
 
-const SORT_MODES = ["recent", "stars", "name"] as const;
+const SORT_MODES = ["recent", "stars", "quality", "name"] as const;
 
 type SortMode = (typeof SORT_MODES)[number];
 
@@ -24,7 +24,7 @@ export class CatalogController {
   private readonly resultsCount: HTMLElement | null;
   private readonly statusButtons: HTMLButtonElement[];
   private readonly statusCounts: Map<HTMLButtonElement, HTMLElement | null>;
-  private readonly sortSelect: HTMLSelectElement | null;
+  private readonly sortButtons: HTMLButtonElement[];
   private readonly abortController = new AbortController();
 
   private query = "";
@@ -51,7 +51,7 @@ export class CatalogController {
         button.querySelector<HTMLElement>("[data-status-count]"),
       ]),
     );
-    this.sortSelect = root.querySelector<HTMLSelectElement>("[data-sort]");
+    this.sortButtons = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-sort-option]"));
   }
 
   init(): void {
@@ -161,16 +161,20 @@ export class CatalogController {
       );
     }
 
-    this.sortSelect?.addEventListener(
-      "change",
-      () => {
-        const value = this.sortSelect?.value ?? "recent";
-        this.sort = isSortMode(value) ? value : "recent";
-        this.sortCards();
-        this.syncUrl();
-      },
-      { signal },
-    );
+    for (const button of this.sortButtons) {
+      button.addEventListener(
+        "click",
+        () => {
+          const value = button.dataset.sortOption ?? "recent";
+
+          this.sort = isSortMode(value) ? value : "recent";
+          this.renderSort();
+          this.sortCards();
+          this.syncUrl();
+        },
+        { signal },
+      );
+    }
 
     this.root.addEventListener(
       "click",
@@ -224,9 +228,7 @@ export class CatalogController {
       this.input.value = query;
     }
 
-    if (this.sortSelect) {
-      this.sortSelect.value = this.sort;
-    }
+    this.renderSort();
   }
 
   private matchesCard(card: HTMLElement): boolean {
@@ -301,6 +303,15 @@ export class CatalogController {
     this.syncUrl();
   }
 
+  private renderSort(): void {
+    for (const button of this.sortButtons) {
+      const selected = button.dataset.sortOption === this.sort;
+
+      button.setAttribute("aria-pressed", String(selected));
+      button.dataset.selected = String(selected);
+    }
+  }
+
   private sortCards(): void {
     if (!this.grid) {
       return;
@@ -321,6 +332,15 @@ export class CatalogController {
 
       if (this.sort === "stars") {
         return (
+          readCardNumber(b, "stars") - readCardNumber(a, "stars") ||
+          collator.compare(a.dataset.name ?? "", b.dataset.name ?? "")
+        );
+      }
+
+      if (this.sort === "quality") {
+        return (
+          readCardNumber(b, "quality") - readCardNumber(a, "quality") ||
+          readCardNumber(b, "codeQuality") - readCardNumber(a, "codeQuality") ||
           readCardNumber(b, "stars") - readCardNumber(a, "stars") ||
           collator.compare(a.dataset.name ?? "", b.dataset.name ?? "")
         );

@@ -20,7 +20,7 @@ import {
   type RepositoryStatsSnapshot,
 } from "@/domain/project/repository-stats";
 
-export type SortMode = "recent" | "stars" | "name";
+export type SortMode = "recent" | "stars" | "quality" | "name";
 
 export interface ProjectView extends Project {
   readonly categoryInfo: Category;
@@ -91,6 +91,15 @@ export function sortProjectViews(
 
     if (mode === "stars") {
       return (b.stats?.stars ?? -1) - (a.stats?.stars ?? -1) || collator.compare(a.name, b.name);
+    }
+
+    if (mode === "quality") {
+      return (
+        (b.audit?.score ?? -1) - (a.audit?.score ?? -1) ||
+        (b.audit?.codeQuality?.score ?? -1) - (a.audit?.codeQuality?.score ?? -1) ||
+        (b.stats?.stars ?? -1) - (a.stats?.stars ?? -1) ||
+        collator.compare(a.name, b.name)
+      );
     }
 
     const aTime = a.updatedAt ? Date.parse(a.updatedAt) : 0;

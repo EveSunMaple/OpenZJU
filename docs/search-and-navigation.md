@@ -13,6 +13,7 @@
   data-search="ego-planner 面向四旋翼无人机的... 科研 research 无人机 轨迹规划 机器人 c++ gpl-3.0"
   data-updated="..."
   data-stars="2727"
+  data-quality="86"
   data-name="ego-planner"
   data-archived="false"
 >
@@ -54,7 +55,7 @@ matchesSearch(haystack, "无人机 机器人"); // 两个词都要出现
 - 项目网格与全部卡片；
 - 结果计数、空状态；
 - 状态筛选按钮；
-- 排序下拉框。
+- 排序按钮。
 
 随后：
 
@@ -84,10 +85,11 @@ all | active | maintained | low | dormant | archived | unknown
 
 - `recent`：默认。按最近更新、Stars、名称排序。
 - `stars`：按 Stars 降序。
+- `quality`：按项目审计的综合质量分降序；没有审计数据的项目排在最后，同分时再比较代码质量分、Stars 与名称。
 - `name`：使用 `Intl.Collator("zh-Hans-CN")` 按名称排序。
 - 所有排序模式都会先把已归档项目沉底，再应用具体排序规则。
 
-排序通过重新 append DOM 节点实现，不重新渲染卡片。
+排序按钮使用 `data-sort-option`，选中态同时写在 `aria-pressed` 与 `data-selected` 上。排序通过重新 append DOM 节点实现，不重新渲染卡片。
 
 ## URL 状态
 

@@ -40,7 +40,7 @@ The site does not host code and does not rank projects. It collects entry points
 - **Maintenance status**: active, maintained, low frequency, dormant and archived. Archived repositories sink to the bottom.
 - **Code-quality-led audit**: a 0–100 score button in each card's status row opens the details, led by the daily deep static analysis (complexity, duplication, lint, secrets and dependency vulnerabilities). Repositories without analyzable source fall back to engineering signals, and the popover includes a heuristic AI-risk label.
 - **Static search**: match names, descriptions, tags, categories, languages and licenses entirely in the browser.
-- **Composable filters**: maintenance status, sort by recent activity / stars / name, with URL state.
+- **Composable filters**: maintenance status, sort by recent activity / stars / quality score / name, with URL state.
 - **Tags as entry points**: click a tag to search for it.
 - **Light / dark / system themes**: follows the system by default and remembers explicit choices.
 - **Swup page transitions**: no full-page flash, with accessibility, head updates and scroll handling preserved.

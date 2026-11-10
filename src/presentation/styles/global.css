@@ -6,6 +6,8 @@
 @import "@heroui/styles/components/button.css" layer(components);
 @import "@heroui/styles/components/card.css" layer(components);
 @import "@heroui/styles/components/search-field.css" layer(components);
+@import "@heroui/styles/components/toggle-button.css" layer(components);
+@import "@heroui/styles/components/toggle-button-group.css" layer(components);
 
 :root {
   --font-body:
@@ -963,46 +965,50 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
 }
 
 .sort-control {
-  display: inline-flex;
+  display: flex;
+  min-inline-size: 0;
   flex-shrink: 0;
   align-items: center;
   gap: 0.55rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
   color: var(--muted);
   font-size: 0.68rem;
 }
 
 .sort-control__label {
+  flex-shrink: 0;
+  padding: 0;
   font-family: var(--font-code);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.sort-control__field {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
+.sort-control__group {
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
-.sort-control select {
-  height: 2.1rem;
-  appearance: none;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
-  background: color-mix(in oklch, var(--surface) 72%, transparent);
-  padding: 0 1.8rem 0 0.65rem;
-  color: var(--foreground);
+.sort-control .toggle-button {
+  gap: 0.3rem;
+  padding-inline: 0.7rem;
+  color: var(--muted);
   font-family: var(--font-body);
   font-size: 0.7rem;
-  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-.sort-control__icon {
-  position: absolute;
-  right: 0.55rem;
-  width: 0.7rem;
-  height: 0.7rem;
-  color: var(--muted);
-  pointer-events: none;
+.sort-control .toggle-button svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0;
+}
+
+.sort-control .toggle-button[data-selected="true"] {
+  color: var(--accent-soft-foreground);
 }
 
 .project-grid {

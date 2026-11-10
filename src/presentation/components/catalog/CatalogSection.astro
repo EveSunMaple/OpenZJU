@@ -19,6 +19,32 @@ const { projects, counts, title, eyebrow = "Directory" } = Astro.props;
 const statuses = MAINTENANCE_STATUSES.filter(
   (status): status is MaintenanceStatus => status !== "unknown" || counts.byStatus.unknown > 0,
 );
+const sortOptions = [
+  {
+    value: "recent",
+    label: "最近更新",
+    icon: "lucide:clock-3",
+    description: "按最近提交时间排序",
+  },
+  {
+    value: "stars",
+    label: "Star 最多",
+    icon: "lucide:star",
+    description: "按 GitHub Stars 数量排序",
+  },
+  {
+    value: "quality",
+    label: "项目质量",
+    icon: "lucide:gauge",
+    description: "按综合质量评分排序，没有审计数据的项目排在最后",
+  },
+  {
+    value: "name",
+    label: "名称",
+    icon: "lucide:arrow-down-a-z",
+    description: "按项目名称排序",
+  },
+] as const;
 ---
 
 <section class="catalog-section" id="catalog" data-catalog aria-labelledby="catalog-title">
@@ -95,17 +121,27 @@ const statuses = MAINTENANCE_STATUSES.filter(
       ))}
     </fieldset>
 
-    <label class="sort-control">
-      <span class="sort-control__label">排序</span>
-      <span class="sort-control__field">
-        <select data-sort aria-label="项目排序方式">
-          <option value="recent">最近更新</option>
-          <option value="stars">Star 最多</option>
-          <option value="name">名称排序</option>
-        </select>
-        <Icon name="lucide:chevron-down" class="sort-control__icon" aria-hidden="true" />
-      </span>
-    </label>
+    <fieldset class="sort-control">
+      <legend class="sr-only">项目排序方式</legend>
+      <span class="sort-control__label" aria-hidden="true">排序</span>
+      <div
+        class="toggle-button-group toggle-button-group--horizontal toggle-button-group--detached sort-control__group"
+      >
+        {sortOptions.map((option) => (
+          <button
+            class="toggle-button toggle-button--sm sort-control__button"
+            type="button"
+            data-sort-option={option.value}
+            aria-pressed={option.value === "recent" ? "true" : "false"}
+            data-selected={option.value === "recent" ? "true" : "false"}
+            title={option.description}
+          >
+            <Icon name={option.icon} aria-hidden="true" />
+            {option.label}
+          </button>
+        ))}
+      </div>
+    </fieldset>
   </div>
 
   <ProjectGrid projects={projects} />

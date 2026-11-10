@@ -100,6 +100,8 @@ HeroUI 默认主题提供语义变量，本项目覆盖：
 @import "@heroui/styles/components/button.css" layer(components);
 @import "@heroui/styles/components/card.css" layer(components);
 @import "@heroui/styles/components/search-field.css" layer(components);
+@import "@heroui/styles/components/toggle-button.css" layer(components);
+@import "@heroui/styles/components/toggle-button-group.css" layer(components);
 ```
 
 实际使用的 HeroUI BEM：
@@ -107,6 +109,7 @@ HeroUI 默认主题提供语义变量，本项目覆盖：
 - `.search-field` / `.search-field__group` / `.search-field__input`：搜索框结构与交互态；
 - `.card`：卡片基础容器与阴影；
 - `.button` / `.button--primary` / `.button--secondary` / `.button--outline`：Hero、页脚与 404 的主要动作；
+- `.toggle-button-group` / `.toggle-button`：目录工具条里的排序切换，使用 detached 分组与 `data-selected` 选中态；
 
 样式覆盖尽量使用语义变量，不复制组件内部 CSS。需要局部调整时，用本项目自己的 `.project-card`、`.catalog-search` 等类覆盖。
 
