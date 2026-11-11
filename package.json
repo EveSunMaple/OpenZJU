@@ -38,13 +38,13 @@
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
     "@heroui/styles": "3.2.7",
-    "@iconify-json/lucide": "1.2.151",
+    "@iconify-json/lucide": "1.2.152",
     "@swup/a11y-plugin": "5.2.1",
     "@swup/head-plugin": "2.3.1",
     "@swup/preload-plugin": "3.2.12",
     "@swup/scroll-plugin": "4.0.0",
     "@vercel/analytics": "2.0.1",
-    "astro": "7.4.5",
+    "astro": "7.4.7",
     "astro-icon": "1.2.0",
     "swup": "4.10.0"
   },
