@@ -1290,7 +1290,7 @@ export const projects = [
   },
   {
     slug: "openzju",
-    name: "OpenZJU 求是开源",
+    name: "OpenZJU",
     description: "浙江大学的开源项目索引，也就是本站；用 Astro 构建并在构建时刷新数据。",
     repo: "EveSunMaple/OpenZJU",
     category: "work",
