@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T22:14:22.499Z",
+  "generatedAt": "2026-11-13T08:43:19.876Z",
   "source": "deep-audit",
   "repositories": {
     "0x000005/better-zdbk": {
@@ -543,6 +543,36 @@
         "vulnerabilities": null
       }
     },
+    "cazorp138/orangeassistant-for-windows": {
+      "analyzedAt": "2026-11-13T08:26:59.059Z",
+      "commitAt": "2026-10-26T08:45:15Z",
+      "branch": "main",
+      "language": "JavaScript",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1"
+      },
+      "metrics": null
+    },
+    "cedar17/cc98-img-upload": {
+      "analyzedAt": "2026-11-13T08:27:18.896Z",
+      "commitAt": "2026-10-30T03:14:38Z",
+      "branch": "master",
+      "language": "Python",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1"
+      },
+      "metrics": null
+    },
     "cedar17/zju-connect-android": {
       "analyzedAt": "2026-11-12T22:10:49.989Z",
       "commitAt": "2026-11-02T16:11:19Z",
@@ -877,6 +907,21 @@
         "vulnerabilities": null
       }
     },
+    "evesunmaple/openzju": {
+      "analyzedAt": "2026-11-13T08:27:28.557Z",
+      "commitAt": "2026-11-12T22:14:22Z",
+      "branch": "main",
+      "language": "TypeScript",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1"
+      },
+      "metrics": null
+    },
     "f1yingwhite/auto-course.zju": {
       "analyzedAt": "2026-11-12T22:09:51.866Z",
       "commitAt": "2026-03-12T02:25:04Z",
@@ -1080,6 +1125,21 @@
         }
       }
     },
+    "geyadawang-boop/humanize-writing": {
+      "analyzedAt": "2026-11-13T08:28:04.947Z",
+      "commitAt": "2026-11-12T13:56:01Z",
+      "branch": "master",
+      "language": "Python",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1"
+      },
+      "metrics": null
+    },
     "grapesea/csdiy_auto_resources_downloader": {
       "analyzedAt": "2026-11-12T22:11:18.016Z",
       "commitAt": "2026-09-28T11:31:10Z",
@@ -1278,6 +1338,23 @@
         }
       }
     },
+    "he-he-he-he-he-he/archive-gpt-reading-assistant": {
+      "analyzedAt": "2026-11-13T08:28:24.544Z",
+      "commitAt": "2026-10-18T09:08:28Z",
+      "branch": "main",
+      "language": "JavaScript",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks",
+        "osv-scanner"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1",
+        "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
+      },
+      "metrics": null
+    },
     "he-he-he-he-he-he/yingqiao-store": {
       "analyzedAt": "2026-11-12T22:10:10.381Z",
       "commitAt": "2026-10-21T03:10:03Z",
@@ -1391,6 +1468,21 @@
           "low": 17
         }
       }
+    },
+    "hy-hue113/ppt-effects": {
+      "analyzedAt": "2026-11-13T08:28:55.692Z",
+      "commitAt": "2026-11-11T12:52:55Z",
+      "branch": "main",
+      "language": "Python",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1"
+      },
+      "metrics": null
     },
     "hzlgames/zju-autosign": {
       "analyzedAt": "2026-11-12T22:10:43.348Z",
@@ -1843,6 +1935,21 @@
           "low": 0
         }
       }
+    },
+    "lineus/zjuam-in": {
+      "analyzedAt": "2026-11-13T08:34:46.652Z",
+      "commitAt": "2026-11-10T05:11:28Z",
+      "branch": "main",
+      "language": "JavaScript",
+      "status": "skipped",
+      "skippedReason": "没有可分析源码或分析工具不可用",
+      "tools": [
+        "gitleaks"
+      ],
+      "toolVersions": {
+        "gitleaks": "8.30.1"
+      },
+      "metrics": null
     },
     "liupilot/zju-teacher-rating-helper": {
       "analyzedAt": "2026-11-12T22:11:18.718Z",
