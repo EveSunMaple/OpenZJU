@@ -42,7 +42,7 @@ The site does not host code and does not rank projects. It collects entry points
 - **Static search**: match names, descriptions, tags, categories, languages and licenses entirely in the browser.
 - **Composable filters**: maintenance status, sort by recent activity / stars / quality score / name, with URL state.
 - **Tags as entry points**: click a tag to search for it.
-- **Light / dark / system themes**: follows the system by default and remembers explicit choices.
+- **Light / dark / system themes**: defaults to dark, with light and system modes available and remembered.
 - **Swup page transitions**: no full-page flash, with accessibility, head updates and scroll handling preserved.
 - **Responsive grid**: global scrolling and adaptive columns from mobile to wide screens.
 - **Accessibility**: skip link, keyboard shortcuts, focus management, live result counts and reduced-motion support.
