@@ -20,9 +20,9 @@ export function getThemeMode(): ThemeMode {
   try {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
 
-    return isThemeMode(stored) ? stored : "system";
+    return isThemeMode(stored) ? stored : "dark";
   } catch {
-    return "system";
+    return "dark";
   }
 }
 

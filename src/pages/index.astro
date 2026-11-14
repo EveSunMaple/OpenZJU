@@ -1,10 +1,34 @@
 ---
+import { matchesSearch } from "@/application/search";
 import CatalogSection from "@/presentation/components/catalog/CatalogSection.astro";
-import Hero from "@/presentation/components/catalog/Hero.astro";
+import CategoryShowcase from "@/presentation/components/catalog/CategoryShowcase.astro";
+import FeaturedProjects from "@/presentation/components/catalog/FeaturedProjects.astro";
+import HomeHero from "@/presentation/components/catalog/HomeHero.astro";
+import ProjectMarquee from "@/presentation/components/catalog/ProjectMarquee.astro";
 import BaseLayout from "@/presentation/layouts/BaseLayout.astro";
 import { getCatalog } from "@/presentation/lib/catalog";
 
 const catalog = getCatalog();
+
+const projectsByStars = [...catalog.projects].sort(
+  (a, b) => (b.stats?.stars ?? -1) - (a.stats?.stars ?? -1),
+);
+const topProjects = projectsByStars.slice(0, 3);
+const marqueeProjects = projectsByStars.slice(0, 20);
+const featuredSlugs = ["cc98-forum", "celechron", "zju-welcome", "zju-learning-assistant"] as const;
+const projectsBySlug = new Map(catalog.projects.map((project) => [project.slug, project]));
+const featuredProjects = featuredSlugs.map((slug) => {
+  const project = projectsBySlug.get(slug);
+
+  if (!project) {
+    throw new Error(`Unknown featured project: ${slug}`);
+  }
+
+  return project;
+});
+const rvpnMatches = catalog.projects.filter((project) =>
+  matchesSearch(project.searchText, "rvpn"),
+).length;
 
 const itemListJsonLd = {
   "@context": "https://schema.org",
@@ -27,13 +51,22 @@ const itemListJsonLd = {
   total={catalog.counts.total}
   jsonLd={itemListJsonLd}
 >
+  <HomeHero
+    counts={catalog.counts}
+    syncedAt={catalog.syncedAt}
+    topProjects={topProjects}
+    exampleMatches={rvpnMatches}
+  />
+  <ProjectMarquee projects={marqueeProjects} />
+  <CategoryShowcase counts={catalog.counts} />
+  <FeaturedProjects projects={featuredProjects} total={catalog.counts.total} />
+
   <div class="page-shell">
-    <Hero counts={catalog.counts} syncedAt={catalog.syncedAt} source={catalog.source} />
     <CatalogSection
       projects={catalog.projects}
       counts={catalog.counts}
       title="全部项目"
-      eyebrow="Directory / All"
+      eyebrow="03 / DIRECTORY"
     />
   </div>
 </BaseLayout>

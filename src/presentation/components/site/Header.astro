@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/site";
 import { CATEGORIES } from "@/domain/project/category";
 import Logo from "./Logo.astro";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -31,8 +33,41 @@ const links = [
       ))}
     </nav>
 
-    <div class="site-header__right">
+    <div class="site-header__actions">
+      <a
+        class="icon-button site-header__search"
+        href="/#catalog"
+        data-search-jump
+        aria-label="搜索项目"
+        title="搜索项目（/）"
+      >
+        <Icon name="lucide:search" aria-hidden="true" />
+        <span class="sr-only">搜索项目</span>
+      </a>
+
+      <a
+        class="icon-button site-header__github"
+        href={siteConfig.repositoryUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="本站 GitHub 仓库"
+        title="GitHub 仓库"
+      >
+        <Icon name="lucide:github" aria-hidden="true" />
+        <span class="sr-only">本站 GitHub 仓库</span>
+      </a>
+
       <ThemeToggle />
+
+      <a
+        class="btn btn--primary site-header__cta"
+        href={siteConfig.newProjectIssueUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="lucide:plus" aria-hidden="true" />
+        推荐项目
+      </a>
     </div>
   </div>
 </header>

@@ -1,0 +1,143 @@
+---
+import { Icon } from "astro-icon/components";
+import type { CatalogCounts, ProjectView } from "@/application/catalog";
+import { siteConfig } from "@/config/site";
+import { CATEGORIES } from "@/domain/project/category";
+import { formatCompactNumber, formatDateTime } from "@/presentation/lib/format";
+
+interface Props {
+  counts: CatalogCounts;
+  syncedAt: string | null;
+  topProjects: readonly ProjectView[];
+  exampleMatches: number;
+}
+
+const { counts, syncedAt, topProjects, exampleMatches } = Astro.props;
+const top = topProjects.slice(0, 3);
+---
+
+<section class="home-hero" aria-labelledby="hero-title">
+  <div class="page-shell home-hero__grid">
+    <div class="home-hero__copy">
+      <a class="hero-badge" href="#catalog">
+        <span class="hero-badge__live"><span class="live-dot" aria-hidden="true"></span>LIVE</span>
+        <span>{counts.total} 个浙大开源项目已收录</span>
+        <span class="hero-badge__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <h1 class="home-hero__title" id="hero-title">
+        浙大人的开源项目<br>
+        <span>都在这里</span>
+      </h1>
+
+      <p class="home-hero__lede">
+        从校园工具、课程资料到科研代码与效率脚本，OpenZJU 把散落在 GitHub
+        上的浙大项目整理成一份可检索的索引。每个项目都有维护状态、Star 数与最近提交时间。
+      </p>
+
+      <a class="hero-command" href="#catalog" data-search-jump aria-label="聚焦项目搜索">
+        <span class="hero-command__prompt" aria-hidden="true">❯</span>
+        <span class="hero-command__text">search 项目、标签或语言…</span>
+        <kbd class="hero-command__kbd" aria-hidden="true">/</kbd>
+        <span class="hero-command__btn">聚焦搜索</span>
+      </a>
+
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#catalog">
+          浏览全部项目
+          <Icon name="lucide:arrow-down" aria-hidden="true" />
+        </a>
+        <a
+          class="btn btn--ghost"
+          href={siteConfig.newProjectIssueUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          推荐项目
+          <Icon name="lucide:plus" aria-hidden="true" />
+        </a>
+      </div>
+
+      <dl class="hero-stats">
+        <div class="hero-stat">
+          <dt>收录项目</dt>
+          <dd>{counts.total}</dd>
+        </div>
+        <div class="hero-stat">
+          <dt title="最近一年内有提交（含活跃项目）">仍在维护</dt>
+          <dd>{counts.maintained}</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>累计 Stars</dt>
+          <dd>{formatCompactNumber(counts.totalStars)}</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>场景分类</dt>
+          <dd>{CATEGORIES.length}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="home-hero__visual" aria-hidden="true">
+      <div class="terminal">
+        <div class="terminal__bar">
+          <span class="terminal__dots"><i></i><i></i><i></i></span>
+          <span class="terminal__title">openzju — status --live</span>
+          <span class="terminal__shell">zsh</span>
+        </div>
+
+        <div class="terminal__body">
+          <div class="terminal__line">
+            <span class="terminal__prompt">❯</span>
+            <span class="terminal__cmd">openzju status</span>
+          </div>
+          <div class="terminal__line">
+            <span class="terminal__ok">●</span>
+            <span>index ready</span>
+            <span>·</span>
+            <span>{counts.total} projects</span>
+            <span>·</span>
+            <span>{counts.maintained} maintained</span>
+          </div>
+
+          <div class="terminal__line" style="margin-top: 0.55rem;">
+            <span class="terminal__prompt">❯</span>
+            <span class="terminal__cmd">openzju top --stars 3</span>
+          </div>
+
+          {top.map((project, index) => (
+            <div class="terminal__row">
+              <span class="terminal__rank">{String(index + 1).padStart(2, "0")}</span>
+              <span class="terminal__name">{project.name}</span>
+              <span class="terminal__lang">{project.stats?.language ?? "—"}</span>
+              <span class="terminal__stars">
+                ★ {formatCompactNumber(project.stats?.stars ?? 0)}
+              </span>
+            </div>
+          ))}
+
+          <div class="terminal__line" style="margin-top: 0.55rem;">
+            <span class="terminal__prompt">❯</span>
+            <span class="terminal__cmd">openzju search "rvpn"</span>
+          </div>
+          <div class="terminal__line">
+            <span class="terminal__accent">{exampleMatches} matches</span>
+            <span>· press</span>
+            <span class="terminal__accent">/</span>
+            <span>to search all {counts.total}</span>
+          </div>
+
+          <div class="terminal__line terminal__cursor">
+            <span class="terminal__prompt">❯</span>
+            <span class="terminal__caret">▋</span>
+          </div>
+        </div>
+
+        <div class="terminal__foot">
+          <span>synced {formatDateTime(syncedAt)}</span>
+          <span class="terminal__ok">● live index</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

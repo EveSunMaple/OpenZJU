@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components";
+import type { ProjectView } from "@/application/catalog";
+import { formatCompactNumber } from "@/presentation/lib/format";
+import ProjectAvatar from "./ProjectAvatar.astro";
+
+interface Props {
+  projects: readonly ProjectView[];
+  total: number;
+}
+
+const { projects, total } = Astro.props;
+
+function hostOf(url: string): string | null {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
+function projectHost(project: ProjectView): string {
+  const websiteHost = project.links.website ? hostOf(project.links.website) : null;
+
+  if (websiteHost) {
+    return websiteHost;
+  }
+
+  if (project.repo) {
+    return `github.com/${project.repo}`;
+  }
+
+  const downloadHost = project.links.download ? hostOf(project.links.download) : null;
+
+  return downloadHost ?? project.name;
+}
+---
+
+<section class="home-section featured-section" aria-labelledby="featured-title">
+  <div class="page-shell">
+    <div class="section-head">
+      <div class="section-head__copy">
+        <span class="kicker">02 / FEATURED</span>
+        <h2 id="featured-title">精选项目</h2>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="#catalog">
+        全部 {total} 个项目
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="featured-grid">
+      {projects.map((project, index) => (
+        <a
+          class={`featured-card ${index === 0 ? "featured-card--lead" : ""}`}
+          href={project.primaryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-category={project.category}
+        >
+          <span class="win__bar">
+            <span class="win__dots">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+            <span class="win__title">{projectHost(project)}</span>
+          </span>
+
+          <span class="featured-card__body">
+            <span class="featured-card__head">
+              <ProjectAvatar project={project} size="lg" />
+              <span class="featured-card__identity">
+                <h3>{project.name}</h3>
+                <span class="featured-card__stars">
+                  <Icon name="lucide:star" aria-hidden="true" />
+                  {formatCompactNumber(project.stats?.stars ?? 0)} Stars
+                </span>
+              </span>
+            </span>
+
+            <span class="featured-card__desc">{project.description}</span>
+
+            <span class="featured-card__meta">
+              <span class="kind-tag">{project.categoryInfo.label}</span>
+              {project.stats?.language && (
+                <span class="platform-tag">{project.stats.language}</span>
+              )}
+              <span
+                class="platform-tag platform-tag--status"
+                style={`--status-color: var(--status-${project.maintenance.status})`}
+                title={project.maintenance.description}
+              >
+                <span
+                  class={`status-dot status-dot--${project.maintenance.status}`}
+                  aria-hidden="true"
+                />
+                {project.maintenance.label}
+              </span>
+            </span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

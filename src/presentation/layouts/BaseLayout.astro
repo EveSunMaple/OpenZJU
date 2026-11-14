@@ -1,5 +1,6 @@
 ---
 import "@/presentation/styles/global.css";
+import "@/presentation/styles/redesign.css";
 import { siteConfig } from "@/config/site";
 import Footer from "@/presentation/components/site/Footer.astro";
 import Header from "@/presentation/components/site/Header.astro";
@@ -53,7 +54,7 @@ const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u00
 ---
 
 <!doctype html>
-<html lang="zh-CN" class="light" data-theme="light" data-theme-mode="system">
+<html lang="zh-CN" class="dark" data-theme="dark" data-theme-mode="dark">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,7 +63,8 @@ const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u00
       try {
         const key = "zju-atlas-theme";
         const stored = localStorage.getItem(key);
-        const mode = stored === "light" || stored === "dark" ? stored : "system";
+        const mode =
+          stored === "light" || stored === "dark" || stored === "system" ? stored : "dark";
         const resolved =
           mode === "dark" ||
           (mode === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -75,7 +77,10 @@ const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u00
         root.dataset.themeMode = mode;
         root.style.colorScheme = resolved;
       } catch {
-        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("light");
+        document.documentElement.classList.add("dark");
+        document.documentElement.dataset.theme = "dark";
+        document.documentElement.dataset.themeMode = "dark";
       }
     })();
     </script>
@@ -85,8 +90,14 @@ const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u00
     <meta name="author" content={siteConfig.author}>
     <meta name="generator" content={Astro.generator}>
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#161619">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f7f9">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080b0e">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    >
     <link rel="canonical" href={canonical}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">

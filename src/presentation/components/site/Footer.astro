@@ -3,7 +3,6 @@ import { Icon } from "astro-icon/components";
 import { siteConfig } from "@/config/site";
 import { CATEGORIES } from "@/domain/project/category";
 import { formatDateTime } from "@/presentation/lib/format";
-import Logo from "./Logo.astro";
 
 interface Props {
   syncedAt?: string | null;
@@ -24,25 +23,40 @@ const sourceLabels: Record<string, string> = {
 
 <footer class="site-footer">
   <div class="page-shell">
+    <span class="site-footer__watermark" aria-hidden="true">OpenZJU</span>
+
     <div class="site-footer__top">
       <div class="site-footer__brand">
-        <Logo />
-        <p class="site-footer__tagline">浙江大学开源项目索引，由社区维护。</p>
+        <span class="site-footer__prompt">❯ openzju --about</span>
+        <p class="site-footer__tagline">
+          浙江大学师生与校友的开源项目索引。静态生成、浏览器内检索，由社区持续维护。
+        </p>
+        <span class="site-footer__status">
+          <span class="live-dot" aria-hidden="true"></span>
+          {syncedAt ? `数据同步于 ${formatDateTime(syncedAt)}` : "尚未同步数据"}
+        </span>
       </div>
 
-      <div class="site-footer__aside">
-        <nav class="site-footer__nav" aria-label="页脚导航">
+      <nav class="site-footer__nav" aria-label="页脚导航">
+        <div class="site-footer__nav-group">
+          <span class="site-footer__nav-label">浏览</span>
+          <a href="/">全部项目</a>
           {CATEGORIES.map((category) => (
             <a href={`/categories/${category.id}/`}>{category.label}</a>
           ))}
+        </div>
+        <div class="site-footer__nav-group">
+          <span class="site-footer__nav-label">站点</span>
           <a href="/about/">关于</a>
           <a href="/about/#criteria">收录标准</a>
           <a href="/about/#contribute">贡献项目</a>
-        </nav>
+        </div>
+      </nav>
 
+      <div class="site-footer__aside">
         <div class="site-footer__actions">
           <a
-            class="button button--sm button--outline site-footer__action"
+            class="btn btn--ghost btn--sm"
             href={siteConfig.newProjectIssueUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -51,7 +65,7 @@ const sourceLabels: Record<string, string> = {
             添加我的项目
           </a>
           <a
-            class="button button--sm button--outline site-footer__action"
+            class="btn btn--ghost btn--sm"
             href={siteConfig.repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -76,17 +90,18 @@ const sourceLabels: Record<string, string> = {
           </a>
         </span>
         {total !== undefined && <span>收录 {total} 个项目</span>}
+        {source && <span>数据源：{sourceLabels[source] ?? source}</span>}
       </div>
 
       <div class="site-footer__meta">
-        {source && <span>数据源：{sourceLabels[source] ?? source}</span>}
-        {syncedAt && <span>数据同步于 {formatDateTime(syncedAt)}</span>}
         <span>
-          本站作者：
+          由{" "}
           <a href={siteConfig.authorUrl} target="_blank" rel="noopener noreferrer">
             @{siteConfig.author}
-          </a>
+          </a>{" "}
+          维护
         </span>
+        <a href="/about/#stack">Astro · Tailwind · HeroUI</a>
       </div>
     </div>
   </div>

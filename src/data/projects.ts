@@ -71,6 +71,7 @@ export const projects = [
     links: {
       website: "https://zjuers.com/welcome/",
     },
+    featured: true,
   },
   {
     slug: "zju-live-better",

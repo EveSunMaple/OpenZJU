@@ -1,0 +1,30 @@
+---
+import type { ProjectView } from "@/application/catalog";
+
+interface Props {
+  project: ProjectView;
+  size?: "sm" | "md" | "lg";
+  class?: string;
+}
+
+const { project, size = "md", class: className = "" } = Astro.props;
+const owner = project.repo?.split("/")[0] ?? null;
+const avatarSrc = owner ? `https://github.com/${owner}.png?size=96` : null;
+const initial = project.name.trim().slice(0, 1).toUpperCase();
+const sizeClass = size === "sm" ? "project-avatar--sm" : size === "lg" ? "project-avatar--lg" : "";
+---
+
+<span class={`project-avatar ${sizeClass} ${className}`} aria-hidden="true">
+  <span class="project-avatar__initial">{initial}</span>
+  {avatarSrc && (
+    <img
+      src={avatarSrc}
+      alt=""
+      width="96"
+      height="96"
+      loading="lazy"
+      decoding="async"
+      onerror="this.remove()"
+    />
+  )}
+</span>

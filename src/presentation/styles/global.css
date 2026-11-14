@@ -3,65 +3,120 @@
 @import "@heroui/styles/variants";
 @import "@heroui/styles/themes/default" layer(theme);
 @import "@heroui/styles/base" layer(base);
-@import "@heroui/styles/components/button.css" layer(components);
-@import "@heroui/styles/components/card.css" layer(components);
-@import "@heroui/styles/components/search-field.css" layer(components);
-@import "@heroui/styles/components/toggle-button.css" layer(components);
-@import "@heroui/styles/components/toggle-button-group.css" layer(components);
 
 :root {
   --font-body:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", "Noto Sans SC", sans-serif;
   --font-display:
-    "Iowan Old Style", "Palatino Linotype", "Songti SC", "Noto Serif SC", "Source Han Serif SC",
-    Georgia, serif;
-  --font-code: "SFMono-Regular", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+    "Bricolage Grotesque", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
+    sans-serif;
+  --font-code:
+    "JetBrains Mono", "SFMono-Regular", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
 
-  --accent: oklch(0.48 0.15 253);
-  --accent-hover: oklch(0.43 0.16 253);
+  --background: oklch(0.972 0.004 240);
+  --foreground: oklch(0.235 0.018 250);
+  --surface: oklch(0.995 0.002 240);
+  --surface-foreground: var(--foreground);
+  --surface-secondary: oklch(0.958 0.006 240);
+  --surface-tertiary: oklch(0.938 0.008 240);
+  --overlay: oklch(0.995 0.002 240);
+  --overlay-foreground: var(--foreground);
+  --muted: oklch(0.48 0.018 250);
+  --border: oklch(0.9 0.008 240);
+  --separator: oklch(0.92 0.006 240);
+  --field-background: oklch(1 0 0);
+  --field-foreground: var(--foreground);
+  --field-placeholder: var(--muted);
+
+  --accent: oklch(0.56 0.13 230);
+  --accent-hover: oklch(0.5 0.14 232);
   --accent-foreground: oklch(0.99 0 0);
+  --accent-soft: color-mix(in oklab, var(--accent) 12%, transparent);
+  --accent-soft-foreground: color-mix(in oklab, var(--accent) 82%, var(--foreground) 18%);
   --link: var(--accent);
-  --radius: 0.8rem;
+  --radius: 0.75rem;
 
-  --cat-life: oklch(0.58 0.14 157);
-  --cat-study: oklch(0.53 0.16 255);
-  --cat-research: oklch(0.56 0.17 305);
-  --cat-work: oklch(0.65 0.15 61);
+  --panel: oklch(0.995 0.002 240);
+  --panel-2: oklch(0.965 0.005 240);
+  --line: oklch(0.91 0.008 240);
+  --line-2: oklch(0.86 0.01 240);
+  --line-3: oklch(0.79 0.012 240);
+  --fg-2: oklch(0.44 0.018 250);
+  --fg-3: oklch(0.54 0.014 250);
+  --accent-glow: color-mix(in oklab, var(--accent) 18%, transparent);
 
-  --status-active: oklch(0.6 0.16 150);
-  --status-maintained: oklch(0.58 0.14 248);
-  --status-low: oklch(0.7 0.15 78);
-  --status-dormant: oklch(0.62 0.17 36);
-  --status-archived: oklch(0.55 0.01 260);
-  --status-unknown: oklch(0.62 0.01 260);
+  --cat-life: oklch(0.55 0.13 155);
+  --cat-study: oklch(0.54 0.15 255);
+  --cat-research: oklch(0.54 0.16 305);
+  --cat-work: oklch(0.58 0.13 65);
 
-  --page-max: 90rem;
-  --page-pad: clamp(1rem, 4vw, 3rem);
-  --surface-glass: color-mix(in oklch, var(--surface) 86%, transparent);
+  --status-active: oklch(0.55 0.15 152);
+  --status-maintained: oklch(0.55 0.13 248);
+  --status-low: oklch(0.62 0.14 78);
+  --status-dormant: oklch(0.58 0.16 38);
+  --status-archived: oklch(0.54 0.012 260);
+  --status-unknown: oklch(0.56 0.012 260);
+
+  --page-max: 80rem;
+  --page-pad: clamp(1.1rem, 4vw, 2rem);
+  --surface-glass: color-mix(in oklab, var(--surface) 84%, transparent);
   --header-height: 4.25rem;
+
+  --surface-shadow: 0 1px 2px 0 rgb(10 20 30 / 4%), 0 8px 24px -16px rgb(10 20 30 / 18%);
+  --overlay-shadow: 0 2px 8px 0 rgb(10 20 30 / 6%), 0 14px 28px 0 rgb(10 20 30 / 8%);
+  --field-shadow: 0 1px 2px 0 rgb(10 20 30 / 4%), 0 0 0 1px rgb(10 20 30 / 3%);
 }
 
 .dark,
 [data-theme="dark"] {
-  --accent: oklch(0.76 0.12 247);
-  --accent-hover: oklch(0.82 0.11 247);
-  --accent-foreground: oklch(0.17 0.025 255);
+  --background: oklch(0.125 0.008 240);
+  --foreground: oklch(0.95 0.008 220);
+  --surface: oklch(0.17 0.01 240);
+  --surface-foreground: var(--foreground);
+  --surface-secondary: oklch(0.2 0.012 240);
+  --surface-tertiary: oklch(0.23 0.014 240);
+  --overlay: oklch(0.19 0.012 240);
+  --overlay-foreground: var(--foreground);
+  --muted: oklch(0.7 0.014 230);
+  --border: oklch(0.29 0.014 240);
+  --separator: oklch(0.26 0.012 240);
+  --field-background: oklch(0.19 0.012 240);
+  --field-foreground: var(--foreground);
+  --field-placeholder: var(--muted);
+
+  --accent: oklch(0.82 0.12 220);
+  --accent-hover: oklch(0.88 0.1 220);
+  --accent-foreground: oklch(0.16 0.025 240);
+  --accent-soft: color-mix(in oklab, var(--accent) 12%, transparent);
+  --accent-soft-foreground: color-mix(in oklab, var(--accent) 86%, var(--foreground) 14%);
   --link: var(--accent);
 
-  --cat-life: oklch(0.76 0.13 157);
-  --cat-study: oklch(0.75 0.12 252);
-  --cat-research: oklch(0.78 0.12 305);
-  --cat-work: oklch(0.82 0.13 74);
+  --panel: oklch(0.175 0.01 240);
+  --panel-2: oklch(0.205 0.012 240);
+  --line: oklch(0.25 0.012 240);
+  --line-2: oklch(0.31 0.014 240);
+  --line-3: oklch(0.39 0.016 240);
+  --fg-2: oklch(0.76 0.012 230);
+  --fg-3: oklch(0.62 0.014 230);
+  --accent-glow: color-mix(in oklab, var(--accent) 22%, transparent);
 
-  --status-active: oklch(0.76 0.15 152);
-  --status-maintained: oklch(0.77 0.12 248);
-  --status-low: oklch(0.82 0.13 82);
-  --status-dormant: oklch(0.73 0.16 42);
+  --cat-life: oklch(0.8 0.13 155);
+  --cat-study: oklch(0.78 0.12 252);
+  --cat-research: oklch(0.81 0.13 305);
+  --cat-work: oklch(0.84 0.13 74);
+
+  --status-active: oklch(0.8 0.14 152);
+  --status-maintained: oklch(0.79 0.12 248);
+  --status-low: oklch(0.84 0.13 82);
+  --status-dormant: oklch(0.75 0.15 42);
   --status-archived: oklch(0.66 0.012 260);
   --status-unknown: oklch(0.66 0.012 260);
 
-  --surface-glass: color-mix(in oklch, var(--surface) 82%, transparent);
+  --surface-glass: color-mix(in oklab, var(--surface) 80%, transparent);
+  --surface-shadow: 0 20px 60px -36px rgb(0 0 0 / 85%);
+  --overlay-shadow: 0 0 0 1px rgb(255 255 255 / 4%) inset, 0 24px 70px -30px rgb(0 0 0 / 85%);
+  --field-shadow: 0 0 0 0 transparent inset;
 }
 
 html {
@@ -445,18 +500,6 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
   margin-top: 2rem;
 }
 
-.hero-actions .button {
-  height: 2.65rem;
-  padding-inline: 1.1rem;
-  border-radius: 0.7rem;
-  font-size: 0.8rem;
-}
-
-.hero-actions .button svg {
-  width: 0.95rem;
-  height: 0.95rem;
-}
-
 .category-index {
   overflow: hidden;
   border: 1px solid var(--border);
@@ -784,55 +827,6 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
   width: 100%;
 }
 
-.catalog-search .search-field__group {
-  height: 3.45rem;
-  border: 1px solid var(--border);
-  border-radius: 0.95rem;
-  background: color-mix(in oklch, var(--surface) 88%, transparent);
-  box-shadow:
-    var(--field-shadow),
-    inset 0 1px 0 oklch(1 0 0 / 4%);
-  backdrop-filter: blur(10px);
-}
-
-.catalog-search .search-field__group:hover {
-  border-color: color-mix(in oklch, var(--accent) 28%, var(--border));
-}
-
-.catalog-search .search-field__group:focus-within {
-  border-color: color-mix(in oklch, var(--accent) 55%, var(--border));
-  box-shadow:
-    0 0 0 2px color-mix(in oklch, var(--accent) 18%, transparent),
-    var(--field-shadow);
-}
-
-.catalog-search .search-field__search-icon {
-  width: 1.05rem;
-  height: 1.05rem;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
-  color: var(--muted);
-}
-
-.catalog-search .search-field__input,
-.catalog-search .search-field__input:hover,
-.catalog-search .search-field__input:focus,
-.catalog-search .search-field__input:focus-visible {
-  height: 100%;
-  padding-inline: 0.25rem 0.5rem;
-  border: 0;
-  outline: none;
-  outline-offset: 0;
-  box-shadow: none;
-  color: var(--foreground);
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-}
-
-.catalog-search .search-field__input::placeholder {
-  color: var(--muted);
-}
-
 .search-clear {
   display: grid;
   width: 1.55rem;
@@ -989,26 +983,6 @@ html[data-theme-mode="dark"] [data-theme-option="dark"] {
   min-width: 0;
   max-width: 100%;
   flex-wrap: wrap;
-}
-
-.sort-control .toggle-button {
-  gap: 0.3rem;
-  padding-inline: 0.7rem;
-  color: var(--muted);
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.sort-control .toggle-button svg {
-  width: 0.85rem;
-  height: 0.85rem;
-  margin: 0;
-}
-
-.sort-control .toggle-button[data-selected="true"] {
-  color: var(--accent-soft-foreground);
 }
 
 .project-grid {

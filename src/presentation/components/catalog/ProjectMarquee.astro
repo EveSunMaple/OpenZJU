@@ -1,0 +1,42 @@
+---
+import type { ProjectView } from "@/application/catalog";
+import ProjectAvatar from "./ProjectAvatar.astro";
+
+interface Props {
+  projects: readonly ProjectView[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="project-marquee" aria-label="项目速览">
+  <div class="project-marquee__track">
+    <div class="project-marquee__group">
+      {projects.map((project) => (
+        <a
+          class="project-marquee__item"
+          href={project.primaryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ProjectAvatar project={project} size="sm" />
+          {project.name}
+        </a>
+      ))}
+    </div>
+    <div class="project-marquee__group" aria-hidden="true">
+      {projects.map((project) => (
+        <a
+          class="project-marquee__item"
+          href={project.primaryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          tabindex="-1"
+        >
+          <ProjectAvatar project={project} size="sm" />
+          {project.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

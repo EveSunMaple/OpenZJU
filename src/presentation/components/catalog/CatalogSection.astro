@@ -49,50 +49,44 @@ const sortOptions = [
 
 <section class="catalog-section" id="catalog" data-catalog aria-labelledby="catalog-title">
   <div class="catalog-heading">
-    <div>
-      <p class="eyebrow">{eyebrow}</p>
+    <div class="catalog-heading__copy">
+      <span class="kicker">{eyebrow}</span>
       <h2 id="catalog-title">{title}</h2>
     </div>
 
     <div class="catalog-heading__meta">
       <p class="results-count" data-results-count aria-live="polite">共 {counts.total} 个项目</p>
-      <p class="results-hint" id="catalog-search-hint">支持名称、简介、标签与编程语言检索</p>
+      <p class="results-hint" id="catalog-search-hint">
+        支持名称、简介、标签与编程语言检索 · 按 / 聚焦
+      </p>
     </div>
   </div>
 
   <search class="catalog-search">
-    <div class="search-field search-field--full-width">
-      <label class="sr-only" for="project-search">搜索项目</label>
-      <div class="search-field__group search-field__group--full-width">
-        <Icon
-          name="lucide:search"
-          class="search-field__search-icon"
-          data-slot="search-field-search-icon"
-          aria-hidden="true"
-        />
-        <input
-          class="search-field__input"
-          id="project-search"
-          data-search-input
-          data-slot="search-field-input"
-          type="search"
-          placeholder="搜索项目、标签、语言…"
-          autocomplete="off"
-          spellcheck="false"
-          aria-describedby="catalog-search-hint"
-        >
-        <button
-          class="search-clear"
-          type="button"
-          data-search-clear
-          aria-label="清空搜索"
-          title="清空搜索"
-          hidden
-        >
-          <Icon name="lucide:x" aria-hidden="true" />
-        </button>
-        <kbd class="search-shortcut" aria-hidden="true">/</kbd>
-      </div>
+    <label class="sr-only" for="project-search">搜索项目</label>
+    <div class="catalog-command">
+      <span class="catalog-command__prompt" aria-hidden="true">❯</span>
+      <input
+        class="catalog-command__input"
+        id="project-search"
+        data-search-input
+        type="search"
+        placeholder="搜索项目、标签、语言…"
+        autocomplete="off"
+        spellcheck="false"
+        aria-describedby="catalog-search-hint"
+      >
+      <button
+        class="search-clear"
+        type="button"
+        data-search-clear
+        aria-label="清空搜索"
+        title="清空搜索"
+        hidden
+      >
+        <Icon name="lucide:x" aria-hidden="true" />
+      </button>
+      <kbd class="search-shortcut" aria-hidden="true">/</kbd>
     </div>
   </search>
 
@@ -112,7 +106,11 @@ const sortOptions = [
           aria-pressed="false"
           title={MAINTENANCE_META[status].description}
         >
-          <span class={`filter-pill__dot status-dot--${status}`} aria-hidden="true" />
+          <span
+            class={`filter-pill__dot status-dot--${status}`}
+            style={`--status-color: var(--status-${status})`}
+            aria-hidden="true"
+          />
           {MAINTENANCE_META[status].label}
           <span class="filter-pill__count" data-status-count>
             {counts.byStatus[status]}
@@ -124,12 +122,10 @@ const sortOptions = [
     <fieldset class="sort-control">
       <legend class="sr-only">项目排序方式</legend>
       <span class="sort-control__label" aria-hidden="true">排序</span>
-      <div
-        class="toggle-button-group toggle-button-group--horizontal toggle-button-group--detached sort-control__group"
-      >
+      <div class="sort-control__group">
         {sortOptions.map((option) => (
           <button
-            class="toggle-button toggle-button--sm sort-control__button"
+            class="sort-pill"
             type="button"
             data-sort-option={option.value}
             aria-pressed={option.value === "recent" ? "true" : "false"}

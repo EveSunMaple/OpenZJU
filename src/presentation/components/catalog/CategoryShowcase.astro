@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import type { CatalogCounts } from "@/application/catalog";
+import { CATEGORIES } from "@/domain/project/category";
+
+interface Props {
+  counts: CatalogCounts;
+}
+
+const { counts } = Astro.props;
+---
+
+<section class="home-section categories-section" aria-labelledby="categories-title">
+  <div class="page-shell">
+    <div class="section-head">
+      <div class="section-head__copy">
+        <span class="kicker">01 / CATEGORIES</span>
+        <h2 id="categories-title">按分类浏览</h2>
+      </div>
+      <p class="section-head__note">
+        从校园生活到科研工作，四个入口覆盖浙大开源项目的主要使用场景。
+      </p>
+    </div>
+
+    <div class="category-tiles">
+      {CATEGORIES.map((category) => {
+        const count = counts.byCategory[category.id];
+
+        return (
+          <a
+            class="category-tile"
+            href={`/categories/${category.id}/`}
+            style={`--category-color: var(--cat-${category.id})`}
+          >
+            <span class="category-tile__top">
+              <span class="category-tile__path">~/{category.id}</span>
+              <span class="category-tile__count">{count} 个项目</span>
+            </span>
+
+            <span class="category-tile__big" aria-hidden="true">
+              {String(count).padStart(2, "0")}
+            </span>
+
+            <span class="category-tile__bottom">
+              <span class="category-tile__copy">
+                <span class="category-tile__name">
+                  <Icon name={category.icon} aria-hidden="true" />
+                  {category.label}
+                  <span>{category.labelEn}</span>
+                </span>
+                <span class="category-tile__desc">{category.description}</span>
+              </span>
+              <span class="category-tile__arrow" aria-hidden="true">
+                →
+              </span>
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

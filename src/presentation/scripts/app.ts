@@ -18,6 +18,35 @@ function mountCatalog(): void {
   catalogController?.init();
 }
 
+function handleSearchJump(event: MouseEvent): void {
+  const target = event.target;
+
+  if (
+    event.button !== 0 ||
+    event.metaKey ||
+    event.ctrlKey ||
+    event.shiftKey ||
+    event.altKey ||
+    !(target instanceof Element)
+  ) {
+    return;
+  }
+
+  if (!target.closest("[data-search-jump]")) {
+    return;
+  }
+
+  const catalog = document.querySelector<HTMLElement>("[data-catalog]");
+  const input = catalog?.querySelector<HTMLInputElement>("[data-search-input]");
+
+  if (!catalog || !input) {
+    return;
+  }
+
+  event.preventDefault();
+  catalogController?.focusSearch();
+}
+
 function handleSearchShortcut(event: KeyboardEvent): void {
   if (event.isComposing) {
     return;
@@ -53,6 +82,7 @@ if (import.meta.env.PROD) {
 }
 
 document.addEventListener("keydown", handleSearchShortcut);
+document.addEventListener("click", handleSearchJump);
 
 const swup = new Swup({
   containers: ["#swup"],
