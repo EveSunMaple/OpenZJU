@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-13T08:25:32.087Z",
-  "source": "mixed",
+  "generatedAt": "2026-11-18T13:01:01.823Z",
+  "source": "github-graphql",
   "repositories": {
     "0x000005/better-zdbk": {
       "fullName": "0x000005/better-zdbk",
@@ -20,7 +20,7 @@
       "commitsLastYear": 3,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "2044145178/learning_in_zju_script": {
       "fullName": "2044145178/Learning_in_ZJU_script",
@@ -39,12 +39,31 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "5dbwat4/login-zju": {
+      "fullName": "5dbwat4/login-ZJU",
+      "description": "Server-side library helping your application login to ZJU services",
+      "stars": 18,
+      "forks": 3,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-10-07T11:07:16Z",
+      "pushedAt": "2026-10-14T17:56:20Z",
+      "commitsLast90Days": 2,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 42,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "5dbwat4/zju-live-better": {
       "fullName": "5dbwat4/ZJU-live-better",
       "description": "A collection of useful scripts helping you live better in ZJU.",
-      "stars": 247,
+      "stars": 249,
       "forks": 39,
       "openIssues": 4,
       "language": "JavaScript",
@@ -55,10 +74,29 @@
       "pushedAt": "2026-10-28T14:56:42Z",
       "commitsLast90Days": 5,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 59,
+      "commitsLastYear": 57,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "5dbwat4/zjuphylab.ics": {
+      "fullName": "5dbwat4/zjuphylab.ics",
+      "description": "将浙江大学物理实验课表转为iCalendar格式",
+      "stars": 4,
+      "forks": 1,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "license": "LGPL-2.1",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2025-02-24T13:39:02Z",
+      "pushedAt": "2025-02-24T13:39:08Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "8eoyw/zju-learning-cli": {
       "fullName": "8eoyw/zju-learning-cli",
@@ -82,7 +120,7 @@
         "zhejiang-university",
         "zju"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "adsr1042/cardscope": {
       "fullName": "ADSR1042/CardScope",
@@ -101,12 +139,12 @@
       "commitsLastYear": 5,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "adsr1042/lazuli": {
       "fullName": "ADSR1042/Lazuli",
       "description": "开源版本浙江大学教务系统选课插件,支持离线/在线查老师评分数据显示,优化教务系统体验",
-      "stars": 50,
+      "stars": 49,
       "forks": 8,
       "openIssues": 2,
       "language": "JavaScript",
@@ -120,7 +158,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "adsr1042/zju_vocabboost": {
       "fullName": "ADSR1042/ZJU_VocabBoost",
@@ -139,7 +177,26 @@
       "commitsLastYear": 0,
       "homepageUrl": "https://eng.adsr.me/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "alwaysbyx/zju-ee": {
+      "fullName": "alwaysbyx/ZJU-EE",
+      "description": "浙江大学电气工程学院（自动化）课程指南",
+      "stars": 117,
+      "forks": 19,
+      "openIssues": 1,
+      "language": null,
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2020-11-07T06:28:03Z",
+      "pushedAt": "2020-11-07T06:28:04Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "anchorite-no/cc98-autosign-fast": {
       "fullName": "Anchorite-no/cc98-autosign-fast",
@@ -165,14 +222,14 @@
         "zju",
         "signin-script"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "anchorite-no/dsh-zju-assistant": {
       "fullName": "Anchorite-no/dsh-zju-assistant",
       "description": "ZJU All-in-One Assistant：浙大学生的一站式校园 AI 助手，DeepSeek Harness 插件（npm 包 dsh-zju-assistant）",
-      "stars": 73,
-      "forks": 3,
-      "openIssues": 2,
+      "stars": 74,
+      "forks": 4,
+      "openIssues": 4,
       "language": "TypeScript",
       "license": "GPL-3.0",
       "archived": false,
@@ -184,7 +241,7 @@
       "commitsLastYear": 89,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "aoikjuice/zju-academic": {
       "fullName": "AoiKJuice/ZJU-Academic",
@@ -203,7 +260,26 @@
       "commitsLastYear": 20,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "auspiow/zhiyun-extension": {
+      "fullName": "Auspiow/ZYNotes",
+      "description": "ZJU智云课堂笔记助手，2025年借助ai搓的一个chrome插件，但是在ai时代已经过时了",
+      "stars": 8,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": null,
+      "archived": true,
+      "defaultBranch": "master",
+      "lastCommitAt": "2025-11-27T04:05:05Z",
+      "pushedAt": "2025-11-27T04:46:11Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 13,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "auspiow/zynotes": {
       "fullName": "Auspiow/ZYNotes",
@@ -222,7 +298,7 @@
       "commitsLastYear": 13,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "ayin-ay/self-evolving-skills": {
       "fullName": "Ayin-ay/self-evolving-skills",
@@ -241,7 +317,45 @@
       "commitsLastYear": 13,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "beringz/cc98_filter": {
+      "fullName": "BeringZ/CC98_Filter",
+      "description": "我的98我做主，不想看的内容直接拒绝 | My CC98, My Own",
+      "stars": 1,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-09-06T02:05:54Z",
+      "pushedAt": "2026-09-06T02:05:56Z",
+      "commitsLast90Days": 4,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 4,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "beringz/web-ai-assistant": {
+      "fullName": "BeringZ/web-ai-assistant",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-08-14T09:02:16Z",
+      "pushedAt": "2026-08-14T09:02:28Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 12,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "birchtree2/zju-grad-course-helper": {
       "fullName": "birchtree2/zju-grad-course-helper",
@@ -260,7 +374,7 @@
       "commitsLastYear": 16,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "blackhorseq/lightgcn-paddle": {
       "fullName": "BlackHorseQ/lightGCN-paddle",
@@ -279,7 +393,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "blackhorseq/ngcf-paddle2": {
       "fullName": "BlackHorseQ/NGCF-paddle2",
@@ -298,7 +412,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "bms-2021/minisql": {
       "fullName": "BMS-2021/MiniSQL",
@@ -322,7 +436,7 @@
         "distributed-systems",
         "zookeeper"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "catqaq/chatpixiu": {
       "fullName": "OpenLLMAI/OpenLLMWiki",
@@ -353,7 +467,7 @@
         "openllm",
         "openllmai"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "catqaq/opentextclassification": {
       "fullName": "catqaq/OpenTextClassification",
@@ -389,7 +503,7 @@
         "bert-text-classification",
         "chinese-text-classification"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "cazorp138/orangeassistant-for-windows": {
       "fullName": "Cazorp138/OrangeAssistant-for-Windows",
@@ -408,7 +522,7 @@
       "commitsLastYear": 2,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "cedar17/cc98-img-upload": {
       "fullName": "Cedar17/cc98-img-upload",
@@ -433,7 +547,7 @@
         "md",
         "upload"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "cedar17/zju-connect-android": {
       "fullName": "Cedar17/zju-connect-android",
@@ -447,7 +561,7 @@
       "defaultBranch": "master",
       "lastCommitAt": "2026-11-02T16:11:19Z",
       "pushedAt": "2026-11-03T12:07:03Z",
-      "commitsLast90Days": 120,
+      "commitsLast90Days": 65,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 164,
       "homepageUrl": "",
@@ -461,13 +575,13 @@
         "atrust",
         "vpn"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "celechron/celechron": {
       "fullName": "Celechron/Celechron",
       "description": "服务于浙大学生的时间管理器",
       "stars": 357,
-      "forks": 61,
+      "forks": 62,
       "openIssues": 53,
       "language": "Dart",
       "license": "GPL-3.0",
@@ -475,12 +589,12 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-09-20T11:52:17Z",
       "pushedAt": "2026-09-20T11:52:18Z",
-      "commitsLast90Days": 13,
+      "commitsLast90Days": 12,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 133,
+      "commitsLastYear": 121,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "colamentos2023/zju_innercurly_tool2": {
       "fullName": "Colamentos2023/ZJU_InnerCurly_Tool2",
@@ -499,7 +613,26 @@
       "commitsLastYear": 2,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "congutsun/animemaster_pro_mobile": {
+      "fullName": "CongutSun/AnimeMaster_Pro_mobile",
+      "description": null,
+      "stars": 4,
+      "forks": 1,
+      "openIssues": 0,
+      "language": "Dart",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-04-10T14:37:25Z",
+      "pushedAt": "2026-04-10T14:42:59Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 23,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "coran-tech/cc98-reborn": {
       "fullName": "Coran-tech/cc98-reborn",
@@ -511,14 +644,33 @@
       "license": "MIT",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-11T12:49:27Z",
-      "pushedAt": "2026-11-11T12:49:31Z",
-      "commitsLast90Days": 24,
+      "lastCommitAt": "2026-11-15T17:48:13Z",
+      "pushedAt": "2026-11-17T10:44:13Z",
+      "commitsLast90Days": 29,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 74,
+      "commitsLastYear": 79,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "couesf/marp-theme-zju": {
+      "fullName": "CouesF/marp-theme-zju",
+      "description": "a marp theme with Zhejiang University's color and LOGO",
+      "stars": 10,
+      "forks": 4,
+      "openIssues": 0,
+      "language": "CSS",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2024-01-13T15:16:32Z",
+      "pushedAt": "2024-01-13T15:16:32Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "cpbianma/zju-yjsy-course-grabber": {
       "fullName": "CPbianma/zju-yjsy-course-grabber",
@@ -537,7 +689,7 @@
       "commitsLastYear": 2,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "crazyspotteddove/fiz": {
       "fullName": "CrazySpottedDove/fiz",
@@ -556,7 +708,64 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "cyhkbl/hack_xzzd": {
+      "fullName": "cyhkbl/Hack_XZZD",
+      "description": "学在浙大自动刷课",
+      "stars": 3,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-03-11T13:49:19Z",
+      "pushedAt": "2026-03-11T13:49:19Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 5,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "daydreammer123/zju-network-auto-reconnect": {
+      "fullName": "Daydreammer123/zju-network-auto-reconnect",
+      "description": "Windows native ZJU campus network auto-reconnection, Wi-Fi failover, and UU remote monitoring",
+      "stars": 1,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Python",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-10-28T02:38:30Z",
+      "pushedAt": "2026-10-28T02:38:49Z",
+      "commitsLast90Days": 6,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 6,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "derren-brown/ieee-latex-copier": {
+      "fullName": "Derren-Brown/ieee-latex-copier",
+      "description": null,
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-04-19T05:04:26Z",
+      "pushedAt": "2026-04-19T05:04:37Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 2,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "deturium/zjuxk": {
       "fullName": "Deturium/ZJUxk",
@@ -575,7 +784,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "dimlitter/zju-dailyhealth-autocheck": {
       "fullName": "Dimlitter/zju-dailyhealth-autocheck",
@@ -597,37 +806,7 @@
         "python",
         "githubaction"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
-    },
-    "donglanqwq0/zju-tongge-schedule": {
-      "fullName": "DongLanQwQ0/ZJU-Tongge-Schedule",
-      "description": "浙大课表撞课工具：上传 .ics 课表、建群、扫码入群，一眼看出和同学哪几节课在重合、教室离得多近。零依赖 Node + 纯前端，课表在浏览器本地解析。",
-      "stars": 3,
-      "forks": 0,
-      "openIssues": 0,
-      "language": "JavaScript",
-      "license": "MIT",
-      "archived": false,
-      "defaultBranch": "main",
-      "lastCommitAt": "2026-10-24T11:13:58Z",
-      "pushedAt": "2026-10-24T11:14:01Z",
-      "commitsLast90Days": 77,
-      "commitsLast90DaysCapped": false,
-      "commitsLastYear": 77,
-      "homepageUrl": "https://111.228.3.50/tongge/",
-      "topics": [
-        "campus-tool",
-        "class-schedule",
-        "course-planner",
-        "ics",
-        "nodejs",
-        "self-hosted",
-        "timetable",
-        "zhejiang-university",
-        "zju",
-        "zju-timetable"
-      ],
-      "fetchedAt": "2026-11-05T03:29:18.958Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "dreaming-zh/segmentation-based-silicon-solar-panel-defect-detection": {
       "fullName": "dreaming-zh/Segmentation-Based-Silicon-Solar-Panel-Defect-Detection",
@@ -646,7 +825,45 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "dreamland-yu/machine_vision": {
+      "fullName": "dreamland-yu/machine_vision",
+      "description": "浙江大学机器视觉课程笔记初稿",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": null,
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-10T11:40:51Z",
+      "pushedAt": "2026-11-10T11:42:24Z",
+      "commitsLast90Days": 1,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 1,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "dremig/arknights": {
+      "fullName": "Dremig/ArkniGhTs",
+      "description": "Can an agent play in arknights, for example, Stronghold Protocol?",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-12T15:09:55Z",
+      "pushedAt": "2026-11-12T15:20:41Z",
+      "commitsLast90Days": 5,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 5,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "elyyyyyyyyxer/elychron": {
       "fullName": "Elyyyyyyyyxer/Elychron",
@@ -662,10 +879,29 @@
       "pushedAt": "2026-10-12T14:32:44Z",
       "commitsLast90Days": 374,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 483,
+      "commitsLastYear": 471,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "ethanpixar/zju-typst-tplt": {
+      "fullName": "ethanpixar/zju-typst-tplt",
+      "description": "Typst template for ZJU",
+      "stars": 45,
+      "forks": 4,
+      "openIssues": 0,
+      "language": "Typst",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2025-11-02T15:08:47Z",
+      "pushedAt": "2025-11-02T15:08:56Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "evesunmaple/openzju": {
       "fullName": "EveSunMaple/OpenZJU",
@@ -677,14 +913,14 @@
       "license": "GPL-3.0",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-12T22:14:22Z",
-      "pushedAt": "2026-11-12T22:14:23Z",
-      "commitsLast90Days": 22,
+      "lastCommitAt": "2026-11-17T23:29:03Z",
+      "pushedAt": "2026-11-18T11:47:14Z",
+      "commitsLast90Days": 32,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 22,
+      "commitsLastYear": 32,
       "homepageUrl": "openzju.cn",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "f1yingwhite/auto-course.zju": {
       "fullName": "F1yingWhite/auto-course.zju",
@@ -703,7 +939,7 @@
       "commitsLastYear": 1,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "fanbb2333/nvidb": {
       "fullName": "FanBB2333/nvidb",
@@ -717,12 +953,12 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-11-06T05:13:54Z",
       "pushedAt": "2026-11-06T05:14:22Z",
-      "commitsLast90Days": 108,
+      "commitsLast90Days": 81,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 266,
       "homepageUrl": "https://pypi.org/project/nvidb",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "fish-zjuer/anchor-explain": {
       "fullName": "Fish-zjuer/anchor-explain",
@@ -741,7 +977,26 @@
       "commitsLastYear": 87,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "fishscp/deepseek-harness-plugins": {
+      "fullName": "FishScP/DeepSeek-Harness-Plugins",
+      "description": "针对DeepSeek Harness开发的一些插件，开发过程中借助了DeepSeek实现",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-08-16T19:38:57Z",
+      "pushedAt": "2026-08-16T19:39:02Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 18,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "flaviohor/pcelechron": {
       "fullName": "Flaviohor/Pcelechron",
@@ -755,12 +1010,12 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-09-18T11:41:48Z",
       "pushedAt": "2026-10-07T06:50:29Z",
-      "commitsLast90Days": 40,
+      "commitsLast90Days": 39,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 160,
+      "commitsLastYear": 148,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "flypancake/zju-english-android": {
       "fullName": "FlyPancake/ZJU-English-Android",
@@ -779,56 +1034,42 @@
       "commitsLastYear": 15,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
-    "gcwing/bitfun": {
-      "fullName": "openBitFun/OpenBitFun",
-      "description": "OpenBitFun combines a high-performance agent runtime written in Rust with a polished desktop application. It pairs the depth of a Code Agent with open, general-purpose capabilities for work beyond software development.",
-      "stars": 4014,
-      "forks": 305,
-      "openIssues": 110,
-      "language": "Rust",
-      "license": "MIT",
+    "foreverhyx/zju_beamer_template": {
+      "fullName": "ForeverHYX/ZJU_Beamer_Template",
+      "description": "浙江大学学术演示 Beamer 模板",
+      "stars": 11,
+      "forks": 1,
+      "openIssues": 0,
+      "language": "TeX",
+      "license": null,
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-12T14:30:58Z",
-      "pushedAt": "2026-11-12T14:30:58Z",
-      "commitsLast90Days": 3656,
+      "lastCommitAt": "2026-09-21T17:12:39Z",
+      "pushedAt": "2026-09-21T17:12:46Z",
+      "commitsLast90Days": 22,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 6927,
-      "homepageUrl": "openbitfun.com",
-      "topics": [
-        "ai-coding",
-        "ai-ide",
-        "vibe-coding",
-        "cowork",
-        "agent-teams",
-        "openclaw",
-        "agentic-os",
-        "agentic-runtime",
-        "agentic",
-        "ai-sdk",
-        "computer-use-agent",
-        "bitfun",
-        "dsh-plugin"
-      ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "commitsLastYear": 22,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "geyadawang-boop/humanize-writing": {
       "fullName": "geyadawang-boop/humanize-writing",
       "description": "中文写作技能包：小说、网文、剧本、诗歌、散文的创作、编辑与长篇项目管理",
-      "stars": 20,
+      "stars": 23,
       "forks": 0,
-      "openIssues": 0,
+      "openIssues": 1,
       "language": "Python",
       "license": "Apache-2.0",
       "archived": false,
       "defaultBranch": "master",
-      "lastCommitAt": "2026-11-12T13:56:01Z",
-      "pushedAt": "2026-11-12T13:56:06Z",
-      "commitsLast90Days": 23,
+      "lastCommitAt": "2026-11-15T14:17:08Z",
+      "pushedAt": "2026-11-15T14:17:11Z",
+      "commitsLast90Days": 28,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 23,
+      "commitsLastYear": 28,
       "homepageUrl": null,
       "topics": [
         "agent-skill",
@@ -838,7 +1079,33 @@
         "fiction",
         "screenplay"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "ginsenvey/cc98-desktop": {
+      "fullName": "Ansherly/CC98-Desktop",
+      "description": "浙江大学校内论坛 CC98 的Windows 11桌面客户端,基于Win UI3构建。",
+      "stars": 40,
+      "forks": 0,
+      "openIssues": 2,
+      "language": "C#",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "Lab",
+      "lastCommitAt": "2026-11-13T04:29:09Z",
+      "pushedAt": "2026-11-14T12:17:45Z",
+      "commitsLast90Days": 48,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 160,
+      "homepageUrl": "https://apps.microsoft.com/detail/9nj1lfj8cdq0?hl=zh-CN&gl=CN&ocid=pdpshare",
+      "topics": [
+        "csharp",
+        "forum",
+        "front-end",
+        "windows",
+        "winui3",
+        "xaml"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "grapesea/csdiy_auto_resources_downloader": {
       "fullName": "Grapesea/csdiy_auto_resources_downloader",
@@ -857,7 +1124,26 @@
       "commitsLastYear": 5,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "guaysu/marp-theme-zju-enhanced": {
+      "fullName": "GuaYsu/marp-theme-zju-enhanced",
+      "description": "an enhanced marp theme with Zhejiang University's color and LOGO",
+      "stars": 45,
+      "forks": 2,
+      "openIssues": 0,
+      "language": "CSS",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-04-10T14:10:00Z",
+      "pushedAt": "2026-04-10T14:10:01Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 6,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "gvrzizo/lazy-tui": {
       "fullName": "Gvrzizo/lazy-tui",
@@ -876,7 +1162,7 @@
       "commitsLastYear": 16,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "gvvg5272-code/cc98-material-search": {
       "fullName": "gvvg5272-code/cc98-material-search",
@@ -902,23 +1188,23 @@
         "manifest-v3",
         "zju"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "habai182/paperforge-android": {
       "fullName": "HABAI182/paperforge-android",
       "description": "PaperForge：简洁分区的Android扫描、OCR、PDF阅读与文件转换工作台。手机本地处理，单个完整APK，个人非营利项目。",
-      "stars": 53,
-      "forks": 0,
+      "stars": 62,
+      "forks": 3,
       "openIssues": 0,
       "language": "Kotlin",
       "license": "AGPL-3.0",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-12T05:11:40Z",
-      "pushedAt": "2026-11-13T06:53:25Z",
-      "commitsLast90Days": 175,
+      "lastCommitAt": "2026-11-17T06:02:10Z",
+      "pushedAt": "2026-11-17T06:02:14Z",
+      "commitsLast90Days": 248,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 175,
+      "commitsLastYear": 248,
       "homepageUrl": "https://github.com/HABAI182/paperforge-android/releases/latest",
       "topics": [
         "android",
@@ -930,7 +1216,7 @@
         "document-management",
         "material3"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "haoka1/zju-offer": {
       "fullName": "HaoKa1/ZJU-Offer",
@@ -949,7 +1235,7 @@
       "commitsLastYear": 16,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "harry-linner/campusos": {
       "fullName": "Harry-Linner/CampusOS",
@@ -968,7 +1254,31 @@
       "commitsLastYear": 22,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "he-he-he-he-he-he/agent-bus": {
+      "fullName": "He-He-He-He-He-He/agent-bus",
+      "description": "A Python standard-library bus for coordinating AI agents on macOS.",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Python",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-14T06:44:24Z",
+      "pushedAt": "2026-11-14T06:44:28Z",
+      "commitsLast90Days": 2,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 2,
+      "homepageUrl": "",
+      "topics": [
+        "ai-agents",
+        "macos",
+        "multi-agent",
+        "python"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "he-he-he-he-he-he/archive-gpt-reading-assistant": {
       "fullName": "He-He-He-He-He-He/archive-gpt-reading-assistant",
@@ -987,7 +1297,7 @@
       "commitsLastYear": 4,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "he-he-he-he-he-he/yingqiao-store": {
       "fullName": "He-He-He-He-He-He/yingqiao-store",
@@ -1006,7 +1316,7 @@
       "commitsLastYear": 38,
       "homepageUrl": "https://github.com/5zhangxuanhao5/yingqiao-store/blob/developer-presence-0312/docs/INSTALL.md",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "he-he-he-he-he-he/zhiyunassistant": {
       "fullName": "He-He-He-He-He-He/ZhiyunAssistant",
@@ -1025,7 +1335,26 @@
       "commitsLastYear": 73,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "hggshiwo/beamerthemeformal": {
+      "fullName": "HGGshiwo/BeamerthemeFormal",
+      "description": "正式主题",
+      "stars": 32,
+      "forks": 4,
+      "openIssues": 0,
+      "language": "TeX",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2022-06-01T12:13:06Z",
+      "pushedAt": "2022-06-01T12:13:06Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "husk-huz/arxivday": {
       "fullName": "husk-huz/ArxivDay",
@@ -1044,23 +1373,23 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "hy-hue113/ppt-effects": {
       "fullName": "HY-hue113/ppt-effects",
       "description": "把调好的 PPT 动效存成可复用配方：10 个效果，每个含 spec 与参考件，给图给字即可出同款动画",
-      "stars": 34,
-      "forks": 1,
+      "stars": 62,
+      "forks": 3,
       "openIssues": 0,
       "language": "Python",
       "license": "NOASSERTION",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-11T12:52:55Z",
-      "pushedAt": "2026-11-11T12:53:04Z",
-      "commitsLast90Days": 12,
+      "lastCommitAt": "2026-11-17T18:15:28Z",
+      "pushedAt": "2026-11-17T18:18:22Z",
+      "commitsLast90Days": 14,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 12,
+      "commitsLastYear": 14,
       "homepageUrl": "",
       "topics": [
         "ai-skills",
@@ -1072,7 +1401,7 @@
         "pptx",
         "python-pptx"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "hzlgames/zju-autosign": {
       "fullName": "hzlgames/zju-autosign",
@@ -1091,12 +1420,12 @@
       "commitsLastYear": 7,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "interest2/anti-addiction": {
       "fullName": "interest2/anti-addiction",
       "description": "防沉迷提醒APP代码",
-      "stars": 18,
+      "stars": 19,
       "forks": 0,
       "openIssues": 0,
       "language": "Java",
@@ -1105,12 +1434,69 @@
       "defaultBranch": "master",
       "lastCommitAt": "2026-11-01T06:02:35Z",
       "pushedAt": "2026-11-01T06:04:52Z",
-      "commitsLast90Days": 20,
+      "commitsLast90Days": 12,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 135,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "inuebisu/bubble-zju": {
+      "fullName": "inuEbisu/bubble-zju",
+      "description": "Modern Zhejiang Univerisity report.",
+      "stars": 13,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Typst",
+      "license": "MIT-0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2025-09-08T13:56:56Z",
+      "pushedAt": "2025-09-08T13:57:07Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "inuebisu/slidetemplate": {
+      "fullName": "inuEbisu/SlideTemplate",
+      "description": "inuEbisu's template for MkSlides / 犬戎的 MkSlides 模板",
+      "stars": 4,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "CSS",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-07-07T14:43:44Z",
+      "pushedAt": "2026-07-07T14:43:53Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 4,
+      "homepageUrl": "https://inuebisu.github.io/SlideTemplate/",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "ishikura-a/quicker": {
+      "fullName": "IshiKura-a/Quicker",
+      "description": "ZJU场馆预约",
+      "stars": 48,
+      "forks": 14,
+      "openIssues": 1,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2023-04-20T02:56:03Z",
+      "pushedAt": "2023-04-20T02:56:12Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "isshikihugh/expoven": {
       "fullName": "IsshikiHugh/ExpOven",
@@ -1129,12 +1515,12 @@
       "commitsLastYear": 6,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "isshikihugh/zju-cs-asio": {
       "fullName": "IsshikiHugh/zju-cs-asio",
       "description": "收集各类与 ZJU-CS 有关的网站形式的资料。",
-      "stars": 342,
+      "stars": 341,
       "forks": 26,
       "openIssues": 0,
       "language": "Python",
@@ -1148,12 +1534,12 @@
       "commitsLastYear": 14,
       "homepageUrl": "https://isshikihugh.github.io/zju-cs-asio/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "jiao77/magpie-board-android": {
       "fullName": "Jiao77/magpie-board-android",
       "description": "MagpieBoard for Android · 面向 Magpie AI 网关的安卓端实时监控看板客户端（额度/用量/路由决策）",
-      "stars": 4,
+      "stars": 5,
       "forks": 1,
       "openIssues": 0,
       "language": "JavaScript",
@@ -1167,7 +1553,7 @@
       "commitsLastYear": 10,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "jnove/zjucoursetrace": {
       "fullName": "Jnove/ZJUCoursetrace",
@@ -1186,7 +1572,7 @@
       "commitsLastYear": 155,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "kaixuanwang2003/zju-welcome": {
       "fullName": "kaixuanwang2003/zju-welcome",
@@ -1200,12 +1586,36 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-09-20T11:19:03Z",
       "pushedAt": "2026-09-20T11:19:25Z",
-      "commitsLast90Days": 9,
+      "commitsLast90Days": 5,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 114,
       "homepageUrl": "https://zjuers.com/welcome/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "keldos-li/typora-latex-theme": {
+      "fullName": "Keldos-Li/typora-latex-theme",
+      "description": "将Typora伪装成LaTeX的中文样式主题，本科生轻量级课程论文撰写的好帮手。This is a theme disguising Typora into Chinese LaTeX style.",
+      "stars": 6001,
+      "forks": 333,
+      "openIssues": 20,
+      "language": "SCSS",
+      "license": "GPL-3.0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-04-26T06:51:32Z",
+      "pushedAt": "2026-04-26T06:51:33Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 2,
+      "homepageUrl": "",
+      "topics": [
+        "latex",
+        "typora",
+        "typora-theme",
+        "typora-themes"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "kirchhoff114514/ppt_deduplicator": {
       "fullName": "kirchhoff114514/ppt_deduplicator",
@@ -1224,12 +1634,12 @@
       "commitsLastYear": 11,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "kiri603/to-sheet-music-skill": {
       "fullName": "kiri603/To-Sheet-Music-Skill",
       "description": "Automatically transforms mixed song recordings into playable five-piece school band arrangements through audio separation, music transcription, arrangement, and difficulty adjustment. Outputs include MIDI, print-ready PDF scores, and editable MuseScore (.mscz) files.将混音歌曲音频自动分轨、扒谱并改编为适合五人校园乐队演奏的伴奏总谱，支持难度调整，并输出 MIDI、PDF 总谱和可编辑的 MuseScore（.mscz）文件。",
-      "stars": 237,
+      "stars": 240,
       "forks": 17,
       "openIssues": 0,
       "language": "Python",
@@ -1243,7 +1653,7 @@
       "commitsLastYear": 17,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "kitty-in-github/ssinvioce": {
       "fullName": "Kitty-in-GitHub/SSInvioce",
@@ -1255,14 +1665,14 @@
       "license": null,
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-13T07:22:29Z",
-      "pushedAt": "2026-11-13T07:25:36Z",
-      "commitsLast90Days": 24,
+      "lastCommitAt": "2026-11-17T08:14:43Z",
+      "pushedAt": "2026-11-17T08:16:09Z",
+      "commitsLast90Days": 13,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 41,
+      "commitsLastYear": 49,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "kryptonite309/zju-english-dictation-tool_kry-advanced": {
       "fullName": "kryptonite309/ZJU-English-dictation-tool_kry-advanced",
@@ -1274,14 +1684,14 @@
       "license": null,
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-10-26T14:48:59Z",
-      "pushedAt": "2026-10-26T14:50:15Z",
-      "commitsLast90Days": 15,
+      "lastCommitAt": "2026-11-16T14:14:50Z",
+      "pushedAt": "2026-11-16T14:16:07Z",
+      "commitsLast90Days": 16,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 15,
+      "commitsLastYear": 16,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "kylian-08/deepseek_harness_for_windows": {
       "fullName": "kylian-08/DeepSeek_Harness_For_Windows",
@@ -1295,12 +1705,12 @@
       "defaultBranch": "master",
       "lastCommitAt": "2026-08-18T03:29:40Z",
       "pushedAt": "2026-08-18T03:29:43Z",
-      "commitsLast90Days": 11,
+      "commitsLast90Days": 0,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 12,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "laujoe/zhelixun": {
       "fullName": "laujoe/zhelixun",
@@ -1319,7 +1729,26 @@
       "commitsLastYear": 2,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "liljay-h/ai-news-cover": {
+      "fullName": "LilJay-H/ai-news-cover",
+      "description": "AI news cover：把桌面变成一张会更新的 AI 报纸",
+      "stars": 5,
+      "forks": 0,
+      "openIssues": 1,
+      "language": "JavaScript",
+      "license": "NOASSERTION",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-11T04:25:56Z",
+      "pushedAt": "2026-11-11T10:10:46Z",
+      "commitsLast90Days": 7,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 7,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "lineus/physics-report-cc": {
       "fullName": "Lineus/physics-report-cc",
@@ -1338,7 +1767,7 @@
       "commitsLastYear": 11,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "lineus/zjuam-in": {
       "fullName": "Lineus/ZJUAM-in",
@@ -1357,7 +1786,7 @@
       "commitsLastYear": 6,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "liupilot/zju-teacher-rating-helper": {
       "fullName": "liupilot/zju-teacher-rating-helper",
@@ -1376,7 +1805,7 @@
       "commitsLastYear": 8,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "logicalpha114/crushzju": {
       "fullName": "logicalpha114/crushzju",
@@ -1395,7 +1824,7 @@
       "commitsLastYear": 33,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "ltto123/zju-low-score-course-selection-helper": {
       "fullName": "Ltto123/ZJU-low-score-course-selection-helper",
@@ -1414,12 +1843,31 @@
       "commitsLastYear": 1,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "lucent-snow/neptune-auto-charger": {
+      "fullName": "Lucent-Snow/neptune-auto-charger",
+      "description": null,
+      "stars": 11,
+      "forks": 46,
+      "openIssues": 0,
+      "language": "Python",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-05T04:09:02Z",
+      "pushedAt": "2026-11-05T04:09:09Z",
+      "commitsLast90Days": 9,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 12,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "lucent-snow/zju-english-dictation-tool": {
       "fullName": "Lucent-Snow/ZJU-English-dictation-tool",
       "description": null,
-      "stars": 15,
+      "stars": 14,
       "forks": 3,
       "openIssues": 0,
       "language": "Python",
@@ -1433,7 +1881,26 @@
       "commitsLastYear": 2,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "lucent-snow/zju-scholar": {
+      "fullName": "Lucent-Snow/zju-scholar",
+      "description": "ZJU Scholar — Claude Code Skill for Zhejiang University academic data (timetable, grades, exams, homework, Zhiyun subtitles)",
+      "stars": 22,
+      "forks": 4,
+      "openIssues": 1,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-07-29T07:07:34Z",
+      "pushedAt": "2026-07-29T07:07:48Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 13,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "lybx-leyw/evergreen-main": {
       "fullName": "lybx-leyw/evergreen-main",
@@ -1447,12 +1914,12 @@
       "defaultBranch": "v2.0",
       "lastCommitAt": "2026-09-15T07:40:32Z",
       "pushedAt": "2026-09-15T07:40:33Z",
-      "commitsLast90Days": 343,
+      "commitsLast90Days": 275,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 436,
       "homepageUrl": "https://lybx-leyw.github.io/evergreen-main/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "lyz20051019/zju_reminder": {
       "fullName": "lyz20051019/ZJU_Reminder",
@@ -1468,10 +1935,10 @@
       "pushedAt": "2026-05-01T05:01:32Z",
       "commitsLast90Days": 0,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 64,
+      "commitsLastYear": 53,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "macanine/zjumihomo-converter": {
       "fullName": "macanine/zjumihomo-converter",
@@ -1483,11 +1950,11 @@
       "license": "MIT",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-08T09:48:58Z",
-      "pushedAt": "2026-11-08T09:49:00Z",
-      "commitsLast90Days": 28,
+      "lastCommitAt": "2026-11-16T14:19:38Z",
+      "pushedAt": "2026-11-16T14:19:43Z",
+      "commitsLast90Days": 29,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 28,
+      "commitsLastYear": 29,
       "homepageUrl": "https://zjumihomo.pages.dev/sub",
       "topics": [
         "mihomo",
@@ -1498,12 +1965,12 @@
         "zhejiang-university",
         "zju"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "maksymilan/zju-resume-template": {
       "fullName": "maksymilan/zju-resume-template",
       "description": "this is a resume template for zju",
-      "stars": 206,
+      "stars": 204,
       "forks": 319,
       "openIssues": 0,
       "language": "TeX",
@@ -1523,7 +1990,31 @@
         "template",
         "zju"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "megrxu/zjureport": {
+      "fullName": "megrxu/zjureport",
+      "description": "浙江大学实验报告模板",
+      "stars": 111,
+      "forks": 37,
+      "openIssues": 0,
+      "language": "TeX",
+      "license": "LPPL-1.3c",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-04-07T02:02:47Z",
+      "pushedAt": "2026-04-07T02:04:06Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 1,
+      "homepageUrl": "",
+      "topics": [
+        "latex",
+        "latex-template",
+        "report-template",
+        "zju"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "memset0/learning-at-zju-helper": {
       "fullName": "memset0/Learning-at-ZJU-Helper",
@@ -1547,7 +2038,26 @@
         "zhejiang-university",
         "webpack"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "memset0/zju-project-report-template": {
+      "fullName": "memset0/ZJU-Project-Report-Template",
+      "description": "Yet another Zhejiang University project reports template written in Typst",
+      "stars": 130,
+      "forks": 13,
+      "openIssues": 0,
+      "language": "Typst",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2025-11-04T04:13:23Z",
+      "pushedAt": "2025-11-04T04:13:23Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "meteors27/zju-calendar-maker": {
       "fullName": "Meteors27/ZJU-Calendar-Maker",
@@ -1566,13 +2076,38 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "mythologyli/iosfakerun": {
+      "fullName": "Mythologyli/iOSFakeRun",
+      "description": "基于虚拟定位的 iOS 免越狱模拟跑步打卡，在线拾取路径，可设置循环次数和跑步速度",
+      "stars": 420,
+      "forks": 41,
+      "openIssues": 11,
+      "language": "C#",
+      "license": "LGPL-2.1",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2023-12-14T17:16:00Z",
+      "pushedAt": "2023-12-14T17:16:01Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "",
+      "topics": [
+        "fake-locations",
+        "libimobiledevice",
+        "gps",
+        "ios",
+        "dotnet"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "mythologyli/zju-connect": {
       "fullName": "Mythologyli/zju-connect",
       "description": "ZJU RVPN 客户端的 Go 语言实现",
-      "stars": 827,
-      "forks": 100,
+      "stars": 830,
+      "forks": 102,
       "openIssues": 11,
       "language": "Go",
       "license": "AGPL-3.0",
@@ -1580,17 +2115,17 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-11-01T14:50:54Z",
       "pushedAt": "2026-11-01T14:51:02Z",
-      "commitsLast90Days": 34,
+      "commitsLast90Days": 25,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 216,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "mythologyli/zju-connect-for-windows": {
       "fullName": "Mythologyli/ZJU-Connect-for-Windows",
       "description": "基于 Qt 编写的 ZJU 网络客户端",
-      "stars": 479,
+      "stars": 480,
       "forks": 79,
       "openIssues": 0,
       "language": "C++",
@@ -1604,12 +2139,12 @@
       "commitsLastYear": 17,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "mythologyli/zjuconnectforandroid": {
       "fullName": "Mythologyli/ZJUConnectForAndroid",
       "description": null,
-      "stars": 12,
+      "stars": 11,
       "forks": 3,
       "openIssues": 0,
       "language": "Java",
@@ -1623,7 +2158,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "nanoarcheaum/zju_coursecraft": {
       "fullName": "Nanoarcheaum/zju_coursecraft",
@@ -1642,26 +2177,26 @@
       "commitsLastYear": 34,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "nzw806/zju-lecture-summerizer-": {
       "fullName": "nzw806/zju-lecture-summerizer-",
       "description": "输入ds的api与智云课堂链接自动生成课堂全部知识点总结",
-      "stars": 17,
+      "stars": 20,
       "forks": 3,
       "openIssues": 1,
       "language": "Python",
       "license": "MIT",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-10-29T16:00:15Z",
-      "pushedAt": "2026-10-29T16:00:19Z",
-      "commitsLast90Days": 2,
+      "lastCommitAt": "2026-11-16T06:39:20Z",
+      "pushedAt": "2026-11-16T06:42:41Z",
+      "commitsLast90Days": 10,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 2,
+      "commitsLastYear": 10,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "ouyuanchen/zjucoursehunter": {
       "fullName": "OuyuanChen/ZJUCourseHunter",
@@ -1680,7 +2215,32 @@
       "commitsLastYear": 17,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "pagechen04/ez4connect": {
+      "fullName": "chenx-dust/EZ4Connect",
+      "description": "ZJU-Connect 图形界面 - 支持 aTrust 和 EasyConnect 协议",
+      "stars": 553,
+      "forks": 50,
+      "openIssues": 8,
+      "language": "C++",
+      "license": "GPL-3.0",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-09-08T05:10:21Z",
+      "pushedAt": "2026-09-08T05:10:26Z",
+      "commitsLast90Days": 10,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 136,
+      "homepageUrl": "",
+      "topics": [
+        "atrust",
+        "easyconnect",
+        "qt",
+        "zju-connect",
+        "vpn"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "panjoel812/zju-english-dictation": {
       "fullName": "panjoel812/zju-english-dictation",
@@ -1696,15 +2256,34 @@
       "pushedAt": "2026-11-08T06:30:57Z",
       "commitsLast90Days": 34,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 52,
+      "commitsLastYear": 51,
       "homepageUrl": "https://zju-english-dictation.panjoel.top",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "paomianpomix/pptassistant-releases": {
+      "fullName": "PaomianPomix/PPTassistant-releases",
+      "description": "PPTAssistant source, documentation and Windows installers for PowerPoint presentation annotation.",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "C#",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-11T08:57:00Z",
+      "pushedAt": "2026-11-11T09:01:27Z",
+      "commitsLast90Days": 6,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 6,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "peipei233/zju-learning-assistant": {
       "fullName": "PeiPei233/zju-learning-assistant",
       "description": "帮你快速下载所有课件😋",
-      "stars": 571,
+      "stars": 575,
       "forks": 25,
       "openIssues": 11,
       "language": "Rust",
@@ -1725,7 +2304,7 @@
         "tauri",
         "zhejiang-university"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "peipei233/zju-score-push-template": {
       "fullName": "PeiPei233/zju-score-push-template",
@@ -1744,7 +2323,26 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "pengsida/learning_research": {
+      "fullName": "pengsida/learning_research",
+      "description": "本人的科研经验",
+      "stars": 16048,
+      "forks": 766,
+      "openIssues": 0,
+      "language": null,
+      "license": null,
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-10-14T01:30:36Z",
+      "pushedAt": "2026-10-14T01:30:37Z",
+      "commitsLast90Days": 3,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 29,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "phil-fan/awesome-zju-tools": {
       "fullName": "Phil-Fan/awesome-zju-tools",
@@ -1756,17 +2354,17 @@
       "license": "CC0-1.0",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-02T06:07:04Z",
-      "pushedAt": "2026-11-02T06:06:58Z",
-      "commitsLast90Days": 20,
+      "lastCommitAt": "2026-11-14T04:14:59Z",
+      "pushedAt": "2026-11-14T04:15:10Z",
+      "commitsLast90Days": 21,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 56,
+      "commitsLastYear": 53,
       "homepageUrl": "https://zjutools.top",
       "topics": [
         "awesome",
         "tools"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "phil-fan/grs-enhance": {
       "fullName": "Phil-Fan/grs-enhance",
@@ -1785,7 +2383,48 @@
       "commitsLastYear": 8,
       "homepageUrl": "https://greasyfork.org/zh-CN/scripts/595750-grs-enhance-浙大研究生选课助手",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "phil-fan/ppt": {
+      "fullName": "Phil-Fan/PPT",
+      "description": "记录我做 PPT 的模版、经验和踩过的坑",
+      "stars": 4,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Ruby",
+      "license": "NOASSERTION",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-01-20T16:26:31Z",
+      "pushedAt": "2026-01-20T16:36:40Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 1,
+      "homepageUrl": "https://phil-fan.github.io/PPT/",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "phil-fan/xmindify": {
+      "fullName": "Phil-Fan/xmindify",
+      "description": "MCP-APP server for Xmind, and a skill that can automatically generate mind maps in different scenarios with respect to .xmind syntax.",
+      "stars": 34,
+      "forks": 4,
+      "openIssues": 2,
+      "language": "TypeScript",
+      "license": "MIT",
+      "archived": true,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-02-27T04:35:30Z",
+      "pushedAt": "2026-02-27T04:35:34Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 9,
+      "homepageUrl": "",
+      "topics": [
+        "skill",
+        "xmind"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "phil-fan/zju-coffee": {
       "fullName": "Phil-Fan/zju-coffee",
@@ -1804,7 +2443,7 @@
       "commitsLastYear": 28,
       "homepageUrl": "https://coffee.philfan.cn/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "pm25000/dsh-course-selector": {
       "fullName": "PM25000/dsh-course-selector",
@@ -1818,17 +2457,17 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-08-19T04:45:17Z",
       "pushedAt": "2026-08-19T04:45:21Z",
-      "commitsLast90Days": 3,
+      "commitsLast90Days": 0,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 3,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "poco-ai/poco-agent": {
       "fullName": "poco-ai/poco-claw",
       "description": "A more beautiful and easier-to-use alternative to OpenClaw. It features a nicer Web UI, built-in IM support, a sandboxed runtime and channel-based team collaboration. Under the hood, it is powered by a Claude Code–based agent.",
-      "stars": 1360,
+      "stars": 1358,
       "forks": 128,
       "openIssues": 0,
       "language": "Python",
@@ -1850,7 +2489,7 @@
         "manus",
         "openclaw"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "qqsugar2000/awesome-cv-cn": {
       "fullName": "QQsugar2000/Awesome-CV-CN",
@@ -1873,13 +2512,13 @@
         "resume",
         "template"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "qsctech/zju-icicles": {
       "fullName": "QSCTech/zju-icicles",
       "description": "浙江大学课程攻略共享计划",
-      "stars": 41397,
-      "forks": 9577,
+      "stars": 41419,
+      "forks": 9569,
       "openIssues": 11,
       "language": "HTML",
       "license": null,
@@ -1892,7 +2531,7 @@
       "commitsLastYear": 4,
       "homepageUrl": "https://qsctech.github.io/zju-icicles/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "qsctech/zjunet": {
       "fullName": "QSCTech/zjunet",
@@ -1911,12 +2550,31 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "qychen2001/zju-beamer-template": {
+      "fullName": "qychen2001/ZJU-Beamer-Template",
+      "description": "一个更好看的浙江大学beamer模板",
+      "stars": 127,
+      "forks": 11,
+      "openIssues": 0,
+      "language": "TeX",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-05-09T01:05:52Z",
+      "pushedAt": "2026-05-09T01:06:02Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 3,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "roboparty/labweft": {
       "fullName": "Roboparty/LabWeft",
       "description": "Weave experiments into understanding. A local research workspace, evidence map, and Skill for your coding agent. / 可追溯的本地科研工作台",
-      "stars": 5,
+      "stars": 6,
       "forks": 4,
       "openIssues": 0,
       "language": "Python",
@@ -1940,12 +2598,69 @@
         "research-map",
         "research-tools"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "ryanfcr/zju_course": {
+      "fullName": "RyanFcr/ZJU_Course",
+      "description": "浙江大学计算机课程资料整理",
+      "stars": 193,
+      "forks": 23,
+      "openIssues": 0,
+      "language": "HTML",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2024-02-29T09:34:53Z",
+      "pushedAt": "2024-02-29T09:35:02Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "shawhaines/evilscripts": {
+      "fullName": "ShawHaines/evilScripts",
+      "description": "Some evil greasyfork script collection.",
+      "stars": 14,
+      "forks": 5,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2023-03-18T16:39:27Z",
+      "pushedAt": "2023-03-18T16:40:07Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "shuenhoy/modern-zju-thesis": {
+      "fullName": "Shuenhoy/modern-zju-thesis",
+      "description": null,
+      "stars": 108,
+      "forks": 14,
+      "openIssues": 0,
+      "language": "Typst",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-05-13T10:03:20Z",
+      "pushedAt": "2026-05-13T10:19:44Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 54,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "sisgloria/zju-23isee-sisgloria": {
       "fullName": "Sisgloria/ZJU-23ISEE-Sisgloria",
       "description": "浙大信电/电科/电子科学与技术GitHub课程资料库",
-      "stars": 44,
+      "stars": 45,
       "forks": 2,
       "openIssues": 0,
       "language": "VHDL",
@@ -1959,7 +2674,7 @@
       "commitsLastYear": 13,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "slowist-lee/website-converter": {
       "fullName": "Slowist-Lee/website-converter",
@@ -1978,7 +2693,7 @@
       "commitsLastYear": 2,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "steambird1/amethyst": {
       "fullName": "steambird1/amethyst",
@@ -1997,13 +2712,13 @@
       "commitsLastYear": 5,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "stella617/zju-clock-in": {
       "fullName": "Stella617/ZJU-Clock-In",
       "description": "浙江大学健康打卡",
-      "stars": 45,
-      "forks": 1008,
+      "stars": 44,
+      "forks": 1010,
       "openIssues": 0,
       "language": "Python",
       "license": "MIT",
@@ -2016,7 +2731,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "stevenstg/obsidian-cc98-publish": {
       "fullName": "stevenstg/obsidian-cc98-publish",
@@ -2035,7 +2750,7 @@
       "commitsLastYear": 16,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "subconv/zju-rule": {
       "fullName": "SubConv/ZJU-Rule",
@@ -2054,13 +2769,32 @@
       "commitsLastYear": 94,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "team-s2/ctf_summer_courses": {
+      "fullName": "team-s2/ctf_summer_courses",
+      "description": "AAA - 短学期安全攻防实践开源仓库",
+      "stars": 134,
+      "forks": 19,
+      "openIssues": 0,
+      "language": "CSS",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-07-29T15:14:36Z",
+      "pushedAt": "2026-07-29T15:14:37Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 77,
+      "homepageUrl": "https://courses.zjusec.com/",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "thenetadmin/zjuthesis": {
       "fullName": "TheNetAdmin/zjuthesis",
       "description": "Zhejiang University Graduation Thesis LaTeX Template",
-      "stars": 3820,
-      "forks": 755,
+      "stars": 3824,
+      "forks": 754,
       "openIssues": 32,
       "language": "TeX",
       "license": "MIT",
@@ -2082,7 +2816,85 @@
         "thesis-template",
         "overleaf"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "tixxin/fuyu": {
+      "fullName": "TixXin/Fuyu",
+      "description": "Fuyu (浮屿) — a lightweight dynamic island for Windows & macOS: message alerts from Telegram, Discord, WhatsApp, QQ and WeChat, Claude Code / Codex status and approvals with alerts to your phone, clipboard history, translation, lyrics, todos and plugins.",
+      "stars": 384,
+      "forks": 4,
+      "openIssues": 50,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-18T10:20:24Z",
+      "pushedAt": "2026-11-18T10:21:17Z",
+      "commitsLast90Days": 3934,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 3987,
+      "homepageUrl": "https://fuyu.ing",
+      "topics": [
+        "clipboard-manager",
+        "desktop-widget",
+        "dynamic-island",
+        "productivity",
+        "react",
+        "rust",
+        "tauri",
+        "todo",
+        "windows",
+        "notifications",
+        "desktop-island",
+        "floating-widget",
+        "lyrics",
+        "macos",
+        "media-controls",
+        "notch",
+        "claude-code",
+        "discord",
+        "telegram",
+        "whatsapp"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "tonycrane/practicalskillstutorial": {
+      "fullName": "TonyCrane/PracticalSkillsTutorial",
+      "description": "浙江大学系列朋辈辅学「实用技能拾遗」课程资料仓库",
+      "stars": 453,
+      "forks": 25,
+      "openIssues": 0,
+      "language": "Markdown",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2024-05-27T14:11:11Z",
+      "pushedAt": "2024-05-27T14:11:28Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "https://slides.tonycrane.cc/PracticalSkillsTutorial",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "tonycrane/slide-template": {
+      "fullName": "TonyCrane/slide-template",
+      "description": "TonyCrane's slide template for reveal-md",
+      "stars": 121,
+      "forks": 17,
+      "openIssues": 0,
+      "language": "Markdown",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2024-07-11T18:36:37Z",
+      "pushedAt": "2024-07-11T18:36:44Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "https://slides.tonycrane.cc/RevealmdTemplate",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "too-difficult-to-study/zju_blind_review_monitor": {
       "fullName": "too-difficult-to-study/ZJU_blind_review_monitor",
@@ -2101,7 +2913,7 @@
       "commitsLastYear": 8,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "upupming/new-grad-positions": {
       "fullName": "upupming/new-grad-positions",
@@ -2129,13 +2941,13 @@
         "internet-company",
         "students"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "upupming/zhr-action-demo": {
       "fullName": "upupming/zhr-action-demo",
       "description": "浙江大学健康打卡自动打卡脚本 GitHub Action 例子，只需一步 Fork 即可使用，每天定时帮你自动打卡。",
       "stars": 61,
-      "forks": 442,
+      "forks": 441,
       "openIssues": 0,
       "language": null,
       "license": "MIT",
@@ -2155,7 +2967,7 @@
         "zju",
         "health-report"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "upupming/zju-grs-ics": {
       "fullName": "upupming/zju-grs-ics",
@@ -2174,7 +2986,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "vita0818/cc98-searchplus": {
       "fullName": "Vita0818/CC98-SearchPlus",
@@ -2193,7 +3005,7 @@
       "commitsLastYear": 1,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "vvirgooo2/auto-video-tronclass-zju": {
       "fullName": "vvirgooo2/Auto-video-tronclass-zju",
@@ -2212,7 +3024,26 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "wdtjm/zta": {
+      "fullName": "wdtjm/zta",
+      "description": null,
+      "stars": 14,
+      "forks": 0,
+      "openIssues": 2,
+      "language": "Vue",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2025-02-09T06:02:28Z",
+      "pushedAt": "2025-02-09T06:02:38Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "wei-liping/echomate": {
       "fullName": "wei-liping/EchoMate",
@@ -2231,7 +3062,131 @@
       "commitsLastYear": 20,
       "homepageUrl": "https://wei-liping.github.io/EchoMate/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "windingwind/zotero-actions-tags": {
+      "fullName": "windingwind/zotero-actions-tags",
+      "description": "Customize your Zotero workflow.",
+      "stars": 2877,
+      "forks": 63,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-11-08T03:54:48Z",
+      "pushedAt": "2026-11-08T03:55:00Z",
+      "commitsLast90Days": 12,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 30,
+      "homepageUrl": "",
+      "topics": [
+        "zotero",
+        "zotero-plugin",
+        "addon",
+        "plugin",
+        "tag",
+        "automation",
+        "actions"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "windingwind/zotero-better-notes": {
+      "fullName": "windingwind/zotero-better-notes",
+      "description": "Everything about note management. All in Zotero.",
+      "stars": 8464,
+      "forks": 276,
+      "openIssues": 6,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2026-11-10T09:02:26Z",
+      "pushedAt": "2026-11-10T09:02:28Z",
+      "commitsLast90Days": 13,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 108,
+      "homepageUrl": "",
+      "topics": [
+        "knowledge",
+        "markdown",
+        "mindmap",
+        "note",
+        "notes",
+        "plugin",
+        "zotero",
+        "zotero-addon",
+        "zotero-plugin",
+        "addon",
+        "obsidian",
+        "obsidian-md"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "windingwind/zotero-pdf-translate": {
+      "fullName": "windingwind/zotero-pdf-translate",
+      "description": "Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services.",
+      "stars": 12318,
+      "forks": 541,
+      "openIssues": 10,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-13T14:34:38Z",
+      "pushedAt": "2026-11-13T14:34:41Z",
+      "commitsLast90Days": 26,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 63,
+      "homepageUrl": "",
+      "topics": [
+        "zotero",
+        "translate",
+        "translation",
+        "plugin",
+        "zotero-plugin",
+        "pdf",
+        "zotero7"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "wuheshidaozod/chaoxing-courseware-downloader": {
+      "fullName": "wuheshidaozod/chaoxing-courseware-downloader",
+      "description": "超星学习通课件下载油猴脚本，自动修复 WPS PDF 在 Edge 中公式乱码",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-11-11T03:52:30Z",
+      "pushedAt": "2026-11-11T03:52:52Z",
+      "commitsLast90Days": 1,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 1,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "wuheshidaozod/zju-courseware-download": {
+      "fullName": "wuheshidaozod/zju-courseware-download",
+      "description": "学在浙大课件下载油猴脚本（含 WPS 导出）",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-10-26T13:21:07Z",
+      "pushedAt": "2026-10-26T13:21:10Z",
+      "commitsLast90Days": 2,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 2,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "x-t-e-r/zotero-mcp-neo": {
       "fullName": "X-T-E-R/Zotero-MCP-Neo",
@@ -2250,7 +3205,30 @@
       "commitsLastYear": 36,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "xecades/markdown-it-typst": {
+      "fullName": "Xecades/markdown-it-typst",
+      "description": "Plugin to transform Typst code to SVG image for markdown-it markdown parser.",
+      "stars": 18,
+      "forks": 1,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "license": "MIT",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2025-05-01T08:02:52Z",
+      "pushedAt": "2025-05-01T08:02:57Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": "https://www.npmjs.com/package/@xecades/markdown-it-typst",
+      "topics": [
+        "markdown",
+        "markdown-it",
+        "typst"
+      ],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "xecades/zju-ical-py": {
       "fullName": "Xecades/zju-ical-py",
@@ -2269,7 +3247,7 @@
       "commitsLastYear": 16,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "xhacker/zju-jwb-to-icalendar": {
       "fullName": "xhacker/zju-jwb-to-icalendar",
@@ -2288,7 +3266,7 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "xi2p/zju-motis": {
       "fullName": "xi2p/ZJU-MOTIS",
@@ -2307,26 +3285,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
-    },
-    "xmmshp/quantum": {
-      "fullName": "XmmShp/Quantum",
-      "description": "Quantum public mirror of GitLab io7/quantum. GitHub Actions builds and releases desktop/mobile clients.",
-      "stars": 25,
-      "forks": 4,
-      "openIssues": 0,
-      "language": "C#",
-      "license": null,
-      "archived": false,
-      "defaultBranch": "main",
-      "lastCommitAt": "2026-11-04T05:35:21Z",
-      "pushedAt": "2026-11-04T06:27:29Z",
-      "commitsLast90Days": 233,
-      "commitsLast90DaysCapped": false,
-      "commitsLastYear": 233,
-      "homepageUrl": "https://git.koala-studio.org.cn/io7/quantum",
-      "topics": [],
-      "fetchedAt": "2026-11-05T03:29:18.958Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "xuanzhizheng/zju-23isee-cognis": {
       "fullName": "xuanzhizheng/ZJU-23ISEE-Cognis",
@@ -2345,7 +3304,7 @@
       "commitsLastYear": 41,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "xxone111/zju-notes-assistant": {
       "fullName": "xxone111/zju-notes-assistant",
@@ -2367,12 +3326,12 @@
         "lecture-notes",
         "zhejiang-university"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "xzzd-pro/xzzd-pro": {
       "fullName": "xzzd-pro/xzzd-pro",
       "description": null,
-      "stars": 48,
+      "stars": 49,
       "forks": 1,
       "openIssues": 4,
       "language": "TypeScript",
@@ -2386,7 +3345,7 @@
       "commitsLastYear": 129,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "yangshu233-snow/cc98-live-better": {
       "fullName": "YangShu233-Snow/cc98-live-better",
@@ -2405,7 +3364,7 @@
       "commitsLastYear": 25,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "yangshu233-snow/learning_at_zju_third_client": {
       "fullName": "YangShu233-Snow/Learning_at_ZJU_third_client",
@@ -2424,26 +3383,102 @@
       "commitsLastYear": 175,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "yhwu-is/computer-system-start-from-a-newbie": {
+      "fullName": "yhwu-is/Computer-System-Start-From-a-Newbie",
+      "description": "计算机系统——从小白学起",
+      "stars": 38,
+      "forks": 5,
+      "openIssues": 2,
+      "language": "CSS",
+      "license": "NOASSERTION",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2023-04-23T15:40:43Z",
+      "pushedAt": "2024-03-06T03:27:21Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "yhwu-is/linear-algebra-left-undone": {
+      "fullName": "yhwu-is/Linear-Algebra-Left-Undone",
+      "description": "线性代数：未竟之美",
+      "stars": 763,
+      "forks": 100,
+      "openIssues": 2,
+      "language": "TeX",
+      "license": "NOASSERTION",
+      "archived": false,
+      "defaultBranch": "new",
+      "lastCommitAt": "2026-11-11T10:19:00Z",
+      "pushedAt": "2026-11-11T10:19:00Z",
+      "commitsLast90Days": 4,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 17,
+      "homepageUrl": "",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "yifengfang-rfl/english_reciting": {
+      "fullName": "YifengFang-rfl/english_reciting",
+      "description": null,
+      "stars": 2,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Dart",
+      "license": "Apache-2.0",
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-08-22T17:35:09Z",
+      "pushedAt": "2026-08-22T18:14:58Z",
+      "commitsLast90Days": 5,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 23,
+      "homepageUrl": "https://dictationen.github.io",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "yinze00/zju-opt": {
+      "fullName": "yinze00/ZJU-OPT",
+      "description": "浙江大学光电信息科学与工程学院-光电信息科学与工程（OPT）课程共享计划",
+      "stars": 214,
+      "forks": 40,
+      "openIssues": 2,
+      "language": "C",
+      "license": "Apache-2.0",
+      "archived": false,
+      "defaultBranch": "master",
+      "lastCommitAt": "2020-05-13T05:33:34Z",
+      "pushedAt": "2022-07-18T12:51:37Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 0,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zack-will/interleaf": {
       "fullName": "Zack-Will/interleaf",
       "description": "Overleaf Community Edition with an AI agent as a first-class collaborator: a built-in MCP endpoint, the review panel enabled, Git access and one-way GitHub backup.",
-      "stars": 28,
+      "stars": 27,
       "forks": 1,
       "openIssues": 0,
       "language": "JavaScript",
       "license": "AGPL-3.0",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-05T11:16:40Z",
-      "pushedAt": "2026-11-06T03:13:07Z",
-      "commitsLast90Days": 786,
+      "lastCommitAt": "2026-11-14T13:14:07Z",
+      "pushedAt": "2026-11-14T13:21:55Z",
+      "commitsLast90Days": 796,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 2298,
+      "commitsLastYear": 2272,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zarad0x/openclaw-zju-skills": {
       "fullName": "Zarad0X/openclaw-zju-skills",
@@ -2462,7 +3497,7 @@
       "commitsLastYear": 2,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zenith-shadow-x/zju-learning-reminder": {
       "fullName": "zenith-shadow-x/ZJU-Learning-Reminder",
@@ -2481,7 +3516,7 @@
       "commitsLastYear": 3,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zhangyc0/zju-course-selection": {
       "fullName": "Zhangyc0/ZJU-Course-Selection",
@@ -2500,7 +3535,26 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "zjjncsn/markdown-to-ubb": {
+      "fullName": "zjjncsn/markdown-to-ubb",
+      "description": "这是一个把 Markdown 代码转换成 ubb 的工具",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "language": "Vue",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-06-16T08:42:36Z",
+      "pushedAt": "2026-06-16T08:42:25Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 12,
+      "homepageUrl": null,
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-cc98/cc98-pwa": {
       "fullName": "ZJU-CC98/CC98-PWA",
@@ -2525,7 +3579,7 @@
         "forum",
         "pwa"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-cc98/forum": {
       "fullName": "ZJU-CC98/Forum",
@@ -2550,7 +3604,7 @@
         "typescript",
         "signalr"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-charger/zju-charger": {
       "fullName": "ZJU-Charger/ZJU-Charger",
@@ -2573,13 +3627,32 @@
         "fastapi",
         "tools"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "zju-eesuad/eestudy-place": {
+      "fullName": "ZJU-EESUAD/EEStUdy-Place",
+      "description": "浙江大学电气工程学院学习网站",
+      "stars": 22,
+      "forks": 5,
+      "openIssues": 15,
+      "language": "CSS",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-07-08T05:19:52Z",
+      "pushedAt": "2026-07-08T05:20:46Z",
+      "commitsLast90Days": 0,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 16,
+      "homepageUrl": "http://www.eestudy.com.cn/",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-fast-lab/ego-planner": {
       "fullName": "ZJU-FAST-Lab/ego-planner",
       "description": null,
-      "stars": 2741,
-      "forks": 419,
+      "stars": 2751,
+      "forks": 420,
       "openIssues": 39,
       "language": "C++",
       "license": "GPL-3.0",
@@ -2592,13 +3665,13 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-fast-lab/ego-planner-swarm": {
       "fullName": "ZJU-FAST-Lab/ego-planner-swarm",
       "description": "An efficient single/multi-agent trajectory planner for multicopters.",
-      "stars": 2255,
-      "forks": 400,
+      "stars": 2261,
+      "forks": 403,
       "openIssues": 32,
       "language": "C++",
       "license": "GPL-3.0",
@@ -2611,13 +3684,13 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-fast-lab/fast-drone-250": {
       "fullName": "ZJU-FAST-Lab/Fast-Drone-250",
       "description": "hardware and software design of the 250mm autonomous drone",
-      "stars": 2585,
-      "forks": 426,
+      "stars": 2587,
+      "forks": 427,
       "openIssues": 45,
       "language": "C++",
       "license": null,
@@ -2630,12 +3703,12 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-fast-lab/gcopter": {
       "fullName": "ZJU-FAST-Lab/GCOPTER",
       "description": "A General-Purpose Trajectory Optimizer for Multicopters",
-      "stars": 1332,
+      "stars": 1335,
       "forks": 218,
       "openIssues": 20,
       "language": "C++",
@@ -2659,7 +3732,7 @@
         "corridors",
         "safe-flight-corridors"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-fast-lab/primitive-planner": {
       "fullName": "ZJU-FAST-Lab/Primitive-Planner",
@@ -2678,7 +3751,7 @@
       "commitsLastYear": 6,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-isee/zju-isee": {
       "fullName": "zju-isee/zju-isee",
@@ -2697,13 +3770,13 @@
       "commitsLastYear": 0,
       "homepageUrl": "https://zju-isee.github.io/zju-isee/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-llms/openstory": {
       "fullName": "ZJU-LLMs/OpenStory",
       "description": "An LLM-powered multi-agent framework for simulating interactive, evolving story worlds.",
-      "stars": 441,
-      "forks": 46,
+      "stars": 445,
+      "forks": 47,
       "openIssues": 1,
       "language": "Python",
       "license": "Apache-2.0",
@@ -2711,7 +3784,7 @@
       "defaultBranch": "main",
       "lastCommitAt": "2026-08-19T04:52:05Z",
       "pushedAt": "2026-08-19T04:52:05Z",
-      "commitsLast90Days": 12,
+      "commitsLast90Days": 0,
       "commitsLast90DaysCapped": false,
       "commitsLastYear": 378,
       "homepageUrl": "",
@@ -2722,7 +3795,7 @@
         "social-simulation",
         "dsh-plugin"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-r/zjutimetable": {
       "fullName": "ZJU-R/zjuTimeTable",
@@ -2741,23 +3814,23 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-real/polaris": {
       "fullName": "ZJU-REAL/Polaris",
       "description": "Toward Autonomous Scientific Discovery",
-      "stars": 265,
-      "forks": 39,
-      "openIssues": 10,
+      "stars": 267,
+      "forks": 40,
+      "openIssues": 8,
       "language": "Python",
       "license": "Apache-2.0",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-10-09T21:14:36Z",
-      "pushedAt": "2026-10-10T01:04:37Z",
-      "commitsLast90Days": 224,
+      "lastCommitAt": "2026-11-18T12:53:02Z",
+      "pushedAt": "2026-11-18T12:53:38Z",
+      "commitsLast90Days": 274,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 917,
+      "commitsLastYear": 975,
       "homepageUrl": "https://zju-real.github.io/Polaris/",
       "topics": [
         "ai-agents",
@@ -2766,7 +3839,7 @@
         "polaris-agent",
         "dsh-plugin"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-sec/cianalyser": {
       "fullName": "ZJU-SEC/CIAnalyser",
@@ -2785,13 +3858,13 @@
       "commitsLastYear": 0,
       "homepageUrl": "",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju-turing/turingcourses": {
       "fullName": "ZJU-Turing/TuringCourses",
       "description": "浙江大学图灵班课程学习指南",
       "stars": 813,
-      "forks": 104,
+      "forks": 103,
       "openIssues": 4,
       "language": "Markdown",
       "license": "NOASSERTION",
@@ -2807,12 +3880,12 @@
         "courses",
         "zju"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju3dv/4k4d": {
       "fullName": "zju3dv/4K4D",
       "description": "[CVPR 2024] 4K4D: Real-Time 4D View Synthesis at 4K Resolution",
-      "stars": 1821,
+      "stars": 1822,
       "forks": 77,
       "openIssues": 47,
       "language": "Python",
@@ -2826,13 +3899,13 @@
       "commitsLastYear": 1,
       "homepageUrl": "https://zju3dv.github.io/4k4d/",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju3dv/easymocap": {
       "fullName": "zju3dv/EasyMocap",
       "description": "Make human motion capture easier. ",
-      "stars": 4975,
-      "forks": 573,
+      "stars": 4984,
+      "forks": 574,
       "openIssues": 132,
       "language": "Python",
       "license": "NOASSERTION",
@@ -2847,13 +3920,13 @@
       "topics": [
         "motion-capture"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju3dv/gvhmr": {
       "fullName": "zju3dv/GVHMR",
       "description": "Code for \"GVHMR: World-Grounded Human Motion Recovery via Gravity-View Coordinates\", Siggraph Asia 2024, TPAMI 2026",
-      "stars": 2294,
-      "forks": 261,
+      "stars": 2306,
+      "forks": 262,
       "openIssues": 35,
       "language": "Jupyter Notebook",
       "license": "NOASSERTION",
@@ -2866,12 +3939,12 @@
       "commitsLastYear": 6,
       "homepageUrl": "https://zju3dv.github.io/gvhmr",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zju3dv/loftr": {
       "fullName": "zju3dv/LoFTR",
       "description": "Code for \"LoFTR: Detector-Free Local Feature Matching with Transformers\", CVPR 2021, T-PAMI 2022",
-      "stars": 2978,
+      "stars": 2982,
       "forks": 421,
       "openIssues": 90,
       "language": "Jupyter Notebook",
@@ -2889,14 +3962,14 @@
         "pose-estimation",
         "3d-vision"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zjuchalaoshi/chalaoshi": {
       "fullName": "zjuchalaoshi/chalaoshi",
       "description": null,
       "stars": 186,
       "forks": 1,
-      "openIssues": 67,
+      "openIssues": 71,
       "language": null,
       "license": null,
       "archived": false,
@@ -2908,7 +3981,26 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
+    },
+    "zjusct/hpc101": {
+      "fullName": "ZJUSCT/HPC101",
+      "description": "Course Lab documents for HPC 101 (a.k.a. 课程综合实践 Ⅰ / CS1030M）of Zhejiang University",
+      "stars": 126,
+      "forks": 33,
+      "openIssues": 0,
+      "language": "C",
+      "license": null,
+      "archived": false,
+      "defaultBranch": "main",
+      "lastCommitAt": "2026-09-02T11:21:08Z",
+      "pushedAt": "2026-09-02T11:30:10Z",
+      "commitsLast90Days": 4,
+      "commitsLast90DaysCapped": false,
+      "commitsLastYear": 84,
+      "homepageUrl": "https://hpc101.zjusct.io",
+      "topics": [],
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zjusct/mirror-front": {
       "fullName": "ZJUSCT/mirror-front",
@@ -2920,14 +4012,14 @@
       "license": "MIT",
       "archived": false,
       "defaultBranch": "main",
-      "lastCommitAt": "2026-11-12T07:45:57Z",
-      "pushedAt": "2026-11-12T07:46:13Z",
-      "commitsLast90Days": 29,
+      "lastCommitAt": "2026-11-14T10:24:53Z",
+      "pushedAt": "2026-11-14T10:24:56Z",
+      "commitsLast90Days": 30,
       "commitsLast90DaysCapped": false,
-      "commitsLastYear": 45,
+      "commitsLastYear": 46,
       "homepageUrl": "https://mirrors.zju.edu.cn",
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zjusct/mirrorsdotnet": {
       "fullName": "ZJUSCT/MirrorManager",
@@ -2950,7 +4042,7 @@
         "job-scheduler",
         "mirror"
       ],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     },
     "zjusct/mirrorz-shim": {
       "fullName": "ZJUSCT/MirrorZ-Shim",
@@ -2969,7 +4061,7 @@
       "commitsLastYear": 0,
       "homepageUrl": null,
       "topics": [],
-      "fetchedAt": "2026-11-13T08:25:32.089Z"
+      "fetchedAt": "2026-11-18T13:01:01.825Z"
     }
   }
 }

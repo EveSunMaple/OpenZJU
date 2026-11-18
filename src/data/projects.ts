@@ -105,7 +105,6 @@ export const projects = [
     slug: "tongge-schedule",
     name: "同格",
     description: "浙大课表撞课比对工具，上传 .ics 课表即可查看与同学的课程冲突和教室距离。",
-    repo: "DongLanQwQ0/ZJU-Tongge-Schedule",
     category: "life",
     tags: ["课表", "撞课", "iCalendar"],
     links: {
@@ -195,14 +194,6 @@ export const projects = [
     repo: "Stella617/ZJU-Clock-In",
     category: "life",
     tags: ["健康打卡", "自动化", "历史项目"],
-  },
-  {
-    slug: "quantum-zju",
-    name: "Quantum",
-    description: "面向 ZJUers 的本地优先插件平台，通过桌面与移动客户端整合校园服务。",
-    repo: "XmmShp/Quantum",
-    category: "life",
-    tags: ["桌面工具", "插件平台", "ZJUers"],
   },
   {
     slug: "elychron",
@@ -1260,7 +1251,7 @@ export const projects = [
   {
     slug: "ppt-effects",
     name: "PPT Effects",
-    description: "把调好的 PPT 动效保存为可复用配方，提供 10 套动效模板与参考件。",
+    description: "把调好的 PPT 动效保存为可复用配方，提供 17 个动效、6 套学术模板与自由组合工具。",
     repo: "HY-hue113/ppt-effects",
     category: "work",
     tags: ["PPT", "动效", "Skill"],
@@ -1680,5 +1671,151 @@ export const projects = [
     repo: "CouesF/marp-theme-zju",
     category: "work",
     tags: ["Marp", "幻灯片", "主题"],
+  },
+  {
+    slug: "fuyu",
+    name: "浮屿 Fuyu",
+    description:
+      "屏幕顶端的灵动岛，集中显示 AI Agent 会话状态、消息、剪贴板、翻译与音乐，并支持自己写插件扩展。",
+    repo: "TixXin/Fuyu",
+    category: "work",
+    tags: ["灵动岛", "桌面工具", "AI Agent", "Tauri"],
+    links: {
+      website: "https://fuyu.ing",
+      download: "https://github.com/TixXin/Fuyu/releases/latest",
+    },
+    featured: true,
+  },
+  {
+    slug: "agent-bus",
+    name: "Agent Bus",
+    description:
+      "用 Python 标准库把本机装好的 Codex、Claude、Antigravity 等 Agent 串起来，让它们互相派活与交叉检查。",
+    repo: "He-He-He-He-He-He/agent-bus",
+    category: "work",
+    tags: ["AI Agent", "多智能体", "Python"],
+  },
+  {
+    slug: "ai-news-cover",
+    name: "AI News Cover",
+    description: "把 AI 新闻聚合站做成一张会自己更新的桌面报纸，支持 Windows 与 macOS。",
+    repo: "LilJay-H/ai-news-cover",
+    category: "work",
+    tags: ["桌面壁纸", "AI 资讯", "效率"],
+    links: {
+      website: "https://liljay-h.github.io/ai-news-cover/",
+    },
+  },
+  {
+    slug: "arknights-agent",
+    name: "ArkniGhTs",
+    description: "让大模型接管《明日方舟》卫戍协议的 Agent，自动凑羁绊、算经济并调整站位。",
+    repo: "Dremig/ArkniGhTs",
+    category: "life",
+    tags: ["游戏", "AI Agent", "自动化"],
+  },
+  {
+    slug: "ppt-assistant",
+    name: "PPT Assistant",
+    description:
+      "给 PowerPoint 加一层易用的墨迹叠加层，支持取色、压感与独立白板，方便在触屏一体机上板书。",
+    repo: "PaomianPomix/PPTassistant-releases",
+    category: "study",
+    tags: ["PowerPoint", "板书", "教学"],
+    links: {
+      download: "https://github.com/PaomianPomix/PPTassistant-releases/releases/latest",
+    },
+  },
+  {
+    slug: "zju-class-comfort",
+    name: "浙大上课爽",
+    description:
+      "针对智云课堂的 Edge 扩展，一键同步视频与字幕、缓存课程，并把课件与授课视频同屏对照。",
+    category: "study",
+    tags: ["智云课堂", "浏览器扩展", "字幕同步"],
+    links: {
+      download:
+        "https://microsoftedge.microsoft.com/addons/detail/piehjgejhhiefojkdjnmmcfkjehmhjmb",
+    },
+  },
+  {
+    slug: "chaoxing-courseware-downloader",
+    name: "超星课件下载器",
+    description: "下载超星学习通课件的油猴脚本，顺带修复 WPS PDF 在 Edge 中的公式乱码。",
+    repo: "wuheshidaozod/chaoxing-courseware-downloader",
+    category: "study",
+    tags: ["超星学习通", "油猴", "课件下载"],
+  },
+  {
+    slug: "zju-machine-vision-notes",
+    name: "机器视觉课程笔记",
+    description: "浙江大学机器视觉课程的复习笔记，附 Markdown 源码与整理后的 PDF。",
+    repo: "dreamland-yu/machine_vision",
+    category: "study",
+    tags: ["课程笔记", "机器视觉", "机器人工程"],
+  },
+  {
+    slug: "zju-courseware-download",
+    name: "学在浙大课件下载",
+    description: "用油猴脚本批量下载学在浙大课件，并支持导出为 WPS 可用的格式。",
+    repo: "wuheshidaozod/zju-courseware-download",
+    category: "study",
+    tags: ["学在浙大", "油猴", "课件下载"],
+  },
+  {
+    slug: "markdown-to-ubb",
+    name: "Markdown to UBB",
+    description: "把 Markdown 转换成 CC98 使用的 UBB 格式，纯静态站点，转换只在本地浏览器完成。",
+    repo: "zjjncsn/markdown-to-ubb",
+    category: "work",
+    tags: ["Markdown", "UBB", "CC98"],
+    links: {
+      website: "https://ubb.sci-tech.top",
+    },
+  },
+  {
+    slug: "anime-master-pro",
+    name: "AnimeMaster Pro",
+    description: "安卓端追番助手，同步 Bangumi 收藏并一键搜索资源、调用网盘下载。",
+    repo: "CongutSun/AnimeMaster_Pro_mobile",
+    category: "life",
+    tags: ["追番", "安卓", "Bangumi"],
+  },
+  {
+    slug: "ieee-latex-copier",
+    name: "ieee-latex-copier",
+    description:
+      "把 IEEE Xplore 论文页面整理成 Markdown 或纯文本导出的浏览器扩展，公式尽量转成 LaTeX。",
+    repo: "Derren-Brown/ieee-latex-copier",
+    category: "research",
+    tags: ["IEEE", "论文", "浏览器扩展", "LaTeX"],
+  },
+  {
+    slug: "web-ai-assistant",
+    name: "Web AI Assistant",
+    description: "网页划线翻译与提问的浏览器扩展，接入自己的 API，并内置词库避免重复翻译。",
+    repo: "BeringZ/web-ai-assistant",
+    category: "work",
+    tags: ["翻译", "浏览器扩展", "AI"],
+  },
+  {
+    slug: "english-reciting",
+    name: "English Reciting",
+    description: "用 Flutter 写的英语听写工具，支持自定义词库、随机复习与导出 PDF 默写纸。",
+    repo: "YifengFang-rfl/english_reciting",
+    category: "study",
+    tags: ["英语听写", "Flutter", "自定义词库"],
+    links: {
+      website: "https://dictationen.github.io",
+    },
+  },
+  {
+    slug: "deepseek-harness-plugins",
+    name: "DeepSeek Harness Plugins",
+    description:
+      "为 DeepSeek Harness 写的一组插件，把推理强度调节、自定义信息栏等功能接进 Harness。",
+    repo: "FishScP/DeepSeek-Harness-Plugins",
+    category: "work",
+    tags: ["DeepSeek Harness", "插件", "AI"],
   },
 ] as const satisfies readonly Project[];
