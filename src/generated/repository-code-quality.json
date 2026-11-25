@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T02:52:41.490Z",
+  "generatedAt": "2026-11-25T00:31:46.554Z",
   "source": "deep-audit",
   "repositories": {
     "0x000005/better-zdbk": {
-      "analyzedAt": "2026-11-24T02:48:24.849Z",
+      "analyzedAt": "2026-11-25T00:28:39.454Z",
       "commitAt": "2026-09-15T03:10:52Z",
       "branch": "main",
       "language": "JavaScript",
@@ -35,7 +35,7 @@
       }
     },
     "2044145178/learning_in_zju_script": {
-      "analyzedAt": "2026-11-24T02:48:25.974Z",
+      "analyzedAt": "2026-11-25T00:28:40.726Z",
       "commitAt": "2024-09-25T03:57:25Z",
       "branch": "master",
       "language": "JavaScript",
@@ -66,7 +66,7 @@
       }
     },
     "5dbwat4/login-zju": {
-      "analyzedAt": "2026-11-24T02:48:26.660Z",
+      "analyzedAt": "2026-11-25T00:28:41.465Z",
       "commitAt": "2026-10-07T11:07:16Z",
       "branch": "main",
       "language": "TypeScript",
@@ -104,7 +104,7 @@
       }
     },
     "5dbwat4/zju-live-better": {
-      "analyzedAt": "2026-11-24T02:48:27.754Z",
+      "analyzedAt": "2026-11-25T00:28:42.770Z",
       "commitAt": "2026-10-28T14:56:42Z",
       "branch": "main",
       "language": "JavaScript",
@@ -142,7 +142,7 @@
       }
     },
     "5dbwat4/zjuphylab.ics": {
-      "analyzedAt": "2026-11-24T02:48:29.390Z",
+      "analyzedAt": "2026-11-25T00:28:44.929Z",
       "commitAt": "2025-02-24T13:39:02Z",
       "branch": "main",
       "language": "TypeScript",
@@ -180,7 +180,7 @@
       }
     },
     "8eoyw/zju-learning-cli": {
-      "analyzedAt": "2026-11-24T02:48:31.725Z",
+      "analyzedAt": "2026-11-25T00:28:50.963Z",
       "commitAt": "2026-11-07T12:08:44Z",
       "branch": "main",
       "language": "Python",
@@ -211,7 +211,7 @@
       }
     },
     "adsr1042/cardscope": {
-      "analyzedAt": "2026-11-24T02:48:32.405Z",
+      "analyzedAt": "2026-11-25T00:28:51.761Z",
       "commitAt": "2026-09-20T17:02:00Z",
       "branch": "main",
       "language": "Go",
@@ -247,7 +247,7 @@
       }
     },
     "adsr1042/lazuli": {
-      "analyzedAt": "2026-11-24T02:48:42.368Z",
+      "analyzedAt": "2026-11-25T00:29:01.158Z",
       "commitAt": "2025-06-20T07:58:39Z",
       "branch": "master",
       "language": "JavaScript",
@@ -278,7 +278,7 @@
       }
     },
     "adsr1042/zju_vocabboost": {
-      "analyzedAt": "2026-11-24T02:48:43.533Z",
+      "analyzedAt": "2026-11-25T00:29:02.407Z",
       "commitAt": "2023-09-15T10:25:11Z",
       "branch": "main",
       "language": "JavaScript",
@@ -309,7 +309,7 @@
       }
     },
     "alwaysbyx/zju-ee": {
-      "analyzedAt": "2026-11-24T02:48:45.301Z",
+      "analyzedAt": "2026-11-25T00:29:04.176Z",
       "commitAt": "2020-11-07T06:28:03Z",
       "branch": "main",
       "language": null,
@@ -338,7 +338,7 @@
       }
     },
     "anchorite-no/cc98-autosign-fast": {
-      "analyzedAt": "2026-11-24T02:48:46.368Z",
+      "analyzedAt": "2026-11-25T00:29:05.311Z",
       "commitAt": "2026-05-25T07:26:21Z",
       "branch": "main",
       "language": "Go",
@@ -367,7 +367,7 @@
       }
     },
     "anchorite-no/dsh-zju-assistant": {
-      "analyzedAt": "2026-11-24T02:48:47.124Z",
+      "analyzedAt": "2026-11-25T00:29:06.085Z",
       "commitAt": "2026-11-10T10:10:12Z",
       "branch": "main",
       "language": "TypeScript",
@@ -405,7 +405,7 @@
       }
     },
     "aoikjuice/zju-academic": {
-      "analyzedAt": "2026-11-24T02:48:53.002Z",
+      "analyzedAt": "2026-11-25T00:29:12.019Z",
       "commitAt": "2026-06-29T14:37:36Z",
       "branch": "main",
       "language": "Python",
@@ -443,7 +443,7 @@
       }
     },
     "auspiow/zhiyun-extension": {
-      "analyzedAt": "2026-11-24T02:49:00.522Z",
+      "analyzedAt": "2026-11-25T00:29:15.528Z",
       "commitAt": "2025-11-27T04:05:05Z",
       "branch": "master",
       "language": "JavaScript",
@@ -454,7 +454,7 @@
       "metrics": null
     },
     "auspiow/zynotes": {
-      "analyzedAt": "2026-11-24T02:49:00.523Z",
+      "analyzedAt": "2026-11-25T00:29:15.529Z",
       "commitAt": "2025-11-27T04:05:05Z",
       "branch": "master",
       "language": "JavaScript",
@@ -465,7 +465,7 @@
       "metrics": null
     },
     "ayin-ay/self-evolving-skills": {
-      "analyzedAt": "2026-11-24T02:49:00.523Z",
+      "analyzedAt": "2026-11-25T00:29:15.529Z",
       "commitAt": "2026-08-31T00:38:26Z",
       "branch": "main",
       "language": "Python",
@@ -496,7 +496,7 @@
       }
     },
     "beringz/cc98_filter": {
-      "analyzedAt": "2026-11-24T02:49:01.251Z",
+      "analyzedAt": "2026-11-25T00:29:16.229Z",
       "commitAt": "2026-09-06T02:05:54Z",
       "branch": "main",
       "language": "JavaScript",
@@ -527,7 +527,7 @@
       }
     },
     "beringz/web-ai-assistant": {
-      "analyzedAt": "2026-11-24T02:49:02.073Z",
+      "analyzedAt": "2026-11-25T00:29:17.037Z",
       "commitAt": "2026-08-14T09:02:16Z",
       "branch": "main",
       "language": "TypeScript",
@@ -565,7 +565,7 @@
       }
     },
     "birchtree2/zju-grad-course-helper": {
-      "analyzedAt": "2026-11-24T02:49:03.725Z",
+      "analyzedAt": "2026-11-25T00:29:18.741Z",
       "commitAt": "2026-09-15T03:01:41Z",
       "branch": "main",
       "language": "JavaScript",
@@ -596,7 +596,7 @@
       }
     },
     "blackhorseq/lightgcn-paddle": {
-      "analyzedAt": "2026-11-24T02:49:04.726Z",
+      "analyzedAt": "2026-11-25T00:29:19.926Z",
       "commitAt": "2021-05-16T02:09:09Z",
       "branch": "main",
       "language": "Python",
@@ -627,7 +627,7 @@
       }
     },
     "blackhorseq/ngcf-paddle2": {
-      "analyzedAt": "2026-11-24T02:50:11.435Z",
+      "analyzedAt": "2026-11-25T00:28:38.254Z",
       "commitAt": "2021-05-16T02:17:47Z",
       "branch": "main",
       "language": "Python",
@@ -658,7 +658,7 @@
       }
     },
     "bms-2021/minisql": {
-      "analyzedAt": "2026-11-24T02:50:17.483Z",
+      "analyzedAt": "2026-11-25T00:28:45.210Z",
       "commitAt": "2022-06-05T13:37:15Z",
       "branch": "main",
       "language": "C++",
@@ -669,7 +669,7 @@
       "metrics": null
     },
     "catqaq/chatpixiu": {
-      "analyzedAt": "2026-11-24T02:50:17.490Z",
+      "analyzedAt": "2026-11-25T00:28:45.218Z",
       "commitAt": "2024-12-10T16:16:40Z",
       "branch": "main",
       "language": null,
@@ -698,7 +698,7 @@
       }
     },
     "catqaq/opentextclassification": {
-      "analyzedAt": "2026-11-24T02:50:18.900Z",
+      "analyzedAt": "2026-11-25T00:28:46.847Z",
       "commitAt": "2023-04-14T10:20:22Z",
       "branch": "master",
       "language": "Python",
@@ -729,7 +729,7 @@
       }
     },
     "cazorp138/orangeassistant-for-windows": {
-      "analyzedAt": "2026-11-24T02:50:19.646Z",
+      "analyzedAt": "2026-11-25T00:28:47.701Z",
       "commitAt": "2026-10-26T08:45:15Z",
       "branch": "main",
       "language": "JavaScript",
@@ -760,7 +760,7 @@
       }
     },
     "cedar17/cc98-img-upload": {
-      "analyzedAt": "2026-11-24T02:50:21.129Z",
+      "analyzedAt": "2026-11-25T00:28:49.610Z",
       "commitAt": "2026-10-30T03:14:38Z",
       "branch": "master",
       "language": "Python",
@@ -791,7 +791,7 @@
       }
     },
     "cedar17/zju-connect-android": {
-      "analyzedAt": "2026-11-24T02:50:21.782Z",
+      "analyzedAt": "2026-11-25T00:28:50.372Z",
       "commitAt": "2026-11-02T16:11:19Z",
       "branch": "master",
       "language": "Kotlin",
@@ -827,7 +827,7 @@
       }
     },
     "celechron/celechron": {
-      "analyzedAt": "2026-11-24T02:50:24.285Z",
+      "analyzedAt": "2026-11-25T00:28:53.714Z",
       "commitAt": "2026-09-20T11:52:17Z",
       "branch": "main",
       "language": "Dart",
@@ -856,7 +856,7 @@
       }
     },
     "colamentos2023/zju_innercurly_tool2": {
-      "analyzedAt": "2026-11-24T02:50:25.878Z",
+      "analyzedAt": "2026-11-25T00:28:55.814Z",
       "commitAt": "2026-01-30T07:00:38Z",
       "branch": "main",
       "language": "Python",
@@ -887,7 +887,7 @@
       }
     },
     "congutsun/animemaster_pro_mobile": {
-      "analyzedAt": "2026-11-24T02:50:26.568Z",
+      "analyzedAt": "2026-11-25T00:28:56.655Z",
       "commitAt": "2026-04-10T14:37:25Z",
       "branch": "main",
       "language": "Dart",
@@ -916,7 +916,7 @@
       }
     },
     "coran-tech/cc98-reborn": {
-      "analyzedAt": "2026-11-24T02:50:27.685Z",
+      "analyzedAt": "2026-11-25T00:28:58.001Z",
       "commitAt": "2026-11-15T17:48:13Z",
       "branch": "main",
       "language": "JavaScript",
@@ -954,7 +954,7 @@
       }
     },
     "couesf/marp-theme-zju": {
-      "analyzedAt": "2026-11-24T02:50:45.709Z",
+      "analyzedAt": "2026-11-25T00:29:14.277Z",
       "commitAt": "2024-01-13T15:16:32Z",
       "branch": "main",
       "language": "CSS",
@@ -983,7 +983,7 @@
       }
     },
     "cpbianma/zju-yjsy-course-grabber": {
-      "analyzedAt": "2026-11-24T02:50:46.338Z",
+      "analyzedAt": "2026-11-25T00:29:15.069Z",
       "commitAt": "2026-09-13T13:58:21Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1014,7 +1014,7 @@
       }
     },
     "crazyspotteddove/fiz": {
-      "analyzedAt": "2026-11-24T02:50:47.070Z",
+      "analyzedAt": "2026-11-25T00:29:15.987Z",
       "commitAt": "2025-11-11T08:27:31Z",
       "branch": "dev",
       "language": "Rust",
@@ -1050,7 +1050,7 @@
       }
     },
     "cyhkbl/hack_xzzd": {
-      "analyzedAt": "2026-11-24T02:50:49.232Z",
+      "analyzedAt": "2026-11-25T00:29:21.521Z",
       "commitAt": "2026-03-11T13:49:19Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1081,7 +1081,7 @@
       }
     },
     "daydreammer123/zju-network-auto-reconnect": {
-      "analyzedAt": "2026-11-24T02:50:49.906Z",
+      "analyzedAt": "2026-11-25T00:29:22.519Z",
       "commitAt": "2026-10-28T02:38:30Z",
       "branch": "main",
       "language": "Python",
@@ -1112,7 +1112,7 @@
       }
     },
     "derren-brown/ieee-latex-copier": {
-      "analyzedAt": "2026-11-24T02:50:50.618Z",
+      "analyzedAt": "2026-11-25T00:29:23.425Z",
       "commitAt": "2026-04-19T05:04:26Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1143,7 +1143,7 @@
       }
     },
     "deturium/zjuxk": {
-      "analyzedAt": "2026-11-24T02:50:51.376Z",
+      "analyzedAt": "2026-11-25T00:29:24.383Z",
       "commitAt": "2018-02-10T11:46:33Z",
       "branch": "master",
       "language": "JavaScript",
@@ -1174,7 +1174,7 @@
       }
     },
     "dimlitter/zju-dailyhealth-autocheck": {
-      "analyzedAt": "2026-11-24T02:50:52.118Z",
+      "analyzedAt": "2026-11-25T00:29:25.267Z",
       "commitAt": "2022-09-13T03:10:41Z",
       "branch": "main",
       "language": "Python",
@@ -1205,7 +1205,7 @@
       }
     },
     "dreaming-zh/segmentation-based-silicon-solar-panel-defect-detection": {
-      "analyzedAt": "2026-11-24T02:50:52.725Z",
+      "analyzedAt": "2026-11-25T00:29:26.064Z",
       "commitAt": "2023-04-08T13:04:36Z",
       "branch": "main",
       "language": "Python",
@@ -1236,7 +1236,7 @@
       }
     },
     "dreamland-yu/machine_vision": {
-      "analyzedAt": "2026-11-24T02:49:21.207Z",
+      "analyzedAt": "2026-11-25T00:28:49.100Z",
       "commitAt": "2026-11-10T11:40:51Z",
       "branch": "main",
       "language": null,
@@ -1265,7 +1265,7 @@
       }
     },
     "dremig/arknights": {
-      "analyzedAt": "2026-11-24T02:49:24.086Z",
+      "analyzedAt": "2026-11-25T00:28:51.696Z",
       "commitAt": "2026-11-12T15:09:55Z",
       "branch": "main",
       "language": "Python",
@@ -1303,7 +1303,7 @@
       }
     },
     "elyyyyyyyyxer/elychron": {
-      "analyzedAt": "2026-11-24T02:49:31.879Z",
+      "analyzedAt": "2026-11-25T00:28:55.968Z",
       "commitAt": "2026-10-12T14:32:38Z",
       "branch": "main",
       "language": "Dart",
@@ -1332,7 +1332,7 @@
       }
     },
     "ethanpixar/zju-typst-tplt": {
-      "analyzedAt": "2026-11-24T02:49:36.164Z",
+      "analyzedAt": "2026-11-25T00:28:59.860Z",
       "commitAt": "2025-11-02T15:08:47Z",
       "branch": "master",
       "language": "Typst",
@@ -1361,7 +1361,7 @@
       }
     },
     "evesunmaple/openzju": {
-      "analyzedAt": "2026-11-24T02:49:38.202Z",
+      "analyzedAt": "2026-11-25T00:29:01.837Z",
       "commitAt": "2026-11-17T23:29:03Z",
       "branch": "main",
       "language": "TypeScript",
@@ -1385,8 +1385,8 @@
         "averageComplexity": 2.54,
         "maxComplexity": 29,
         "highComplexityFunctions": 4,
-        "duplicationPercentage": 52.45,
-        "duplicatedBlocks": 1027,
+        "duplicationPercentage": 52.4,
+        "duplicatedBlocks": 1026,
         "lintErrors": 0,
         "lintWarnings": 2,
         "secrets": null,
@@ -1399,7 +1399,7 @@
       }
     },
     "f1yingwhite/auto-course.zju": {
-      "analyzedAt": "2026-11-24T02:49:40.661Z",
+      "analyzedAt": "2026-11-25T00:29:04.208Z",
       "commitAt": "2026-03-12T02:25:04Z",
       "branch": "main",
       "language": "Python",
@@ -1437,7 +1437,7 @@
       }
     },
     "fanbb2333/nvidb": {
-      "analyzedAt": "2026-11-24T02:49:42.152Z",
+      "analyzedAt": "2026-11-25T00:29:05.555Z",
       "commitAt": "2026-11-06T05:13:54Z",
       "branch": "main",
       "language": "Python",
@@ -1468,7 +1468,7 @@
       }
     },
     "fish-zjuer/anchor-explain": {
-      "analyzedAt": "2026-11-24T02:49:44.367Z",
+      "analyzedAt": "2026-11-25T00:29:07.706Z",
       "commitAt": "2026-10-06T06:58:11Z",
       "branch": "master",
       "language": "JavaScript",
@@ -1506,7 +1506,7 @@
       }
     },
     "fishscp/deepseek-harness-plugins": {
-      "analyzedAt": "2026-11-24T02:50:01.123Z",
+      "analyzedAt": "2026-11-25T00:29:24.572Z",
       "commitAt": "2026-08-16T19:38:57Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1537,7 +1537,7 @@
       }
     },
     "flaviohor/pcelechron": {
-      "analyzedAt": "2026-11-24T02:50:02.781Z",
+      "analyzedAt": "2026-11-25T00:29:25.878Z",
       "commitAt": "2026-09-18T11:41:48Z",
       "branch": "main",
       "language": "Dart",
@@ -1566,7 +1566,7 @@
       }
     },
     "flypancake/zju-english-android": {
-      "analyzedAt": "2026-11-24T02:50:06.049Z",
+      "analyzedAt": "2026-11-25T00:29:29.217Z",
       "commitAt": "2026-10-08T15:15:26Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1597,7 +1597,7 @@
       }
     },
     "foreverhyx/zju_beamer_template": {
-      "analyzedAt": "2026-11-24T02:50:07.417Z",
+      "analyzedAt": "2026-11-25T00:29:30.556Z",
       "commitAt": "2026-09-21T17:12:39Z",
       "branch": "main",
       "language": "TeX",
@@ -1626,7 +1626,7 @@
       }
     },
     "geyadawang-boop/humanize-writing": {
-      "analyzedAt": "2026-11-24T02:50:11.095Z",
+      "analyzedAt": "2026-11-25T00:29:34.096Z",
       "commitAt": "2026-11-15T14:17:08Z",
       "branch": "master",
       "language": "Python",
@@ -1657,7 +1657,7 @@
       }
     },
     "ginsenvey/cc98-desktop": {
-      "analyzedAt": "2026-11-24T02:50:12.963Z",
+      "analyzedAt": "2026-11-25T00:29:35.951Z",
       "commitAt": "2026-11-13T04:29:09Z",
       "branch": "Lab",
       "language": "C#",
@@ -1686,7 +1686,7 @@
       }
     },
     "grapesea/csdiy_auto_resources_downloader": {
-      "analyzedAt": "2026-11-24T02:50:16.166Z",
+      "analyzedAt": "2026-11-25T00:29:38.964Z",
       "commitAt": "2026-09-28T11:31:10Z",
       "branch": "master",
       "language": "JavaScript",
@@ -1717,7 +1717,7 @@
       }
     },
     "guaysu/marp-theme-zju-enhanced": {
-      "analyzedAt": "2026-11-24T02:50:17.533Z",
+      "analyzedAt": "2026-11-25T00:29:40.437Z",
       "commitAt": "2026-04-10T14:10:00Z",
       "branch": "main",
       "language": "CSS",
@@ -1746,7 +1746,7 @@
       }
     },
     "gvrzizo/lazy-tui": {
-      "analyzedAt": "2026-11-24T02:50:18.536Z",
+      "analyzedAt": "2026-11-25T00:29:41.352Z",
       "commitAt": "2026-01-17T12:41:45Z",
       "branch": "main",
       "language": "C++",
@@ -1777,7 +1777,7 @@
       }
     },
     "gvvg5272-code/cc98-material-search": {
-      "analyzedAt": "2026-11-24T02:50:19.701Z",
+      "analyzedAt": "2026-11-25T00:29:42.499Z",
       "commitAt": "2026-11-02T11:35:23Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1808,7 +1808,7 @@
       }
     },
     "habai182/paperforge-android": {
-      "analyzedAt": "2026-11-24T02:50:20.943Z",
+      "analyzedAt": "2026-11-25T00:29:43.711Z",
       "commitAt": "2026-11-17T06:02:10Z",
       "branch": "main",
       "language": "Kotlin",
@@ -1844,7 +1844,7 @@
       }
     },
     "haoka1/zju-offer": {
-      "analyzedAt": "2026-11-24T02:50:36.275Z",
+      "analyzedAt": "2026-11-25T00:29:58.324Z",
       "commitAt": "2026-09-08T03:35:18Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1875,7 +1875,7 @@
       }
     },
     "harry-linner/campusos": {
-      "analyzedAt": "2026-11-24T02:48:53.706Z",
+      "analyzedAt": "2026-11-25T00:28:49.873Z",
       "commitAt": "2026-10-12T02:45:22Z",
       "branch": "main",
       "language": "TypeScript",
@@ -1913,7 +1913,7 @@
       }
     },
     "he-he-he-he-he-he/agent-bus": {
-      "analyzedAt": "2026-11-24T02:49:02.507Z",
+      "analyzedAt": "2026-11-25T00:28:58.542Z",
       "commitAt": "2026-11-14T06:44:24Z",
       "branch": "main",
       "language": "Python",
@@ -1944,7 +1944,7 @@
       }
     },
     "he-he-he-he-he-he/archive-gpt-reading-assistant": {
-      "analyzedAt": "2026-11-24T02:49:03.784Z",
+      "analyzedAt": "2026-11-25T00:28:59.688Z",
       "commitAt": "2026-10-18T09:08:28Z",
       "branch": "main",
       "language": "JavaScript",
@@ -1982,7 +1982,7 @@
       }
     },
     "he-he-he-he-he-he/yingqiao-store": {
-      "analyzedAt": "2026-11-24T02:49:14.791Z",
+      "analyzedAt": "2026-11-25T00:29:10.324Z",
       "commitAt": "2026-10-21T03:10:03Z",
       "branch": "developer-presence-0312",
       "language": "C++",
@@ -2020,7 +2020,7 @@
       }
     },
     "he-he-he-he-he-he/zhiyunassistant": {
-      "analyzedAt": "2026-11-24T02:49:29.596Z",
+      "analyzedAt": "2026-11-25T00:29:24.437Z",
       "commitAt": "2026-11-06T10:05:07Z",
       "branch": "main",
       "language": "TypeScript",
@@ -2058,7 +2058,7 @@
       }
     },
     "hggshiwo/beamerthemeformal": {
-      "analyzedAt": "2026-11-24T02:49:56.521Z",
+      "analyzedAt": "2026-11-25T00:29:50.918Z",
       "commitAt": "2022-06-01T12:13:06Z",
       "branch": "main",
       "language": "TeX",
@@ -2087,7 +2087,7 @@
       }
     },
     "husk-huz/arxivday": {
-      "analyzedAt": "2026-11-24T02:49:57.692Z",
+      "analyzedAt": "2026-11-25T00:29:51.946Z",
       "commitAt": "2025-01-13T08:44:42Z",
       "branch": "main",
       "language": "Python",
@@ -2119,13 +2119,13 @@
         "vulnerabilities": {
           "critical": 2,
           "high": 17,
-          "medium": 88,
+          "medium": 92,
           "low": 17
         }
       }
     },
     "hy-hue113/ppt-effects": {
-      "analyzedAt": "2026-11-24T02:50:07.245Z",
+      "analyzedAt": "2026-11-25T00:30:03.174Z",
       "commitAt": "2026-11-17T18:15:28Z",
       "branch": "main",
       "language": "Python",
@@ -2156,7 +2156,7 @@
       }
     },
     "hzlgames/zju-autosign": {
-      "analyzedAt": "2026-11-24T02:50:09.231Z",
+      "analyzedAt": "2026-11-25T00:30:05.176Z",
       "commitAt": "2025-12-24T03:53:57Z",
       "branch": "main",
       "language": "HTML",
@@ -2185,7 +2185,7 @@
       }
     },
     "interest2/anti-addiction": {
-      "analyzedAt": "2026-11-24T02:50:10.446Z",
+      "analyzedAt": "2026-11-25T00:30:06.426Z",
       "commitAt": "2026-11-01T06:02:35Z",
       "branch": "master",
       "language": "Java",
@@ -2214,7 +2214,7 @@
       }
     },
     "inuebisu/bubble-zju": {
-      "analyzedAt": "2026-11-24T02:50:12.070Z",
+      "analyzedAt": "2026-11-25T00:30:07.971Z",
       "commitAt": "2025-09-08T13:56:56Z",
       "branch": "main",
       "language": "Typst",
@@ -2243,7 +2243,7 @@
       }
     },
     "inuebisu/slidetemplate": {
-      "analyzedAt": "2026-11-24T02:50:12.995Z",
+      "analyzedAt": "2026-11-25T00:30:08.858Z",
       "commitAt": "2026-07-07T14:43:44Z",
       "branch": "main",
       "language": "CSS",
@@ -2272,7 +2272,7 @@
       }
     },
     "ishikura-a/quicker": {
-      "analyzedAt": "2026-11-24T02:50:16.693Z",
+      "analyzedAt": "2026-11-25T00:30:12.581Z",
       "commitAt": "2023-04-20T02:56:03Z",
       "branch": "master",
       "language": "Python",
@@ -2310,7 +2310,7 @@
       }
     },
     "isshikihugh/expoven": {
-      "analyzedAt": "2026-11-24T02:50:23.645Z",
+      "analyzedAt": "2026-11-25T00:30:16.986Z",
       "commitAt": "2026-02-16T02:33:54Z",
       "branch": "main",
       "language": "Python",
@@ -2341,7 +2341,7 @@
       }
     },
     "isshikihugh/zju-cs-asio": {
-      "analyzedAt": "2026-11-24T02:50:24.735Z",
+      "analyzedAt": "2026-11-25T00:30:18.190Z",
       "commitAt": "2026-10-04T20:14:42Z",
       "branch": "main",
       "language": "Python",
@@ -2372,7 +2372,7 @@
       }
     },
     "jiao77/magpie-board-android": {
-      "analyzedAt": "2026-11-24T02:50:25.612Z",
+      "analyzedAt": "2026-11-25T00:30:19.189Z",
       "commitAt": "2026-10-25T09:31:19Z",
       "branch": "main",
       "language": "JavaScript",
@@ -2403,7 +2403,7 @@
       }
     },
     "jnove/zjucoursetrace": {
-      "analyzedAt": "2026-11-24T02:50:26.729Z",
+      "analyzedAt": "2026-11-25T00:30:20.230Z",
       "commitAt": "2026-10-08T02:02:11Z",
       "branch": "main",
       "language": "TypeScript",
@@ -2441,7 +2441,7 @@
       }
     },
     "kaixuanwang2003/zju-welcome": {
-      "analyzedAt": "2026-11-24T02:50:31.208Z",
+      "analyzedAt": "2026-11-25T00:30:25.389Z",
       "commitAt": "2026-09-20T11:19:03Z",
       "branch": "main",
       "language": "HTML",
@@ -2470,7 +2470,7 @@
       }
     },
     "keldos-li/typora-latex-theme": {
-      "analyzedAt": "2026-11-24T02:50:33.347Z",
+      "analyzedAt": "2026-11-25T00:30:27.458Z",
       "commitAt": "2026-04-26T06:51:32Z",
       "branch": "main",
       "language": "SCSS",
@@ -2499,7 +2499,7 @@
       }
     },
     "kirchhoff114514/ppt_deduplicator": {
-      "analyzedAt": "2026-11-24T02:50:34.367Z",
+      "analyzedAt": "2026-11-25T00:30:28.284Z",
       "commitAt": "2025-12-25T05:33:20Z",
       "branch": "main",
       "language": "Python",
@@ -2530,7 +2530,7 @@
       }
     },
     "kiri603/to-sheet-music-skill": {
-      "analyzedAt": "2026-11-24T02:48:26.488Z",
+      "analyzedAt": "2026-11-25T00:28:40.391Z",
       "commitAt": "2026-09-17T02:43:32Z",
       "branch": "main",
       "language": "Python",
@@ -2561,7 +2561,7 @@
       }
     },
     "kitty-in-github/ssinvioce": {
-      "analyzedAt": "2026-11-24T02:48:27.383Z",
+      "analyzedAt": "2026-11-25T00:28:41.440Z",
       "commitAt": "2026-11-17T08:14:43Z",
       "branch": "main",
       "language": "Python",
@@ -2599,7 +2599,7 @@
       }
     },
     "kryptonite309/zju-english-dictation-tool_kry-advanced": {
-      "analyzedAt": "2026-11-24T02:48:55.776Z",
+      "analyzedAt": "2026-11-25T00:29:05.416Z",
       "commitAt": "2026-11-16T14:14:50Z",
       "branch": "main",
       "language": "C#",
@@ -2628,7 +2628,7 @@
       }
     },
     "kylian-08/deepseek_harness_for_windows": {
-      "analyzedAt": "2026-11-24T02:48:57.191Z",
+      "analyzedAt": "2026-11-25T00:29:07.062Z",
       "commitAt": "2026-08-18T03:29:40Z",
       "branch": "master",
       "language": "JavaScript",
@@ -2666,7 +2666,7 @@
       }
     },
     "laujoe/zhelixun": {
-      "analyzedAt": "2026-11-24T02:49:02.962Z",
+      "analyzedAt": "2026-11-25T00:29:10.389Z",
       "commitAt": "2026-11-09T03:46:07Z",
       "branch": "main",
       "language": "HTML",
@@ -2695,7 +2695,7 @@
       }
     },
     "liljay-h/ai-news-cover": {
-      "analyzedAt": "2026-11-24T02:49:07.319Z",
+      "analyzedAt": "2026-11-25T00:29:15.894Z",
       "commitAt": "2026-11-11T04:25:56Z",
       "branch": "main",
       "language": "JavaScript",
@@ -2726,7 +2726,7 @@
       }
     },
     "lineus/physics-report-cc": {
-      "analyzedAt": "2026-11-24T02:49:08.897Z",
+      "analyzedAt": "2026-11-25T00:29:17.732Z",
       "commitAt": "2026-11-09T16:10:16Z",
       "branch": "main",
       "language": "Python",
@@ -2764,7 +2764,7 @@
       }
     },
     "lineus/zjuam-in": {
-      "analyzedAt": "2026-11-24T02:49:18.434Z",
+      "analyzedAt": "2026-11-25T00:29:24.654Z",
       "commitAt": "2026-11-10T05:11:28Z",
       "branch": "main",
       "language": "JavaScript",
@@ -2795,7 +2795,7 @@
       }
     },
     "liupilot/zju-teacher-rating-helper": {
-      "analyzedAt": "2026-11-24T02:49:19.476Z",
+      "analyzedAt": "2026-11-25T00:29:25.712Z",
       "commitAt": "2026-09-28T14:55:09Z",
       "branch": "main",
       "language": "JavaScript",
@@ -2826,7 +2826,7 @@
       }
     },
     "logicalpha114/crushzju": {
-      "analyzedAt": "2026-11-24T02:49:20.296Z",
+      "analyzedAt": "2026-11-25T00:29:26.625Z",
       "commitAt": "2026-03-28T09:13:27Z",
       "branch": "main",
       "language": "HTML",
@@ -2862,7 +2862,7 @@
       }
     },
     "ltto123/zju-low-score-course-selection-helper": {
-      "analyzedAt": "2026-11-24T02:49:29.684Z",
+      "analyzedAt": "2026-11-25T00:29:32.307Z",
       "commitAt": "2026-09-14T14:03:27Z",
       "branch": "main",
       "language": null,
@@ -2891,7 +2891,7 @@
       }
     },
     "lucent-snow/neptune-auto-charger": {
-      "analyzedAt": "2026-11-24T02:49:30.349Z",
+      "analyzedAt": "2026-11-25T00:29:33.146Z",
       "commitAt": "2026-11-05T04:09:02Z",
       "branch": "main",
       "language": "Python",
@@ -2923,13 +2923,13 @@
         "vulnerabilities": {
           "critical": 0,
           "high": 13,
-          "medium": 71,
+          "medium": 75,
           "low": 16
         }
       }
     },
     "lucent-snow/zju-english-dictation-tool": {
-      "analyzedAt": "2026-11-24T02:49:36.136Z",
+      "analyzedAt": "2026-11-25T00:29:35.991Z",
       "commitAt": "2026-01-06T08:02:22Z",
       "branch": "master",
       "language": "Python",
@@ -2960,7 +2960,7 @@
       }
     },
     "lucent-snow/zju-scholar": {
-      "analyzedAt": "2026-11-24T02:49:39.731Z",
+      "analyzedAt": "2026-11-25T00:29:38.483Z",
       "commitAt": "2026-07-29T07:07:34Z",
       "branch": "main",
       "language": "Python",
@@ -2998,7 +2998,7 @@
       }
     },
     "lybx-leyw/evergreen-main": {
-      "analyzedAt": "2026-11-24T02:49:43.109Z",
+      "analyzedAt": "2026-11-25T00:29:40.769Z",
       "commitAt": "2026-09-15T07:40:32Z",
       "branch": "v2.0",
       "language": "Dart",
@@ -3027,7 +3027,7 @@
       }
     },
     "lyz20051019/zju_reminder": {
-      "analyzedAt": "2026-11-24T02:49:49.618Z",
+      "analyzedAt": "2026-11-25T00:29:48.947Z",
       "commitAt": "2026-05-01T04:52:18Z",
       "branch": "main",
       "language": "Dart",
@@ -3056,7 +3056,7 @@
       }
     },
     "macanine/zjumihomo-converter": {
-      "analyzedAt": "2026-11-24T02:49:51.054Z",
+      "analyzedAt": "2026-11-25T00:29:50.631Z",
       "commitAt": "2026-11-16T14:19:38Z",
       "branch": "main",
       "language": "JavaScript",
@@ -3087,7 +3087,7 @@
       }
     },
     "maksymilan/zju-resume-template": {
-      "analyzedAt": "2026-11-24T02:49:52.119Z",
+      "analyzedAt": "2026-11-25T00:29:51.728Z",
       "commitAt": "2026-01-10T02:18:42Z",
       "branch": "master",
       "language": "TeX",
@@ -3116,7 +3116,7 @@
       }
     },
     "megrxu/zjureport": {
-      "analyzedAt": "2026-11-24T02:49:53.972Z",
+      "analyzedAt": "2026-11-25T00:29:53.754Z",
       "commitAt": "2026-04-07T02:02:47Z",
       "branch": "master",
       "language": "TeX",
@@ -3145,7 +3145,7 @@
       }
     },
     "memset0/learning-at-zju-helper": {
-      "analyzedAt": "2026-11-24T02:49:54.627Z",
+      "analyzedAt": "2026-11-25T00:29:54.452Z",
       "commitAt": "2024-12-05T16:09:55Z",
       "branch": "master",
       "language": "JavaScript",
@@ -3183,7 +3183,7 @@
       }
     },
     "memset0/zju-project-report-template": {
-      "analyzedAt": "2026-11-24T02:48:29.699Z",
+      "analyzedAt": "2026-11-25T00:28:47.531Z",
       "commitAt": "2025-11-04T04:13:23Z",
       "branch": "master",
       "language": "Typst",
@@ -3212,7 +3212,7 @@
       }
     },
     "meteors27/zju-calendar-maker": {
-      "analyzedAt": "2026-11-24T02:48:30.795Z",
+      "analyzedAt": "2026-11-25T00:28:48.615Z",
       "commitAt": "2023-03-18T14:50:09Z",
       "branch": "main",
       "language": "Python",
@@ -3243,7 +3243,7 @@
       }
     },
     "mythologyli/iosfakerun": {
-      "analyzedAt": "2026-11-24T02:48:31.486Z",
+      "analyzedAt": "2026-11-25T00:28:49.516Z",
       "commitAt": "2023-12-14T17:16:00Z",
       "branch": "master",
       "language": "C#",
@@ -3272,7 +3272,7 @@
       }
     },
     "mythologyli/zju-connect": {
-      "analyzedAt": "2026-11-24T02:48:32.485Z",
+      "analyzedAt": "2026-11-25T00:28:50.667Z",
       "commitAt": "2026-11-01T14:50:54Z",
       "branch": "main",
       "language": "Go",
@@ -3308,7 +3308,7 @@
       }
     },
     "mythologyli/zju-connect-for-windows": {
-      "analyzedAt": "2026-11-24T02:48:42.529Z",
+      "analyzedAt": "2026-11-25T00:29:02.919Z",
       "commitAt": "2026-03-12T01:38:08Z",
       "branch": "master",
       "language": "C++",
@@ -3339,7 +3339,7 @@
       }
     },
     "mythologyli/zjuconnectforandroid": {
-      "analyzedAt": "2026-11-24T02:48:44.086Z",
+      "analyzedAt": "2026-11-25T00:29:04.610Z",
       "commitAt": "2024-07-28T09:20:27Z",
       "branch": "master",
       "language": "Java",
@@ -3368,7 +3368,7 @@
       }
     },
     "nanoarcheaum/zju_coursecraft": {
-      "analyzedAt": "2026-11-24T02:48:44.787Z",
+      "analyzedAt": "2026-11-25T00:29:05.665Z",
       "commitAt": "2026-09-12T10:03:49Z",
       "branch": "main",
       "language": "JavaScript",
@@ -3399,7 +3399,7 @@
       }
     },
     "nzw806/zju-lecture-summerizer-": {
-      "analyzedAt": "2026-11-24T02:48:46.121Z",
+      "analyzedAt": "2026-11-25T00:29:07.369Z",
       "commitAt": "2026-11-16T06:39:20Z",
       "branch": "main",
       "language": "Python",
@@ -3430,7 +3430,7 @@
       }
     },
     "ouyuanchen/zjucoursehunter": {
-      "analyzedAt": "2026-11-24T02:48:46.838Z",
+      "analyzedAt": "2026-11-25T00:29:08.203Z",
       "commitAt": "2026-03-09T08:52:04Z",
       "branch": "main",
       "language": "Python",
@@ -3468,7 +3468,7 @@
       }
     },
     "pagechen04/ez4connect": {
-      "analyzedAt": "2026-11-24T02:48:49.455Z",
+      "analyzedAt": "2026-11-25T00:29:10.710Z",
       "commitAt": "2026-09-08T05:10:21Z",
       "branch": "master",
       "language": "C++",
@@ -3499,7 +3499,7 @@
       }
     },
     "panjoel812/zju-english-dictation": {
-      "analyzedAt": "2026-11-24T02:48:51.446Z",
+      "analyzedAt": "2026-11-25T00:29:13.090Z",
       "commitAt": "2026-11-08T06:30:23Z",
       "branch": "master",
       "language": "TypeScript",
@@ -3537,7 +3537,7 @@
       }
     },
     "paomianpomix/pptassistant-releases": {
-      "analyzedAt": "2026-11-24T02:48:59.798Z",
+      "analyzedAt": "2026-11-25T00:29:22.941Z",
       "commitAt": "2026-11-11T08:57:00Z",
       "branch": "main",
       "language": "C#",
@@ -3566,7 +3566,7 @@
       }
     },
     "peipei233/zju-learning-assistant": {
-      "analyzedAt": "2026-11-24T02:49:01.497Z",
+      "analyzedAt": "2026-11-25T00:29:25.119Z",
       "commitAt": "2026-11-02T14:38:11Z",
       "branch": "main",
       "language": "Rust",
@@ -3602,7 +3602,7 @@
       }
     },
     "peipei233/zju-score-push-template": {
-      "analyzedAt": "2026-11-24T02:49:04.500Z",
+      "analyzedAt": "2026-11-25T00:29:28.704Z",
       "commitAt": "2023-07-14T05:05:33Z",
       "branch": "main",
       "language": null,
@@ -3631,7 +3631,7 @@
       }
     },
     "pengsida/learning_research": {
-      "analyzedAt": "2026-11-24T02:49:05.140Z",
+      "analyzedAt": "2026-11-25T00:29:29.532Z",
       "commitAt": "2026-10-14T01:30:36Z",
       "branch": "master",
       "language": null,
@@ -3660,7 +3660,7 @@
       }
     },
     "phil-fan/awesome-zju-tools": {
-      "analyzedAt": "2026-11-24T02:49:05.783Z",
+      "analyzedAt": "2026-11-25T00:29:30.251Z",
       "commitAt": "2026-11-14T04:14:59Z",
       "branch": "main",
       "language": "MDX",
@@ -3696,7 +3696,7 @@
       }
     },
     "phil-fan/grs-enhance": {
-      "analyzedAt": "2026-11-24T02:49:07.921Z",
+      "analyzedAt": "2026-11-25T00:29:32.601Z",
       "commitAt": "2026-09-14T10:38:45Z",
       "branch": "main",
       "language": "JavaScript",
@@ -3727,7 +3727,7 @@
       }
     },
     "phil-fan/ppt": {
-      "analyzedAt": "2026-11-24T02:49:08.719Z",
+      "analyzedAt": "2026-11-25T00:29:33.641Z",
       "commitAt": "2026-01-20T16:26:31Z",
       "branch": "main",
       "language": "Ruby",
@@ -3763,7 +3763,7 @@
       }
     },
     "phil-fan/xmindify": {
-      "analyzedAt": "2026-11-24T02:49:10.680Z",
+      "analyzedAt": "2026-11-25T00:29:36.301Z",
       "commitAt": "2026-02-27T04:35:30Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3774,7 +3774,7 @@
       "metrics": null
     },
     "phil-fan/zju-coffee": {
-      "analyzedAt": "2026-11-24T02:49:10.681Z",
+      "analyzedAt": "2026-11-25T00:29:36.302Z",
       "commitAt": "2026-04-06T07:27:24Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3812,7 +3812,7 @@
       }
     },
     "pm25000/dsh-course-selector": {
-      "analyzedAt": "2026-11-24T02:50:45.805Z",
+      "analyzedAt": "2026-11-25T00:28:15.384Z",
       "commitAt": "2026-08-19T04:45:17Z",
       "branch": "main",
       "language": "TypeScript",
@@ -3843,7 +3843,7 @@
       }
     },
     "poco-ai/poco-agent": {
-      "analyzedAt": "2026-11-24T02:50:47.214Z",
+      "analyzedAt": "2026-11-25T00:28:17.045Z",
       "commitAt": "2026-09-22T11:40:25Z",
       "branch": "main",
       "language": "Python",
@@ -3875,13 +3875,13 @@
         "vulnerabilities": {
           "critical": 17,
           "high": 153,
-          "medium": 378,
+          "medium": 382,
           "low": 43
         }
       }
     },
     "qqsugar2000/awesome-cv-cn": {
-      "analyzedAt": "2026-11-24T02:50:57.974Z",
+      "analyzedAt": "2026-11-25T00:28:31.150Z",
       "commitAt": "2024-10-09T15:15:50Z",
       "branch": "master",
       "language": "TeX",
@@ -3910,7 +3910,7 @@
       }
     },
     "qsctech/zju-icicles": {
-      "analyzedAt": "2026-11-24T02:51:02.263Z",
+      "analyzedAt": "2026-11-25T00:28:35.714Z",
       "commitAt": "2026-09-07T08:18:15Z",
       "branch": "master",
       "language": "HTML",
@@ -3946,7 +3946,7 @@
       }
     },
     "qsctech/zjunet": {
-      "analyzedAt": "2026-11-24T02:51:06.581Z",
+      "analyzedAt": "2026-11-25T00:28:40.548Z",
       "commitAt": "2023-12-21T07:39:53Z",
       "branch": "master",
       "language": "Shell",
@@ -3975,7 +3975,7 @@
       }
     },
     "qychen2001/zju-beamer-template": {
-      "analyzedAt": "2026-11-24T02:51:07.406Z",
+      "analyzedAt": "2026-11-25T00:28:41.486Z",
       "commitAt": "2026-05-09T01:05:52Z",
       "branch": "main",
       "language": "TeX",
@@ -4004,7 +4004,7 @@
       }
     },
     "roboparty/labweft": {
-      "analyzedAt": "2026-11-24T02:51:08.273Z",
+      "analyzedAt": "2026-11-25T00:28:42.429Z",
       "commitAt": "2026-10-17T06:07:17Z",
       "branch": "main",
       "language": "Python",
@@ -4035,7 +4035,7 @@
       }
     },
     "ryanfcr/zju_course": {
-      "analyzedAt": "2026-11-24T02:51:09.794Z",
+      "analyzedAt": "2026-11-25T00:28:43.732Z",
       "commitAt": "2024-02-29T09:34:53Z",
       "branch": "main",
       "language": "HTML",
@@ -4064,7 +4064,7 @@
       }
     },
     "shawhaines/evilscripts": {
-      "analyzedAt": "2026-11-24T02:51:12.369Z",
+      "analyzedAt": "2026-11-25T00:28:46.504Z",
       "commitAt": "2023-03-18T16:39:27Z",
       "branch": "main",
       "language": "JavaScript",
@@ -4095,7 +4095,7 @@
       }
     },
     "shuenhoy/modern-zju-thesis": {
-      "analyzedAt": "2026-11-24T02:51:13.128Z",
+      "analyzedAt": "2026-11-25T00:28:47.284Z",
       "commitAt": "2026-05-13T10:03:20Z",
       "branch": "master",
       "language": "Typst",
@@ -4124,7 +4124,7 @@
       }
     },
     "sisgloria/zju-23isee-sisgloria": {
-      "analyzedAt": "2026-11-24T02:51:13.909Z",
+      "analyzedAt": "2026-11-25T00:28:48.043Z",
       "commitAt": "2026-07-10T06:41:05Z",
       "branch": "main",
       "language": "VHDL",
@@ -4153,7 +4153,7 @@
       }
     },
     "slowist-lee/website-converter": {
-      "analyzedAt": "2026-11-24T02:51:15.438Z",
+      "analyzedAt": "2026-11-25T00:28:49.591Z",
       "commitAt": "2026-02-23T04:55:48Z",
       "branch": "master",
       "language": "JavaScript",
@@ -4184,7 +4184,7 @@
       }
     },
     "steambird1/amethyst": {
-      "analyzedAt": "2026-11-24T02:51:16.245Z",
+      "analyzedAt": "2026-11-25T00:28:50.332Z",
       "commitAt": "2026-09-14T15:17:28Z",
       "branch": "main",
       "language": "Python",
@@ -4215,7 +4215,7 @@
       }
     },
     "stella617/zju-clock-in": {
-      "analyzedAt": "2026-11-24T02:51:17.057Z",
+      "analyzedAt": "2026-11-25T00:28:51.099Z",
       "commitAt": "2021-05-22T13:40:18Z",
       "branch": "master",
       "language": "Python",
@@ -4246,7 +4246,7 @@
       }
     },
     "stevenstg/obsidian-cc98-publish": {
-      "analyzedAt": "2026-11-24T02:51:17.869Z",
+      "analyzedAt": "2026-11-25T00:28:51.862Z",
       "commitAt": "2026-10-19T12:54:54Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4284,7 +4284,7 @@
       }
     },
     "subconv/zju-rule": {
-      "analyzedAt": "2026-11-24T02:51:19.403Z",
+      "analyzedAt": "2026-11-25T00:28:53.238Z",
       "commitAt": "2026-09-28T01:51:13Z",
       "branch": "main",
       "language": "Python",
@@ -4315,7 +4315,7 @@
       }
     },
     "team-s2/ctf_summer_courses": {
-      "analyzedAt": "2026-11-24T02:51:20.933Z",
+      "analyzedAt": "2026-11-25T00:28:54.637Z",
       "commitAt": "2026-07-29T15:14:36Z",
       "branch": "master",
       "language": "CSS",
@@ -4344,7 +4344,7 @@
       }
     },
     "thenetadmin/zjuthesis": {
-      "analyzedAt": "2026-11-24T02:51:22.565Z",
+      "analyzedAt": "2026-11-25T00:28:56.187Z",
       "commitAt": "2025-12-08T05:41:41Z",
       "branch": "master",
       "language": "TeX",
@@ -4373,7 +4373,7 @@
       }
     },
     "tixxin/fuyu": {
-      "analyzedAt": "2026-11-24T02:51:23.369Z",
+      "analyzedAt": "2026-11-25T00:28:56.901Z",
       "commitAt": "2026-11-18T10:20:24Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4391,16 +4391,16 @@
         "osv-scanner": "osv-scanner version: 2.7.0\nosv-scalibr version: 0.5.3\ncommit: n/a\nbuilt at: n/a"
       },
       "metrics": {
-        "files": 3686,
-        "loc": 293132,
-        "functions": 44834,
-        "averageComplexity": 2.26,
+        "files": 3716,
+        "loc": 297991,
+        "functions": 45254,
+        "averageComplexity": 2.27,
         "maxComplexity": 125,
-        "highComplexityFunctions": 499,
-        "duplicationPercentage": 17.14,
-        "duplicatedBlocks": 3574,
+        "highComplexityFunctions": 521,
+        "duplicationPercentage": 17.02,
+        "duplicatedBlocks": 3624,
         "lintErrors": 0,
-        "lintWarnings": 252,
+        "lintWarnings": 253,
         "secrets": null,
         "vulnerabilities": {
           "critical": 0,
@@ -4411,7 +4411,7 @@
       }
     },
     "tonycrane/practicalskillstutorial": {
-      "analyzedAt": "2026-11-24T02:51:45.289Z",
+      "analyzedAt": "2026-11-25T00:29:17.762Z",
       "commitAt": "2024-05-27T14:11:11Z",
       "branch": "master",
       "language": "Markdown",
@@ -4440,7 +4440,7 @@
       }
     },
     "tonycrane/slide-template": {
-      "analyzedAt": "2026-11-24T02:49:00.571Z",
+      "analyzedAt": "2026-11-25T00:28:28.153Z",
       "commitAt": "2024-07-11T18:36:37Z",
       "branch": "master",
       "language": "Markdown",
@@ -4469,7 +4469,7 @@
       }
     },
     "too-difficult-to-study/zju_blind_review_monitor": {
-      "analyzedAt": "2026-11-24T02:49:05.285Z",
+      "analyzedAt": "2026-11-25T00:28:31.635Z",
       "commitAt": "2026-04-27T02:46:28Z",
       "branch": "main",
       "language": "HTML",
@@ -4498,7 +4498,7 @@
       }
     },
     "upupming/new-grad-positions": {
-      "analyzedAt": "2026-11-24T02:49:08.154Z",
+      "analyzedAt": "2026-11-25T00:28:34.235Z",
       "commitAt": "2023-02-04T03:28:53Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4536,7 +4536,7 @@
       }
     },
     "upupming/zhr-action-demo": {
-      "analyzedAt": "2026-11-24T02:49:10.884Z",
+      "analyzedAt": "2026-11-25T00:28:36.464Z",
       "commitAt": "2023-01-02T10:00:07Z",
       "branch": "main",
       "language": null,
@@ -4565,7 +4565,7 @@
       }
     },
     "upupming/zju-grs-ics": {
-      "analyzedAt": "2026-11-24T02:49:11.698Z",
+      "analyzedAt": "2026-11-25T00:28:37.087Z",
       "commitAt": "2022-09-19T13:25:04Z",
       "branch": "master",
       "language": "TypeScript",
@@ -4603,7 +4603,7 @@
       }
     },
     "vita0818/cc98-searchplus": {
-      "analyzedAt": "2026-11-24T02:49:14.309Z",
+      "analyzedAt": "2026-11-25T00:28:40.865Z",
       "commitAt": "2026-08-22T03:46:52Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4641,7 +4641,7 @@
       }
     },
     "vvirgooo2/auto-video-tronclass-zju": {
-      "analyzedAt": "2026-11-24T02:49:16.062Z",
+      "analyzedAt": "2026-11-25T00:28:42.299Z",
       "commitAt": "2023-09-23T06:32:00Z",
       "branch": "main",
       "language": "JavaScript",
@@ -4672,7 +4672,7 @@
       }
     },
     "wdtjm/zta": {
-      "analyzedAt": "2026-11-24T02:49:17.008Z",
+      "analyzedAt": "2026-11-25T00:28:43.077Z",
       "commitAt": "2025-02-09T06:02:28Z",
       "branch": "master",
       "language": "Vue",
@@ -4708,7 +4708,7 @@
       }
     },
     "wei-liping/echomate": {
-      "analyzedAt": "2026-11-24T02:49:20.435Z",
+      "analyzedAt": "2026-11-25T00:28:46.799Z",
       "commitAt": "2026-03-24T10:18:47Z",
       "branch": "main",
       "language": "Python",
@@ -4746,7 +4746,7 @@
       }
     },
     "windingwind/zotero-actions-tags": {
-      "analyzedAt": "2026-11-24T02:49:29.970Z",
+      "analyzedAt": "2026-11-25T00:28:57.911Z",
       "commitAt": "2026-11-08T03:54:48Z",
       "branch": "master",
       "language": "TypeScript",
@@ -4784,7 +4784,7 @@
       }
     },
     "windingwind/zotero-better-notes": {
-      "analyzedAt": "2026-11-24T02:49:33.991Z",
+      "analyzedAt": "2026-11-25T00:29:01.403Z",
       "commitAt": "2026-11-10T09:02:26Z",
       "branch": "master",
       "language": "TypeScript",
@@ -4822,7 +4822,7 @@
       }
     },
     "windingwind/zotero-pdf-translate": {
-      "analyzedAt": "2026-11-24T02:50:09.687Z",
+      "analyzedAt": "2026-11-25T00:29:28.796Z",
       "commitAt": "2026-11-13T14:34:38Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4860,7 +4860,7 @@
       }
     },
     "wuheshidaozod/chaoxing-courseware-downloader": {
-      "analyzedAt": "2026-11-24T02:50:12.182Z",
+      "analyzedAt": "2026-11-25T00:29:31.183Z",
       "commitAt": "2026-11-11T03:52:30Z",
       "branch": "main",
       "language": "JavaScript",
@@ -4891,7 +4891,7 @@
       }
     },
     "wuheshidaozod/zju-courseware-download": {
-      "analyzedAt": "2026-11-24T02:50:13.181Z",
+      "analyzedAt": "2026-11-25T00:29:31.925Z",
       "commitAt": "2026-10-26T13:21:07Z",
       "branch": "main",
       "language": "JavaScript",
@@ -4922,7 +4922,7 @@
       }
     },
     "x-t-e-r/zotero-mcp-neo": {
-      "analyzedAt": "2026-11-24T02:50:14.150Z",
+      "analyzedAt": "2026-11-25T00:29:32.732Z",
       "commitAt": "2026-04-09T07:52:41Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4960,7 +4960,7 @@
       }
     },
     "xecades/markdown-it-typst": {
-      "analyzedAt": "2026-11-24T02:50:19.632Z",
+      "analyzedAt": "2026-11-25T00:29:35.526Z",
       "commitAt": "2025-05-01T08:02:52Z",
       "branch": "main",
       "language": "TypeScript",
@@ -4998,7 +4998,7 @@
       }
     },
     "xecades/zju-ical-py": {
-      "analyzedAt": "2026-11-24T02:50:21.841Z",
+      "analyzedAt": "2026-11-25T00:29:37.079Z",
       "commitAt": "2026-09-17T08:46:32Z",
       "branch": "main",
       "language": "Python",
@@ -5036,7 +5036,7 @@
       }
     },
     "xhacker/zju-jwb-to-icalendar": {
-      "analyzedAt": "2026-11-24T02:50:26.638Z",
+      "analyzedAt": "2026-11-25T00:29:42.053Z",
       "commitAt": "2017-08-06T09:24:23Z",
       "branch": "master",
       "language": "Python",
@@ -5067,7 +5067,7 @@
       }
     },
     "xi2p/zju-motis": {
-      "analyzedAt": "2026-11-24T02:50:27.566Z",
+      "analyzedAt": "2026-11-25T00:29:42.900Z",
       "commitAt": "2025-03-04T09:53:29Z",
       "branch": "master",
       "language": "Python",
@@ -5098,7 +5098,7 @@
       }
     },
     "xuanzhizheng/zju-23isee-cognis": {
-      "analyzedAt": "2026-11-24T02:50:28.658Z",
+      "analyzedAt": "2026-11-25T00:29:43.762Z",
       "commitAt": "2026-11-08T09:39:14Z",
       "branch": "main",
       "language": "C",
@@ -5122,14 +5122,14 @@
         "highComplexityFunctions": 543,
         "duplicationPercentage": 50.18,
         "duplicatedBlocks": 10888,
-        "lintErrors": 291,
-        "lintWarnings": 1877,
+        "lintErrors": 300,
+        "lintWarnings": 1992,
         "secrets": null,
         "vulnerabilities": null
       }
     },
     "xxone111/zju-notes-assistant": {
-      "analyzedAt": "2026-11-24T02:49:06.320Z",
+      "analyzedAt": "2026-11-25T00:28:43.771Z",
       "commitAt": "2026-10-11T10:52:05Z",
       "branch": "main",
       "language": "JavaScript",
@@ -5160,7 +5160,7 @@
       }
     },
     "xzzd-pro/xzzd-pro": {
-      "analyzedAt": "2026-11-24T02:49:07.685Z",
+      "analyzedAt": "2026-11-25T00:28:44.843Z",
       "commitAt": "2026-11-07T04:40:40Z",
       "branch": "master",
       "language": "TypeScript",
@@ -5198,7 +5198,7 @@
       }
     },
     "yangshu233-snow/cc98-live-better": {
-      "analyzedAt": "2026-11-24T02:49:12.212Z",
+      "analyzedAt": "2026-11-25T00:28:49.658Z",
       "commitAt": "2026-05-28T05:18:38Z",
       "branch": "main",
       "language": "TypeScript",
@@ -5236,7 +5236,7 @@
       }
     },
     "yangshu233-snow/learning_at_zju_third_client": {
-      "analyzedAt": "2026-11-24T02:49:14.236Z",
+      "analyzedAt": "2026-11-25T00:28:51.801Z",
       "commitAt": "2026-11-08T15:04:52Z",
       "branch": "main",
       "language": "Python",
@@ -5267,7 +5267,7 @@
       }
     },
     "yhwu-is/computer-system-start-from-a-newbie": {
-      "analyzedAt": "2026-11-24T02:49:15.103Z",
+      "analyzedAt": "2026-11-25T00:28:52.828Z",
       "commitAt": "2023-04-23T15:40:43Z",
       "branch": "main",
       "language": "CSS",
@@ -5296,7 +5296,7 @@
       }
     },
     "yhwu-is/linear-algebra-left-undone": {
-      "analyzedAt": "2026-11-24T02:49:15.882Z",
+      "analyzedAt": "2026-11-25T00:28:53.657Z",
       "commitAt": "2026-11-11T10:19:00Z",
       "branch": "new",
       "language": "TeX",
@@ -5325,7 +5325,7 @@
       }
     },
     "yifengfang-rfl/english_reciting": {
-      "analyzedAt": "2026-11-24T02:49:17.011Z",
+      "analyzedAt": "2026-11-25T00:28:54.838Z",
       "commitAt": "2026-08-22T17:35:09Z",
       "branch": "main",
       "language": "Dart",
@@ -5354,7 +5354,7 @@
       }
     },
     "yinze00/zju-opt": {
-      "analyzedAt": "2026-11-24T02:49:21.759Z",
+      "analyzedAt": "2026-11-25T00:29:03.524Z",
       "commitAt": "2020-05-13T05:33:34Z",
       "branch": "master",
       "language": "C",
@@ -5385,7 +5385,7 @@
       }
     },
     "zack-will/interleaf": {
-      "analyzedAt": "2026-11-24T02:49:24.179Z",
+      "analyzedAt": "2026-11-25T00:29:04.883Z",
       "commitAt": "2026-11-14T13:14:07Z",
       "branch": "main",
       "language": "JavaScript",
@@ -5423,7 +5423,7 @@
       }
     },
     "zarad0x/openclaw-zju-skills": {
-      "analyzedAt": "2026-11-24T02:50:17.269Z",
+      "analyzedAt": "2026-11-25T00:30:10.759Z",
       "commitAt": "2026-03-31T09:47:35Z",
       "branch": "main",
       "language": null,
@@ -5452,7 +5452,7 @@
       }
     },
     "zenith-shadow-x/zju-learning-reminder": {
-      "analyzedAt": "2026-11-24T02:50:18.235Z",
+      "analyzedAt": "2026-11-25T00:30:11.595Z",
       "commitAt": "2026-04-28T12:43:55Z",
       "branch": "main",
       "language": "JavaScript",
@@ -5483,7 +5483,7 @@
       }
     },
     "zhangyc0/zju-course-selection": {
-      "analyzedAt": "2026-11-24T02:50:18.984Z",
+      "analyzedAt": "2026-11-25T00:30:12.506Z",
       "commitAt": "2021-08-13T16:13:28Z",
       "branch": "main",
       "language": "Python",
@@ -5514,7 +5514,7 @@
       }
     },
     "zjjncsn/markdown-to-ubb": {
-      "analyzedAt": "2026-11-24T02:50:19.767Z",
+      "analyzedAt": "2026-11-25T00:30:13.324Z",
       "commitAt": "2026-06-16T08:42:36Z",
       "branch": "main",
       "language": "Vue",
@@ -5550,7 +5550,7 @@
       }
     },
     "zju-cc98/cc98-pwa": {
-      "analyzedAt": "2026-11-24T02:50:22.554Z",
+      "analyzedAt": "2026-11-25T00:30:15.855Z",
       "commitAt": "2024-05-09T13:15:59Z",
       "branch": "dev",
       "language": "TypeScript",
@@ -5588,7 +5588,7 @@
       }
     },
     "zju-cc98/forum": {
-      "analyzedAt": "2026-11-24T02:50:25.658Z",
+      "analyzedAt": "2026-11-25T00:30:19.773Z",
       "commitAt": "2026-11-04T06:55:02Z",
       "branch": "main",
       "language": "TypeScript",
@@ -5626,7 +5626,7 @@
       }
     },
     "zju-charger/zju-charger": {
-      "analyzedAt": "2026-11-24T02:50:32.029Z",
+      "analyzedAt": "2026-11-25T00:30:26.166Z",
       "commitAt": "2026-03-11T09:19:56Z",
       "branch": "main",
       "language": "Python",
@@ -5658,13 +5658,13 @@
         "vulnerabilities": {
           "critical": 2,
           "high": 32,
-          "medium": 106,
+          "medium": 110,
           "low": 18
         }
       }
     },
     "zju-eesuad/eestudy-place": {
-      "analyzedAt": "2026-11-24T02:50:35.048Z",
+      "analyzedAt": "2026-11-25T00:30:29.332Z",
       "commitAt": "2026-07-08T05:19:52Z",
       "branch": "main",
       "language": "CSS",
@@ -5693,7 +5693,7 @@
       }
     },
     "zju-fast-lab/ego-planner": {
-      "analyzedAt": "2026-11-24T02:50:36.941Z",
+      "analyzedAt": "2026-11-25T00:30:30.775Z",
       "commitAt": "2025-03-08T09:23:46Z",
       "branch": "master",
       "language": "C++",
@@ -5724,7 +5724,7 @@
       }
     },
     "zju-fast-lab/ego-planner-swarm": {
-      "analyzedAt": "2026-11-24T02:50:42.935Z",
+      "analyzedAt": "2026-11-25T00:30:37.793Z",
       "commitAt": "2025-03-08T09:21:50Z",
       "branch": "master",
       "language": "C++",
@@ -5755,7 +5755,7 @@
       }
     },
     "zju-fast-lab/fast-drone-250": {
-      "analyzedAt": "2026-11-24T02:50:49.919Z",
+      "analyzedAt": "2026-11-25T00:30:45.622Z",
       "commitAt": "2022-11-09T08:02:20Z",
       "branch": "master",
       "language": "C++",
@@ -5786,7 +5786,7 @@
       }
     },
     "zju-fast-lab/gcopter": {
-      "analyzedAt": "2026-11-24T02:50:30.993Z",
+      "analyzedAt": "2026-11-25T00:28:41.627Z",
       "commitAt": "2023-06-06T15:15:32Z",
       "branch": "main",
       "language": "C++",
@@ -5817,7 +5817,7 @@
       }
     },
     "zju-fast-lab/primitive-planner": {
-      "analyzedAt": "2026-11-24T02:50:34.274Z",
+      "analyzedAt": "2026-11-25T00:28:45.253Z",
       "commitAt": "2026-08-26T07:53:25Z",
       "branch": "main",
       "language": "C++",
@@ -5848,7 +5848,7 @@
       }
     },
     "zju-isee/zju-isee": {
-      "analyzedAt": "2026-11-24T02:50:39.397Z",
+      "analyzedAt": "2026-11-25T00:28:50.953Z",
       "commitAt": "2023-12-05T16:11:11Z",
       "branch": "master",
       "language": "Jupyter Notebook",
@@ -5884,7 +5884,7 @@
       }
     },
     "zju-llms/openstory": {
-      "analyzedAt": "2026-11-24T02:50:55.277Z",
+      "analyzedAt": "2026-11-25T00:29:15.590Z",
       "commitAt": "2026-08-19T04:52:05Z",
       "branch": "main",
       "language": "Python",
@@ -5915,7 +5915,7 @@
       }
     },
     "zju-r/zjutimetable": {
-      "analyzedAt": "2026-11-24T02:50:58.657Z",
+      "analyzedAt": "2026-11-25T00:29:20.220Z",
       "commitAt": "2024-06-05T15:20:07Z",
       "branch": "main",
       "language": "HTML",
@@ -5944,7 +5944,7 @@
       }
     },
     "zju-real/polaris": {
-      "analyzedAt": "2026-11-24T02:50:59.530Z",
+      "analyzedAt": "2026-11-25T00:29:21.760Z",
       "commitAt": "2026-11-18T12:53:02Z",
       "branch": "main",
       "language": "Python",
@@ -5982,7 +5982,7 @@
       }
     },
     "zju-sec/cianalyser": {
-      "analyzedAt": "2026-11-24T02:51:10.744Z",
+      "analyzedAt": "2026-11-25T00:29:36.257Z",
       "commitAt": "2023-03-13T11:10:50Z",
       "branch": "main",
       "language": "Go",
@@ -6018,7 +6018,7 @@
       }
     },
     "zju-turing/turingcourses": {
-      "analyzedAt": "2026-11-24T02:51:20.040Z",
+      "analyzedAt": "2026-11-25T00:29:48.853Z",
       "commitAt": "2026-09-19T08:40:38Z",
       "branch": "master",
       "language": "Markdown",
@@ -6054,7 +6054,7 @@
       }
     },
     "zju3dv/4k4d": {
-      "analyzedAt": "2026-11-24T02:51:22.672Z",
+      "analyzedAt": "2026-11-25T00:29:51.634Z",
       "commitAt": "2026-09-15T07:34:02Z",
       "branch": "main",
       "language": "Python",
@@ -6092,7 +6092,7 @@
       }
     },
     "zju3dv/easymocap": {
-      "analyzedAt": "2026-11-24T02:51:41.194Z",
+      "analyzedAt": "2026-11-25T00:29:57.013Z",
       "commitAt": "2026-09-15T07:34:02Z",
       "branch": "master",
       "language": "Python",
@@ -6124,13 +6124,13 @@
         "vulnerabilities": {
           "critical": 10,
           "high": 26,
-          "medium": 104,
+          "medium": 108,
           "low": 20
         }
       }
     },
     "zju3dv/gvhmr": {
-      "analyzedAt": "2026-11-24T02:51:55.391Z",
+      "analyzedAt": "2026-11-25T00:30:20.083Z",
       "commitAt": "2026-09-15T07:44:58Z",
       "branch": "main",
       "language": "Jupyter Notebook",
@@ -6166,7 +6166,7 @@
       }
     },
     "zju3dv/loftr": {
-      "analyzedAt": "2026-11-24T02:52:00.452Z",
+      "analyzedAt": "2026-11-25T00:30:23.818Z",
       "commitAt": "2023-08-03T06:04:38Z",
       "branch": "master",
       "language": "Jupyter Notebook",
@@ -6196,13 +6196,13 @@
         "vulnerabilities": {
           "critical": 8,
           "high": 22,
-          "medium": 96,
+          "medium": 100,
           "low": 18
         }
       }
     },
     "zjuchalaoshi/chalaoshi": {
-      "analyzedAt": "2026-11-24T02:52:07.818Z",
+      "analyzedAt": "2026-11-25T00:30:37.669Z",
       "commitAt": "2025-08-18T16:33:43Z",
       "branch": "main",
       "language": null,
@@ -6231,7 +6231,7 @@
       }
     },
     "zjusct/hpc101": {
-      "analyzedAt": "2026-11-24T02:52:08.586Z",
+      "analyzedAt": "2026-11-25T00:30:38.656Z",
       "commitAt": "2026-09-02T11:21:08Z",
       "branch": "main",
       "language": "C",
@@ -6269,7 +6269,7 @@
       }
     },
     "zjusct/mirror-front": {
-      "analyzedAt": "2026-11-24T02:52:12.961Z",
+      "analyzedAt": "2026-11-25T00:30:44.496Z",
       "commitAt": "2026-11-14T10:24:53Z",
       "branch": "main",
       "language": "TypeScript",
@@ -6307,7 +6307,7 @@
       }
     },
     "zjusct/mirrorsdotnet": {
-      "analyzedAt": "2026-11-24T02:52:15.724Z",
+      "analyzedAt": "2026-11-25T00:30:47.747Z",
       "commitAt": "2025-04-29T03:17:28Z",
       "branch": "master",
       "language": "C#",
@@ -6318,7 +6318,7 @@
       "metrics": null
     },
     "zjusct/mirrorz-shim": {
-      "analyzedAt": "2026-11-24T02:52:15.725Z",
+      "analyzedAt": "2026-11-25T00:30:47.748Z",
       "commitAt": "2023-12-20T07:38:14Z",
       "branch": "main",
       "language": "Go",
